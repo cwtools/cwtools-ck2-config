@@ -1,18 +1,20 @@
 enums = {
-    complex_enum[artifact_slot] = {
+    complex_enum[artifact_slots] = {
         path = "game/common/artifacts"
         start_from_root = yes
         name = {
             slots = {
-                enum_name = scalar
+                enum_name = int[0..inf]
             }
         }
     }
 }
 
 types = {
+    ## type_key_filter <> slots
     type[artifact] = {
-        path = "game/common/artifact"
+        path = "game/common/artifacts"
+        path_strict = yes
         localisation = {
             name = "$"
             description = "$_desc"
@@ -57,7 +59,7 @@ artifact = {
 
     ## cardinality = 0..1
     ### Associated slot to equip the artifact.
-    slot = value[artifact_slot]
+    slot = enum[artifact_slots]
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
