@@ -34,4 +34,9 @@ enums = {
         fort
         trade_post
     }
+    enum[combat_phases] = {
+        skirmish
+        melee
+        pursue
+    }
 }
