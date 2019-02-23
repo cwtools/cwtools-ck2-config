@@ -1,0 +1,27 @@
+enums = {
+    enum[dlcs] = {
+        "The Sword of Islam"
+        "Legacy of Rome"
+        "Sunset Invasion"
+        "The Republic"
+        "The Old Gods"
+        "Sons of Abraham"
+        "Rajas of India"
+        "Charlemagne"
+        "Way of Life"
+        "Horse Lords"
+        "Zeus"
+        "Conclave"
+        "Reapers"
+        "Mystics"
+        "Jade Dragon"
+        "Holy Fury"
+    }
+    enum[title_tiers] = {
+        baron
+        count
+        duke
+        king
+        emperor
+    }
+}
