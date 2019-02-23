@@ -39,4 +39,12 @@ enums = {
         melee
         pursue
     }
+    enum[interactions] = {
+        declare_war_interaction
+        imprison_character_interaction
+        exile_imprisoned_interaction
+        execute_imprisoned_interaction
+        revoke_title_interaction
+        grant_landed_title_interaction
+    }
 }

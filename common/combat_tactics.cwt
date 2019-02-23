@@ -1,5 +1,5 @@
 enums = {
-    enum[combat_tactic_group] = {
+    enum[combat_tactic_groups] = {
         skirmish
         advance
         charge
@@ -9,7 +9,7 @@ enums = {
         defensive
         stand_fast
     }
-    enum[siege_side] = {
+    enum[siege_sides] = {
         attacker
         defender
     }
@@ -20,6 +20,14 @@ types = {
     type[combat_tactic] = {
         path_strict = yes
         path = "game/common/combat_tactics"
+
+        subtype[siege] = {
+            siege = yes
+        }
+        subtype[regular] = {
+            ## cardinality = 0..1
+            siege = no
+        }
 
         localisation = {
             ## required
@@ -32,15 +40,21 @@ combat_tactic = {
     ### How many days the tactic will last.
     days = int
 
-    ### What unit sprite to use for the tactic. Vanilla uses 1-7.
-    sprite = int
+    subtype[regular] = {
+        ### What frame from GFX_combat_tactic_strip to use for the tactic. Vanilla uses 1-7.
+        sprite = int
+    }
+    subtype[siege] = {
+        ### What frame from GFX_combat_siege_tactic_strip to use for the tactic. Vanilla uses 1.
+        sprite = int
+    }
 
     ### What group the tactic belongs to.
-    group = enum[combat_tactic_group]
+    group = enum[combat_tactic_groups]
 
     ## cardinality = 0..1
     ### If set, used for sieges for the appropriate side.
-    siege = enum[siege_side]
+    siege = enum[siege_sides]
 
     # According to wiki, the scope for ongoing battles is siege; not actually sure that's true
     ## replace_scope = { this = siege root = siege }
@@ -77,7 +91,7 @@ combat_tactic = {
     ## cardinality = 0..inf
     ### UNCONFIRMED: I think it's if the enemy is using a tactic of the given group, their stats are changed by factor. Feel free to confirm.
     enemy = {
-        group = enum[combat_tactic_group]
+        group = enum[combat_tactic_groups]
         factor = float
     }
 }

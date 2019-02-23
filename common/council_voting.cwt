@@ -1,0 +1,44 @@
+# TODO: probably wrong syntax; either way, figure out what stored_token_trigger means
+
+enums = {
+    enum[council_voting_pattern_types] = {
+        for
+        against
+    }
+}
+
+types = {
+    type[council_voting_pattern] = {
+        path_strict = yes
+        path = "game/common/council_voting"
+    }
+}
+
+council_voting_pattern = {
+    ### What frame from GFX_voting_reason_sprite to use for the reason when it decides a vote. Vanilla uses 1-17.
+    icon = int
+
+    ### What type of vote this is.
+    pattern_type = enum[council_voting_pattern_types]
+
+    ## cardinality = 0..inf
+    ## replace_scope = { this = character root = character from = character fromfrom = character fromfromfrom = character fromfromfromfrom = title }
+    ### Voting on war declaration. Attacker is FROM, defender is FROMFROM, third party is FROMFROMFROM, third party title is FROMFROMFROMFROM; stored_token_trigger is cb_type (available from ROOT and FROM).
+    declare_war_interaction = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## cardinality = 0..inf
+    ## replace_scope = { this = character root = character }
+    ### Voting on interaction of the given type.
+    enum[interaction] = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## cardinality = 0..inf
+    ## replace_scope = { this = character root = character }
+    ### Voting on laws of the given type.
+    <law> = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
