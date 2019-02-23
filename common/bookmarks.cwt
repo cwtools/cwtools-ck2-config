@@ -42,7 +42,7 @@ bookmark = {
 
     subtype[era] = {
         ### The picture used on the era select screen.
-        picture = value[gfx_resource]
+        picture = <gfx_resource>
     }
 
     ## cardinality = 0..1
@@ -54,7 +54,7 @@ bookmark = {
     ### Suggested characters to play as at this bookmark. For eras, the first six will be shown on the era select screen.
     selectable_character = {
         ### The character's ID. Prooobably needs to be alive during the bookmark's date.
-        id = value[character]
+        id = <character>
         
         subtype[era] = {
             ### The character's age at the time of the bookmark.
@@ -64,7 +64,7 @@ bookmark = {
             name = localisation
 
             ### The character's primary title to use for CoA.
-            title = value[title]
+            title = <title>
 
             ### The character's title's localised (cultural) name of the title.
             title_name = localisation
@@ -86,16 +86,16 @@ bookmark = {
                 properties = portrait_properties_field
 
                 ### The character's religion.
-                religion = value[religion]
+                religion = <religion>
 
                 ### The character's culture.
-                culture = value[culture]
+                culture = <culture>
 
                 ### The character's government.
-                government = value[government]
+                government = <government>
                 
                 ### The character's dynasty's ID.
-                dynasty = value[dynasty]
+                dynasty = <dynasty>
             }
         }
     }

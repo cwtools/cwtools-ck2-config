@@ -24,4 +24,14 @@ enums = {
         king
         emperor
     }
+    enum[holding_types] = {
+        castle
+        city
+        temple
+        tribal
+        hospital
+        nomad
+        fort
+        trade_post
+    }
 }

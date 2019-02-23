@@ -55,7 +55,7 @@ artifact = {
     indestructible = bool
     
     ### 118x118px picture; also uses this value plus "_small" (59x59px)
-    picture = value[gfx_resource]
+    picture = <gfx_resource>
 
     ## cardinality = 0..1
     ### Associated slot to equip the artifact.
