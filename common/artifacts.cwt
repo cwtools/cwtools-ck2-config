@@ -43,7 +43,7 @@ artifact = {
     ### Flags automatically assigned to each created artifact of this type.
     flags = {
         ## cardinality = 0..inf
-        set_value[artifact_flag]
+        value_set[artifact_flag]
     }
 
     ## cardinality = 0..1
