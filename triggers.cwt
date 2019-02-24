@@ -1,11 +1,11 @@
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = character
 ### The absolute value of the age difference between two characters. Typically used in conjunction with is_older_than.
@@ -25,7 +25,7 @@ alias[trigger:had_global_flag] = clause
 
 ## scope = any
 ### Checks if the user has a specified DLC. Values: ""The Sword of Islam"", ""Legacy of Rome"", ""Sunset Invasion"", ""The Republic"", ""The Old Gods"", ""Sons of Abraham"", ""Rajas of India"", ""Charlemagne"", ""Way of Life"", ""Horse Lords"", ""Zeus"" or ""Conclave"" (both are equivalent), ""Reapers"", ""Mystics"", ""Jade Dragon"", or ""Holy Fury"".
-alias[trigger:has_dlc] = string
+alias[trigger:has_dlc] = enum[DLCs]
 
 ## scope = any
 ### Checks if a game rule is active. See game rules modding.
@@ -37,7 +37,7 @@ alias[trigger:has_game_started] = bool
 
 ## scope = any
 ### See flags.
-alias[trigger:has_global_flag] = flag
+alias[trigger:has_global_flag] = value[global_flag]
 
 ## scope = any
 ### Detects if religion features are enabled in the current game (usually dependent on whether or not Holy Fury is active)
@@ -49,15 +49,16 @@ alias[trigger:is_alternate_start] = bool
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = any
 ### Indicates whether the landed title has a holder (landed titles deactivate if they have no holder). Landless titles (landless = yes) remain active once activated, which is done via the activate_title command.
-alias[trigger:is_title_active] = title
+#TODO: Should this be title.landless?
+alias[trigger:is_title_active] = <landed_title>
 
 ## scope = any
 ### In-game month number. Ranges from 0 (January) to 11 (December). Will also evaluate to true if it is a later month, e.g. ""10"" will be true for both November and December in-game.
-alias[trigger:month] = int
+alias[trigger:month] = int[0..11]
 
 ## scope = any
 ### Whether the game is multiplayer vs single player.
@@ -65,15 +66,15 @@ alias[trigger:multiplayer] = bool
 
 ## scope = any
 ### Chance of success is (100-N)%!
-alias[trigger:random] = int
+alias[trigger:random] = int[0..100]
 
 ## scope = any
 ### Checks for actual IRL month (contrary to monthwhich checks it in-game). Ranges from 0 (January) to 11 (December)
-alias[trigger:real_month_of_year] = int
+alias[trigger:real_month_of_year] = int[0..11]
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = any
 ### Check the initial start date of current game.
@@ -105,11 +106,11 @@ alias[trigger:had_flag] = clause
 
 ## scope = any with flags
 ### Checks if the current scope has a given flag. Works for any scope that can store flags, unlike the more specific has_scope_flag commands.
-alias[trigger:has_flag] = flag
+alias[trigger:has_flag] = value[flag]
 
 ## scope = artifact
 ### (2.8) Checks to see if the scoped artifact is the same as the target artifact.
-alias[trigger:artifact] = artifact
+alias[trigger:artifact] = scope[artifact]
 
 ## scope = artifact
 ### (2.8) Checks to see if the artifact is older than the specified value. Can use comparison operators (<, <=, >=, ==). Always returns false if the artifact has no known creation date.
@@ -117,19 +118,19 @@ alias[trigger:artifact_age] = int
 
 ## scope = artifact
 ### (2.8) Checks if the scoped artifact can be gifted to the target character.
-alias[trigger:artifact_can_be_gifted_to] = character
+alias[trigger:artifact_can_be_gifted_to] = scope[character]
 
 ## scope = artifact
 ### Checks if the scoped artifact is of the given type
-alias[trigger:artifact_type] = artifact type
+alias[trigger:artifact_type] = <artifact>
 
 ## scope = artifact
 ### Checks if the given character owns at least one instance of the scoped artifact.
-alias[trigger:artifact_type_owned_by] = character
+alias[trigger:artifact_type_owned_by] = scope[character]
 
 ## scope = artifact
 ### Checks if the scoped artifact has the given flag defined.
-alias[trigger:has_artifact_flag] = flag
+alias[trigger:has_artifact_flag] = value[artifact_flag]
 
 ## scope = artifact
 ### (2.8) Checks if the artifact has a creation date on record.
@@ -145,7 +146,7 @@ alias[trigger:is_artifact_equipped] = bool
 
 ## scope = artifact
 ### Checks if the scoped artifact is the same as the given artifact
-alias[trigger:is_artifact_same_type_as] = artifact
+alias[trigger:is_artifact_same_type_as] = scope[artifact]
 
 ## scope = artifact
 ### Checks if the artifact is indestructible (has indestructible = yes)
@@ -165,11 +166,11 @@ alias[trigger:flank_has_tactic] = bool
 
 ## scope = bloodline
 ### Returns true if the current scope <bloodline> is the exact same bloodline as the RHS scope <bloodline>. Note that this compares bloodlines, not bloodline types.
-alias[trigger:bloodline] = bloodline
+alias[trigger:bloodline] = scope[bloodline]
 
 ## scope = bloodline
 ### Returns true if current scope <bloodline> is active for <character> on right-hand side.
-alias[trigger:bloodline_is_active_for] = character
+alias[trigger:bloodline_is_active_for] = scope[character]
 
 ## scope = character
 ### The absolute value of the age difference between two characters. Typically used in conjunction with is_older_than.
@@ -177,7 +178,7 @@ alias[trigger:age_diff] = clause
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = character
 ### The age of a character. Can be any whole number.
@@ -225,7 +226,7 @@ alias[trigger:age_diff] = clause
 
 ## scope = character
 ### Checks for hidden attribute base health
-alias[trigger:base_health] = double
+alias[trigger:base_health] = float
 
 ## scope = character
 ### Crusades have been unlocked
@@ -237,7 +238,7 @@ alias[trigger:can_change_religion] = bool
 
 ## scope = character
 ###
-alias[trigger:can_copy_personality_trait_from] = character
+alias[trigger:can_copy_personality_trait_from] = scope[character]
 
 ## scope = character
 ### Checks the limit of leadership trait based on martial education trait (leadership_traits = N)
@@ -249,7 +250,7 @@ alias[trigger:age_diff] = clause
 
 ## scope = character
 ### Checks if scope character can join the specified society.
-alias[trigger:can_join_society] = society
+alias[trigger:can_join_society] = <society>
 
 ## scope = character
 ### The absolute value of the age difference between two characters. Typically used in conjunction with is_older_than.
@@ -257,7 +258,7 @@ alias[trigger:age_diff] = clause
 
 ## scope = character
 ### Checks if the character scope you're currently in can see the target character's secret religion.
-alias[trigger:can_see_secret_religion] = character
+alias[trigger:can_see_secret_religion] = scope[character]
 
 ## scope = character
 ### The absolute value of the age difference between two characters. Typically used in conjunction with is_older_than.
@@ -289,11 +290,11 @@ alias[trigger:age_diff] = clause
 
 ## scope = character
 ### Similar to completely_controls
-alias[trigger:completely_controls_region] = region
+alias[trigger:completely_controls_region] = <region>
 
 ## scope = character
 ### (2.8) Checks if the scoped character is old enough to be the target character's parent. This means that they're at least AGE_OF_MARRIAGE_MALE years older, and at most MAX_CHILD_BIRTH_AGE years older if female (for immortal characters, as long as they became immortal before this age they bypass the check). It also checks that they didn't die before the birth date of the target.
-alias[trigger:could_be_parent_of] = character
+alias[trigger:could_be_parent_of] = scope[character]
 
 ## scope = character
 ### Checks if the day of the character's date of birth is at least this number.
@@ -309,11 +310,11 @@ alias[trigger:days_in_society] = int
 
 ## scope = character
 ###
-alias[trigger:death_reason] = deathReason
+alias[trigger:death_reason] = <death>
 
 ## scope = character
 ###
-alias[trigger:decadence] = double
+alias[trigger:decadence] = float
 
 ## scope = character
 ###
@@ -321,7 +322,7 @@ alias[trigger:defending_against_claimant] = clause
 
 ## scope = character
 ###
-alias[trigger:demesne_efficiency] = double
+alias[trigger:demesne_efficiency] = float
 
 ## scope = character
 ###
@@ -333,7 +334,7 @@ alias[trigger:demesne_size] = int
 
 ## scope = character
 ### (2.8) Checks if the character's demesne size is proportional to the floating point percentage specified. Can use comparison operators (=, <, <=, >, >=, ==).
-alias[trigger:demesne_size_compared_to_limit] = double
+alias[trigger:demesne_size_compared_to_limit] = float
 
 ## scope = character
 ### The character's Diplomacy attribute. For state value, see realm_diplomacy
@@ -361,11 +362,11 @@ alias[trigger:age_diff] = clause
 
 ## scope = character
 ###
-alias[trigger:dynasty_realm_power] = double
+alias[trigger:dynasty_realm_power] = float
 
 ## scope = character
 ###
-alias[trigger:excommunicated_for] = character
+alias[trigger:excommunicated_for] = scope[character]
 
 ## scope = character
 ###
@@ -377,7 +378,9 @@ alias[trigger:faction_power] = clause
 
 ## scope = character
 ### Seems to be the same as dynasty
-alias[trigger:family] = character/title/bool
+#TODO rest of this
+alias[trigger:family] = scope[character]
+#alias[trigger:family] = character/title/bool
 
 ## scope = character
 ### Checks if a pregnant woman's unborn child has a known father.
@@ -385,7 +388,7 @@ alias[trigger:father_of_unborn_known] = bool
 
 ## scope = character
 ### The character's fertility value. In-game, can only be seen through the ""charinfo"" console command.
-alias[trigger:fertility] = double
+alias[trigger:fertility] = float
 
 ## scope = character
 ###
@@ -397,11 +400,11 @@ alias[trigger:gold] = int
 
 ## scope = character
 ### Check government type of a character. For checking government groups, see is_feudal, is_republic, etc.
-alias[trigger:government] = government
+alias[trigger:government] = <government>
 
 ## scope = character
 ### A character's graphical culture. This is different from the effect set_graphical_culture which takes a culture, not a culturegfx. In-game, can only be seen through the ""charinfo"" console command. Fixed in 2.8. (In 2.7 and earlier, checking against an invalid culturegfx will cause a CTD.)
-alias[trigger:graphical_culture] = culturegfx
+alias[trigger:graphical_culture] = <graphical_culture>
 
 ## scope = character
 ### (2.8) Note: months and years do not work as parameters, only days does.
@@ -417,11 +420,14 @@ alias[trigger:had_dynasty_flag] = clause
 
 ## scope = character
 ###
-alias[trigger:has_ambition] = bool/objective
+alias[trigger:has_ambition] = bool
+
+## scope = character
+alias[trigger:has_ambition] = <objective>
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = character
 ### Checks whether or not the scoped character has any quests
@@ -433,11 +439,11 @@ alias[trigger:has_any_symptom] = bool
 
 ## scope = character
 ### Checks if the scoped character owns an artifact by that name.
-alias[trigger:has_artifact] = artifact
+alias[trigger:has_artifact] = <artifact>
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = character
 ### Checks for religion autocephaly = yes
@@ -445,7 +451,7 @@ alias[trigger:has_autocephaly] = bool
 
 ## scope = character
 ###
-alias[trigger:has_blood_oath_with] = character
+alias[trigger:has_blood_oath_with] = scope[character]
 
 ## scope = character
 ###
@@ -453,7 +459,7 @@ alias[trigger:has_called_crusade] = bool
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = character
 ### Checks if the character has a modifier
@@ -477,31 +483,32 @@ alias[trigger:has_council] = bool
 
 ## scope = character
 ###
-alias[trigger:has_dynasty_flag] = flag
+alias[trigger:has_dynasty_flag] = value[dynasty_flag]
 
 ## scope = character
 ### Set via spawn_unit command and earmark parameter.
-alias[trigger:has_earmarked_regiments] = flag
+alias[trigger:has_earmarked_regiments] = value[army_earmark]
 
 ## scope = character
 ### Check for earmark & raiding
-alias[trigger:has_earmarked_regiments_not_raiding] = flag
+alias[trigger:has_earmarked_regiments_not_raiding] = value[army_earmark]
 
 ## scope = character
 ###
-alias[trigger:has_embargo] = character
+alias[trigger:has_embargo] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:has_feud_with] = character
+alias[trigger:has_feud_with] = scope[character]
 
 ## scope = character
 ### Checks for focuses
-alias[trigger:has_focus] = focus
+#TODO: Check this
+alias[trigger:has_focus] = <objective.focus>
 
 ## scope = character
 ### Similar to has_opinion_modifier.
-alias[trigger:has_any_opinion_modifier] = modifier
+alias[trigger:has_any_opinion_modifier] = <opinion_modifier>
 
 ## scope = character
 ### Check for hord flag from culture definition
@@ -517,15 +524,28 @@ alias[trigger:has_any_opinion_modifier] = modifier
 
 ## scope = character
 ###
-alias[trigger:has_job_action] = bool/jobAction
-
-## scope = character
-### Checks that character is a councillor.
-alias[trigger:has_job_title] = jobTitle/bool
+alias[trigger:has_job_action] = bool
 
 ## scope = character
 ###
-alias[trigger:has_landed_title] = bool/title
+alias[trigger:has_job_action] = <job_action>
+
+## scope = character
+### Checks that character is a councillor.
+alias[trigger:has_job_title] = bool
+
+## scope = character
+### Checks that character is a councillor.
+alias[trigger:has_job_title] = <job_title>
+
+## scope = character
+###
+alias[trigger:has_landed_title] = bool
+
+## scope = character
+###
+#TODO: Check this
+alias[trigger:has_landed_title] = <title.landed>
 
 ## scope = character
 ### Prevents wars, also see will_liege_enforce_peace.
@@ -541,7 +561,11 @@ alias[trigger:has_lover] = bool
 
 ## scope = character
 ### Yes if the character has a minor title. Also includes religion titles.
-alias[trigger:has_minor_title] = minorTitle/bool
+alias[trigger:has_minor_title] = bool
+
+## scope = character
+### Yes if the character has a minor title. Also includes religion titles.
+alias[trigger:has_minor_title] = <minor_title>
 
 ## scope = character
 ### Character holds titles he just recently acquired
@@ -553,11 +577,11 @@ alias[trigger:has_any_opinion_modifier] = modifier
 
 ## scope = character
 ### Checks if a character a non-aggression pact with another character.
-alias[trigger:has_non_aggression_pact_with] = character
+alias[trigger:has_non_aggression_pact_with] = scope[character]
 
 ## scope = character
 ### Deprecated, replaced by has_ambition/has_plot
-alias[trigger:has_objective] = objective
+alias[trigger:has_objective] = <objective>
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -589,11 +613,16 @@ alias[trigger:has_portrait_property] = clause
 
 ## scope = character
 ### Checks the voting attitude of a councillor, or if same as another character. Also see is_voter. Not to be confused with has_minor_title or has_job_title.
+#TODO: Attitude
 alias[trigger:has_position] = attitude/character
 
 ## scope = character
+### Checks the voting attitude of a councillor, or if same as another character. Also see is_voter. Not to be confused with has_minor_title or has_job_title.
+alias[trigger:has_position] = scope[character]
+
+## scope = character
 ### True if the character has a pressed claim (i.e., a non-heritable weak or strong claim created through Fabricate Claims) on the target title.
-alias[trigger:has_pressed_claim] = title
+alias[trigger:has_pressed_claim] = <title>
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -613,7 +642,7 @@ alias[trigger:has_regiments] = bool
 
 ## scope = character
 ### Checks if character religion has a specific feature
-alias[trigger:has_religion_feature] = feature
+alias[trigger:has_religion_feature] = <religion_feature>
 
 ## scope = character
 ### Checks if character secretly follows another religion
@@ -621,11 +650,11 @@ alias[trigger:has_secret_religion] = bool
 
 ## scope = character
 ###
-alias[trigger:has_strong_claim] = title
+alias[trigger:has_strong_claim] = <title>
 
 ## scope = character
 ### True if the character has a strong pressed claim (i.e., a non-heritable strong claim) on the target title.
-alias[trigger:has_strong_pressed_claim] = title
+alias[trigger:has_strong_pressed_claim] = <title>
 
 ## scope = character
 ### Checks for traits with terrain command modifiers
@@ -633,15 +662,15 @@ alias[trigger:has_terrain_specialization] = terrain/any/bool
 
 ## scope = character
 ###
-alias[trigger:has_truce] = character
+alias[trigger:has_truce] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:has_weak_claim] = title
+alias[trigger:has_weak_claim] = <title>
 
 ## scope = character
 ### True if the character has a weak pressed claim (i.e., a non-inheritable claim) on the target title.
-alias[trigger:has_weak_pressed_claim] = title
+alias[trigger:has_weak_pressed_claim] = <title>
 
 ## scope = character
 ### A character's health value. In-game, can only be seen through the ""charinfo"" console command.
@@ -653,11 +682,16 @@ alias[trigger:health_traits] = int
 
 ## scope = character
 ###
-alias[trigger:held_title_rating] = character
+alias[trigger:held_title_rating] = scope[character]
 
 ## scope = character
 ### Same as higher_tier_than but ignores temporary titles
+#TODO: Tier
 alias[trigger:higher_real_tier_than] = character/tier
+
+## scope = character
+### Same as higher_tier_than but ignores temporary titles
+alias[trigger:higher_real_tier_than] = scope[character]
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -665,7 +699,7 @@ alias[trigger:has_any_opinion_modifier] = modifier
 
 ## scope = character
 ### Checks if a character holds a favor toward another character. The reverse condition is owes_favor_to.
-alias[trigger:holds_favor_on] = character
+alias[trigger:holds_favor_on] = scope[character]
 
 ## scope = character
 ### Checks if the character has a trait with immortal = yes
@@ -689,7 +723,11 @@ alias[trigger:in_command] = bool
 
 ## scope = character
 ###
-alias[trigger:in_faction] = bool/faction
+alias[trigger:in_faction] = bool
+
+## scope = character
+###
+alias[trigger:in_faction] = <faction>
 
 ## scope = character
 ###
@@ -701,7 +739,7 @@ alias[trigger:in_siege] = bool
 
 ## scope = character
 ### Threat
-alias[trigger:infamy] = double
+alias[trigger:infamy] = float
 
 ## scope = character
 ### Check if the character is interested in the society with the given tag.
@@ -709,7 +747,7 @@ alias[trigger:interested_in_society] = bool
 
 ## scope = character
 ### (2.8) Check if the character is interested in the society that the target character is a member of.
-alias[trigger:interested_in_society_of_character] = character
+alias[trigger:interested_in_society_of_character] = scope[character]
 
 ## scope = character
 ### A character's Intrigue stat.
@@ -729,7 +767,7 @@ alias[trigger:is_alive] = bool
 
 ## scope = character
 ### Checks for alliances and tributary relationships. Does not check for being temporary war allies. Expensive calculation, use with care[2]
-alias[trigger:is_allied_with] = character
+alias[trigger:is_allied_with] = scope[character]
 
 ## scope = character
 ### Character can raid.
@@ -737,7 +775,7 @@ alias[trigger:is_allowed_to_loot] = bool
 
 ## scope = character
 ### (2.8) Checks if the scoped character is a progenitor of the target character's bloodline, within up to sixteen generations (for performance reasons). Expensive, so use with caution.
-alias[trigger:is_ancestor_of] = character
+alias[trigger:is_ancestor_of] = scope[character]
 
 ## scope = character
 ###
@@ -745,7 +783,7 @@ alias[trigger:is_at_sea] = bool
 
 ## scope = character
 ### (2.8) Checks if the current scoped character is the sibling of either of the target character's parents (i.e., one of the target character's parents' siblings, colloquially known as ""piblings"").
-alias[trigger:is_aunt_uncle_of] = character
+alias[trigger:is_aunt_uncle_of] = scope[character]
 
 ## scope = character
 ### If yes, will only affect betrothed characters
@@ -753,23 +791,27 @@ alias[trigger:is_betrothed] = bool
 
 ## scope = character
 ### Returns true if current scope <character> is the founder of RightHand-Side(RHS) scope <bloodline>.
-alias[trigger:is_bloodline_founder_of] = bloodline
+alias[trigger:is_bloodline_founder_of] = scope[bloodline]
 
 ## scope = character
 ### Returns true if current scope <character> is a member of RightHand-Side(RHS) scope <bloodline>.
-alias[trigger:is_bloodline_member_of] = bloodline
+alias[trigger:is_bloodline_member_of] = scope[bloodline]
 
 ## scope = character
 ### Checks if the scope is a child of another character
-alias[trigger:is_child_of] = character
+alias[trigger:is_child_of] = scope[character]
 
 ## scope = character
 ### checks if the scope is a close relative of another character. This includes spouses, parents, children, siblings, grandparents, and grandchildren
-alias[trigger:is_close_relative] = character
+alias[trigger:is_close_relative] = scope[character]
 
 ## scope = character
 ### Checks if the scoped character is a concubine/consort of somebody; or a concubine/consort or the specified character
-alias[trigger:is_consort] = bool/character
+alias[trigger:is_consort] = bool
+
+## scope = character
+### Checks if the scoped character is a concubine/consort of somebody; or a concubine/consort or the specified character
+alias[trigger:is_consort] = scope[character]
 
 ## scope = character
 ### Checks whether the council is content or not.
@@ -785,7 +827,7 @@ alias[trigger:is_cousin_of] = bool
 
 ## scope = character
 ### (2.8) Checks if the scoped character descends from the target character, within up to sixteen generations (for performance reasons). Expensive, so use with care.
-alias[trigger:is_descendant_of] = character
+alias[trigger:is_descendant_of] = scope[character]
 
 ## scope = character
 ### Checks if character is about to die. Used for on_actions called just when character dies, such as on_chronicle_owner_change.
@@ -793,7 +835,7 @@ alias[trigger:is_dying] = bool
 
 ## scope = character
 ###
-alias[trigger:is_father] = character
+alias[trigger:is_father] = scope[character]
 
 ## scope = character
 ### Case of illegitimate bastards.
@@ -805,7 +847,7 @@ alias[trigger:is_female] = bool
 
 ## scope = character
 ### Checks if the target character is_rival or has an opinion modifier with crime = yes toward the scoped character
-alias[trigger:is_foe] = character
+alias[trigger:is_foe] = scope[character]
 
 ## scope = character
 ###
@@ -813,27 +855,34 @@ alias[trigger:is_former_lover] = bool
 
 ## scope = character
 ### Checks if this character is a friend of the given character
-alias[trigger:is_friend] = character
+alias[trigger:is_friend] = scope[character]
 
 ## scope = character
 ### Checks if a character matches the potential block of another government.
-alias[trigger:is_government_potential] = government
+alias[trigger:is_government_potential] = <government>
 
 ## scope = character
 ### (2.8) Checks if the scoped character is the son or daughter of the target character's son or daughter.
-alias[trigger:is_grandchild_of] = character
+alias[trigger:is_grandchild_of] = scope[character]
 
 ## scope = character
 ### (2.8) Checks if the scoped character is the father or mother of the target character's father or mother.
-alias[trigger:is_grandparent_of] = character
+alias[trigger:is_grandparent_of] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:is_guardian] = bool/character
+alias[trigger:is_guardian] = bool
+## scope = character
+###
+alias[trigger:is_guardian] = scope[character]
 
 ## scope = character
 ### Checks if a character is first in the succession line of a title.
-alias[trigger:is_heir] = bool/character
+alias[trigger:is_heir] = bool
+
+## scope = character
+### Checks if a character is first in the succession line of a title.
+alias[trigger:is_heir] = scope[character]
 
 ## scope = character
 ### Checks for traits with is_illness = yes
@@ -845,11 +894,15 @@ alias[trigger:is_immune_to_pruning] = bool
 
 ## scope = character
 ### Checks if the two characters are in the same unit. Does NOT check every unit on a side of a combat, unlike any/random_unit_leader.
-alias[trigger:is_in_same_unit_as] = character
+alias[trigger:is_in_same_unit_as] = scope[character]
 
 ## scope = character
 ### Checks to see if a character is in a society or not, or if the character is in that particular society.
-alias[trigger:is_in_society] = bool/society
+alias[trigger:is_in_society] = bool
+
+## scope = character
+### Checks to see if a character is in a society or not, or if the character is in that particular society.
+alias[trigger:is_in_society] = <society>
 
 ## scope = character
 ### Checks if the character is incapable. With the addition of sick_incapable in RD, it's important to use this conditional instead of checking for trait = incapable.
@@ -869,15 +922,24 @@ alias[trigger:is_landed] = bool
 
 ## scope = character
 ### Checks if the character fulfills the allow conditions of a particular title.
-alias[trigger:is_landed_title_allowed] = title
+alias[trigger:is_landed_title_allowed] = <title>
 
 ## scope = character
 ### vassal/courtier = { is_liege_or_above = liege } would evaluate to true.
-alias[trigger:is_liege_of] = character/title/province
+#TODO: Check these
+alias[trigger:is_liege_of] = scope[character]
+
+## scope = character
+### vassal/courtier = { is_liege_or_above = liege } would evaluate to true.
+alias[trigger:is_liege_of] = <title>
+
+## scope = character
+### vassal/courtier = { is_liege_or_above = liege } would evaluate to true.
+alias[trigger:is_liege_of] = scope[province]
 
 ## scope = character
 ### Checks that scoped character is a superior to the right hand side character in the top liege's realm.
-alias[trigger:is_liege_or_above_of] = character
+alias[trigger:is_liege_or_above_of] = scope[character]
 
 ## scope = character
 ###
@@ -885,11 +947,15 @@ alias[trigger:is_looting] = bool
 
 ## scope = character
 ###
-alias[trigger:is_looting_in] = province
+alias[trigger:is_looting_in] = scope[province]
 
 ## scope = character
 ### Checks if this character is a lover of the given character
-alias[trigger:is_lover] = bool/character
+alias[trigger:is_lover] = bool
+
+## scope = character
+### Checks if this character is a lover of the given character
+alias[trigger:is_lover] = scope[character]
 
 ## scope = character
 ### Checks if the character is lowborn. Fixed in 2.8. (In versions prior to 2.8, it worked backwards: setting it to no will pick out characters that are actually lowborn.) Equivalent to dynasty = none
@@ -905,7 +971,11 @@ alias[trigger:is_marriage_adult] = bool
 
 ## scope = character
 ### Yes, will only affect married characters
-alias[trigger:is_married] = bool/character
+alias[trigger:is_married] = bool
+
+## scope = character
+### Yes, will only affect married characters
+alias[trigger:is_married] = scope[character]
 
 ## scope = character
 ###
@@ -913,7 +983,7 @@ alias[trigger:is_married_matrilineally] = bool
 
 ## scope = character
 ###
-alias[trigger:is_mother] = character
+alias[trigger:is_mother] = scope[character]
 
 ## scope = character
 ### Whether scoped character is the host in a multiplayer game.
@@ -921,7 +991,7 @@ alias[trigger:is_multiplayer_host_character] = bool
 
 ## scope = character
 ### (2.8) Checks if the current scoped character is a niece/nephew of the target character (colloquially known by the gender-neutral ""nibling"").
-alias[trigger:is_nibling_of] = character
+alias[trigger:is_nibling_of] = scope[character]
 
 ## scope = character
 ### Checks if character government is part of nomadic_governments group.
@@ -941,11 +1011,11 @@ alias[trigger:has_any_opinion_modifier] = modifier
 
 ## scope = character
 ### Checks if the scoped character is older than the target. Even works for twins and other characters with the same age.
-alias[trigger:is_older_than] = character
+alias[trigger:is_older_than] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:is_opposite_sex] = character
+alias[trigger:is_opposite_sex] = scope[character]
 
 ## scope = character
 ### Checks whether the scoped character is currently the ruler (holder) of the specified offmap power, or died while holding that title.
@@ -953,10 +1023,11 @@ alias[trigger:is_or_was_offmap_power_ruler] = bool
 
 ## scope = character
 ### (2.8) Checks if the current scoped character is the mother or father of the target character.
-alias[trigger:is_parent_of] = character
+alias[trigger:is_parent_of] = scope[character]
 
 ## scope = character
 ###
+#TODO: Check these
 alias[trigger:is_parent_religion] = character/province/title
 
 ## scope = character
@@ -977,7 +1048,7 @@ alias[trigger:is_plot_active] = bool
 
 ## scope = character
 ###
-alias[trigger:is_plot_target_of] = character
+alias[trigger:is_plot_target_of] = scope[character]
 
 ## scope = character
 ### Checks if a character is considered a powerful vassal. If Conclave is enabled, these vassals have a raised fist icon and expect a seat on the council. The trigger works even without Conclave. Also see among_most_powerful_vassals.
@@ -993,7 +1064,11 @@ alias[trigger:is_priest] = bool
 
 ## scope = character
 ### Heir to primary title (regardless if same dynasty or not)
-alias[trigger:is_primary_heir] = bool/character
+alias[trigger:is_primary_heir] = bool
+
+## scope = character
+### Heir to primary title (regardless if same dynasty or not)
+alias[trigger:is_primary_heir] = scope[character]
 
 ## scope = character
 ###
@@ -1009,7 +1084,7 @@ alias[trigger:is_reincarnated] = bool
 
 ## scope = character
 ###
-alias[trigger:is_rival] = character
+alias[trigger:is_rival] = scope[character]
 
 ## scope = character
 ### Yes, will only affect characters who have a title (who are a ruler). Note that the character may not necessarily be landed (is_landed = false) in case of mercenaries, holy orders, or adventurers.
@@ -1053,23 +1128,23 @@ alias[trigger:has_any_opinion_modifier] = modifier
 
 ## scope = character
 ### If yes, the scoped character is the target character's twin.
-alias[trigger:is_twin_of] = character
+alias[trigger:is_twin_of] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:is_valid_attraction] = character
+alias[trigger:is_valid_attraction] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:is_valid_romance_target] = character
+alias[trigger:is_valid_romance_target] = scope[character]
 
 ## scope = character
 ### Checks that scoped character is the liege of right hand side character. Warning: the naming is not intuitive, it seems reversed !
-alias[trigger:is_vassal_or_below] = character
+alias[trigger:is_vassal_or_below] = scope[character]
 
 ## scope = character
 ### Checks that scoped character is the vassal of the right hand side character. Actually intuitive (literal opposite of is_vassal_or_below).
-alias[trigger:is_vassal_or_below_of] = character
+alias[trigger:is_vassal_or_below_of] = scope[character]
 
 ## scope = character
 ### Checks if character votes on the council (i.e. holds a position or title with the flag is_voter = yes). Also see has_position.
@@ -1077,7 +1152,7 @@ alias[trigger:is_voter] = bool
 
 ## scope = character
 ###
-alias[trigger:is_within_diplo_range] = character
+alias[trigger:is_within_diplo_range] = scope[character]
 
 ## scope = character
 ### Number of traits with leader = yes.
@@ -1085,7 +1160,11 @@ alias[trigger:leader_traits] = int
 
 ## scope = character
 ###
-alias[trigger:leads_faction] = bool/faction
+alias[trigger:leads_faction] = bool
+
+## scope = character
+###
+alias[trigger:leads_faction] = scope[faction]
 
 ## scope = character
 ### A character's learning attribute. For state value, see realm_learning
@@ -1109,7 +1188,11 @@ alias[trigger:lower_real_tier_than] = character/tier
 
 ## scope = character
 ### A character's Martial attribute. For state value, see realm_martial
-alias[trigger:martial] = int/character
+alias[trigger:martial] = int
+
+## scope = character
+### A character's Martial attribute. For state value, see realm_martial
+alias[trigger:martial] = scope[character]
 
 ## scope = character
 ###
@@ -1121,11 +1204,11 @@ alias[trigger:month_of_birth] = int
 
 ## scope = character
 ### Checks if the character's monthly piety is at least this amount.
-alias[trigger:monthly_piety] = double
+alias[trigger:monthly_piety] = float
 
 ## scope = character
 ### Checks if the character's monthly prestige is at least this amount.
-alias[trigger:monthly_prestige] = double
+alias[trigger:monthly_prestige] = float
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -1269,7 +1352,7 @@ alias[trigger:num_traits] = int
 
 ## scope = character
 ### Checks if the scoped character is obedient to the target character, e.g. has an opinion modifier with obedient = yes toward the target character.
-alias[trigger:obedient] = character
+alias[trigger:obedient] = scope[character]
 
 ## scope = character
 ### Checks if the scope's opinion of who is at least this value
@@ -1293,15 +1376,15 @@ alias[trigger:over_vassal_limit] = int
 
 ## scope = character
 ###
-alias[trigger:overlord_of] = character
+alias[trigger:overlord_of] = scope[character]
 
 ## scope = character
 ### Checks if a character owes a favor to another character. The reverse condition is holds_favor_on.
-alias[trigger:owes_favor_to] = character
+alias[trigger:owes_favor_to] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:owns] = province
+alias[trigger:owns] = scope[province]
 
 ## scope = character
 ### Checks if character owns mercenary units
@@ -1313,7 +1396,7 @@ alias[trigger:pacifist] = bool
 
 ## scope = character
 ###
-alias[trigger:pays_tribute_to] = character
+alias[trigger:pays_tribute_to] = scope[character]
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -1333,11 +1416,11 @@ alias[trigger:piety] = int
 
 ## scope = character
 ### Tests if a plot is known by another character
-alias[trigger:plot_is_known_by] = character
+alias[trigger:plot_is_known_by] = scope[character]
 
 ## scope = character
 ### Typically ranges from 0.5 to 4.0 in vanilla
-alias[trigger:plot_power] = double
+alias[trigger:plot_power] = float
 
 ## scope = character
 ###
@@ -1353,7 +1436,7 @@ alias[trigger:population_and_manpower] = int
 
 ## scope = character
 ### Percentage of maximum population.
-alias[trigger:population_factor] = double
+alias[trigger:population_factor] = float
 
 ## scope = character
 ### Checks the apparent age of the character, taking immortality into account -- e.g., if the character became immortal at age 40, this will yield 40 rather than their true age.
@@ -1373,7 +1456,11 @@ alias[trigger:prisoner] = bool
 
 ## scope = character
 ### Same as culture condition. Checks if a character's culture matches that of a specified culture or character. This is different from graphical_culure, i.e when comparing two cultures that have the same culturegfx, race still evaluates to false.
-alias[trigger:race] = culture/character
+alias[trigger:race] = scope[character]
+
+## scope = character
+### Same as culture condition. Checks if a character's culture matches that of a specified culture or character. This is different from graphical_culure, i.e when comparing two cultures that have the same culturegfx, race still evaluates to false.
+alias[trigger:race] = <culture>
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -1429,7 +1516,7 @@ alias[trigger:has_any_opinion_modifier] = modifier
 
 ## scope = character
 ###
-alias[trigger:relative_power_to_liege] = double
+alias[trigger:relative_power_to_liege] = float
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -1457,7 +1544,7 @@ alias[trigger:reverse_has_opinion_modifier] = clause
 
 ## scope = character
 ###
-alias[trigger:reverse_has_truce] = character
+alias[trigger:reverse_has_truce] = scope[character]
 
 ## scope = character
 ### Similar to reverse_opinion, but does not take state diplomacy, laws or any other such state concerns into account
@@ -1469,7 +1556,7 @@ alias[trigger:reverse_personal_opinion_diff] = clause
 
 ## scope = character
 ###
-alias[trigger:rightful_religious_head] = character
+alias[trigger:rightful_religious_head] = scope[character]
 
 ## scope = character
 ###
@@ -1477,23 +1564,23 @@ alias[trigger:risks_minor_clan_rising] = bool
 
 ## scope = character
 ###
-alias[trigger:same_guardian] = character
+alias[trigger:same_guardian] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:same_liege] = character
+alias[trigger:same_liege] = scope[character]
 
 ## scope = character
 ### Checks if two characters have the same regnal name for numbering purposes. Regnal names are currently defined as having the same first first name (E.G., ""Gustav"" and ""Gustav Adolf"" are the same regnal name), or the same cultural first first name (E.G., ""Alfr_Alf"" and ""Alf_Alf"" are the same regnal name).
-alias[trigger:same_regnal_name] = character
+alias[trigger:same_regnal_name] = scope[character]
 
 ## scope = character
 ### Checks if two characters have same sex.
-alias[trigger:same_sex] = character
+alias[trigger:same_sex] = scope[character]
 
 ## scope = character
 ### Checks if scope character is in the same society as target character.
-alias[trigger:same_society_as] = character
+alias[trigger:same_society_as] = scope[character]
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -1505,23 +1592,23 @@ alias[trigger:score] = int
 
 ## scope = character
 ### Checks if character secretly follows the given religion
-alias[trigger:secret_religion] = religion
+alias[trigger:secret_religion] = <religion>
 
 ## scope = character
 ### Checks if character secretly follows a religion in the given religion group
-alias[trigger:secret_religion_group] = religion group
+alias[trigger:secret_religion_group] = <religion_group>
 
 ## scope = character
 ### Returns true is both characters have at least one bloodline in common
-alias[trigger:shares_any_bloodline_with] = character
+alias[trigger:shares_any_bloodline_with] = scope[character]
 
 ## scope = character
 ### (2.8) Checks if any province in your realm (everything under your titles) borders any province in their realm.
-alias[trigger:shares_realm_border_with] = character
+alias[trigger:shares_realm_border_with] = scope[character]
 
 ## scope = character
 ###
-alias[trigger:sibling] = character
+alias[trigger:sibling] = scope[character]
 
 ## scope = character
 ### Checks if the character can rank down within their society
@@ -1533,7 +1620,7 @@ alias[trigger:society_can_rank_up] = bool
 
 ## scope = character
 ### Checks if character has the given number of society points. Can add a scaled_by_influence parameter to scale by society influence, going from a 70% reduction when the society is at 100% influence and going linearly to a 0% reduction at 0% influence
-alias[trigger:society_currency] = society
+alias[trigger:society_currency] = <society>
 
 ## scope = character
 ### Checks if character's society is criminal or not.
@@ -1545,7 +1632,7 @@ alias[trigger:society_is_devil_worshiper] = bool
 
 ## scope = character
 ### Checks if character belongs to the given society
-alias[trigger:society_member_of] = society
+alias[trigger:society_member_of] = <society>
 
 ## scope = character
 ### A character's Stewardship attribute. For state value, see realm_stewardship
@@ -1573,15 +1660,15 @@ alias[trigger:trait] = string
 
 ## scope = character
 ###
-alias[trigger:treasury] = double
+alias[trigger:treasury] = float
 
 ## scope = character
 ### If the character has a secret religion, checks if character secretly follows the given religion, otherwise checks if the character publicly follows the given religion
-alias[trigger:true_religion] = religion
+alias[trigger:true_religion] = <religion>
 
 ## scope = character
 ### If the character has a secret religion, checks if character secretly follows a religion in the given religion group, otherwise checks if the character publicly follows a religion in the given religion group
-alias[trigger:true_religion_group] = religion group
+alias[trigger:true_religion_group] = <religion_group>
 
 ## scope = character
 ###
@@ -1593,7 +1680,7 @@ alias[trigger:uses_decadence] = bool
 
 ## scope = character
 ###
-alias[trigger:vassal_of] = character
+alias[trigger:vassal_of] = scope[character]
 
 ## scope = character
 ### Checks if the character is in war
@@ -1601,7 +1688,11 @@ alias[trigger:war] = bool
 
 ## scope = character
 ### Returns true if people are hostile due to raiding or if their armies are hostile because of a personal, liege or third party war.[3]
-alias[trigger:war_with] = character/title
+alias[trigger:war_with] = scope[character]
+
+## scope = character
+### Returns true if people are hostile due to raiding or if their armies are hostile because of a personal, liege or third party war.[3]
+alias[trigger:war_with] = <title>
 
 ## scope = character
 ###
@@ -1635,7 +1726,7 @@ alias[trigger:reverse_opinion] = clause
 ### The absolute value of the age difference between two characters. Typically used in conjunction with is_older_than.
 alias[trigger:age_diff] = clause
 
-## scope = character/province
+## scope = { character province }
 ### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
 alias[trigger:distance] = clause
 
@@ -1647,51 +1738,56 @@ alias[trigger:has_any_opinion_modifier] = modifier
 ### Similar to has_opinion_modifier.
 alias[trigger:has_any_opinion_modifier] = modifier
 
-## scope = character/province
+## scope = { character province }
 ###
 alias[trigger:has_heresies] = bool
 
-## scope = character/province
+## scope = { character province }
 ### Checks if the character or province's religion has the field hard_to_convert = yes
 alias[trigger:is_hard_to_convert] = bool
 
-## scope = character/province
+## scope = { character province }
 ###
 alias[trigger:is_heresy_of] = character/province/title/religion
 
-## scope = character/province
+## scope = { character province }
 ###
 alias[trigger:is_heretic] = bool
 
-## scope = character/province
+## scope = { character province }
 ###
 alias[trigger:is_liege_or_above] = character/title/province
 
-## scope = character/province
+## scope = { character province }
 ### Checks if the religion of character or province is a reformed pagan religion.
-alias[trigger:is_reformed_religion] = bool/character
+alias[trigger:is_reformed_religion] = bool
 
-## scope = character/province
+## scope = { character province }
+### Checks if the religion of character or province is a reformed pagan religion.
+#TODO: Check
+alias[trigger:is_reformed_religion] = scope[character]
+
+## scope = { character province }
 ### Checks if a variable has the exact value, instead of standard >= check. See variables.
 alias[trigger:is_variable_equal] = clause
 
-## scope = character/province
+## scope = { character province }
 ### Checks if character/province has the given religion
-alias[trigger:religion] = religion
+alias[trigger:religion] = <religion>
 
-## scope = character/province
+## scope = { character province }
 ### Ranges from 0 to 1
-alias[trigger:religion_authority] = double
+alias[trigger:religion_authority] = float
 
-## scope = character/province
+## scope = { character province }
 ### Checks if character's/province's religion belongs to the given religion group
-alias[trigger:religion_group] = religion
+alias[trigger:religion_group] = <religion_group>
 
-## scope = character/province/title
+## scope = { character province title }
 ### Checks if the character has this specific culture
 alias[trigger:culture] = culture/character/province/title
 
-## scope = character/province/title
+## scope = { character province title }
 ### Checks if the character is part of this culture group
 alias[trigger:culture_group] = cultureGroup/character/province/title
 
@@ -1703,15 +1799,15 @@ alias[trigger:num_of_society_members] = int
 ### The absolute value of the age difference between two characters. Typically used in conjunction with is_older_than.
 alias[trigger:age_diff] = clause
 
-## scope = character/title
+## scope = { character title }
 ### Checks that the defacto liege title of a character or title is the right-hand side.
 alias[trigger:de_facto_liege_title] = character/title
 
-## scope = character/title
+## scope = { character title }
 ### Checks whether current scope is a de jure liege of right hand side scope.
 alias[trigger:de_jure_vassal_or_below] = character/title
 
-## scope = character/title
+## scope = { character title }
 ### Checks for dislike_tribal_organization religion flag
 alias[trigger:dislike_tribal_organization] = bool
 
@@ -1719,23 +1815,23 @@ alias[trigger:dislike_tribal_organization] = bool
 ### Similar to has_opinion_modifier.
 alias[trigger:has_any_opinion_modifier] = modifier
 
-## scope = character/title
+## scope = { character title }
 ### Check that the tier of scoped character/title is strictly higher than the given tier.
 alias[trigger:higher_tier_than] = character/tier/title
 
-## scope = character/title
+## scope = { character title }
 ###
 alias[trigger:holy_order] = bool
 
-## scope = character/title
+## scope = { character title }
 ###
 alias[trigger:independent] = bool
 
-## scope = character/title
+## scope = { character title }
 ### Checks if government is part of feudal_governments group.
 alias[trigger:is_feudal] = bool
 
-## scope = character/title
+## scope = { character title }
 ### Checks if character is the doge of a merchant republic or if title is a merchant republic.
 alias[trigger:is_merchant_republic] = bool
 
@@ -1743,31 +1839,31 @@ alias[trigger:is_merchant_republic] = bool
 ### Similar to has_opinion_modifier.
 alias[trigger:has_any_opinion_modifier] = modifier
 
-## scope = character/title
+## scope = { character title }
 ### Checks if government is part of republic_governments group.
 alias[trigger:is_republic] = bool
 
-## scope = character/title
+## scope = { character title }
 ### Checks if government is part of theocracy_governments group.
 alias[trigger:is_theocracy] = bool
 
-## scope = character/title
+## scope = { character title }
 ### Yes, will only affect characters who are of a lower tier
 alias[trigger:lower_tier_than] = character/tier
 
-## scope = character/title
+## scope = { character title }
 ###
 alias[trigger:mercenary] = bool
 
-## scope = character/title
+## scope = { character title }
 ### Same as tier but ignores temporary titles
 alias[trigger:real_tier] = character/title/tier
 
-## scope = character/title
+## scope = { character title }
 ###
 alias[trigger:rebel] = bool
 
-## scope = character/title
+## scope = { character title }
 ###
 alias[trigger:ruled_years] = int
 
@@ -1775,43 +1871,44 @@ alias[trigger:ruled_years] = int
 ### Similar to has_opinion_modifier.
 alias[trigger:has_any_opinion_modifier] = modifier
 
-## scope = character/title
+## scope = { character title }
 ### Values: baron, count, duke, king, emperor
+#TODO: Enum
 alias[trigger:tier] = string
 
-## scope = character/title
+## scope = { character title }
 ###
 alias[trigger:title] = title/province
 
-## scope = character/title (holding)
+## scope = { character title } #(holding)
 ###
-alias[trigger:monthly_income] = double
+alias[trigger:monthly_income] = float
 
-## scope = character/title (holding)
+## scope = { character title } #(holding)
 ###
-alias[trigger:yearly_income] = double
+alias[trigger:yearly_income] = float
 
-## scope = character/title(holding)
+## scope = { character title } #(holding)
 ### Checks if government is part of tribal_governments group.
 alias[trigger:is_tribal] = bool
 
-## scope = character/title/province
+## scope = { character title province }
 ###
 alias[trigger:de_facto_liege] = character/title
 
-## scope = character/title/province
+## scope = { character title province }
 ### Checks whether current scope is a direct de jure vassal of right hand side scope.
 alias[trigger:de_jure_liege] = character/title
 
-## scope = character/title/province
+## scope = { character title province }
 ### Checks whether current scope is a de jure vassal of right hand side scope.
 alias[trigger:de_jure_liege_or_above] = character/title
 
-## scope = character/title/province
+## scope = { character title province }
 ### Checks if the current scope is being targeted by a quest.
 alias[trigger:is_quest_target] = bool
 
-## scope = character/title/province
+## scope = { character title province }
 ### Checks if the current scope is being targeted by any quest the given character has.
 alias[trigger:is_quest_target_of] = bool
 
@@ -1921,11 +2018,11 @@ alias[trigger:continent] = continent
 
 ## scope = province
 ### Checks if the province has the specified disease.
-alias[trigger:disease] = disease
+alias[trigger:disease] = <disease>
 
 ## scope = province
 ### Checks if the province has at least the specified disease defence modifier.
-alias[trigger:disease_defence] = int #(?)
+alias[trigger:disease_defence] = int
 
 ## scope = province
 ### Note: months and years do not work as parameters, only days does.
@@ -1941,7 +2038,11 @@ alias[trigger:has_any_opinion_modifier] = modifier
 
 ## scope = province
 ###
-alias[trigger:has_higher_tech_than] = province/character
+alias[trigger:has_higher_tech_than] = scope[character]
+
+## scope = province
+###
+alias[trigger:has_higher_tech_than] = scope[province]
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -1957,7 +2058,7 @@ alias[trigger:has_any_opinion_modifier] = modifier
 
 ## scope = province
 ###
-alias[trigger:has_province_flag] = flag
+alias[trigger:has_province_flag] = value[province_flag]
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -1973,7 +2074,7 @@ alias[trigger:hospital_has_any_building] = bool
 
 ## scope = province
 ### Checks if a hospital has the specified building.
-alias[trigger:hospital_has_building] = building
+alias[trigger:hospital_has_building] = <building>
 
 ## scope = province
 ### Checks if a province has at least the given hospital level.
@@ -2017,7 +2118,7 @@ alias[trigger:province_id] = int
 
 ## scope = province
 ###
-alias[trigger:revolt_risk] = double
+alias[trigger:revolt_risk] = float
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -2029,25 +2130,25 @@ alias[trigger:technology_can_spread] = bool
 
 ## scope = province
 ### Values: forest, hills, mountain, plains, farmlands, steppe, desert, jungle, arctic
-alias[trigger:terrain] = terrain
+alias[trigger:terrain] = <terrain>
 
 ## scope = province
 ### Checks if a trade post has at least 1 building.
-alias[trigger:trade_post_has_any_building] = building
+alias[trigger:trade_post_has_any_building] = <building>
 
 ## scope = province
 ### Checks if a trade post has the specified building.
-alias[trigger:trade_post_has_building] = building
+alias[trigger:trade_post_has_building] = <building>
 
 ## scope = province
 ### Checks if a province is on the specified trade route.
-alias[trigger:trade_route] = trade route
+alias[trigger:trade_route] = <trade_route>
 
 ## scope = character
 ### Similar to has_opinion_modifier.
 alias[trigger:has_any_opinion_modifier] = modifier
 
-## scope = province/title
+## scope = { province title }
 ### If yes, will only affect the capital HOLDING
 alias[trigger:is_capital] = bool
 
@@ -2055,11 +2156,11 @@ alias[trigger:is_capital] = bool
 ### Similar to has_opinion_modifier.
 alias[trigger:has_any_opinion_modifier] = modifier
 
-## scope = province/title?
+## scope = { province title }
 ###
 alias[trigger:has_trade_post] = bool
 
-## scope = religion/character/province
+## scope = { religion character province }
 ### Checks for whether the associated religion has a pentarchy. Works with anything that has a religion
 alias[trigger:has_pentarchy] = bool
 
@@ -2073,7 +2174,7 @@ alias[trigger:troops] = clause
 
 ## scope = society
 ### Checks if the currently scoped society is the same as the given one.
-alias[trigger:is_society] = society
+alias[trigger:is_society] = <society>
 
 ## scope = society
 ### Checks if the society currently has an ongoing progress counter.
@@ -2105,11 +2206,15 @@ alias[trigger:age_diff] = clause
 
 ## scope = title
 ###
-alias[trigger:claimed_by] = character
+alias[trigger:claimed_by] = scope[character]
 
 ## scope = title
 ### If yes, only fires if conquest_culture is set (?). Certain CBs set Conquest_Culture (used for cultural conversion events)
-alias[trigger:conquest_culture] = bool/character
+alias[trigger:conquest_culture] = bool
+
+## scope = title
+### If yes, only fires if conquest_culture is set (?). Certain CBs set Conquest_Culture (used for cultural conversion events)
+alias[trigger:conquest_culture] = scope[character]
 
 ## scope = title
 ### Note: months and years do not work as parameters, only days does.
@@ -2125,7 +2230,7 @@ alias[trigger:has_crown_law_title] = bool
 
 ## scope = title
 ###
-alias[trigger:has_de_jure_pretension] = character
+alias[trigger:has_de_jure_pretension] = scope[character]
 
 ## scope = character
 ### Similar to has_opinion_modifier.
@@ -2213,7 +2318,7 @@ alias[trigger:is_tribal_type_title] = bool
 
 ## scope = title
 ### Checks that FROM holds the right amount of territory in the kingdom
-alias[trigger:is_valid_viking_invasion_target] = character
+alias[trigger:is_valid_viking_invasion_target] = scope[character]
 
 ## scope = title
 ### Checks for viceroyalty flag on title
@@ -2221,7 +2326,7 @@ alias[trigger:is_vice_royalty] = bool
 
 ## scope = title
 ### Percentage of payment factor [?]
-alias[trigger:mercenary_siphon_factor] = double
+alias[trigger:mercenary_siphon_factor] = float
 
 ## scope = title
 ### Checks how many characters in ones court that would fit for a specific title
@@ -2253,13 +2358,13 @@ alias[trigger:has_siege] = bool
 
 ## scope = title(holding)
 ### Checks if holding type is allowed by the government of specified character
-alias[trigger:is_allowed_holding_type] = character
+alias[trigger:is_allowed_holding_type] = scope[character]
 
-## scope = title,province
+## scope = { title province }
 ### Checks if scope belongs to a geographical region.
-alias[trigger:region] = region
+alias[trigger:region] = <region>
 
-## scope = title/province
+## scope = { title province }
 ### Checks if province/holding is occupied (war) by another character/realm
 alias[trigger:controlled_by] = character/title
 
@@ -2281,15 +2386,15 @@ alias[trigger:loot] = int
 
 ## scope = war
 ###
-alias[trigger:using_cb] = casusBelli
+alias[trigger:using_cb] = <casus_belli>
 
 ## scope = war
 ###
-alias[trigger:war_participation] = double
+alias[trigger:war_participation] = float
 
 ## scope = war
 ###
-alias[trigger:war_score] = double
+alias[trigger:war_score] = float
 
 ## scope = war
 ###
