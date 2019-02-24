@@ -27,7 +27,7 @@ alias[trigger:had_global_flag] = clause
 
 ## scope = any
 ### Checks if the user has a specified DLC. Values: ""The Sword of Islam"", ""Legacy of Rome"", ""Sunset Invasion"", ""The Republic"", ""The Old Gods"", ""Sons of Abraham"", ""Rajas of India"", ""Charlemagne"", ""Way of Life"", ""Horse Lords"", ""Zeus"" or ""Conclave"" (both are equivalent), ""Reapers"", ""Mystics"", ""Jade Dragon"", or ""Holy Fury"".
-alias[trigger:has_dlc] = enum[DLCs]
+alias[trigger:has_dlc] = enum[dlcs]
 
 ## scope = any
 ### Checks if a game rule is active. See game rules modding.
