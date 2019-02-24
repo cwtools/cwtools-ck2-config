@@ -1,0 +1,1566 @@
+
+## scope = ?
+### Sets the dislike of the specified offmap power to the specified type. May use ""random"" to switch to a random dislike.
+alias[effect:set_offmap_dislike] = clause
+
+## scope = ?
+### Sets the like of the specified offmap power to the specified type. May use ""random"" to switch to a random like.
+alias[effect:set_offmap_like] = clause
+
+## scope = any
+### Activate a disease, which can now randomly appear. Note that there's no way to deactivate a disease.
+alias[effect:activate_disease] = disease
+
+## scope = any
+### Activate/deactivate a titular or de jure landed title. Unlike destroyed titles (destroy_landed_title), deactivated titles cannot be re-created by the player or AI, except through special decisions.
+alias[effect:activate_title] = clause
+
+## scope = any
+### Deletes a previously saved variable
+alias[effect:clear_event_target] = var
+
+## scope = any
+### Deletes a previously saved global variable
+alias[effect:clear_global_event_target] = var
+
+## scope = any
+### Deletes all previously saved global variables
+alias[effect:clear_global_event_targets] = bool
+
+## scope = any
+###
+alias[effect:clr_global_flag] = flag
+
+## scope = any
+### Enables dynamically prepared invasions for that religion with allow_viking_invasionflag. Also see disable_prepared_invasion.
+alias[effect:enable_prepared_invasion] = religion
+
+## scope = any
+### Logs for debug purposes into game.log. Localisation commands can be used normally in the string. Can even be used within event triggers and other places that normally only accept conditionals, such as if limit. Only logs if the game is started with the ""-scriptlog"" parameter.
+alias[effect:log] = string
+
+## scope = any
+### Logs a list of all event targets set, and what each scope corresponds to into game.log. Only logs if the game is started with the ""-scriptlog"" parameter.
+alias[effect:log_scopes] = bool[?]
+
+## scope = any
+###
+alias[effect:random] = clause
+
+## scope = any
+###
+alias[effect:random_list] = clause
+
+## scope = any
+### Recalculates the succession.
+alias[effect:recalc_succession] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = any
+### Saves a scope into a global variable, to be re-used later
+alias[effect:save_global_event_target_as] = var
+
+## scope = any
+### Creates a global flag.
+alias[effect:set_global_flag] = flag
+
+## scope = any
+### Religion becomes an heresy of new parent religion
+alias[effect:set_parent_religion] = clause
+
+## scope = any
+### Plays the specified sound, as defined in interface/sound.sfx
+alias[effect:sound_effect] = sound
+
+## scope = any
+### Forces an outbreak, but follows the scenarios set up in the disease.txt file.
+alias[effect:start_outbreak] = disease
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = any with flags
+### Clears the given flag from the current scope. Works for any scope that can store flags, unlike the more specific clr_scope_flag commands.
+alias[effect:clr_flag] = flag
+
+## scope = any with flags
+### Sets a flag in the current scope if it can store flags. Works for any such scope, unlike the more specific set_scope_flag commands.
+alias[effect:set_flag] = flag
+
+## scope = artifact
+###
+alias[effect:clr_artifact_flag] = flag
+
+## scope = artifact
+### Copies the artifact history from the given artifact to the scoped artifact.
+alias[effect:copy_artifact_history] = artifact
+
+## scope = artifact
+###
+alias[effect:set_artifact_flag] = flag
+
+## scope = artifact
+### Sets the original owner of the artifact
+alias[effect:set_artifact_original_owner] = character
+
+## scope = artifact
+### Changes the original owner of an artifact.
+alias[effect:set_original_owner] = character
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = artifact/bloodline
+### Changes the description of the scoped to artifact or bloodline to the given string/localisation key. All custom localisation is resolved when set, so the description will not change once set. Can be reset by setting it to the blank string """".
+alias[effect:set_description] = string
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+
+
+## scope = battle/unit?
+### Totally ignores the triggers or phases. If the tactic has a phase change part then that part will be acknowledged however.[5]
+alias[effect:set_flank_tactic] = tactic?
+
+## scope = bloodline
+### Add the specified character to the scoped bloodline
+alias[effect:add_bloodline_member] = character
+
+## scope = bloodline
+### Removes a script flag from the scoped bloodline
+alias[effect:clr_bloodline_flag] = flag
+
+## scope = bloodline
+### Removed the scoped bloodline from the game
+alias[effect:destroy_bloodline] = bool
+
+## scope = bloodline
+### Remove the specified character from the scoped bloodline
+alias[effect:remove_bloodline_member] = character
+
+## scope = bloodline
+### Adds a script flag to the scoped bloodline
+alias[effect:set_bloodline_flag] = flag
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+###
+alias[effect:abdicate_to_most_liked_by] = character
+
+## scope = character
+### For plots activated by decision
+alias[effect:activate_plot] = bool
+
+## scope = character
+### Adds the given value to the age of the scoped character. Warning: messing with a character's age may have unintended side effects so use with caution.
+alias[effect:add_age] = int
+
+## scope = character
+### Creates an alliance between characters. Also see break_alliance.
+alias[effect:add_alliance] = clause
+
+## scope = character
+###
+alias[effect:add_ambition] = ambition
+
+## scope = character
+### A copy of the named artifact is created and added to the scoped character
+alias[effect:add_artifact] = artifact
+
+## scope = character
+### Warn: buggy behavior
+alias[effect:add_betrothal] = unknown
+
+## scope = character
+### Adds a character modifier. Specify duration using days, months, years, or duration = -1 (non-expiring). Can use optional fields hidden = yes and stacking = yes.
+alias[effect:add_character_modifier] = clause
+
+## scope = character
+### Adds the given character as a consort to the scoped character.
+alias[effect:add_consort] = character
+
+## scope = character
+### Makes scoped character be owed a favor toward another character. Also see reverse_add_favor.
+alias[effect:add_favor] = character
+
+## scope = character
+###
+alias[effect:add_friend] = character
+
+## scope = character
+###
+alias[effect:add_lover] = character
+
+## scope = character
+###
+alias[effect:add_objective] = objective
+
+## scope = character
+### Adds the specified value of offmap currency for the specified offmap power to the scoped character. Use a negative number to subtract.
+alias[effect:add_offmap_currency] = clause
+
+## scope = character
+### Adds or subtracts a portion of the scope's population.
+alias[effect:add_population_scaled] = double
+
+## scope = character
+### Adds an education /trait matching specified attribute or level.
+alias[effect:add_random_education_trait] = attribute/1/2/3/4/yes
+
+## scope = character
+###
+alias[effect:add_rival] = character
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+###
+alias[effect:add_spouse] = character
+
+## scope = character
+###
+alias[effect:add_spouse_matrilineal] = character
+
+## scope = character
+### Add the scoped character to the RHS bloodline. Note that the RHS must be an existing bloodline, not a bloodline type.
+alias[effect:add_to_bloodline] = bloodline
+
+## scope = character
+### Adds a trait to the character, using an ID from the traits files. Also see remove_trait.
+alias[effect:add_trait] = trait
+
+## scope = character
+###
+alias[effect:ambition_succeeds] = bool
+
+## scope = character
+###
+alias[effect:back_plot] = character
+
+## scope = character
+### Banish character to random court
+alias[effect:banish] = bool
+
+## scope = character
+### All characters of the targeted religion will be banished to random court
+alias[effect:banish_religion] = religion
+
+## scope = character
+### Changes character religion to a random heresy of current religion
+alias[effect:become_heretic] = bool
+
+## scope = character
+### Changes character religion to a heresy of their current religion, but still openly practices their current faith (i.e., similar to become_heretic, but in secret rather than openly).
+alias[effect:become_secret_heretic] = bool
+
+## scope = character
+### Remove an alliance. Also see add_alliance
+alias[effect:break_alliance] = character
+
+## scope = character
+###
+alias[effect:break_betrothal] = character
+
+## scope = character
+###
+alias[effect:cancel_ambition] = bool
+
+## scope = character
+###
+alias[effect:cancel_job_action] = job_action
+
+## scope = character
+### Outdated, now cancel_objective/cancel_plot
+alias[effect:cancel_objective] = objective
+
+## scope = character
+###
+alias[effect:cancel_plot] = plot
+
+## scope = character
+### Ends a character's pregnancy instantaneously. Can be called at any time during pregnancy prior to birth. If pregnancy notification is to be avoided, must be called earlier than 2 months pregnancy.
+alias[effect:cancel_pregnancy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Changes base diplomacy stat. Negative decreases base diplomacy but will not decrease base diplomacy below 0
+alias[effect:change_diplomacy] = int
+
+## scope = character
+### Add or remove threat from a character.
+alias[effect:change_infamy] = clause
+
+## scope = character
+### Changes base intrigue stat. Negative decreases base intrigue but will not decrease base intrigue below 0
+alias[effect:change_intrigue] = int
+
+## scope = character
+### Changes base learning stat. Negative decreases base learning but will not decrease base learning below 0
+alias[effect:change_learning] = int
+
+## scope = character
+### Changes base martial stat. Negative decreases base martial but will not decrease base martial below 0
+alias[effect:change_martial] = int
+
+## scope = character
+### Add the specified amount of plot power to the plot owned by the scoped characters.
+alias[effect:change_plot_power] = int
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Changes base stewardship stat. Negative decreases base stewardship but will not decrease base stewardship below 0
+alias[effect:change_stewardship] = int
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Removes all opinion modifiers allowing the scoped character to banish the given character. Doesn't clear ongoing reasons like excommunication.
+alias[effect:clear_banish_reasons] = character
+
+## scope = character
+### Removes all traits with the education = yes parameter.
+alias[effect:clear_education_trait] = bool
+
+## scope = character
+### Removes all opinion modifiers allowing the scoped character to execute the given character. Doesn't clear ongoing reasons like excommunication.
+alias[effect:clear_execute_reasons] = character
+
+## scope = character
+### Removes the focus of a character. Also see set_focus.
+alias[effect:clear_focus] = bool
+
+## scope = character
+### Removes all opinion modifiers allowing the scoped character to imprison the given character. Doesn't clear ongoing reasons like excommunication.
+alias[effect:clear_prison_reasons] = character
+
+## scope = character
+### Removes all opinion modifiers allowing the scoped character to revoke the given character's titles. Doesn't clear ongoing reasons like excommunication.
+alias[effect:clear_revoke_reasons] = character
+
+## scope = character
+### Removes the scoped character's secret religion.
+alias[effect:clear_secret_religion] = bool
+
+## scope = character
+### Sets wealth of character to 0. Can be used after transfer of money via wealth command.
+alias[effect:clear_wealth] = bool/character
+
+## scope = character
+###
+alias[effect:clr_character_flag] = flag
+
+## scope = character
+### Resets the character's revealed society.
+alias[effect:clr_discovered_society] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Clears the target of the specified quest belonging to the scoped character. Does not clear the quest itself.
+alias[effect:clr_quest_target] = quest_id
+
+## scope = character
+### Sets the scoped character's public religion to his/her secret religion, or to the target character's secret religion if a scope is used.
+alias[effect:convert_to_secret_religion] = bool/character
+
+## scope = character
+###
+alias[effect:copy_random_personality_trait] = character
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Creates the patrician family palace
+alias[effect:create_family_palace] = bool
+
+## scope = character
+###
+alias[effect:culture_techpoints] = int
+
+## scope = character
+###
+alias[effect:cure_illness] = bool
+
+## scope = character
+### Kills currently scoped character
+alias[effect:death] = clause
+
+## scope = character
+###
+alias[effect:decadence] = int
+
+## scope = character
+### Also see approve_law.
+alias[effect:decline_law] = title
+
+## scope = character
+###
+alias[effect:destroy_tradepost] = province
+
+## scope = character
+###
+alias[effect:diplomatic_immunity] = bool
+
+## scope = character
+### Disable dynamically the allow_viking_invasion characteristic of a religion. Also see enable_prepared_invasion.
+alias[effect:disable_prepared_invasion] = religion
+
+## scope = character
+### Disbands the levies previously created with the given earmark via spawn_unit = { earmark = xxx }
+alias[effect:disband_event_forces] = earmark
+
+## scope = character
+### Sets the dynasty of scoped character. May need to been chained with recalc_succession command, if impacting succession. Use dynasty = father_bastard to generate a cadet dynasty, dynasty = mother_bastard to create a bastard dynasty, or dynasty = none to make the character Lowborn. Special values used in character creation (""random"", ""culture"", and ""actually_culture"") do not work here. When setting character dynasty in an event it only works inside of an immediate = { } block.
+alias[effect:dynasty] = id/character
+
+## scope = character
+###
+alias[effect:economy_techpoints] = int
+
+## scope = character
+###
+alias[effect:embargo] = character
+
+## scope = character
+###
+alias[effect:excommunicate] = bool
+
+## scope = character
+###
+alias[effect:faction] = faction
+
+## scope = character
+###
+alias[effect:fertility] = double
+
+## scope = character
+### Similar to move_character, but it bypasses the checks and forces the character to move. Should not be used lightly.
+alias[effect:force_host] = character
+
+## scope = character
+###
+alias[effect:gain_all_occupied_titles] = character
+
+## scope = character
+### Note: Does not work with ""any_"" scopes.
+alias[effect:gain_settlements_under_title] = clause
+
+## scope = character
+###
+alias[effect:give_job_title] = job
+
+## scope = character
+###
+alias[effect:give_minor_title] = minor_title
+
+## scope = character
+### gives the character a nickname
+alias[effect:give_nickname] = nickname
+
+## scope = character
+###
+alias[effect:health] = double
+
+## scope = character
+### For merchant republics
+alias[effect:hold_election] = TRUE
+
+## scope = character
+### Scope gets impregnated by the value.
+alias[effect:impregnate] = character/0
+
+## scope = character
+###
+alias[effect:impregnate_cuckoo] = character/bool
+
+## scope = character
+### Scoped character will be imprisoned by target, or imprisoned in the correct location if used with boolean yes, or released from the prison with boolean no. Identical to the `prisoner` command.
+alias[effect:imprison] = character/bool
+
+## scope = character
+### Scoped character will inherit titles of target character.
+alias[effect:inherit] = character
+
+## scope = character
+###
+alias[effect:join_attacker_wars] = character
+
+## scope = character
+### Only joins one war. Cannot be used by (feudal?) vassals to join liege's war.
+alias[effect:join_defender_wars] = character
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Joins the specified society.
+alias[effect:join_society] = society
+
+## scope = character
+###
+alias[effect:leave_faction] = faction/all
+
+## scope = character
+###
+alias[effect:leave_plot] = character
+
+## scope = character
+### Makes the scoped character leave the society they are currently part of.
+alias[effect:leave_society] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### scoped character will become primary spouse
+alias[effect:make_primary_spouse] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Increase/decrease manpower
+alias[effect:manpower] = int
+
+## scope = character
+###
+alias[effect:military_techpoints] = int
+
+## scope = character
+### scoped character will be moved to targeted characters court
+alias[effect:move_character] = character
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+###
+alias[effect:occupy_minors_of_occupied_settlements] = character
+
+## scope = character
+### Adds an opinion modifier to the scoped character towards the target character. Duration can be given in months or years (but not ""days""), or omitted to use the duration specified in the opinion modifier definition. origin_description can be used to customize localization that appears in tooltip. See also reverse_opinion.
+alias[effect:opinion] = clause
+
+## scope = character
+###
+alias[effect:participation_scaled_decadence] = double
+
+## scope = character
+###
+alias[effect:participation_scaled_piety] = double
+
+## scope = character
+###
+alias[effect:participation_scaled_prestige] = double
+
+## scope = character
+###
+alias[effect:piety] = int
+
+## scope = character
+### Tells the plot system to end the plot and fire the effect block. Note that it doesn't cause a plot to succeed, it should be used when a plot has already succeeded (successcondition block).
+alias[effect:plot_succeeds] = bool
+
+## scope = character
+###
+alias[effect:population] = int
+
+## scope = character
+### Removes a character modifier
+alias[effect:remove_character_modifier] = modifier
+
+## scope = character
+### Removes a number of instances of a character modifier (usually a stackable one).
+alias[effect:remove_character_modifiers] = clause
+
+## scope = character
+### Removes the consort/concubine relationship between the scoped and the given characters. Works in either scope.
+alias[effect:remove_consort] = character
+
+## scope = character
+### Target character no longer owes a favor to the scoped character. Also see reverse_remove_favor.
+alias[effect:remove_favor] = character
+
+## scope = character
+###
+alias[effect:remove_friend] = character
+
+## scope = character
+### Remove the scoped character from the specified bloodline. Note that the right-hand side must be a bloodlin, not a bloodline type.
+alias[effect:remove_from_bloodline] = bloodline
+
+## scope = character
+###
+alias[effect:remove_guardian] = character
+
+## scope = character
+### Remove scoped character's lover
+alias[effect:remove_lover] = character
+
+## scope = character
+### Remove character's nickname
+alias[effect:remove_nickname] = bool/nickname
+
+## scope = character
+### Removes an opinion modifier
+alias[effect:remove_opinion] = clause
+
+## scope = character
+###
+alias[effect:remove_rival] = character
+
+## scope = character
+###
+alias[effect:remove_special_character_title] = key
+
+## scope = character
+### remove scoped character's spouse
+alias[effect:remove_spouse] = string/bool/character
+
+## scope = character
+###
+alias[effect:remove_title] = job/minor_title
+
+## scope = character
+### Removes a trait, also see add_trait.
+alias[effect:remove_trait] = trait
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### reveal scoped characters plot
+alias[effect:reveal_plot_w_message] = bool
+
+## scope = character
+### Makes scoped character owe a favor to another character. Also see add_favor.
+alias[effect:reverse_add_favor] = character
+
+## scope = character
+###
+alias[effect:reverse_banish] = character
+
+## scope = character
+### Target character will be imprisoned by the scoped character
+alias[effect:reverse_imprison] = character
+
+## scope = character
+### Adds an opinion modifier to the target character towards scoped character.
+alias[effect:reverse_opinion] = clause
+
+## scope = character
+### Scoped character no longer owes a favor to the target character. Also see remove_favor.
+alias[effect:reverse_remove_favor] = character
+
+## scope = character
+### Removes an opinion modifier of right side of who argument towards scoped character.
+alias[effect:reverse_remove_opinion] = clause
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+###
+alias[effect:send_assassin] = character
+
+## scope = character
+###
+alias[effect:set_character_flag] = flag
+
+## scope = character
+###
+alias[effect:set_defacto_vassal] = character/title
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+###
+alias[effect:set_dynasty_flag] = flag
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Sets the focus of a character (bypasses 5 year cooldown period)
+alias[effect:set_focus] = clause
+
+## scope = character
+### Xets the scoped character's gender to be male or female or the opposite of what they currently are. Warning: messing with a character's gender may have unintended side effects so use with caution.
+alias[effect:set_gender] = male/female/opposite
+
+## scope = character
+### Change the government type of a character
+alias[effect:set_government_type] = government
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+###
+alias[effect:set_guardian] = character
+
+## scope = character
+### Sets a character as important. They will neither be removed from AI courts nor be deleted from the saved game to reduce file size. WARNING: This cannot be reversed.
+alias[effect:set_immune_to_pruning] = bool
+
+## scope = character
+### Make a character interested in joining the specified society.
+alias[effect:set_interested_society] = society
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+###
+alias[effect:set_mother] = character
+
+## scope = character
+### Sets the scoped character's total amount of offmap currency for the specified offmappower to the value.
+alias[effect:set_offmap_currency] = clause
+
+## scope = character
+###
+alias[effect:set_opinion_levy_raised_days] = clause
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Creates a quest for the scoped character. Society can be optionally specified.
+alias[effect:set_quest] = quest_id/clause
+
+## scope = character
+### When a child is denounced (no official father), real_father is used to keep track of it.
+alias[effect:set_real_father] = character
+
+## scope = character
+###
+alias[effect:set_reincarnation] = character/0
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Set or unset the scoped character as the grandmaster of their society.
+alias[effect:set_society_grandmaster] = bool
+
+## scope = character
+###
+alias[effect:set_special_character_title] = key
+
+## scope = character
+### Gives a temporary truce to the scoped character towards right side of who argument
+alias[effect:set_truce] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+###
+alias[effect:subjugate_or_take_under_title] = clause
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Same as wealth ?
+alias[effect:treasury] = int
+
+## scope = character
+### Scope gets impregnated by the value. This will work even on someone already pregnant.
+alias[effect:unsafe_impregnate] = character/0
+
+## scope = character
+###
+alias[effect:unsafe_impregnate_cuckoo] = character/0
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Note: Command shortened in example to avoid stretching the column.
+alias[effect:vassalize_or_take_under_title] = clause
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character
+### Initiate a war, with current character as attacker. Also see reverse_war. infamy can be used to override the threat value (for instance infamy = 0).
+alias[effect:war] = clause
+
+## scope = character
+### Modify the wealth of scoped character with the specified amount, or with the wealth of another character.
+alias[effect:wealth] = double/character
+
+## scope = character(?)
+### Destroys the hospital in the specified province
+alias[effect:destroy_hospital] = province
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Removes specified event id with a delayed trigger on current scope.
+alias[effect:clear_delayed_event] = clause
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### creates a random character with diplomacy education
+alias[effect:create_random_diplomat] = clause
+
+## scope = character/province
+### creates a random character with intrigue education
+alias[effect:create_random_intriguer] = clause
+
+## scope = character/province
+### creates a random character with learning education
+alias[effect:create_random_priest] = clause
+
+## scope = character/province
+### creates a random character with martial education
+alias[effect:create_random_soldier] = clause
+
+## scope = character/province
+### creates a random character with stewardship education
+alias[effect:create_random_steward] = clause
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Adds a religion modifier to the religion of scoped character/province
+alias[effect:religion_authority] = double/clause
+
+## scope = character/province
+### Change the target's culture to the one of current scope
+alias[effect:reverse_culture] = character/title/province
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/title
+### Adds a weak, non-inheritable claim. Note: assigned value cannot be a scope reference to a title.[1]
+alias[effect:add_weak_claim] = title/character
+
+## scope = character/title
+### Adds a weak, inheritable claim. Note: assigned value cannot be a scope reference to a title.[1]
+alias[effect:add_weak_pressed_claim] = title/character
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/title
+### Creates a hospital in the specified province
+alias[effect:create_hospital] = province #(ID or scope pointing to province)
+
+## scope = character/title
+### Creates a trade post in the specified province (only works if the character meets requirements such as being under their trade post limit)
+alias[effect:create_tradepost] = province #(ID or scope pointing to province)
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/title
+### No claim for the giver and no opinion bonus from the receiver.
+alias[effect:grant_title_no_opinion] = title/character
+
+## scope = character/title
+###
+alias[effect:prestige] = int
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/title
+### Sets the liege of a character. Can be used to make a character become independent via set_defacto_liege = THIS
+alias[effect:set_defacto_liege] = character/title
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/title?
+### As set_name, but sets name of scope to that of the right side of copy_name = <scope> argument.
+alias[effect:copy_name] = character/title?
+
+## scope = chararcter
+###
+alias[effect:clr_dynasty_flag] = flag
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = holding
+### Makes the holding the capital of the province. Also see revoke_capital_holding.
+alias[effect:make_capital_holding] = bool
+
+## scope = holding
+### Also see make_capital_holding
+alias[effect:revoke_capital_holding] = bool
+
+## scope = holding title?
+###
+alias[effect:set_trade_route_base_value] = double?
+
+## scope = holding title?
+###
+alias[effect:set_trade_route_value_multiplier] = double?
+
+## scope = offmap
+### Wipes the specified flag from the scoped offmap power.
+alias[effect:clr_offmap_tmp_flag] = string
+
+## scope = offmap
+### Sets the scoped offmap power's current ruler to the target scope.
+alias[effect:set_offmap_holder] = character
+
+## scope = offmap
+### Sets the scoped offmap power's name to the localisation key corresponding to the string.
+alias[effect:set_offmap_name] = string
+
+## scope = offmap
+### Adds the specified script flag to the scoped offmap power (check with has_offmap_tmp_flag or has_offmap_flag).
+alias[effect:set_offmap_tmp_flag] = string
+
+## scope = offmap
+### Sets the scoped offmap power's current policy to the specified ID (corresponding to a policy in /common/offmap_powers/policies).
+alias[effect:set_policy] = id
+
+## scope = offmap
+### Sets the scoped offmap power's current status modifier to the specified ID (corresponding to a modifier in /common/offmap_powers/statuses).
+alias[effect:set_status] = id
+
+## scope = province
+### Adds N constructible settlement to a province. Can be negative. [2]
+alias[effect:add_holding_slot] = int
+
+## scope = province
+### Adds a province modifier
+alias[effect:add_province_modifier] = clause
+
+## scope = province
+### Construct a building in a special holding (hospital, fort or trade post).
+alias[effect:add_to_extra_holding] = clause
+
+## scope = province
+### Builds a new settlement in the province.
+alias[effect:build_holding] = clause
+
+## scope = province
+###
+alias[effect:change_random_civ_tech] = int
+
+## scope = province
+###
+alias[effect:change_random_eco_tech] = int
+
+## scope = province
+###
+alias[effect:change_random_mil_tech] = int
+
+## scope = province
+### Improves technology in the province (referenced in common/technology.txt)
+alias[effect:change_tech] = clause
+
+## scope = province
+###
+alias[effect:clear_revolt] = bool
+
+## scope = province
+###
+alias[effect:clr_province_flag] = flag
+
+## scope = province
+### Destroy the fort in a province.
+alias[effect:destroy_fort] = province
+
+## scope = province
+### Destroy a building in a special holding (hospital, fort or trade post).
+alias[effect:destroy_in_extra_holding] = clause
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = province
+###
+alias[effect:reduce_disease] = double
+
+## scope = province
+### Removes a province modifier
+alias[effect:remove_province_modifier] = modifier
+
+## scope = province
+### Removes a number of instances of a province modifier (usually a stackable one).
+alias[effect:remove_province_modifiers] = clause
+
+## scope = province
+###
+alias[effect:set_province_flag] = flag
+
+## scope = province
+### Spawns a specific disease in the scoped province
+alias[effect:spawn_disease] = disease
+
+## scope = province
+###
+alias[effect:steal_random_tech] = character
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = religion
+### Adds an evil god name to the scoped religion.
+alias[effect:add_evil_god_name] = key
+
+## scope = religion
+### Adds a god name to the scoped religion.
+alias[effect:add_god_name] = key
+
+## scope = religion
+### Removes all evil god names from the scoped religion
+alias[effect:remove_evil_god_names] = bool
+
+## scope = religion
+### Removes all god names from the scoped religion
+alias[effect:remove_god_names] = bool
+
+## scope = religion
+### Sets the religion's high god's name to the given key.
+alias[effect:set_high_god_name] = key
+
+## scope = religion
+### Sets the religion's men_can_take_consorts attribute to the given value.
+alias[effect:set_men_can_take_consorts] = bool
+
+## scope = religion
+### Sets the religion's rel_head_defense attribute to the given value.
+alias[effect:set_rel_head_defense] = bool
+
+## scope = religion
+### Sets the religion's women_can_take_consorts attribute to the given value.
+alias[effect:set_women_can_take_consorts] = bool
+
+## scope = society
+### Adds a given value to the society's current progress.
+alias[effect:add_society_progress] = float
+
+## scope = society
+### Set the society's current progress to a given value.
+alias[effect:set_society_progress] = float
+
+## scope = society
+### Enables the society's progress bar.
+alias[effect:start_society_progress] = bool
+
+## scope = society
+### Disables the society's progress bar.
+alias[effect:stop_society_progress] = bool
+
+## scope = title
+### Construct a building in a holding. Also constructs the buildings it upgrades from, based on upgrades_from.
+alias[effect:add_building] = building
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+###
+alias[effect:add_law_w_cooldown] = law
+
+## scope = title
+###
+alias[effect:adjective] = string
+
+## scope = title
+### Update the percentage of income that goes to the creator for a dynamic mercenary company.
+alias[effect:adjust_siphon_factor] = double
+
+## scope = title
+### Change the composition of a dynamic mercenary title.
+alias[effect:change_mercenary_composition] = clause
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+###
+alias[effect:clr_title_flag] = flag
+
+## scope = title
+### Copies title history from title on the right to title on the left.
+alias[effect:copy_title_history] = title
+
+## scope = title
+### Copies title laws from title on the right to title on the left.
+alias[effect:copy_title_laws] = title
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+### Break free the dynamic mercenary title from its creator.
+alias[effect:cut_mercenary_creator_relation] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+### Destroys scoped holding. Also see build_holding.
+alias[effect:destroy_settlement] = title
+
+## scope = title
+### Changes council laws. Also see enable_council_voting_on_issue.
+alias[effect:disable_council_voting_on_issue] = votingTopic
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+### Gives opinion bonus toward the title giver
+alias[effect:gain_title_plus_barony_if_unlanded] = character
+
+## scope = title
+### cognatic, agnatic, true_cognatic, enatic_cognatic, or enatic
+alias[effect:gender_succ] = string
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+###
+alias[effect:make_primary_title] = bool
+
+## scope = title
+###
+alias[effect:press_claim] = character
+
+## scope = title
+###
+alias[effect:province_capital] = bool
+
+## scope = title
+###
+alias[effect:rebel_defection] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+###
+alias[effect:remove_building] = building
+
+## scope = title
+### Removes a holding modifier
+alias[effect:remove_holding_modifier] = modifier
+
+## scope = title
+### Removes a number of instances of a holding modifier (usually a stackable one).
+alias[effect:remove_holding_modifiers] = clause
+
+## scope = title
+### Removes the scoped title from being a holy site of the given religion. Warning: this lets you have less than 5 holy sites which might cause weirdness. Also, removing holy sites to a religion but not its heresies will cause their icons to show up individually on other shared holy sites instead of being hidden like normal.
+alias[effect:remove_holy_site] = religion
+
+## scope = title
+### Removes the scoped title from being a holy site of the given religion and its heresies. Warning: this lets you have less than 5 holy sites which might cause weirdness.
+alias[effect:remove_holy_site] = religion
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+###
+alias[effect:revoke_law] = law
+
+## scope = title
+###
+alias[effect:set_allow_feminism] = bool
+
+## scope = title
+### Crown laws
+alias[effect:set_allow_free_duchy_revokation] = bool
+
+## scope = title
+### Crown laws
+alias[effect:set_allow_free_infidel_revokation] = bool
+
+## scope = title
+### Crown laws
+alias[effect:set_allow_free_revokation] = bool
+
+## scope = title
+### Crown laws
+alias[effect:set_allow_free_vice_royalty_revokation] = bool
+
+## scope = title
+###
+alias[effect:set_allow_gender_laws] = bool
+
+## scope = title
+### Crown laws
+alias[effect:set_allow_title_revokation] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+###
+alias[effect:set_allows_matrilineal_marriage] = bool
+
+## scope = title
+### Crown laws
+alias[effect:set_appoint_generals] = bool
+
+## scope = title
+### Crown laws
+alias[effect:set_appoint_regents] = bool
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+### Sets the scoped title to be a holy site of the given religion. Warning: this lets you have more than 5 holy sites which might cause weirdness. Also, adding holy sites to a religion but not its heresies will cause their icons to show up individually on other shared holy sites instead of being hidden like normal.
+alias[effect:set_holy_site] = religion
+
+## scope = title
+### Sets the scoped title to be a holy site of the given religion and its heresies. Warning: this lets you have more than 5 holy sites which might cause weirdness.
+alias[effect:set_holy_site_with_heresies] = religion
+
+## scope = title
+### Crown laws
+alias[effect:set_investiture] = string
+
+## scope = title
+###
+alias[effect:set_mercenary_maintenance_modifier] = modifier
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title
+### Sets the preferred capital of the scoped title to the specified provinces. Works for both dynamic and static titles since patch 2.8.
+alias[effect:set_preferred_capital] = province
+
+## scope = title
+### Crown laws: avoid titles leaving the realm upon inheritance
+alias[effect:set_protected_inheritance] = bool
+
+## scope = title
+### Sets the title's short_name parameter to the given value.
+alias[effect:set_short_name] = bool
+
+## scope = title
+### Crown laws: allow/disallow vassals to wage war
+alias[effect:set_the_kings_full_peace] = bool
+
+## scope = title
+### Crown laws: allow/disallow vassals to wage war between them
+alias[effect:set_the_kings_peace] = bool
+
+## scope = title
+### set/unset title as being an adventurer title.
+alias[effect:set_title_adventurer] = clause
+
+## scope = title
+### Creates a flag on a title
+alias[effect:set_title_flag] = flag
+
+## scope = title
+### set/unset title as being a temporary title.
+alias[effect:set_title_landless] = clause
+
+## scope = title
+### set/unset title as being a nomad title.
+alias[effect:set_title_nomad] = clause
+
+## scope = title
+### Whether liege can directly raise tribal vassal levies
+alias[effect:set_tribal_vassal_levy_control] = bool
+
+## scope = title
+### Whether tribal vassals pay taxes to their liege
+alias[effect:set_tribal_vassal_tax_income] = bool
+
+## scope = title
+### Valid successions: gavelkind, primogeniture, feudal_elective, seniority, catholic_bishopric, open_elective, turkish_succession, patrician_elective, ultimogeniture, tanistry, appointment, papal_succession, elective_gavelkind
+alias[effect:succession] = succession
+
+## scope = title
+###
+alias[effect:succession_w_cooldown] = succession
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title(holding)
+### Converts holding to another holding type: CASTLE, CITY, TEMPLE, TRIBAL, NOMAD
+alias[effect:convert_to] = type
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = title/character
+### Adds a strong, inheritable claim. Note: assigned value cannot be a scope reference to a title.[1]
+alias[effect:add_pressed_claim] = character/title
+
+## scope = title/province
+###
+alias[effect:seize_trade_post] = character
+
+## scope = character/province
+### Converts to the parent religion
+alias[effect:abandon_heresy] = bool
+
+## scope = unit
+### Removes morale for the army (or adds morale with negative values). Only takes absolute values.
+alias[effect:damage_unit_morale] = float
+
+## scope = unit
+###
+alias[effect:set_can_toggle_looting] = bool
+
+## scope = unit
+### Used with set_can_toggle_looting
+alias[effect:set_looting] = bool
+
+## scope = unit/siege
+### Changes the morale of the unit by the amount indicated
+alias[effect:morale] = double
+
+## scope = unit/siege
+### Changes the size of the unit by the amount indicated
+alias[effect:troops] = double
+
+## scope = war
+### Possible war ends: invalid, whitepeace, success, reverse_demand
+alias[effect:end_war] = string
