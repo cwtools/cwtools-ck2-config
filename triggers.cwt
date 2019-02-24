@@ -1,4 +1,6 @@
 
+alias[trigger:always] = bool
+
 ## scope = any
 ### Checks if current scope matches the allow block of the given decision
 alias[trigger:is_decision_allowed] = <decision>
