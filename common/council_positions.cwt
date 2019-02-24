@@ -81,6 +81,7 @@ council_position = {
         }
     }
 
+    # Based on wiki info.
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ## cardinality = 0..1
     ### Selects a preferred war target for the character.
