@@ -16,7 +16,7 @@ enums = {
 }
 
 types = {
-    ## type_key_filter <> no_tactic flank_retreat_odds flank_pursue_odds
+    ## type_key_filter <> { no_tactic flank_retreat_odds flank_pursue_odds }
     type[combat_tactic] = {
         path_strict = yes
         path = "game/common/combat_tactics"
