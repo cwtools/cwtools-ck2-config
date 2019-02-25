@@ -15,6 +15,7 @@ death_text = {
         ### Base chance for the death text to be used.
         factor = int
 
+        # TODO: Confirm if cardinality of 0 is ok
         ## cardinality = 1..inf
         ### Additional modifiers to the chance.
         alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
