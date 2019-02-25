@@ -1,4 +1,17 @@
+### Conditional multiplicative modifier.
 alias[multiplicative_modifier:modifier] = {
+    ### The base weight/chance will be multiplied by this value if the conditions are met.
     factor = float
+
+    ### Conditions for the multiplicative modifier to apply.
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+### Condiitonal additive modifier.
+alias[additive_modifier:additive_modifier] = {
+    ### This value will be added to the base weight/chance if the conditions are met.
+    value = int
+
+    ### Conditions for the additive modifier to apply.
     alias_name[trigger] = alias_match_left[trigger]
 }

@@ -42,26 +42,26 @@ council_position = {
 
         ## cardinality = 0..inf
         ### Adds the percentage of available troops from "ROOT" to "who" multiplied by factor to the score.
-		additive_power_diff_modifier = {
-			who = scope[character]
-			factor = float
+        additive_power_diff_modifier = {
+            who = scope[character]
+            factor = float
             alias_name[trigger] = alias_match_left[trigger]
         }
 
         ## cardinality = 0..inf
         ### Adds the percentage of realm size from "ROOT" to "who" multiplied by factor to the score.
-		additive_compared_realm_size_modifier = {
-			who = scope[character]
-			factor = float
+        additive_compared_realm_size_modifier = {
+            who = scope[character]
+            factor = float
             alias_name[trigger] = alias_match_left[trigger]
         }
 
         # According to wiki; haven't checked myself
         ## cardinality = 0..inf
         ### Divide the character's absolute size by balance, then square and multiply by factor.
-		additive_realm_size_modifier = { 
-			factor = float
-			balance = int
+        additive_realm_size_modifier = { 
+            factor = float
+            balance = int
             alias_name[trigger] = alias_match_left[trigger]
         }
         
@@ -74,11 +74,9 @@ council_position = {
         }
 
         ## cardinality = 0..inf
-        ### Possible modifiers affecting the selection.
-        additive_modifier = {
-            value = int
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        alias_name[additive_modifier] = alias_match_left[additive_modifier]
+
+        # TODO: Check if multiplicative modifier works.
     }
 
     # Based on wiki info.

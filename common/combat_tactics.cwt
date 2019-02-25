@@ -70,12 +70,9 @@ combat_tactic = {
         days = int
 
         ## cardinality = 0..inf
-        ### Conditions multiplicatively affecting the MTTH.
-        modifier = {
-            ### The MTTH will be multiplied by this value.
-            factor = float
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+        
+        # TODO: Check if additive modifier works
     }
 
     # Hope this is the correct syntax, will know when I reach dynamic modifiers :)

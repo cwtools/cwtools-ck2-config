@@ -15,7 +15,7 @@ types = {
             desc = "$_FEATURES"
         }
     }
-	## type_key_filter <> { alternate_start graphical_cultures }
+    ## type_key_filter <> { alternate_start graphical_cultures }
     type[culture] = {
         path_strict = yes
         path = "game/common/cultures"
