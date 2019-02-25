@@ -2,6 +2,8 @@ types = {
     type[execution_method] = {
         path_strict = yes
         path = "game/common/execution_methods"
+
+        name_field = death
     }
 }
 
