@@ -72,12 +72,8 @@ culture_group = {
             alias_name[trigger] = alias_match_left[trigger]
         }
 
-        # TODO: chinese_group.han in vanilla uses "color = { 211 44 44 }" which is probably wrong; see if it actually works; jurchen too
         ### The culture's colour on the culture map mode.
-        color = {
-            ## cardinality = 3..3
-            float[0.0..1.0]
-        }
+        alias_name[color] = alias_match_left[color]
 
         ### Names for males of this culture.
         male_names = {

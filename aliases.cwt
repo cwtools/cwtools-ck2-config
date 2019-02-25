@@ -15,3 +15,15 @@ alias[additive_modifier:additive_modifier] = {
     ### Conditions for the additive modifier to apply.
     alias_name[trigger] = alias_match_left[trigger]
 }
+
+### Colour in RGB format, three 0.0-1.0 floats.
+alias[color:color] = {
+    ## cardinality = 3..3
+    float[0.0..1.0]
+}
+
+### Colour in RGB format, three 0-255 ints.
+alias[color:color] = {
+    ## cardinality = 3..3
+    int[0..255]
+}
