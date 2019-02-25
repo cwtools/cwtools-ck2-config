@@ -1,0 +1,102 @@
+types = {
+	type[event] = {
+		name_field = "id"
+
+		path = "game/events"
+
+		## type_key_filter = character_event
+		## push_scope = character
+		subtype[character] = {
+        }
+
+		## type_key_filter = long_character_event
+		## push_scope = character
+		subtype[long_character] = {
+        }
+
+		## type_key_filter = letter_event
+		## push_scope = character
+		subtype[letter] = {
+        }
+
+		## type_key_filter = narrative_even
+		## push_scope = character
+		subtype[narrative] = {
+		}
+		## type_key_filter = province_event
+		## push_scope = province
+		subtype[province] = {
+        }
+
+		## type_key_filter = diploresponse_event
+		## push_scope = character
+		subtype[diploresponse] = {
+		}
+		## type_key_filter = unit_event
+		## push_scope = unit
+		subtype[unit] = {
+        }
+
+		## type_key_filter = society_quest_event
+		## push_scope = character
+		subtype[society_quest] = {
+        }
+
+		subtype[mean_time_to_happen] = {
+			mean_time_to_happen = {
+			}
+		}
+		subtype[hidden] = {
+			hide_window = yes
+		}
+		subtype[triggered] = {
+			is_triggered_only = yes
+		}
+	}
+}
+
+event = {
+    id = scalar
+
+    ## cardinality = 0..1
+	trigger = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+
+	## cardinality = 0..1
+	immediate = {
+		alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 1..inf
+	option = {
+		subtype[hidden] = {
+			## cardinality = 0..1
+			name = localisation
+		}
+		subtype[!hidden] = {
+			## severity = warning
+			name = localisation
+		}
+
+		## cardinality = 0..1
+		trigger = {
+			alias_name[trigger] = alias_match_left[trigger]
+		}
+
+		## cardinality = 0..1
+		alias_name[effect] = alias_match_left[effect]
+
+		## cardinality = 0..1
+		ai_chance = {
+			factor = float[0..10000]
+			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+		}
+	}
+
+
+	## cardinality = 0..1
+	after = {
+		alias_name[effect] = alias_match_left[effect]
+	}
+}
