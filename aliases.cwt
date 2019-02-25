@@ -27,3 +27,81 @@ alias[color:color] = {
     ## cardinality = 3..3
     int[0..255]
 }
+
+# TODO: possibly use a special system for that to ensure everything is in correct amounts?
+# Mostly taken from wiki.
+### Coat of arms explicit definition.
+alias[coa:coat_of_arms] = {
+    ### Which basic template to use. Use 0 for Plain (0), 1 for Per Fess, 2 for Per Pale, 3 for Per Cross, 4 for Triangle.
+    template = int
+
+    ## cardinality = 1..4
+    ### Definition of a layer. Make sure to use the right amount of layers. 1 for Plain, 2 for Per Fess or Per Pale, 4 for Per Cross, 3 for Triangle.
+    layer = {
+        ### The pattern texture file ID to use.
+        texture = int
+        ### The ID of the pattern tile in the file to use.
+        texture_internal = int
+        ## cardinality = 0..1
+        ### The emblem ID to draw on the layer.
+        emblem = int
+        ## cardinality = 1..inf
+        ### Determines which colours to use for drawing. Make sure to use the right amount for the texture.
+        color = int
+    }
+
+    ## cardinality = 0..1
+    ### Defines which kind of CoA is to be used.
+    religion = <religion>
+}
+
+### Coat of arms definition via a set of values.
+alias[coa:coat_of_arms] = {
+    ### Shorthand for: template [texture emblem texture_internal [colour](per colour)](per layer)
+    data = {
+        ## cardinality = 1..inf
+        int
+    }
+
+    ## cardinality = 0..1
+    ### Defines which kind of CoA is to be used.
+    religion = <religion>
+}
+
+### Coat of arms explicit definition.
+alias[pagan_coa:pagan_coa] = {
+    ### Which basic template to use. Use 0 for Plain (0), 1 for Per Fess, 2 for Per Pale, 3 for Per Cross, 4 for Triangle.
+    template = int
+
+    ## cardinality = 1..4
+    ### Definition of a layer. Make sure to use the right amount of layers. 1 for Plain, 2 for Per Fess or Per Pale, 4 for Per Cross, 3 for Triangle.
+    layer = {
+        ### The pattern texture file ID to use.
+        texture = int
+        ### The ID of the pattern tile in the file to use.
+        texture_internal = int
+        ## cardinality = 0..1
+        ### The emblem ID to draw on the layer.
+        emblem = int
+        ## cardinality = 1..inf
+        ### Determines which colours to use for drawing. Make sure to use the right amount for the texture.
+        color = int
+    }
+
+    ## cardinality = 0..1
+    ### Defines which kind of CoA is to be used.
+    religion = <religion>
+}
+
+### Coat of arms definition via a set of values.
+alias[pagan_coa:pagan_coa] = {
+    ### Shorthand for: template [texture emblem texture_internal [colour] - per colour] - per layer
+    data = {
+        ## cardinality = 1..inf
+        int
+    }
+
+    ## cardinality = 0..1
+    ### Defines which kind of CoA is to be used.
+    religion = <religion>
+}
