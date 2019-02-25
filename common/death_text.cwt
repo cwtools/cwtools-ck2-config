@@ -1,0 +1,24 @@
+types = {
+    type[death_text] = {
+        path_strict = yes
+        path = "game/common/death_text"
+        localisation = {
+            description = "$"
+        }
+    }
+}
+
+death_text = {
+    ## replace_scope = { this = character root = character }
+    weight_multiplier = {
+        # Possibly float?
+        ### Base chance for the death text to be used.
+        factor = int
+
+        ## cardinality = 1..inf
+        ### Additional modifiers to the chance.
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+
+        # TODO: see if additive_modifier works
+    }
+}
