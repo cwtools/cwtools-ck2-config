@@ -149,8 +149,8 @@ law = {
 
 succession_law = {
     ## cardinality = 0..inf
-    ### Opinion modifiers applied towards the liege with this succession law.
-    enum[hardcoded_opinion_modifiers] = int
+    ## replace_scope = { this = title root = title }
+    alias_name[modifier] = alias_match_left[modifier]
 
     # TODO: Confirm scopes in this and the following.
     ## replace_scope = { this = title root = title }
