@@ -1,0 +1,132 @@
+enums = {
+    enum[law_types] = {
+        council
+        obligations
+        realm
+    }
+}
+
+types = {
+    ###### type_key_filter <> { no_tactic flank_retreat_odds flank_pursue_odds }
+    type[law_group] = {
+        path_strict = yes
+        path = "game/common/laws"
+        skip_root_key = law_groups
+
+        subtype[obligations] = {
+            law_type = obligations
+        }
+
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[law] = {
+        path_strict = yes
+        path = "game/common/laws"
+        skip_root_key = { laws de_jure_laws }
+
+        subtype[obligations] = {
+            group = <law_group.obligations>
+        }
+
+        localisation = {
+            name = "$"
+            description = "$_desc"
+
+            # Obligations use sprites
+            subtype[!obligations] = {
+                button = "$_option"
+            }
+        }
+    }
+
+    type[succession_law] = {
+        path_strict = yes
+        path = "game/common/laws"
+        skip_root_key = { gender_laws succession_laws }
+
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+}
+
+law_group = {
+    ### Which tab this law belongs in.
+    law_type = enum[law_types]
+
+    ## cardinality = 0..1
+    ### If yes, councilors can initiate voting on this type of law. Defaults to "no".
+    allowed_for_councillors = bool
+
+    subtype[obligations] = {
+        ### Text shown on the left side of the obligations slider.
+        left_value = localisation
+
+        ### Text shown on the right side of the obligations slider.
+        right_value = localisation
+
+        ### The GFX resource used for positions on the obligations slider.
+        slider_sprite = <gfx_resource>
+    }
+}
+
+law = {
+    # TODO: Figure out.
+    ## cardinality = 0..1
+    ### UNKNOWN. Default no.
+    show_as_title = bool
+    group = <law_group>
+
+    ## cardinality = 0..1
+    ### If yes, this law will be selected by default on game start. Defaults to "no".
+    default = bool
+
+    ### Conditions for the law to be enabled.
+    allow = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ### Conditions for the law appear.
+    potential = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ### Effects when the law is enacted.
+    effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ### Effects when the law is enacted. Takes place before effect = {} and is only triggered when the law is passed in-game (not via history or event).
+    pass_effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ### Conditions for the law to be able to be revoked.
+    revoke_allowed = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ### Chance for the AI to enact this law if able.
+    ai_will_do = {
+        ### Base chance. 1.0 is 100%.
+        factor = float
+
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+    }
+
+    ### Chance for the AI to revoke this law if able.
+    ai_will_revoke = {
+        ### Base chance. 1.0 is 100%.
+        factor = float
+
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+    }
+
+    ### Effects of the law.
+    alias_name[modifier] = alias_match_left[modifier]
+}
