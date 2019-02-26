@@ -39,4 +39,11 @@ enums = {
         melee
         pursue
     }
+    enum[attributes] = {
+        diplomacy
+        martial
+        stewardship
+        intrigue
+        learning
+    }
 }
