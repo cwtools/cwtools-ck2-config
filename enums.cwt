@@ -46,4 +46,14 @@ enums = {
         intrigue
         learning
     }
+    enum[troop_types] = {
+        pikemen
+        knights
+        archers
+        light_infantry
+        heavy_infantry
+        light_cavalry
+        heavy_cavalry
+        galleys
+    }
 }
