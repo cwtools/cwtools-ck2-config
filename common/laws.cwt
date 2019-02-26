@@ -7,7 +7,6 @@ enums = {
 }
 
 types = {
-    ###### type_key_filter <> { no_tactic flank_retreat_odds flank_pursue_odds }
     type[law_group] = {
         path_strict = yes
         path = "game/common/laws"
@@ -26,10 +25,14 @@ types = {
     type[law] = {
         path_strict = yes
         path = "game/common/laws"
-        skip_root_key = { laws de_jure_laws }
 
-        subtype[obligations] = {
-            group = <law_group.obligations>
+        # Let's keep it at least like that for testing.
+        skip_root_key = laws
+        #skip_root_key = { laws de_jure_laws }
+
+        # Used mainly for obligations.
+        subtype[sprite] = {
+            slider_sprite = scalar
         }
 
         localisation = {
@@ -37,7 +40,7 @@ types = {
             description = "$_desc"
 
             # Obligations use sprites
-            subtype[!obligations] = {
+            subtype[!sprite] = {
                 button = "$_option"
             }
         }
@@ -46,7 +49,10 @@ types = {
     type[succession_law] = {
         path_strict = yes
         path = "game/common/laws"
-        skip_root_key = { gender_laws succession_laws }
+
+        # Let's keep it at least like that for testing.
+        skip_root_key = succession_laws
+        #skip_root_key = { gender_laws succession_laws }
 
         localisation = {
             name = "$"
@@ -63,14 +69,14 @@ law_group = {
     ### If yes, councilors can initiate voting on this type of law. Defaults to "no".
     allowed_for_councillors = bool
 
-    subtype[obligations] = {
-        ### Text shown on the left side of the obligations slider.
+    subtype[sprite] = {
+        ### Text shown on the left side of the slider.
         left_value = localisation
 
-        ### Text shown on the right side of the obligations slider.
+        ### Text shown on the right side of the slider.
         right_value = localisation
 
-        ### The GFX resource used for positions on the obligations slider.
+        ### The GFX resource used for positions on the slider.
         slider_sprite = <gfx_resource>
     }
 }
@@ -86,27 +92,35 @@ law = {
     ### If yes, this law will be selected by default on game start. Defaults to "no".
     default = bool
 
-    ### Conditions for the law to be enabled.
+    # TODO: Confirm scopes in this and the following.
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law to be enabled. ROOT seems to be title.
     allow = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
-    ### Conditions for the law appear.
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law appear. ROOT seems to be title.
     potential = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
-    ### Effects when the law is enacted.
+    ## replace_scope = { this = title root = title }
+    ### Effects when the law is enacted. ROOT seems to be title.
     effect = {
         alias_name[effect] = alias_match_left[effect]
     }
 
-    ### Effects when the law is enacted. Takes place before effect = {} and is only triggered when the law is passed in-game (not via history or event).
+    ## replace_scope = { this = title root = title }
+    ## cardinality = 0..1
+    ### Effects when the law is enacted. Takes place before effect = {} and is only triggered when the law is passed in-game (not via history or event). ROOT seems to be title.
     pass_effect = {
         alias_name[effect] = alias_match_left[effect]
     }
 
-    ### Conditions for the law to be able to be revoked.
+    ## cardinality = 0..1
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law to be able to be revoked. ROOT seems to be title.
     revoke_allowed = {
         alias_name[trigger] = alias_match_left[trigger]
     }
@@ -116,6 +130,7 @@ law = {
         ### Base chance. 1.0 is 100%.
         factor = float
 
+        ## replace_scope = { this = title root = title }
         alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
     }
 
@@ -124,9 +139,41 @@ law = {
         ### Base chance. 1.0 is 100%.
         factor = float
 
+        ## replace_scope = { this = title root = title }
         alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
     }
 
     ### Effects of the law.
     alias_name[modifier] = alias_match_left[modifier]
+}
+
+succession_law = {
+    ## cardinality = 0..inf
+    ### Opinion modifiers applied towards the liege with this succession law.
+    enum[hardcoded_opinion_modifiers] = int
+
+    # TODO: Confirm scopes in this and the following.
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law to be enabled. ROOT seems to be title.
+    allow = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law appear. ROOT seems to be title.
+    potential = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## replace_scope = { this = title root = title }
+    ### Effects when the law is enacted. ROOT seems to be title.
+    effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law to be able to be revoked. ROOT seems to be title.
+    revoke_allowed = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 }
