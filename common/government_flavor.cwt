@@ -1,0 +1,30 @@
+types = {
+    type[government_flavor] = {
+        path_strict = yes
+        path = "game/common/government_flavor"
+
+        name_field = name
+
+        localisation = {
+            name = "$"
+        }
+    }
+}
+
+government_flavor = {
+    ### The localisation key used for the government flavour type.
+    name = localisation
+
+    ### The 450x150px picture used for the government flavour type.
+    graphics = <gfx_resource>
+
+    ### The government flavour type with the highest priority out of those that meet the conditions will be used.
+    priority = int
+
+    # TODO: Confirm
+    ## replace_scope = { this = character root = character }
+    ### Conditions for the government flavour type to be used. UNCONFIRMED: ROOT seems to be either the liege character or the title.
+    trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+}
