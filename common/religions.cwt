@@ -1,0 +1,142 @@
+# TODO: See if I can apply crusading as a subtype down to religion from religion_group
+types = {
+    ## type_key_filter <> secret_religion_visibility_trigger
+    type[religion_group] = {
+        path_strict = yes
+        path = "game/common/religions"
+
+        localisation = {
+            name = "$"
+        }
+    }
+    ## type_key_filter <> { interface_skin color male_names female_names }
+    type[religion] = {
+        path_strict = yes
+        path = "game/common/religions"
+        skip_root_key = any
+
+        subtype[crusade] = {
+            crusade_name = localisation
+        }
+
+        localisation = {
+            name = "$"
+            desc = "$_desc"
+        }
+    }
+}
+
+religion_group = {
+    ### If no, the religion group will generate random COAs even above barony level.
+    has_coa_on_barony_only = bool
+
+    ### Used to display the CoA frames on the map.
+    graphical_culture = <graphical_culture>
+
+    ## cardinality = 0..1
+    ### If defined, the religion group can have crusades and uses this casus belli for them.
+    crusade_cb = <casus_belli>
+
+    ### If no, the religion group is unplayable.
+    playable = bool
+
+    ## cardinality = 0..1
+    ### If yes, Hordes will lose their super-aggressiveness upon conversion to this religion group. Defaults to "no".
+    ai_peaceful = bool
+
+    ## cardinality = 0..1
+    ### If yes, holy orders will agree to fight others and interfaith marriage will be blocked within the group. Defaults to "no".
+    hostile_within_group = bool
+
+    ### How hard the AI will try to convert characters of other religions. 0 is never, 1 is if ai_zeal is high, 2 is always.
+    ai_convert_same_group = int[0..2]
+
+    ### How hard the AI will try to convert characters of other religions. 0 is never, 1 is if ai_zeal is high, 2 is always.
+    ai_convert_other_group = int[0..2]
+
+    # TODO: Figure out
+    ## cardinality = 0..1
+    ### Whether the AI will try to fabricate claims.
+    ai_fabricate_claims = bool
+
+    ### The religion group's colour on the coalitions per religion group mapmode.
+    alias_name[color] = alias_match_left[color]
+
+    ## cardinality = 0..1
+    ### If yes, then when a republic and searching for a texture for the interface it will look for <texture_name>_republic and use that version of the texture instead of the normal one. Defaults to "no".
+    merge_republic_interface = bool
+
+    ## cardinality = 0..1
+    ### The interface skins the religion group tries to use. It'll go down the list and use the first one available.
+    interface_skin = {
+        ## cardinality = 1..inf
+        scalar # interface skin
+    }
+
+    # TODO: Figure out how that works
+    ## cardinality = 0..1
+    ### Names only given to males of this religion group.
+    male_names = {
+        ## cardinality = 1..inf
+        scalar
+    }
+
+    # TODO: Figure out how that works
+    ## cardinality = 0..1
+    ### Names only given to females of this religion group.
+    female_names = {
+        ## cardinality = 1..inf
+        scalar
+    }
+
+    ## cardinality = 1..inf
+    <religion> = {
+        graphical_culture = <graphical_culture>
+
+        ## cardinality = 0..1
+        ## replace_scope = { this = no_scope root = no_scope }
+        alternate_start = {
+            alias_name[trigger] = alias_match_left[trigger]
+        }
+
+        icon = int
+        heresy_icon = int
+
+        subtype[crusade] = {
+            crusade_name = localisation
+            crusade_cb = <casus_belli>
+            use_new_crusade = bool
+        }
+
+        scripture_name = localisation
+        priest_title = localisation
+        high_god_name = localisation
+        god_names = {
+            ## cardinality = 1..inf
+            localisation
+        }
+        evil_god_names = {
+            ## cardinality = 1..inf
+            localisation
+        }
+
+        ### The religion group's colour on the religion mapmode.
+        alias_name[color] = alias_match_left[color]
+
+        ## cardinality = 0..1
+        ### If set, this religion is considered a heresy of the parent religion.
+        parent = <religion>
+
+        ## cardinality = 0..inf
+        ### Which religions this religion is allowed to intermarry with.
+        intermarry = <religion>
+
+        ## cardinality = 0..inf
+        ### Which religion groups this religion is allowed to intermarry with.
+        intermarry = <religion_group>
+
+        ## cardinality = 0..1
+        ### If no, this religion cannot be selected in the ruler designer. Defaults to "yes".
+        allow_in_ruler_designer = bool
+    }
+}
