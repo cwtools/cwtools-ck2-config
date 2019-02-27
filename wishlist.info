@@ -4,3 +4,4 @@
 - Multiple path values for types.
 - skip_root_key as OR
 - A property, uh, property, that counts as a replacement for a parameter in a top-level type. For example, religion_group property ai_convert_other_group can be explicitly replaced by a religion. In such cases it should probably inform you what the default (religion_group value) currently is. Low priority as it's just religions.
+- For property = int a "## frame_of_gfx_resource = <gfx_resource>" or something like that to make sure that the int is within [1..noOfFrames] for the gfx_resource.
