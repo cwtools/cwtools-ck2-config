@@ -105,3 +105,12 @@ alias[pagan_coa:pagan_coa] = {
     ### Defines which kind of CoA is to be used.
     religion = <religion>
 }
+
+### Duration in days.
+alias[duration:days] = int[0..inf]
+
+### Duration in months.
+alias[duration:months] = int[0..inf]
+
+### Duration in years.
+alias[duration:years] = int[0..inf]
