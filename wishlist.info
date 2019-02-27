@@ -1,0 +1,5 @@
+- Referring to a property name in type localisation for types where localisation keys are explicit.
+- starts_with filter for types/subtypes (for stuff like b_<title> or faction_<objective>).
+- Autocomplete for matching nested types like options for game rules.
+- Multiple path values for types.
+- skip_root_key as OR
