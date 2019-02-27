@@ -1,0 +1,30 @@
+types = {
+    type[nickname] = {
+        path_strict = yes
+        path = "game/common/nicknames"
+
+        localisation = {
+            name = "$"
+        }
+    }
+}
+
+# TODO: Confirm if additive modifier works.
+nickname = {
+    ## cardinality = 0..1
+    ## replace_scope = { this = character root = character }
+    ### Conditions for the character to be eligible for the nickname.
+    allow = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    ## cardinality = 0..1
+    ### Yearly chance to gain the nickname if the character doesn't have a nickname yet.
+    chance = {
+        ### Base chance.
+        factor = int[1..100]
+
+        ## replace_scope = { this = character root = character }
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+    }
+}
