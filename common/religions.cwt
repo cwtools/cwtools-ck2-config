@@ -20,16 +20,16 @@ types = {
         path = "game/common/religions"
         skip_root_key = any
 
-        # Isn't being recognised for some arcane reason, even though heresy is and they use similar conditions; same for uses_caste_system.
-        subtype[has_crusade_details] = {
-            crusade_name = scalar
-        }
-        subtype[heresy] = {
-            parent = scalar
-        }
-        subtype[uses_caste_system] = {
-            castes = yes
-        }
+        # TODO: make it work without a ton of aliases/copypasta; or at least make it work without copypasta
+        #subtype[has_crusade_details] = {
+        #    crusade_name = scalar
+        #}
+        #subtype[heresy] = {
+        #    parent = scalar
+        #}
+        #subtype[uses_caste_system] = {
+        #    castes = yes
+        #}
 
         localisation = {
             name = "$"
@@ -153,9 +153,9 @@ religion_group = {
         ### Heresies use this value of the parent religion instead of icon.
         heresy_icon = int
 
-        subtype[has_crusade_details] = {
+        #subtype[has_crusade_details] = {
             ## cardinality = 0..1
-            ### The name for this religion's crusade, if any.
+            ### The name for this religion's crusade, if any. Required if crusade_cb is defined for this religion or its group.
             crusade_name = localisation
 
             ## cardinality = 0..1
@@ -165,25 +165,40 @@ religion_group = {
             ## cardinality = 0..1
             ### If yes, the religion will use Holy Fury's crusade mechanics. Defaults to "no".
             use_new_crusade = bool
-        }
+        #}
 
-        subtype[!heresy] = {
-            scripture_name = localisation
-            priest_title = localisation
-            high_god_name = localisation
+        #subtype[!heresy] = {
             ## cardinality = 0..1
+            ### The name of this religion's holy scriptures. Not required for heresies (parent = <religion>).
+            scripture_name = localisation
+
+            ## cardinality = 0..1
+            ### The title of this religion's priests. Not required for heresies (parent = <religion>).
+            priest_title = localisation
+
+            ## cardinality = 0..1
+            ### The name of this religion's high god. Not required for heresies (parent = <religion>).
+            high_god_name = localisation
+
+            ## cardinality = 0..1
+            ### The name of this religion's piety resource. Maybe not required for heresies (parent = <religion>).
             piety_name = localisation
 
+            ## cardinality = 0..1
+            ### The name of this religion's gods/alternative names for the one god. Not required for heresies (parent = <religion>).
             god_names = {
                 ## cardinality = 1..inf
                 localisation
             }
 
+            ## cardinality = 0..1
+            ### The name of this religion's evil gods/alternative names for the devil. Not required for heresies (parent = <religion>).
+            ## cardinality = 0..1
             evil_god_names = {
                 ## cardinality = 1..inf
                 localisation
             }
-        }
+        #}
 
         ### The religion group's colour on the religion mapmode.
         alias_name[color] = alias_match_left[color]
@@ -335,6 +350,11 @@ religion_group = {
         ### If yes, armies will take a large hit to supply limit in hostile provinces of this religion. Defaults to "no".
         defensive_attrition = bool
 
+        # TODO: Confirm
+        ## cardinality = 0..1
+        ### If yes, armies of rulers of this religion will not have the penalty inflicted by defensive_attrition. Defaults to "no".
+        ignores_defensive_attrition = bool
+
         ## cardinality = 0..1
         ### If yes, vassals of this religion will disapprove and form factions if their liege increases tribal organization. Defaults to "no".
         dislike_tribal_organization = bool
@@ -421,12 +441,12 @@ religion_group = {
         ### If yes, uses a caste system. Defaults to "no".
         castes = bool
 
-        subtype[uses_caste_system] = {
+        #subtype[uses_caste_system] = {
             # TODO: Elaborate
             ## cardinality = 0..1
-            ### If yes, the religion uses caste opinion modifiers. Defaults to "no".
+            ### If yes, the religion uses caste opinion modifiers. Defaults to "no". Only applicable is castes = yes.
             caste_opinions = bool
-        }
+        #}
 
         ## cardinality = 0..1
         ### If yes, rulers of this religion can designate their heir. Defaults to "no".
