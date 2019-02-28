@@ -1,0 +1,36 @@
+alias[multiplicative_modifer:<scripted_score_value.multiplicative>] = yes
+alias[additive_modifer:<scripted_score_value.additive>] = yes
+
+# Of course, all that cardinality doesn't work out due to aliases, but a man can dream
+# Figured I could try via separate types, but sadly that won't work either because then everything will be parsed as both types
+types = {
+    type[scripted_score_value] = {
+        path_strict = yes
+        path = "game/common/scripted_score_values"
+
+        subtype[multiplicative] = {
+            ## cardinality = 1..inf
+            alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+        }
+        subtype[additive] = {
+            ## cardinality = 1..inf
+            alias_name[additive_modifier] = alias_match_left[additive_modifier]
+        }
+    }
+}
+
+scripted_score_value = {
+    subtype[multiplicative] = {
+        ## cardinality = 1..inf
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+        ## cardinality = 0..0
+        alias_name[additive_modifier] = alias_match_left[additive_modifier]
+    }
+
+    subtype[additive] = {
+        ## cardinality = 0..0
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+        ## cardinality = 1..inf
+        alias_name[additive_modifier] = alias_match_left[additive_modifier]
+    }
+}
