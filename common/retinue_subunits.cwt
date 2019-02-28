@@ -27,7 +27,10 @@ types = {
         }
 
         #subtype[special_troops] = {
-
+        #    first_type = 6
+        #}
+        #subtype[special_troops] = {
+        #    second_type = 6
         #}
 
         subtype[gold_cost] = {
@@ -75,9 +78,11 @@ retinue_subunit = {
     ### The cost of the retinue. Gold by default, costs_piety = yes or costs_prestige = yes for other resources.
     hire_cost = float
 
-    ## cardinality = 0..1
-    ### What special troop type to use for this retinue. Required if and only if first_type = 6 or second_type = 6.
-    special_troops = <special_troop_type>
+    #subtype[special_troops] = {
+        ## cardinality = 0..1
+        ### What special troop type to use for this retinue. Required if and only if first_type = 6 or second_type = 6.
+        special_troops = <special_troop_type>
+    #}
 
     subtype[gold_cost] = {
         ## cardinality = 0..0
