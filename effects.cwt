@@ -261,7 +261,7 @@ alias[effect:add_to_bloodline] = bloodline
 
 ## scope = character
 ### Adds a trait to the character, using an ID from the traits files. Also see remove_trait.
-alias[effect:add_trait] = trait
+alias[effect:add_trait] = <trait>
 
 ## scope = character
 ###
@@ -677,7 +677,7 @@ alias[effect:remove_title] = job/minor_title
 
 ## scope = character
 ### Removes a trait, also see add_trait.
-alias[effect:remove_trait] = trait
+alias[effect:remove_trait] = <trait>
 
 ## scope = character
 ### Stop a character to be tributary to its suzerain.

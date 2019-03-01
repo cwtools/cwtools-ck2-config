@@ -1658,7 +1658,7 @@ alias[trigger:trade_route_control] = clause
 
 ## scope = character
 ### Checks if the character has this trait
-alias[trigger:trait] = string
+alias[trigger:trait] = <trait>
 
 ## scope = character
 ###
