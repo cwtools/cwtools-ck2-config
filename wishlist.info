@@ -7,3 +7,4 @@
 - For property = int a "## frame_of_gfx_resource = <gfx_resource>" or something like that to make sure that the int is within [1..noOfFrames] for the gfx_resource.
 - When adding a new member of a type, automatically add the "required" fields (cardinality equal to some fixed number above 0) like with aliases.
 - For nested types in the localisation block - a variable for the parent type name (alternate starts need that if I'm doing options as types)
+- Using define values in comments (### Default is [DEFINE].), cardinality (cardinality = define1..define3) and value bounds (int[0..define]).
