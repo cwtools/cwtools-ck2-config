@@ -63,17 +63,17 @@ building = {
     replaces = <building>
 
     ## cardinality = 0..1
-    ## replace_scope = { this = province root = province from = character fromfrom = title}
+    ## replace_scope = { this = province root = province from = character fromfrom = title }
     ### Conditions for the building to be constructible. If not met, an icon will show up in place of the build button showing what's missing.
     trigger = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
     ## cardinality = 0..1
-    ## replace_scope = { this = province root = province from = character fromfrom = title}
+    ## replace_scope = { this = province root = province from = character fromfrom = title }
     ### Conditions for the building to apply its effects. Defaults to always active.
     is_active_trigger = {
-        alias_name[trigger] = alias_match_left[trigger]        
+        alias_name[trigger] = alias_match_left[trigger]
     }
 
     ## cardinality = 0..1
@@ -132,7 +132,7 @@ building = {
     ## cardinality = 0..1
     ### Modifies the AI creation factor by this value if the AI is republican or tribal striving to be republican.
     ai_republic_modifier = int
-    
+
     ## cardinality = 0..1
     ### On new game, this building will be pre-built in an eligible province if it has higher tech than [this value] + [trigger requirements] + [rand(0-1)]
     extra_tech_building_start = float
