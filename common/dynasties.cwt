@@ -3,9 +3,9 @@ types = {
         path_strict = yes
         path = "game/common/dynasties"
 
-        #localisation = {
-        #   name = name field
-        #}
+        localisation = {
+            name = name
+        }
     }
 }
 

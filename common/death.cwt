@@ -5,6 +5,8 @@ types = {
 
         localisation = {
             description = "$"
+            long_description = long_desc
+            death_date_description = death_date_desc
         }
     }
 }

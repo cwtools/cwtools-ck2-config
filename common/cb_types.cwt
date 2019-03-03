@@ -15,11 +15,9 @@ types = {
         }
 
         localisation = {
-            ## optional
-            name = "CB_NAME_$"
+            name = name
             description = "$_desc"
-            ## optional
-            war_name = "WAR_NAME_$"
+            war_name = war_name
         }
     }
 }

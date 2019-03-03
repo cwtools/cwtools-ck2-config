@@ -5,15 +5,10 @@ types = {
         path = "game/common/tributary_types"
 
         localisation = {
-            ## optional
-            name = "TRIBUTARY_$_NAME"
-            ## optional
-            plural = "TRIBUTARY_$_PLURAL"
-            ## optional
-            suzerain = "SUZERAIN_$_NAME"
-            # TODO: Once referring to specific keys in loc is done, change this
-            ## optional
-            tribute = "TRIBUTARY_$_TRIBUTE"
+            name = tributary_name
+            plural_name = tributary_plural
+            suzerain = suzerain_name
+            tribute = tribute_name
         }
     }
     ## type_key_filter = none

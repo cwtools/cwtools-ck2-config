@@ -5,8 +5,7 @@ types = {
 
         localisation = {
             name = "$"
-            ## optional
-            description = "$_INFO"
+            description = tooltip
         }
     }
 }

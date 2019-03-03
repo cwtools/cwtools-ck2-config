@@ -10,18 +10,8 @@ types = {
             era = no
         }
         localisation = {
-            subtype[era] = {
-                ## optional
-                name = "$_ERA"
-                ## optional
-                description = "$_ERA_INFO"
-            }
-            subtype[regular] = {
-                ## optional
-                name = "$"
-                ## optional
-                description = "$_INFO"
-            }
+            name = name
+            description = desc
         }
     }
 }

@@ -6,7 +6,7 @@ types = {
         name_field = name
 
         localisation = {
-            name = "$"
+            name = name
         }
     }
 }
