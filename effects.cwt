@@ -1,131 +1,218 @@
+# TODO: possibly scope[offmap]?
+# TODO: <offmap_dislike> matching the <offmap>.
+## scope = any
+### Sets the dislike of the specified offmap power to the specified type.
+alias[effect:set_offmap_dislike] = {
+    offmap = <offmap>
+    type = <offmap_dislike> 
+}
 
-## scope = ?
-### Sets the dislike of the specifiedÂ offmapÂ power to the specifiedÂ type. May use ""random"" to switch to a random dislike.
-alias[effect:set_offmap_dislike] = clause
+# TODO: possibly scope[offmap]?
+## scope = any
+### Sets the dislike of the specified offmap power to a random type available to it.
+alias[effect:set_offmap_dislike] = {
+    offmap = <offmap>
+    type = random
+}
 
-## scope = ?
-### Sets the like of the specifiedÂ offmapÂ power to the specifiedÂ type. May use ""random"" to switch to a random like.
-alias[effect:set_offmap_like] = clause
+# TODO: possibly scope[offmap]?
+# TODO: <offmap_like> matching the <offmap>.
+## scope = any
+### Sets the dislike of the specified offmap power to the specified type.
+alias[effect:set_offmap_like] = {
+    offmap = <offmap>
+    type = <offmap_like> 
+}
+
+TODO: possibly scope[offmap]?
+## scope = any
+### Sets the dislike of the specified offmap power to a random type available to it.
+alias[effect:set_offmap_like] = {
+    offmap = <offmap>
+    type = random
+}
 
 ## scope = any
-### Activate aÂ disease, which can now randomly appear. Note that there's no way to deactivate a disease.
-alias[effect:activate_disease] = disease
+### Activate a disease, which can now randomly appear. Note that there's no way to deactivate a disease.
+alias[effect:activate_disease] = <disease>
 
+# TODO: possibly scope[title]?
 ## scope = any
 ### Activate/deactivate a titular or de jure landed title. Unlike destroyed titles (destroy_landed_title), deactivated titles cannot be re-created by the player or AI, except through special decisions.
-alias[effect:activate_title] = clause
+alias[effect:activate_title] = {
+    title = <title>
+    status = bool
+}
 
 ## scope = any
-### Deletes a previously saved variable
+### Deletes a previously saved variable.
 alias[effect:clear_event_target] = var
 
 ## scope = any
-### Deletes a previously saved global variable
-alias[effect:clear_global_event_target] = var
+### Deletes a previously saved global variable.
+alias[effect:clear_global_event_target] = value[global_variable]
 
 ## scope = any
-### Deletes all previously saved global variables
-alias[effect:clear_global_event_targets] = bool
+### Deletes all previously saved global variables.
+alias[effect:clear_global_event_targets] = yes
 
 ## scope = any
-###
-alias[effect:clr_global_flag] = flag
+### Clears a previously set global flag.
+alias[effect:clr_global_flag] = value[global_flag]
+
+# TODO: possibly scope[religion]?
+## scope = any
+### Enables dynamically prepared invasions for that religion (the allow_viking_invasion property). Also see disable_prepared_invasion.
+alias[effect:enable_prepared_invasion] = <religion>
 
 ## scope = any
-### Enables dynamically prepared invasions for that religion withÂ allow_viking_invasionflag. Also seeÂ disable_prepared_invasion.
-alias[effect:enable_prepared_invasion] = religion
+### Logs the given string for debug purposes into game.log. Localisation commands can be used normally in the string. Can even be used within event triggers and other places that normally only accept conditionals, such as if limit. Only logs if the game is started with the "-scriptlog" parameter.
+alias[effect:log] = scalar
 
 ## scope = any
-### Logs for debug purposes intoÂ game.log.Â Localisation commandsÂ can be used normally in the string. Can even be used within event triggers and other places that normally only accept conditionals, such as if limit. Only logs if the game is started with the ""-scriptlog"" parameter.
-alias[effect:log] = string
+### Logs a list of all event targets set, and what each scope corresponds to intoÂ game.log. Only logs if the game is started with the "-scriptlog" parameter.
+alias[effect:log_scopes] = yes
 
+# TODO: see if additive modifiers work
 ## scope = any
-### Logs a list of all event targets set, and what each scope corresponds to intoÂ game.log. Only logs if the game is started with the ""-scriptlog"" parameter.
-alias[effect:log_scopes] = bool[?]
+### An effect that might execute or not based on random chance.
+alias[effect:random] = {
+    ### Basic chance is equal to [value]%.
+    chance = int
 
+    ## cardinality = 0..inf
+    alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+
+    ## cardinality = 1..inf
+    alias_name[effect] = alias_match_left[effect]
+}
+
+# TODO: see if additive modifiers work
 ## scope = any
-###
-alias[effect:random] = clause
+### A list of different effects, one of which will be selected to execute based on each entry's weight (left hand side).
+alias[effect:random_list] = {
+    ## cardinality = 2..inf
+    int = {
+        ## cardinality = 0..inf
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
 
-## scope = any
-###
-alias[effect:random_list] = clause
+        ## cardinality = 1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+}
 
+# TODO: check scope
 ## scope = any
 ### Recalculates the succession.
-alias[effect:recalc_succession] = bool
+alias[effect:recalc_succession] = yes
 
+# TODO: make different versions for different events, because character_event and province_event are different and scopes and stuff
 ## scope = any
-### Fires an event, without modifying theÂ event chainÂ (i.e ROOT and FROM remain unchanged). Note that it will fire the event whose id is specified, and not necessarily the current event again. SeeÂ event modding.
-alias[effect:repeat_event] = clause
+### Fires an event, without modifying the event chain (i.e ROOT and FROM remain unchanged). Note that it will fire the event whose id is specified, and not necessarily the current event again. See event modding.
+alias[effect:repeat_event] = {
+    ### id of the event to fire.
+    id = <event>
+
+    ## cardinality = 0..1
+    ### Base number of days to wait before firing the event. If not specified (or 0), event occurs instantly.
+    days = int
+
+    ## cardinality = 0..1
+    ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
+    random = int
+
+    ## cardinality = 0..1
+    ### Localisation key to show as tooltip. If not specified, uses the DEFAULT_SENDEVENT_EVENTOPTION_TOOLTIP key ("Character receives an event").
+    tooltip = localisation
+}
 
 ## scope = any
 ### Saves a scope into a variable, to be re-used later in an event chain
-alias[effect:save_event_target_as] = var
+alias[effect:save_event_target_as] = TODO
 
 ## scope = any
 ### Saves a scope into a global variable, to be re-used later
-alias[effect:save_global_event_target_as] = var
+alias[effect:save_global_event_target_as] = TODO
 
 ## scope = any
-### Creates a globalÂ flag.
-alias[effect:set_global_flag] = flag
+### Creates a global flag.
+alias[effect:set_global_flag] = value_set[global_flag]
 
+# TODO: possibly scope[religion]?
 ## scope = any
-### Religion becomes an heresy of new parent religion
-alias[effect:set_parent_religion] = clause
+### Religion becomes a heresy of new parent religion.
+alias[effect:set_parent_religion] = {
+    religion = <religion>
+    parent = <religion>
+}
 
 ## scope = any
 ### Plays the specified sound, as defined in interface/sound.sfx
-alias[effect:sound_effect] = sound
+alias[effect:sound_effect] = TODO
 
 ## scope = any
 ### Forces an outbreak, but follows the scenarios set up in the disease.txt file.
-alias[effect:start_outbreak] = disease
+alias[effect:start_outbreak] = <disease>
 
 ## scope = any
-###
-alias[effect:trigger_switch] = clause
+### Based on the evaluation of a simple (non-clause right-hand side) trigger, selects up to one of the results to happen.
+alias[effect:trigger_switch] = {
+    ### The LHS trigger to check.
+    on_trigger = alias_name[trigger]
+
+    ## cardinality = 1..inf
+    ### The RHS option.
+    howdoidothis = {
+        ## cardinality = 1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 0..1
+    ### The option to pick if none of the previous options match.
+    fallback = {
+        ## cardinality = 1..inf
+        alias_name[effect] = alias_match_left[effect]
+    }
+}
 
 ## scope = any
-### Bypasses some error-checking in destroy title, allowing to destroy landless titles. Warning: use this effect with careÂ !
-alias[effect:unsafe_destroy_landed_title] = title
-
-## scope = any
-### Bypasses some error-checking in destroy title, allowing to destroy landless titles. Warning: use this effect with careÂ !
-alias[effect:unsafe_destroy_landed_title] = title
+### Bypasses some error-checking in destroy title, allowing to destroy landless titles. Warning: use this effect with care!
+alias[effect:unsafe_destroy_landed_title] = scope[title]
 
 ## scope = any with flags
 ### Clears the given flag from the current scope. Works for any scope that can store flags, unlike the more specific clr_scope_flag commands.
-alias[effect:clr_flag] = flag
+alias[effect:clr_flag] = TODO
 
 ## scope = any with flags
 ### Sets a flag in the current scope if it can store flags. Works for any such scope, unlike the more specific set_scope_flag commands.
-alias[effect:set_flag] = flag
+alias[effect:set_flag] = TODO
 
 ## scope = artifact
-###
-alias[effect:clr_artifact_flag] = flag
+### Clears a flag in the currently scoped artifact.
+alias[effect:clr_artifact_flag] = value[artifact_flag]
 
 ## scope = artifact
 ### Copies the artifact history from the given artifact to the scoped artifact.
-alias[effect:copy_artifact_history] = artifact
+alias[effect:copy_artifact_history] = scope[artifact]
 
 ## scope = artifact
-###
-alias[effect:set_artifact_flag] = flag
+### Sets a flag in the currently scoped artifact.
+alias[effect:set_artifact_flag] = value_set[artifact_flag]
 
 ## scope = artifact
-### Sets the original owner of the artifact
-alias[effect:set_artifact_original_owner] = character
+### Sets the original owner of the artifact.
+alias[effect:set_artifact_original_owner] = scope[character]
 
 ## scope = artifact
 ### Changes the original owner of an artifact.
-alias[effect:set_original_owner] = character
+alias[effect:set_original_owner] = scope[character]
 
 ## scope = artifact
 ### Transfers the artifact from one character to another. If from does not have the artifact, it will not be transferred.
-alias[effect:transfer_artifact] = clause
+alias[effect:transfer_artifact] = {
+    from = scope[character]
+    to = scope[character]
+}
 
 ## scope = artifact/bloodline
 ### Changes the description of the scoped to artifact or bloodline to the given string/localisation key. All custom localisation is resolved when set, so the description will not change once set. Can be reset by setting it to the blank string """".
