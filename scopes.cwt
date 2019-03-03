@@ -3,3 +3,25 @@
 #CWTools magic scope
 alias[trigger:scope_field] = { alias_name[trigger] = alias_match_left[trigger] }
 alias[effect:scope_field] = { alias_name[effect] = alias_match_left[effect] }
+
+## scope = any
+alias[effect:if] = {
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+alias[effect:else_if] = {
+	## severity = info
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
+	alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+alias[effect:else] = {
+	alias_name[effect] = alias_match_left[effect]
+}
