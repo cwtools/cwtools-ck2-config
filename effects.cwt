@@ -154,6 +154,7 @@ alias[effect:sound_effect] = TODO
 ### Forces an outbreak, but follows the scenarios set up in the disease.txt file.
 alias[effect:start_outbreak] = <disease>
 
+# TODO: implement validation
 ## scope = any
 ### Based on the evaluation of a simple (non-clause right-hand side) trigger, selects up to one of the results to happen.
 alias[effect:trigger_switch] = {
@@ -162,7 +163,7 @@ alias[effect:trigger_switch] = {
 
     ## cardinality = 1..inf
     ### The RHS option.
-    howdoidothis = {
+    scalar = {
         ## cardinality = 1..inf
         alias_name[effect] = alias_match_left[effect]
     }
@@ -214,121 +215,182 @@ alias[effect:transfer_artifact] = {
     to = scope[character]
 }
 
-## scope = artifact/bloodline
-### Changes the description of the scoped to artifact or bloodline to the given string/localisation key. All custom localisation is resolved when set, so the description will not change once set. Can be reset by setting it to the blank string """".
-alias[effect:set_description] = string
+## scope = artifact
+### Resets the description of the scoped to artifact.
+alias[effect:set_description] = ""
 
-## scope = artifact/character
+## scope = artifact
+### Changes the description of the scoped to artifact to the given localisation key. All custom localisation is resolved when set, so the description will not change once set.
+alias[effect:set_description] = localisation
+
+## scope = artifact
+### Changes the description of the scoped to artifact to the given string. All custom localisation is resolved when set, so the description will not change once set.
+alias[effect:set_description] = scalar
+
+## scope = bloodline
+### Resets the description of the scoped to bloodline.
+alias[effect:set_description] = ""
+
+## scope = bloodline
+### Changes the description of the scoped to bloodline to the given localisation key. All custom localisation is resolved when set, so the description will not change once set.
+alias[effect:set_description] = localisation
+
+## scope = bloodline
+### Changes the description of the scoped to bloodline to the given string. All custom localisation is resolved when set, so the description will not change once set.
+alias[effect:set_description] = scalar
+
+## scope = artifact
 ### Destroys the artifact, even if indestructible.
-alias[effect:unsafe_destroy_artifact] = bool/artifact
+alias[effect:unsafe_destroy_artifact] = yes
 
-## scope = artifact/society/offmap
-###
-alias[effect:] =
+# TODO see if scope[artifact] works
+## scope = any
+### Destroys the artifact, even if indestructible.
+alias[effect:unsafe_destroy_artifact] = <artifact>
 
-## scope = artifact/society/offmap
-###
-alias[effect:] =
-
-## scope = battle/unit?
-### Totally ignores the triggers or phases. If the tactic has a phase change part then that part will be acknowledged however.[5]
-alias[effect:set_flank_tactic] = tactic?
+# TODO Confirm it works that way
+## scope = unit
+### Changes the current tactic of the unit. Totally ignores the triggers or phases. If the tactic has a phase change part then that part will be acknowledged however.
+alias[effect:set_flank_tactic] = <combat_tactic>
 
 ## scope = bloodline
 ### Add the specified character to the scoped bloodline
-alias[effect:add_bloodline_member] = character
+alias[effect:add_bloodline_member] = scope[character]
 
 ## scope = bloodline
 ### Removes a script flag from the scoped bloodline
-alias[effect:clr_bloodline_flag] = flag
+alias[effect:clr_bloodline_flag] = value[bloodline_flag]
 
 ## scope = bloodline
-### Removed the scoped bloodline from the game
-alias[effect:destroy_bloodline] = bool
+### Removed the scoped bloodline from the game.
+alias[effect:destroy_bloodline] = yes
 
 ## scope = bloodline
-### Remove the specified character from the scoped bloodline
+### Remove the specified character from the scoped bloodline.
 alias[effect:remove_bloodline_member] = character
 
 ## scope = bloodline
-### Adds a script flag to the scoped bloodline
-alias[effect:set_bloodline_flag] = flag
+### Adds a script flag to the scoped bloodline.
+alias[effect:set_bloodline_flag] = value_set[bloodline_flag]
 
 ## scope = character
 ### Abdicate to current heir
-alias[effect:abdicate] = bool/clause
+alias[effect:abdicate] = yes
+
+# TODO: Figure out what the clause does.
+## scope = character
+### Abdicate to current heir
+alias[effect:abdicate] = {
+    move = no
+}
 
 ## scope = character
-### Abdicate to an arbitrary character.Â 
-alias[effect:abdicate_to] = character
+### Abdicate to an arbitrary character.
+alias[effect:abdicate_to] = scope[character]
 
+# TODO: Figure out
 ## scope = character
-###
-alias[effect:abdicate_to_most_liked_by] = character
+### UNKNOWN
+alias[effect:abdicate_to_most_liked_by] = scope[character]
 
 ## scope = character
 ### For plots activated by decision
-alias[effect:activate_plot] = bool
+alias[effect:activate_plot] = yes
 
 ## scope = character
 ### Adds the given value to the age of the scoped character. Warning: messing with a character's age may have unintended side effects so use with caution.
 alias[effect:add_age] = int
 
 ## scope = character
-### Creates an alliance between characters. Also seeÂ break_alliance.
-alias[effect:add_alliance] = clause
+### Creates an alliance between characters. Also see break_alliance.
+alias[effect:add_alliance] = {
+    who = scope[character]
+    alias_name[duration] = alias_match_left[duration]
+}
 
 ## scope = character
 ###
-alias[effect:add_ambition] = ambition
+alias[effect:add_ambition] = TODO
 
 ## scope = character
-### A copy of the named artifact is created and added to the scoped character
-alias[effect:add_artifact] = artifact
+### A copy of the named artifact is created and added to the scoped character.
+alias[effect:add_artifact] = <artifact>
 
 ## scope = character
 ### Warn: buggy behavior
-alias[effect:add_betrothal] =
+alias[effect:add_betrothal] = TODO
 
+# TODO: pay attention to the type for name field, might be wrong
+# TODO: Also write an alias for "either duration = -1 or days/months/years"
+# TODO: docs.
 ## scope = character
-### Adds aÂ character modifier. Specify duration usingÂ days,Â months,Â years, orÂ duration = -1Â (non-expiring). Can use optional fieldsÂ hidden = yesÂ andÂ stacking = yes.
-alias[effect:add_character_modifier] = clause
+### Adds a character modifier. Specify duration using days, months, years, or duration = -1 (non-expiring). Can use optional fields hidden = yes and stacking = yes.
+alias[effect:add_character_modifier] = {
+    name = <event_modifier>
+    ## cardinality = 0..1
+    duration = -1
+    ## cardinality = 0..1
+    alias_name[duration] = alias_match_left[duration]
+    ## cardinality = 0..1
+    hidden = bool
+    ## cardinality = 0..1
+    stacking = bool
+}
 
 ## scope = character
 ### Adds the given character as a consort to the scoped character.
-alias[effect:add_consort] = character
+alias[effect:add_consort] = scope[character]
 
 ## scope = character
-### Makes scoped character be owed a favor toward another character. Also seeÂ reverse_add_favor.
-alias[effect:add_favor] = character
+### Makes scoped character be owed a favor toward another character. Also see reverse_add_favor.
+alias[effect:add_favor] = scope[character]
+
+# TODO: Confirm
+## scope = character
+### UNCONFIRMED Makes the scoped character a friend of the given character.
+alias[effect:add_friend] = scope[character]
+
+# TODO: Confirm
+## scope = character
+### UNCONFIRMED Makes the scoped character a lover of the given character.
+alias[effect:add_lover] = scope[character]
 
 ## scope = character
 ###
-alias[effect:add_friend] = character
+alias[effect:add_objective] = TODO
 
+# TODO see if scope[offmap] works
 ## scope = character
-###
-alias[effect:add_lover] = character
-
-## scope = character
-###
-alias[effect:add_objective] = objective
-
-## scope = character
-### Adds the specifiedÂ valueÂ of offmap currency for the specifiedÂ offmapÂ power to the scoped character. Use a negative number to subtract.
-alias[effect:add_offmap_currency] = clause
+### Adds the specified amount of offmap currency for the specified offmap power to the scoped character. Use a negative number to subtract.
+alias[effect:add_offmap_currency] = {
+    offmap = <offmap>
+    value = int
+}
 
 ## scope = character
 ### Adds or subtracts a portion of the scope's population.
-alias[effect:add_population_scaled] = double
+alias[effect:add_population_scaled] = float
 
 ## scope = character
-### Adds an education /trait matching specified attribute or level.
-alias[effect:add_random_education_trait] = attribute/1/2/3/4/yes
+### Adds an education trait matching specified attribute.
+alias[effect:add_random_education_trait] = enum[attributes]
 
+# TODO: see if int is really strictly 1..4
 ## scope = character
-###
-alias[effect:add_rival] = character
+### Adds an education trait matching specified level.
+alias[effect:add_random_education_trait] = int[1..4]
+
+# TODO: Confirm
+## scope = character
+### Adds a random education trait.
+alias[effect:add_random_education_trait] = yes
+
+# TODO: Confirm
+## scope = character
+### UNCONFIRMED Makes the scoped character a rival of the given character.
+alias[effect:add_rival] = scope[character]
+
+# STOPPED HERE
 
 ## scope = character
 ### Adds a timed modifier to the society of scoped character. Works with days and years.
