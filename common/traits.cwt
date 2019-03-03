@@ -12,6 +12,10 @@ types = {
             customizer = yes
         }
 
+        subtype[cached] = {
+            cached = yes
+        }
+
         subtype[hidden_same_trait] = {
             same_trait_visibility = yes
             ## cardinality = 0..0
