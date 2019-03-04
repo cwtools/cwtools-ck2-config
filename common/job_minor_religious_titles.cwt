@@ -18,10 +18,10 @@ types = {
         path = "game/common/minor_titles"
         path = "game/common/religious_titles"
 
-        subtype[religious_title] = {
+        subtype[religious] = {
             religion = <religion>
         }
-        subtype[job_title] = {
+        subtype[job] = {
             enum[is_jobs] = yes
         }
 
@@ -93,7 +93,7 @@ minor_title = {
         alias_name[effect] = alias_match_left[effect]
     }
 
-    subtype[!job_title] = {
+    subtype[!job] = {
         ## cardinality = 0..1
         ### If yes, a notification will be shown if the player doesn't have all the slots of this title filled. Defaults to "no".
         is_high_prio = bool
@@ -148,7 +148,7 @@ minor_title = {
         message = bool
     }
 
-    subtype[religious_title] = {
+    subtype[religious] = {
         ### Which religion this is a religious title of.
         religion = <religion>
 
@@ -164,7 +164,7 @@ minor_title = {
         }
     }
 
-    subtype[job_title] = {
+    subtype[job] = {
         ### Which job this job title counts as.
         enum[is_jobs] = yes
 

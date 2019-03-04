@@ -62,7 +62,7 @@ alias[effect:clr_global_flag] = value[global_flag]
 
 # TODO: possibly scope[religion]?
 ## scope = any
-### Enables dynamically prepared invasions for that religion (the allow_viking_invasion property). Also see disable_prepared_invasion.
+### Enables prepared invasions for that religion (the allow_viking_invasion property). Also see disable_prepared_invasion.
 alias[effect:enable_prepared_invasion] = <religion>
 
 ## scope = any
@@ -70,7 +70,7 @@ alias[effect:enable_prepared_invasion] = <religion>
 alias[effect:log] = scalar
 
 ## scope = any
-### Logs a list of all event targets set, and what each scope corresponds to intoÂ game.log. Only logs if the game is started with the "-scriptlog" parameter.
+### Logs a list of all event targets set, and what each scope corresponds to into game.log. Only logs if the game is started with the "-scriptlog" parameter.
 alias[effect:log_scopes] = yes
 
 # TODO: see if additive modifiers work
@@ -459,342 +459,525 @@ alias[effect:break_betrothal] = scope[character]
 ### UNCONFIRMED Cancels the current ambition of the scoped character.
 alias[effect:cancel_ambition] = yes
 
-# STOPPED HERE
-
+# TODO: Figure out
 ## scope = character
-###
-alias[effect:cancel_job_action] = job_action
+### UNKNOWN
+alias[effect:cancel_job_action] = <job_action>
 
 ## scope = character
 ### Outdated, now cancel_objective/cancel_plot
-alias[effect:cancel_objective] = objective
+alias[effect:cancel_objective] = TODO
 
 ## scope = character
 ###
-alias[effect:cancel_plot] = plot
+alias[effect:cancel_plot] = TODO
 
 ## scope = character
 ### Ends a character's pregnancy instantaneously. Can be called at any time during pregnancy prior to birth. If pregnancy notification is to be avoided, must be called earlier than 2 months pregnancy.
-alias[effect:cancel_pregnancy] = bool
+alias[effect:cancel_pregnancy] = yes
 
 ## scope = character
-### Moves the capital
-alias[effect:capital] = province
+### Moves the capital.
+alias[effect:capital] = <province>
 
 ## scope = character
-### Changes base diplomacy stat. Negative decreases base diplomacy but will not decrease base diplomacy below 0
+### Changes base diplomacy stat. Will not decrease base stat below 0.
 alias[effect:change_diplomacy] = int
 
 ## scope = character
-### Add or remove threat from a character.
-alias[effect:change_infamy] = clause
-
-## scope = character
-### Changes base intrigue stat. Negative decreases base intrigue but will not decrease base intrigue below 0
-alias[effect:change_intrigue] = int
-
-## scope = character
-### Changes base learning stat. Negative decreases base learning but will not decrease base learning below 0
-alias[effect:change_learning] = int
-
-## scope = character
-### Changes base martial stat. Negative decreases base martial but will not decrease base martial below 0
+### Changes base martial stat. Will not decrease base stat below 0.
 alias[effect:change_martial] = int
 
 ## scope = character
-### Add the specified amount of plot power to the plot owned by the scoped characters.
-alias[effect:change_plot_power] = int
-
-## scope = character
-### Changes the currency of scope character in their society. Can optionally specify parameters for the society to change the currency of and to scale the currency changed by the society influence, reducing the amount of currency consumed (or given, but is intended for the former) by 70% when the society is at 100% influence, going linearly from 0% at 0%.
-alias[effect:change_society_currency] = int/clause
-
-## scope = character
-### Changes base stewardship stat. Negative decreases base stewardship but will not decrease base stewardship below 0
+### Changes base stewardship stat. Will not decrease base stat below 0.
 alias[effect:change_stewardship] = int
 
 ## scope = character
-### Fires an event to scoped character. SeeÂ event modding.
-alias[effect:character_event] = clause
+### Changes base intrigue stat. Will not decrease base stat below 0.
+alias[effect:change_intrigue] = int
 
 ## scope = character
-### Parameters: entry, portrait, picture
-alias[effect:chronicle] = clause
+### Changes base learning stat. Will not decrease base stat below 0.
+alias[effect:change_learning] = int
+
+## scope = character
+### Add or remove threat from a character.
+alias[effect:change_infamy] = {
+    value = float
+    ### Key for the localisation entry for the character's threat tooltip.
+    localisation = localisation
+}
+
+## scope = character
+### Add the specified amount of plot power to the plot owned by the scoped character.
+alias[effect:change_plot_power] = int
+
+## scope = character
+### Changes the currency of the scoped character in their society.
+alias[effect:change_society_currency] = int
+
+## scope = character
+### Changes the currency of the scoped character in their society, reducing the amount of currency consumed (or given, but is intended for the former) by 70% when the society is at 100% influence, going linearly from 0% at 0%.
+alias[effect:change_society_currency] = {
+    society = <society>
+    value = int
+    scaled_by_influence = yes
+}
+
+# TODO: See if months works
+## scope = character
+### Fires an event to scoped character.
+alias[effect:character_event] = {
+    id = <event.character>
+
+    ## cardinality = 0..1
+    ### How many days to delay.
+    days = int
+
+    ## cardinality = 0..1
+    ### How many years to delay.
+    years = int
+
+    ## cardinality = 0..1
+    ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
+    random = int
+
+    ## cardinality = 0..1
+    ### Tooltip for the effect. If not specified, uses the DEFAULT_SENDEVENT_EVENTOPTION_TOOLTIP key ("Character receives an event").
+    tooltip = localisation
+}
+
+# TODO: Elaborate.
+## scope = character
+### Records a chronicle entry.
+alias[effect:chronicle] = {
+    entry = localisation
+
+    ## cardinality = 0..1
+    portrait = TODO # localisation as scalar?
+
+    ## cardinality = 0..1
+    picture = <gfx_resource>
+}
 
 ## scope = character
 ### Removes all opinion modifiers allowing the scoped character to banish the given character. Doesn't clear ongoing reasons like excommunication.
-alias[effect:clear_banish_reasons] = character
+alias[effect:clear_banish_reasons] = scope[character]
 
 ## scope = character
-### Removes all traits with theÂ education = yesÂ parameter.
-alias[effect:clear_education_trait] = bool
+### Removes all traits with the education = yes parameter.
+alias[effect:clear_education_trait] = yes
 
 ## scope = character
 ### Removes all opinion modifiers allowing the scoped character to execute the given character. Doesn't clear ongoing reasons like excommunication.
-alias[effect:clear_execute_reasons] = character
+alias[effect:clear_execute_reasons] = scope[character]
 
 ## scope = character
-### Removes the focus of a character. Also seeÂ set_focus.
-alias[effect:clear_focus] = bool
+### Removes the focus of a character. Also see set_focus.
+alias[effect:clear_focus] = yes
 
 ## scope = character
 ### Removes all opinion modifiers allowing the scoped character to imprison the given character. Doesn't clear ongoing reasons like excommunication.
-alias[effect:clear_prison_reasons] = character
+alias[effect:clear_prison_reasons] = scope[character]
 
 ## scope = character
 ### Removes all opinion modifiers allowing the scoped character to revoke the given character's titles. Doesn't clear ongoing reasons like excommunication.
-alias[effect:clear_revoke_reasons] = character
+alias[effect:clear_revoke_reasons] = scope[character]
 
 ## scope = character
 ### Removes the scoped character's secret religion.
-alias[effect:clear_secret_religion] = bool
+alias[effect:clear_secret_religion] = yes
 
 ## scope = character
-### Sets wealth of character to 0. Can be used after transfer of money viaÂ wealthÂ command.
-alias[effect:clear_wealth] = bool/character
+### Sets wealth of the scoped character to 0.
+alias[effect:clear_wealth] = yes
+
+## scope = any
+### Sets wealth of the given character to 0.
+alias[effect:clear_wealth] = scope[character]
 
 ## scope = character
-###
-alias[effect:clr_character_flag] = flag
+### Clears a previously set flag in the scoped character.
+alias[effect:clr_character_flag] = value[character_flag]
 
 ## scope = character
 ### Resets the character's revealed society.
-alias[effect:clr_discovered_society] = bool
+alias[effect:clr_discovered_society] = yes
 
 ## scope = character
-### Removes any quest with that name (and from that society, if the society name is present) belonging to the scoped character. Can optionally specify a failure parameter, considered a success otherwise.
-alias[effect:clr_quest] = bool/clause
+### Removes any quest with that name belonging to the scoped character, considered a success.
+alias[effect:clr_quest] = value[quest]
+
+## scope = character
+### Removes any quest with that name (and from that society, if the society name is present) belonging to the scoped character, considered a failure.
+alias[effect:clr_quest] = {
+    ## cardinality = 0..1
+    society = <society>
+    id = value[quest]
+    failure = yes
+}
 
 ## scope = character
 ### Clears the target of the specified quest belonging to the scoped character. Does not clear the quest itself.
-alias[effect:clr_quest_target] = quest_id
+alias[effect:clr_quest_target] = value[quest]
 
 ## scope = character
-### Sets the scoped character's public religion to his/her secret religion, or to the target character's secret religion if a scope is used.
-alias[effect:convert_to_secret_religion] = bool/character
+### Sets the scoped character's public religion to their secret religion.
+alias[effect:convert_to_secret_religion] = yes
 
 ## scope = character
-###
-alias[effect:copy_random_personality_trait] = character
+### Sets the scoped character's public religion to the given character's secret religion.
+alias[effect:convert_to_secret_religion] = scope[character]
 
+# TODO: Confirm
 ## scope = character
-### Scoped characters founds a new bloodline of the specified type
-alias[effect:create_bloodline] = clause
+### UNCONFIRMED Copies a random trait with personality = yes from the given character.
+alias[effect:copy_random_personality_trait] = scope[character]
+
+# TODO: Probably scope[religion] but we'll see.
+## scope = character
+### Scoped character founds a new bloodline of the specified type.
+alias[effect:create_bloodline] = {
+    type = <bloodline>
+
+    ## cardinality = 0..1
+    ### Associates the bloodline with a religion, connecting it with the religion view.
+    religion = <religion>
+
+    ## cardinality = 0..1
+    ### Associates the bloodline with a society, connecting it with the society view.
+    society = <society>
+
+    ## cardinality = 0..1
+    ### Overrides the base type's inheritance rules.
+    inheritance = enum[bloodline_inheritance_types]
+
+    ## cardinality = 0..1
+    ### Overrides the base type's bastard rules.
+    allow_bastards = bool
+}
 
 ## scope = character
 ### Creates the patrician family palace
-alias[effect:create_family_palace] = bool
+alias[effect:create_family_palace] = yes
 
+# TODO: Confirm
 ## scope = character
 ###
 alias[effect:culture_techpoints] = int
 
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:cure_illness] = bool
+alias[effect:cure_illness] = yes
 
 ## scope = character
-### Kills currently scoped character
-alias[effect:death] = clause
+### Kills the scoped character.
+alias[effect:death] = {
+    death_reason = <death>
 
+    # Cardinality probably depends on can_no_killer of the death reason?
+    ## cardinality = 0..1
+    killer = scope[character]
+}
+
+# TODO: Confirm
 ## scope = character
-###
+### UNCONFIRMED Changes the scoped character's decadence by this amount.
 alias[effect:decadence] = int
 
 ## scope = character
-### Also seeÂ approve_law.
-alias[effect:decline_law] = title
+### Also see approve_law.
+alias[effect:decline_law] = TODO
 
+## scope = character
+### Destroys the tradepost in the given province.
+alias[effect:destroy_tradepost] = scope[province]
+
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:destroy_tradepost] = province
+alias[effect:diplomatic_immunity] = yes
 
-## scope = character
-###
-alias[effect:diplomatic_immunity] = bool
-
-## scope = character
-### Disable dynamically theÂ allow_viking_invasionÂ characteristic of a religion. Also seeÂ enable_prepared_invasion.
-alias[effect:disable_prepared_invasion] = religion
+# TODO: possibly scope[religion]?
+## scope = any
+### Disables prepared invasions for that religion (the allow_viking_invasion property). Also see enable_prepared_invasion.
+alias[effect:disable_prepared_invasion] = <religion>
 
 ## scope = character
 ### Disbands the levies previously created with the given earmark via spawn_unit = { earmark = xxx }
-alias[effect:disband_event_forces] = earmark
+alias[effect:disband_event_forces] = value[earmark]
 
 ## scope = character
-### Sets the dynasty of scoped character. May need to been chained with recalc_succession command, if impacting succession. UseÂ dynasty = father_bastardÂ to generate a cadet dynasty,Â dynasty = mother_bastardÂ to create a bastard dynasty, orÂ dynasty = noneÂ to make the character Lowborn. Special values used in character creation (""random"", ""culture"", and ""actually_culture"") doÂ notÂ work here. When setting character dynasty in an event it only works inside of an immediate = { } block.
-alias[effect:dynasty] = id/character
+### Sets the dynasty of scoped character. May need to been chained with recalc_succession command, if impacting succession. Use dynasty = father_bastard to generate a cadet dynasty, dynasty = mother_bastard to create a bastard dynasty, or dynasty = none to make the character Lowborn. Special values used in character creation (""random"", ""culture"", and ""actually_culture"") do not work here. When setting character dynasty in an event it only works inside of an immediate = { } block.
+alias[effect:dynasty] = TODO
 
+# TODO: Confirm
 ## scope = character
 ###
 alias[effect:economy_techpoints] = int
 
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:embargo] = character
+alias[effect:embargo] = scope[character]
+
+# TODO: Confirm - bool or yes?
+## scope = character
+###
+alias[effect:excommunicate] = yes
 
 ## scope = character
 ###
-alias[effect:excommunicate] = bool
+alias[effect:faction] = TODO
 
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:faction] = faction
-
-## scope = character
-###
-alias[effect:fertility] = double
+alias[effect:fertility] = float
 
 ## scope = character
 ### Similar to move_character, but it bypasses the checks and forces the character to move. Should not be used lightly.
-alias[effect:force_host] = character
+alias[effect:force_host] = scope[character]
+
+# TODO: Confirm
+## scope = character
+###
+alias[effect:gain_all_occupied_titles] = scope[character]
+
+# TODO: Confirm scopes and whatever this does anyway
+## scope = character
+### Note: Does not work with "any_" scopes.
+alias[effect:gain_settlements_under_title] = {
+    title = scope[title]
+    enemy = scope[character]
+}
+
+# TODO: Confirm
+## scope = character
+###
+alias[effect:give_job_title] = <minor_title.job>
+
+# TODO: Confirm
+## scope = character
+###
+alias[effect:give_minor_title] = <minor_title>
+
+## scope = character
+### gives the character a nickname.
+alias[effect:give_nickname] = <nickname>
+
+# TODO: Confirm
+## scope = character
+###
+alias[effect:health] = float
+
+# TODO: Confirm
+## scope = character
+### For merchant republics.
+alias[effect:hold_election] = yes
+
+## scope = character
+### Scope gets impregnated by the character.
+alias[effect:impregnate] = scope[character]
+
+## scope = character
+### Scope gets impregnated with no specified father.
+alias[effect:impregnate] = 0
 
 ## scope = character
 ###
-alias[effect:gain_all_occupied_titles] = character
+alias[effect:impregnate_cuckoo] = TODO
 
 ## scope = character
-### Note: Does not work with ""any_"" scopes.
-alias[effect:gain_settlements_under_title] = clause
+### Scoped character will be imprisoned by target. Identical to the "prisoner" command.
+alias[effect:imprison] = scope[character]
+
+# TODO: Confirm it's "current" and not "correct" (original)
+## scope = character
+### Scoped character will be imprisoned in the current location. Identical to the "prisoner" command.
+alias[effect:imprison] = yes
 
 ## scope = character
-###
-alias[effect:give_job_title] = job
-
-## scope = character
-###
-alias[effect:give_minor_title] = minor_title
-
-## scope = character
-### gives the character a nickname
-alias[effect:give_nickname] = nickname
-
-## scope = character
-###
-alias[effect:health] = double
-
-## scope = character
-### For merchant republics
-alias[effect:hold_election] = TRUE
-
-## scope = character
-### Scope gets impregnated by the value.
-alias[effect:impregnate] = character/0
-
-## scope = character
-###
-alias[effect:impregnate_cuckoo] = character/bool
-
-## scope = character
-### Scoped character will be imprisoned by target, or imprisoned in the correct location if used with boolean yes, or released from the prison with boolean no. Identical to the `prisoner` command.
-alias[effect:imprison] = character/bool
+### Scoped character will be released from prison. Identical to the "prisoner" command.
+alias[effect:imprison] = no
 
 ## scope = character
 ### Scoped character will inherit titles of target character.
-alias[effect:inherit] = character
+alias[effect:inherit] = scope[character]
 
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:join_attacker_wars] = character
+alias[effect:join_attacker_wars] = scope[character]
 
+# TODO: Confirm
 ## scope = character
 ### Only joins one war. Cannot be used by (feudal?) vassals to join liege's war.
-alias[effect:join_defender_wars] = character
+alias[effect:join_defender_wars] = scope[character]
 
 ## scope = character
 ### Joins the faction led by the faction leader, if it exists. Also supports the optional argument
-alias[effect:join_faction] = clause
+alias[effect:join_faction] = TODO
 
 ## scope = character
 ### Joins the specified society.
-alias[effect:join_society] = society
+alias[effect:join_society] = <society>
 
 ## scope = character
 ###
-alias[effect:leave_faction] = faction/all
+alias[effect:leave_faction] = TODO
 
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:leave_plot] = character
+alias[effect:leave_plot] = scope[character]
 
 ## scope = character
 ### Makes the scoped character leave the society they are currently part of.
-alias[effect:leave_society] = bool
+alias[effect:leave_society] = yes
 
 ## scope = character
-### Fires an event to scoped character. SeeÂ event modding.
-alias[effect:letter_event] = clause
+### Fires an event to scoped character.
+alias[effect:letter_event] = {
+    id = <event.letter>
+
+    ## cardinality = 0..1
+    ### How many days to delay.
+    days = int
+
+    ## cardinality = 0..1
+    ### How many years to delay.
+    years = int
+
+    ## cardinality = 0..1
+    ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
+    random = int
+
+    ## cardinality = 0..1
+    ### Tooltip for the effect. If not specified, uses the DEFAULT_SENDEVENT_EVENTOPTION_TOOLTIP key ("Character receives an event").
+    tooltip = localisation
+}
 
 ## scope = character
-### scoped character will become primary spouse
-alias[effect:make_primary_spouse] = bool
+### The scoped character will become primary spouse.
+alias[effect:make_primary_spouse] = yes
 
 ## scope = character
-### Whoever the command is scoped from becomes the suzerain, WHO becomes the tributary and tributary_type determines what kind of tributary they are. For example, on a targetted_decision, to make the target the tributary of the decision taker, use the first example in the Example column. To make the decision taker the tributary, and the target the suzerain, use the second example. (The suzerain is the boss, the tributary is the servant). If tributary_type is omitted, it defaults to ""default"
-alias[effect:make_tributary] = clause
+### The scoped character will become a suzerain to "who".
+alias[effect:make_tributary] = {
+    ### This will become the tributary.
+    who = scope[character]
+
+    ## cardinality = 0..1
+    ### What percentage of tribute the tributary type pays to their liege. Defaults to the tributary_type's values.
+    percentage = float
+
+    ## cardinality = 0..1
+    ### Determines the suzerain-tributary relationship type. Defaults to "default".
+    tributary_type = <tributary_type>
+}
 
 ## scope = character
-### Increase/decrease manpower
+### Increase/decrease manpower.
 alias[effect:manpower] = int
 
+# TODO: Confirm
 ## scope = character
 ###
 alias[effect:military_techpoints] = int
 
 ## scope = character
-### scoped character will be moved to targeted characters court
-alias[effect:move_character] = character
+### The scoped character will be moved to targeted characters court
+alias[effect:move_character] = scope[character]
 
 ## scope = character
-### Fires an event to scoped character. SeeÂ event modding.
-alias[effect:narrative_event] = clause
+### Fires an event to scoped character.
+alias[effect:narrative_event] = {
+    id = <event.narrative>
 
+    ## cardinality = 0..1
+    ### How many days to delay.
+    days = int
+
+    ## cardinality = 0..1
+    ### How many years to delay.
+    years = int
+
+    ## cardinality = 0..1
+    ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
+    random = int
+
+    ## cardinality = 0..1
+    ### Tooltip for the effect. If not specified, uses the DEFAULT_SENDEVENT_EVENTOPTION_TOOLTIP key ("Character receives an event").
+    tooltip = localisation
+}
+
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:occupy_minors_of_occupied_settlements] = character
+alias[effect:occupy_minors_of_occupied_settlements] = scope[character]
 
 ## scope = character
-### Adds anÂ opinion modifierÂ to the scoped character towards the target character. Duration can be given inÂ monthsÂ orÂ yearsÂ (but not ""days""), or omitted to use the duration specified in the opinion modifier definition.Â origin_descriptionÂ can be used to customize localization that appears in tooltip. See alsoÂ reverse_opinion.
-alias[effect:opinion] = clause
+### Adds an opinion modifier to the scoped character towards "who".
+alias[effect:opinion] = {
+    modifier = <opinion_modifier>
 
+    who = scope[character]
+
+    ## cardinality = 0..1
+    ### Can be used to customise localisation that appears in the tooltip.
+    origin_description = localisation
+
+    ## cardinality = 0..1
+    ### Overrides the default duration of the opinion modifier.
+    alias_name[duration_my] = alias_match_left[duration_my]
+}
+
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:participation_scaled_decadence] = double
+alias[effect:participation_scaled_decadence] = float
 
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:participation_scaled_piety] = double
+alias[effect:participation_scaled_piety] = float
 
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:participation_scaled_prestige] = double
+alias[effect:participation_scaled_prestige] = float
 
 ## scope = character
-###
+### Adds the given amount of piety to the character.
 alias[effect:piety] = int
 
 ## scope = character
-### Tells the plot system to end the plot and fire theÂ effectÂ block. Note that it doesn't cause a plot to succeed, it should be used when a plot has already succeeded (successcondition block).
-alias[effect:plot_succeeds] = bool
+### Tells the plot system to end the plot and fire the effect block. Note that it doesn't cause a plot to succeed, it should be used when a plot has already succeeded (successcondition block).
+alias[effect:plot_succeeds] = yes
 
+# TODO: Confirm
 ## scope = character
 ###
 alias[effect:population] = int
 
 ## scope = character
-### Removes aÂ character modifier
-alias[effect:remove_character_modifier] = modifier
+### Removes a character modifier
+alias[effect:remove_character_modifier] = TODO
 
 ## scope = character
-### Removes a number of instances of aÂ character modifierÂ (usually a stackable one).
-alias[effect:remove_character_modifiers] = clause
+### Removes a number of instances of a character modifier (usually a stackable one).
+alias[effect:remove_character_modifiers] = TODO
+
+# STOPPED HERE
 
 ## scope = character
 ### Removes the consort/concubine relationship between the scoped and the given characters. Works in either scope.
 alias[effect:remove_consort] = character
 
 ## scope = character
-### Target character no longer owes a favor to the scoped character. Also seeÂ reverse_remove_favor.
+### Target character no longer owes a favor to the scoped character. Also see reverse_remove_favor.
 alias[effect:remove_favor] = character
 
 ## scope = character
@@ -818,7 +1001,7 @@ alias[effect:remove_lover] = character
 alias[effect:remove_nickname] = bool/nickname
 
 ## scope = character
-### Removes anÂ opinion modifier
+### Removes an opinion modifier
 alias[effect:remove_opinion] = clause
 
 ## scope = character
@@ -838,7 +1021,7 @@ alias[effect:remove_spouse] = string/bool/character
 alias[effect:remove_title] = job/minor_title
 
 ## scope = character
-### Removes a trait, also seeÂ add_trait.
+### Removes a trait, also see add_trait.
 alias[effect:remove_trait] = <trait>
 
 ## scope = character
@@ -854,7 +1037,7 @@ alias[effect:reveal_plot] = bool/character
 alias[effect:reveal_plot_w_message] = bool
 
 ## scope = character
-### Makes scoped character owe a favor to another character. Also seeÂ add_favor.
+### Makes scoped character owe a favor to another character. Also see add_favor.
 alias[effect:reverse_add_favor] = character
 
 ## scope = character
@@ -866,15 +1049,27 @@ alias[effect:reverse_banish] = character
 alias[effect:reverse_imprison] = character
 
 ## scope = character
-### Adds anÂ opinion modifierÂ to the target character towards scoped character.
-alias[effect:reverse_opinion] = clause
+### Adds an opinion modifier to "who" towards scoped character.
+alias[effect:reverse_opinion] = {
+    modifier = <opinion_modifier>
+
+    who = scope[character]
+
+    ## cardinality = 0..1
+    ### Can be used to customise localisation that appears in the tooltip.
+    origin_description = localisation
+
+    ## cardinality = 0..1
+    ### Overrides the default duration of the opinion modifier.
+    alias_name[duration_my] = alias_match_left[duration_my]
+}
 
 ## scope = character
-### Scoped character no longer owes a favor to the target character. Also seeÂ remove_favor.
+### Scoped character no longer owes a favor to the target character. Also see remove_favor.
 alias[effect:reverse_remove_favor] = character
 
 ## scope = character
-### Removes anÂ opinion modifierÂ of right side of who argument towards scoped character.
+### Removes an opinion modifier of right side of who argument towards scoped character.
 alias[effect:reverse_remove_opinion] = clause
 
 ## scope = character
@@ -882,15 +1077,15 @@ alias[effect:reverse_remove_opinion] = clause
 alias[effect:reverse_unsafe_war] = clause
 
 ## scope = character
-### Modifies piety by percent (1.0 = 100%) of annual piety increase.Â minÂ increases final cost toÂ minÂ if result would be lower.Â maxÂ reduces the final cost toÂ maxÂ if result would be lower.
+### Modifies piety by percent (1.0 = 100%) of annual piety increase. min increases final cost to min if result would be lower. max reduces the final cost to max if result would be lower.
 alias[effect:scaled_piety] = double/clause
 
 ## scope = character
-### Modifies prestige by percent (1.0 = 100%) of annual prestige increase.Â minÂ increases final cost toÂ minÂ if result would be lower.Â maxÂ reduces the final cost toÂ maxÂ if result would be lower.
+### Modifies prestige by percent (1.0 = 100%) of annual prestige increase. min increases final cost to min if result would be lower. max reduces the final cost to max if result would be lower.
 alias[effect:scaled_prestige] = double/clause
 
 ## scope = character
-### Modifies wealth by percent (1.0 = 100%) of annual income.Â minÂ increases final cost toÂ minif result would be lower.Â maxÂ reduces the final cost toÂ maxÂ if result would be higher.
+### Modifies wealth by percent (1.0 = 100%) of annual income. min increases final cost to minif result would be lower. max reduces the final cost to max if result would be higher.
 alias[effect:scaled_wealth] = double/clause
 
 ## scope = character
@@ -954,7 +1149,7 @@ alias[effect:set_job_action] = clause
 alias[effect:set_mother] = character
 
 ## scope = character
-### Sets the scoped character's total amount of offmap currency for the specifiedÂ offmappower to theÂ value.
+### Sets the scoped character's total amount of offmap currency for the specified offmappower to the value.
 alias[effect:set_offmap_currency] = clause
 
 ## scope = character
@@ -962,7 +1157,7 @@ alias[effect:set_offmap_currency] = clause
 alias[effect:set_opinion_levy_raised_days] = clause
 
 ## scope = character
-### The player controlling the scoped character starts controlling the given character instead. Does not enforce remaining within the same dynasty.Â WARNING: It's possible to cause game overs with this so use with care.
+### The player controlling the scoped character starts controlling the given character instead. Does not enforce remaining within the same dynasty. WARNING: It's possible to cause game overs with this so use with care.
 alias[effect:set_player_character] = character
 
 ## scope = character
@@ -1026,7 +1221,7 @@ alias[effect:subjugate_or_take_under_title] = clause
 alias[effect:transfer_scaled_wealth] = clause
 
 ## scope = character
-### Same asÂ wealthÂ ?
+### Same as wealth ?
 alias[effect:treasury] = int
 
 ## scope = character
@@ -1050,7 +1245,7 @@ alias[effect:vassalize_or_take_under_title] = clause
 alias[effect:vassalize_or_take_under_title] = clause
 
 ## scope = character
-### Initiate a war, with current character as attacker. Also seeÂ reverse_war.Â infamyÂ can be used to override the threat value (for instanceÂ infamy = 0).
+### Initiate a war, with current character as attacker. Also see reverse_war. infamy can be used to override the threat value (for instance infamy = 0).
 alias[effect:war] = clause
 
 ## scope = character
@@ -1062,7 +1257,7 @@ alias[effect:wealth] = double/character
 alias[effect:destroy_hospital] = province
 
 ## scope = character/artifact
-### Destroy the scoped or specified artifact. If there is no name given, the scope must be an artifact, and the PREV scope must be the owner. If an artifact name is given, the scope should be the owner of the artifact. If they own more than one, only the first one will be destroyed. Cannot be used to destroy indestructible objects; seeÂ unsafe_destroy_artifact
+### Destroy the scoped or specified artifact. If there is no name given, the scope must be an artifact, and the PREV scope must be the owner. If an artifact name is given, the scope should be the owner of the artifact. If they own more than one, only the first one will be destroyed. Cannot be used to destroy indestructible objects; see unsafe_destroy_artifact
 alias[effect:destroy_artifact] = artifact/bool
 
 ## scope = character/province
@@ -1118,7 +1313,7 @@ alias[effect:divide_variable] = clause
 alias[effect:multiply_variable] = clause
 
 ## scope = character/province
-### Adds aÂ religion modifierÂ to the religion of scoped character/province
+### Adds a religion modifier to the religion of scoped character/province
 alias[effect:religion_authority] = double/clause
 
 ## scope = character/province
@@ -1130,11 +1325,11 @@ alias[effect:reverse_culture] = character/title/province
 alias[effect:reverse_religion] = character/title
 
 ## scope = character/province
-### Used to create (or reset) aÂ variableÂ to a value, or to the value of another variable
+### Used to create (or reset) a variable to a value, or to the value of another variable
 alias[effect:set_variable] = clause
 
 ## scope = character/province
-### Subtract specified value or anotherÂ variableÂ to a variable
+### Subtract specified value or another variable to a variable
 alias[effect:subtract_variable] = clause
 
 ## scope = character/province/landed title/artifact/bloodline
@@ -1150,7 +1345,7 @@ alias[effect:add_weak_claim] = title/character
 alias[effect:add_weak_pressed_claim] = title/character
 
 ## scope = character/title
-### approve_law = lawÂ starts a vote on a law
+### approve_law = law starts a vote on a law
 alias[effect:approve_law] = law/title
 
 ## scope = character/title
@@ -1178,7 +1373,7 @@ alias[effect:grant_title_no_opinion] = title/character
 alias[effect:prestige] = int
 
 ## scope = character/title
-### Changes the (public) religion of scoped character/province/title. Can use a clause to specify which of the scope's religion to use, defaulting to public. See alsoÂ unsafe_religion.
+### Changes the (public) religion of scoped character/province/title. Can use a clause to specify which of the scope's religion to use, defaulting to public. See also unsafe_religion.
 alias[effect:religion] = religion/clause
 
 ## scope = character/title
@@ -1186,11 +1381,11 @@ alias[effect:religion] = religion/clause
 alias[effect:remove_claim] = title/character
 
 ## scope = character/title
-### Initiate a war, with current character as defender.Â infamyÂ can be used to override the threat value (for instanceÂ infamy = 0).
+### Initiate a war, with current character as defender. infamy can be used to override the threat value (for instance infamy = 0).
 alias[effect:reverse_war] = clause
 
 ## scope = character/title
-### Sets the liege of a character. Can be used to make a character become independent viaÂ set_defacto_liege = THIS
+### Sets the liege of a character. Can be used to make a character become independent via set_defacto_liege = THIS
 alias[effect:set_defacto_liege] = character/title
 
 ## scope = character/title
@@ -1198,7 +1393,7 @@ alias[effect:set_defacto_liege] = character/title
 alias[effect:set_name] = string
 
 ## scope = character/title
-### Bypasses some error-checking in set religion, allowing to change the religion of the leader of a holy order, a religious head or a rebel leader. Warning: use this effect with careÂ !
+### Bypasses some error-checking in set religion, allowing to change the religion of the leader of a holy order, a religious head or a rebel leader. Warning: use this effect with care !
 alias[effect:unsafe_religion] = religion
 
 ## scope = character/title
@@ -1218,11 +1413,11 @@ alias[effect:usurp_title_plus_barony_if_unlanded] = title/character/clause
 alias[effect:usurp_title_plus_barony_if_unlanded] = title/character
 
 ## scope = character/title/province
-### Used to create (or reset) aÂ variableÂ to a the value of a trigger.
+### Used to create (or reset) a variable to a the value of a trigger.
 alias[effect:export_to_variable] = clause
 
 ## scope = character/title/province
-### Divides the variable by the specified value or variable, returning theÂ remainderÂ of the division.
+### Divides the variable by the specified value or variable, returning the remainder of the division.
 alias[effect:modulo_variable] = clause
 
 ## scope = character/title/province
@@ -1238,15 +1433,15 @@ alias[effect:copy_name] = character/title?
 alias[effect:clr_dynasty_flag] = flag
 
 ## scope = holding
-### Adds aÂ holding modifier. Can use optional fieldÂ stacking = yes.
+### Adds a holding modifier. Can use optional field stacking = yes.
 alias[effect:add_holding_modifier] = modifier
 
 ## scope = holding
-### Makes the holding the capital of the province. Also seeÂ revoke_capital_holding.
+### Makes the holding the capital of the province. Also see revoke_capital_holding.
 alias[effect:make_capital_holding] = bool
 
 ## scope = holding
-### Also seeÂ make_capital_holding
+### Also see make_capital_holding
 alias[effect:revoke_capital_holding] = bool
 
 ## scope = holding title?
@@ -1282,11 +1477,11 @@ alias[effect:set_policy] = id
 alias[effect:set_status] = id
 
 ## scope = province
-### Adds N constructible settlement to a province. Can be negative.Â [2]
+### Adds N constructible settlement to a province. Can be negative. [2]
 alias[effect:add_holding_slot] = int
 
 ## scope = province
-### Adds aÂ province modifier
+### Adds a province modifier
 alias[effect:add_province_modifier] = clause
 
 ## scope = province
@@ -1330,7 +1525,7 @@ alias[effect:destroy_fort] = province
 alias[effect:destroy_in_extra_holding] = clause
 
 ## scope = province
-### Fires an event to scoped province. SeeÂ event modding.
+### Fires an event to scoped province. See event modding.
 alias[effect:province_event] = clause
 
 ## scope = province
@@ -1338,11 +1533,11 @@ alias[effect:province_event] = clause
 alias[effect:reduce_disease] = double
 
 ## scope = province
-### Removes aÂ province modifier
+### Removes a province modifier
 alias[effect:remove_province_modifier] = modifier
 
 ## scope = province
-### Removes a number of instances of aÂ province modifierÂ (usually a stackable one).
+### Removes a number of instances of a province modifier (usually a stackable one).
 alias[effect:remove_province_modifiers] = clause
 
 ## scope = province
@@ -1362,7 +1557,7 @@ alias[effect:steal_random_tech] = character
 alias[effect:clear_persistent_event_target] = var
 
 ## scope = province/character/title/
-### Saves a scope into a persistent event target in the current scope to be reused later.Â nameÂ is the name of the event target,Â scopeÂ is the scope to save. Relative scoping works.
+### Saves a scope into a persistent event target in the current scope to be reused later. name is the name of the event target, scope is the scope to save. Relative scoping works.
 alias[effect:save_persistent_event_target] = clause
 
 ## scope = province/holding
@@ -1390,15 +1585,15 @@ alias[effect:remove_god_names] = bool
 alias[effect:set_high_god_name] = key
 
 ## scope = religion
-### Sets the religion'sÂ men_can_take_consortsÂ attribute to the given value.
+### Sets the religion's men_can_take_consorts attribute to the given value.
 alias[effect:set_men_can_take_consorts] = bool
 
 ## scope = religion
-### Sets the religion'sÂ rel_head_defenseÂ attribute to the given value.
+### Sets the religion's rel_head_defense attribute to the given value.
 alias[effect:set_rel_head_defense] = bool
 
 ## scope = religion
-### Sets the religion'sÂ women_can_take_consortsÂ attribute to the given value.
+### Sets the religion's women_can_take_consorts attribute to the given value.
 alias[effect:set_women_can_take_consorts] = bool
 
 ## scope = society
@@ -1486,15 +1681,15 @@ alias[effect:de_jure_liege] = character/title/0
 alias[effect:destroy_landed_title] = title/bool
 
 ## scope = title
-### Destroys scoped holding. Also seeÂ build_holding.
+### Destroys scoped holding. Also see build_holding.
 alias[effect:destroy_settlement] = title
 
 ## scope = title
-### Changes council laws. Also seeÂ enable_council_voting_on_issue.
+### Changes council laws. Also see enable_council_voting_on_issue.
 alias[effect:disable_council_voting_on_issue] = votingTopic
 
 ## scope = title
-### Changes council laws. Also seeÂ disable_council_voting_on_issue.
+### Changes council laws. Also see disable_council_voting_on_issue.
 alias[effect:enable_council_voting_on_issue] = votingTopic
 
 ## scope = title
@@ -1542,11 +1737,11 @@ alias[effect:refill_holding_levy] = bool
 alias[effect:remove_building] = building
 
 ## scope = title
-### Removes aÂ holding modifier
+### Removes a holding modifier
 alias[effect:remove_holding_modifier] = modifier
 
 ## scope = title
-### Removes a number of instances of aÂ holding modifierÂ (usually a stackable one).
+### Removes a number of instances of a holding modifier (usually a stackable one).
 alias[effect:remove_holding_modifiers] = clause
 
 ## scope = title
@@ -1610,7 +1805,7 @@ alias[effect:set_appoint_generals] = bool
 alias[effect:set_appoint_regents] = bool
 
 ## scope = title
-### Set the coats of arms (flag) of a title to that of another title. An otherwise unused ""dummy"" title inÂ landed_titlesÂ can be used to define the coats of arms.
+### Set the coats of arms (flag) of a title to that of another title. An otherwise unused ""dummy"" title in landed_titles can be used to define the coats of arms.
 alias[effect:set_coa] = title
 
 ## scope = title
@@ -1642,7 +1837,7 @@ alias[effect:set_preferred_capital] = province
 alias[effect:set_protected_inheritance] = bool
 
 ## scope = title
-### Sets the title'sÂ short_nameÂ parameter to the given value.
+### Sets the title's short_name parameter to the given value.
 alias[effect:set_short_name] = bool
 
 ## scope = title
@@ -1658,7 +1853,7 @@ alias[effect:set_the_kings_peace] = bool
 alias[effect:set_title_adventurer] = clause
 
 ## scope = title
-### Creates aÂ flagÂ on a title
+### Creates a flag on a title
 alias[effect:set_title_flag] = flag
 
 ## scope = title
@@ -1718,7 +1913,7 @@ alias[effect:damage_unit_morale] = float
 alias[effect:set_can_toggle_looting] = bool
 
 ## scope = unit
-### Used withÂ set_can_toggle_looting
+### Used with set_can_toggle_looting
 alias[effect:set_looting] = bool
 
 ## scope = unit/siege
