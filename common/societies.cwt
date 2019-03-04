@@ -177,14 +177,14 @@ society = {
     }
 
     ## cardinality = 0..1
-    ### ???
+    ### Absolutely meaningless block of code. So yeah. ???
     plots = {
         ## cardinality = 0..inf
         scalar
     }
 
     ## cardinality = 0..1
-    ### ???
+    ### Absolutely meaningless block of code. So yeah. ???
     ambitions = {
         ## cardinality = 0..inf
         scalar
