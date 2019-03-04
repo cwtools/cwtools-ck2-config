@@ -4,7 +4,7 @@
 ### Sets the dislike of the specified offmap power to the specified type.
 alias[effect:set_offmap_dislike] = {
     offmap = <offmap>
-    type = <offmap_dislike> 
+    type = <offmap_dislike>
 }
 
 # TODO: possibly scope[offmap]?
@@ -21,7 +21,7 @@ alias[effect:set_offmap_dislike] = {
 ### Sets the dislike of the specified offmap power to the specified type.
 alias[effect:set_offmap_like] = {
     offmap = <offmap>
-    type = <offmap_like> 
+    type = <offmap_like>
 }
 
 TODO: possibly scope[offmap]?
@@ -390,63 +390,76 @@ alias[effect:add_random_education_trait] = yes
 ### UNCONFIRMED Makes the scoped character a rival of the given character.
 alias[effect:add_rival] = scope[character]
 
-# STOPPED HERE
-
 ## scope = character
 ### Adds a timed modifier to the society of scoped character. Works with days and years.
-alias[effect:add_society_modifier] = clause
+alias[effect:add_society_modifier] = {
+    modifier = TODO # waiting for static modifiers
+    aliast_name[duration] = alias_match_left[duration]
+    # Works with duration, but apparently not months.
+    ## cardinality = 0..0
+    months = scalar
+}
 
+# TODO: Confirm
 ## scope = character
-###
-alias[effect:add_spouse] = character
+### UNCONFIRMED Makes the scoped character a spouse of the given character (normal marriage).
+alias[effect:add_spouse] = scope[character]
 
+# TODO: Confirm
 ## scope = character
-###
-alias[effect:add_spouse_matrilineal] = character
+### UNCONFIRMED Makes the scoped character a spouse of the given character (matrilineal marriage).
+alias[effect:add_spouse_matrilineal] = scope[character]
 
 ## scope = character
 ### Add the scoped character to the RHS bloodline. Note that the RHS must be an existing bloodline, not a bloodline type.
-alias[effect:add_to_bloodline] = bloodline
+alias[effect:add_to_bloodline] = scope[bloodline]
 
 ## scope = character
-### Adds a trait to the character, using an ID from the traits files. Also seeÂ remove_trait.
+### Adds a trait to the character, using an ID from the traits files. Also see remove_trait.
 alias[effect:add_trait] = <trait>
 
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:ambition_succeeds] = bool
+alias[effect:ambition_succeeds] = yes
 
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:back_plot] = character
+alias[effect:back_plot] = scope[character]
 
 ## scope = character
 ### Banish character to random court
-alias[effect:banish] = bool
+alias[effect:banish] = yes
 
+# TODO: Possibly scope[religion]?
 ## scope = character
 ### All characters of the targeted religion will be banished to random court
-alias[effect:banish_religion] = religion
+alias[effect:banish_religion] = <religion>
 
 ## scope = character
 ### Changes character religion to a random heresy of current religion
-alias[effect:become_heretic] = bool
+alias[effect:become_heretic] = yes
 
 ## scope = character
 ### Changes character religion to a heresy of their current religion, but still openly practices their current faith (i.e., similar to become_heretic, but in secret rather than openly).
-alias[effect:become_secret_heretic] = bool
+alias[effect:become_secret_heretic] = yes
 
 ## scope = character
-### Remove an alliance. Also seeÂ add_alliance
-alias[effect:break_alliance] = character
+### Remove an alliance. Also see add_alliance
+alias[effect:break_alliance] = scope[character]
 
+# TODO: Confirm
 ## scope = character
-###
-alias[effect:break_betrothal] = character
+### UNCONFIRMED Breaks the betrothal between the scoped character and the target character
+alias[effect:break_betrothal] = scope[character]
 
+# TODO: Confirm
 ## scope = character
-###
-alias[effect:cancel_ambition] = bool
+### UNCONFIRMED Cancels the current ambition of the scoped character.
+alias[effect:cancel_ambition] = yes
+
+# STOPPED HERE
 
 ## scope = character
 ###
@@ -1066,7 +1079,7 @@ alias[effect:clear_delayed_event] = clause
 
 ## scope = character/province
 ### Clears all flags of the current scope that begin with the specified prefix
-alias[effect:clear_flags_with_prefix] = flag (prefix)
+alias[effect:clear_flags_with_prefix] = scalar
 
 ## scope = character/province
 ### Creates a random character with specified parameters.
