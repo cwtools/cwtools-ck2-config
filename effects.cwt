@@ -981,15 +981,16 @@ alias[effect:remove_consort] = character
 alias[effect:remove_favor] = character
 
 ## scope = character
-###
+# TODO: Confirm what scopes this applies to
+### Removes a friend relationship between the scoped and the given characters
 alias[effect:remove_friend] = character
 
 ## scope = character
-### Remove the scoped character from the specified bloodline. Note that the right-hand side must be a bloodlin, not a bloodline type.
+### Remove the scoped character from the specified bloodline. Note that the right-hand side must be a bloodline, not a bloodline type.
 alias[effect:remove_from_bloodline] = bloodline
 
 ## scope = character
-###
+### Remove scoped character's guardian
 alias[effect:remove_guardian] = character
 
 ## scope = character
@@ -1352,13 +1353,15 @@ alias[effect:approve_law] = law/title
 ###
 alias[effect:conquest_culture] = culture/character
 
-## scope = character/title
+# TODO confirm scope
+## scope = <province>
 ### Creates a hospital in the specified province
-alias[effect:create_hospital] = province (ID or scope pointing to province)
+alias[effect:create_hospital] = province
 
-## scope = character/title
+# TODO confirm scope
+## scope = <province>
 ### Creates a trade post in the specified province (only works if the character meets requirements such as being under their trade post limit)
-alias[effect:create_tradepost] = province (ID or scope pointing to province)
+alias[effect:create_tradepost] = province
 
 ## scope = character/title
 ### Also grants any vassal owning or below current title
