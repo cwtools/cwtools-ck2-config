@@ -2,6 +2,7 @@ types = {
     type[death_text] = {
         path_strict = yes
         path = "game/common/death_text"
+
         localisation = {
             description = "$"
         }
