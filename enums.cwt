@@ -29,10 +29,18 @@ enums = {
         city
         temple
         tribal
-        hospital
         nomad
+        hospital
         fort
         trade_post
+        family_palace
+    }
+    enum[holding_types_barony_only] = {
+        castle
+        city
+        temple
+        tribal
+        nomad
     }
     enum[combat_phases] = {
         skirmish
