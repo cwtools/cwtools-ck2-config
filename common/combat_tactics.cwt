@@ -63,15 +63,16 @@ combat_tactic = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
+    # TODO: Confirm
     ## replace_scope = { this = siege root = siege }
-    ### The MTTH for the tactic to be used.
+    ### The MTTH for the tactic to be used. UNCONFIRMED Judging by succession voting, this is actually a scoring system, not MTTH. Because that's not confusing at all, no sire.
     mean_time_to_happen = {
         ### Base MTTH in days.
         days = int
 
         ## cardinality = 0..inf
         alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-        
+
         # TODO: Check if additive modifier works
     }
 
