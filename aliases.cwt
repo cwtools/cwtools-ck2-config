@@ -16,6 +16,18 @@ alias[additive_modifier:additive_modifier] = {
     alias_name[trigger] = alias_match_left[trigger]
 }
 
+### Condiitonal additive modifier with a localisation key.
+alias[additive_modifier_with_loc_key:additive_modifier] = {
+    ### This value will be added to the base weight/chance if the conditions are met.
+    value = int
+
+    ### This key will be shown in the tooltip when the modifier is applicable.
+    localisation_key = localisation
+
+    ### Conditions for the additive modifier to apply.
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
 ### Colour in RGB format, three 0.0-1.0 floats.
 alias[color:color] = {
     ## cardinality = 3..3
