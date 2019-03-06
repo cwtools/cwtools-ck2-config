@@ -25,3 +25,146 @@ alias[effect:else_if] = {
 alias[effect:else] = {
 	alias_name[effect] = alias_match_left[effect]
 }
+
+# Absolute reference scopes
+
+## scope = any
+## push_scope = society
+### Scopes to a society by absolute reference.
+alias[trigger:<society>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = society
+### Scopes to a society by absolute reference.
+alias[effect:<society>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = offmap
+### Scopes to an offmap power by absolute reference.
+alias[trigger:<offmap>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = offmap
+### Scopes to an offmap power by absolute reference.
+alias[effect:<offmap>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = title
+### Scopes to a landed title by absolute reference.
+alias[trigger:<title>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = title
+### Scopes to a landed title by absolute reference.
+alias[effect:<title>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = character
+### Scopes to a character by absolute reference.
+alias[trigger:c_<character>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = character
+### Scopes to a character by absolute reference.
+alias[effect:c_<character>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+# TODO: See if limits work
+## scope = any
+## push_scope = character
+### Scopes to all characters with a cached trait.
+alias[trigger:<trait.cached>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = character
+### Scopes to all characters with a cached trait.
+alias[effect:<trait.cached>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = province
+### Scopes to a province by absolute reference.
+alias[trigger:<province>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = province
+### Scopes to a province by absolute reference.
+alias[effect:<province>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = religion
+### Scopes to a religion by absolute reference.
+alias[trigger:<religion>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = religion
+### Scopes to a religion by absolute reference.
+alias[effect:<religion>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = religion
+### Scopes to the first religion in a group by absolute reference.
+alias[trigger:<religion_group>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = religion
+### Scopes to the first religion in a group by absolute reference.
+alias[effect:<religion_group>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = culture
+### Scopes to a culture by absolute reference.
+alias[trigger:<culture>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = culture
+### Scopes to a culture by absolute reference.
+alias[effect:<culture>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+## scope = any
+## push_scope = culture
+### Scopes to the first culture in a group by absolute reference.
+alias[trigger:<culture_group>] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+## push_scope = culture
+### Scopes to the first culture in a group by absolute reference.
+alias[effect:<culture_group>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
