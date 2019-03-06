@@ -28,6 +28,7 @@ dynamic_modifier = {
     ### How many numbers max to show after the decimal point.
     max_decimals = int[0..3]
 
-    ### If yes, the value will show be displayed if it's not equal to zero. If no, it will never be displayed.
+    ## cardinality = 0..1
+    ### If yes, the value will show be displayed if it's not equal to zero. If no, it will never be displayed. Defaults to "yes".
 	show_value = bool
 }
