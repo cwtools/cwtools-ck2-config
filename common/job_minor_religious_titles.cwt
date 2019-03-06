@@ -24,6 +24,13 @@ types = {
         subtype[job] = {
             enum[is_jobs] = yes
         }
+        subtype[offmap] = {
+            ## cardinality = 0..0
+            religion = <religion>
+            ## cardinality = 0..0
+            enum[is_jobs] = yes
+            is_offmap_holder = yes
+        }
 
         localisation = {
             name = "$"
@@ -39,10 +46,10 @@ types = {
 
 # TODO: Figure out the differences and similarities
 # Note that it's not clear which of these are exclusive to job titles and which to minor titles and also religious titles. Will need more testing.
+## replace_scope = { this = character root = character }
 minor_title = {
-    # TODO: Confirm
     ## cardinality = 0..1
-    ### UNCONFIRMED If yes, characters with this minor title are voters in the liege's council. Defaults to "no".
+    ### If yes, characters with this minor title are voters in the liege's council. Defaults to "no".
     is_voter = bool
 
     # TODO: Figure out
@@ -67,16 +74,18 @@ minor_title = {
     ### Titles with higher dignity take priority over titles with lower dignity.
     dignity = float
 
-    ## replace_scope = { this = character root = character from = character }
-    ### Effects applied when the character receives the title. ROOT is the title holder, FROM is the title granter.
-    gain_effect = {
-        alias_name[effect] = alias_match_left[effect]
-    }
+    subtype[!offmap] = {
+        ## replace_scope = { this = character root = character from = character }
+        ### Effects applied when the character receives the title. ROOT is the title holder, FROM is the title granter.
+        gain_effect = {
+            alias_name[effect] = alias_match_left[effect]
+        }
 
-    ## replace_scope = { this = character root = character from = character }
-    ### Effects applied when the character loses the title. ROOT is the title holder, FROM is the title granter.
-    lose_effect = {
-        alias_name[effect] = alias_match_left[effect]
+        ## replace_scope = { this = character root = character from = character }
+        ### Effects applied when the character loses the title. ROOT is the title holder, FROM is the title granter.
+        lose_effect = {
+            alias_name[effect] = alias_match_left[effect]
+        }
     }
 
     ## cardinality = 0..1
@@ -99,7 +108,7 @@ minor_title = {
         is_high_prio = bool
 
         ## cardinality = 0..1
-        ### UNKNOWN. Defaults to "no".
+        ### If yes, this title cannot be held together with another is_unique title. Defaults to "no".
         is_unique = bool
 
         ## cardinality = 0..1
@@ -112,7 +121,10 @@ minor_title = {
 
         ## cardinality = 0..1
         ### If yes, the minor title will be shown in the holder's title. Defaults to "no".
-        show_in_title = bool
+        show_as_title = bool
+
+        ## cardinality = 0..1
+        ### If yes, title name as if the other gender version of the spouse's ruler title. Defaults to "no".
         spouse_context = bool
 
         # TODO: Figure out
@@ -144,8 +156,25 @@ minor_title = {
         # TODO: Confirm
         # regent = bool # Vaguely documented, but unused in vanilla even for regent titles
 
+        ## cardinality = 0..1
         ### If yes, shows a message to a character that receives the title. Defaults to "no".
         message = bool
+
+        ## cardinality = 0..1
+        ### If yes, this is a special title that determines the heir of a Patrician. Defaults to "no".
+        patrician_heir = bool
+
+        ## cardinality = 0..1
+        ### If yes, holder of the title counts as born-in-the-purple for Byzantine Empire succession.. Defaults to "no".
+        counts_as_purple_born = bool
+    }
+
+    subtype[offmap] = {
+        ### If yes, this minor title is used for an offmap power's holder. Defaults to "no".
+        is_offmap_holder = bool
+
+        ### Which offmap power this title belongs to.
+        offmap_power = <offmap>
     }
 
     subtype[religious] = {
@@ -192,4 +221,7 @@ minor_title = {
         enum[lift_fows] = bool
     }
 
+    ## cardinality = 0..inf
+    ### Modifiers applied to the title holder.
+    alias_name[modifier] = alias_match_left[modifier]
 }
