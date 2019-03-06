@@ -13,8 +13,7 @@ types = {
 # Info from, you guessed it, wiki
 ## replace_scope = { this = character root = character }
 triggered_modifier = {
-    # TODO: replace with enum[event_modifier_icons] once added
-    ### Same icons as event modifier icons.
+    ### Same icons as event modifier icons. Frames of GFX_modifier_icons.
     icon = enum[event_modifier_icons]
 
     ### Conditions for the character to be eligible for checking the trigger.
