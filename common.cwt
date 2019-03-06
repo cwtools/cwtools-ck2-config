@@ -49,6 +49,19 @@ types = {
             description = "$_DESC"
         }
     }
+
+    type[static_modifier] = {
+        path_strict = yes
+        path = "game/common"
+        path_file = "static_modifiers.txt"
+
+        localisation = {
+            ## optional
+            name = "$"
+            ## optional
+            description = "desc_$"
+        }
+    }
 }
 
 # TODO: Figure out what most of these things mean
@@ -94,4 +107,15 @@ technology_group = {
             add_decision = <decision>
         }
     }
+}
+
+# Scopes vary by modifier, no way am I going to categorise them. TODO: categorise them.
+## replace_scope = { this = any root = any }
+static_modifier = {
+    ## cardinality = 0..1
+    ### The icon to use for the event modifier. Frames of GFX_modifier_icons.
+    icon = enum[event_modifier_icons]
+
+    ## cardinality = 0..inf
+    alias_name[modifier] = alias_match_left[modifier]
 }

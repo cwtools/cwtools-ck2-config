@@ -13,7 +13,7 @@ types = {
 # I guess the only way to directly say that "this event modifier is applied to provinces" (or characters, or holdings) based on the modifiers used
 # is to make bigass enums and match those. Not a very great approach but if someone has the time they'd be welcome. TODO.
 event_modifier = {
-    ### The icon to use for the event modifier.
+    ### The icon to use for the event modifier. Frames of GFX_modifier_icons.
     icon = enum[event_modifier_icons]
 
     ## cardinality = 0..inf
