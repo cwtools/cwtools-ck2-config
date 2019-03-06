@@ -387,7 +387,7 @@ alias[effect:add_random_education_trait] = yes
 
 # TODO: Confirm
 ## scope = character
-### UNCONFIRMED Makes the scoped character a rival of the given character.
+### UNCONFIRMED Makes the scoped character a rival of the given character. See also remove_rival.
 alias[effect:add_rival] = scope[character]
 
 ## scope = character
@@ -429,7 +429,7 @@ alias[effect:ambition_succeeds] = yes
 alias[effect:back_plot] = scope[character]
 
 ## scope = character
-### Banish character to random court
+### Banish character to random court. See also remove_banish.
 alias[effect:banish] = yes
 
 # TODO: Possibly scope[religion]?
@@ -1005,11 +1005,11 @@ alias[effect:remove_nickname] = bool/nickname
 alias[effect:remove_opinion] = clause
 
 ## scope = character
-###
+### Makes the scoped character no longer rival of the given character. See also add_rival.
 alias[effect:remove_rival] = character
 
 ## scope = character
-###
+### Removes special title from scoped character. See also set_special_character_title.
 alias[effect:remove_special_character_title] = key
 
 ## scope = character
@@ -1017,7 +1017,7 @@ alias[effect:remove_special_character_title] = key
 alias[effect:remove_spouse] = string/bool/character
 
 ## scope = character
-###
+### Remove minor title.
 alias[effect:remove_title] = job/minor_title
 
 ## scope = character
@@ -1041,7 +1041,8 @@ alias[effect:reveal_plot_w_message] = bool
 alias[effect:reverse_add_favor] = character
 
 ## scope = character
-###
+# TODO confirm actual behaviour - where do they actually go, ect.
+### Bring scoped character back into court. See also banish.
 alias[effect:reverse_banish] = character
 
 ## scope = character
@@ -1181,7 +1182,7 @@ alias[effect:set_secret_religion] = religion/clause
 alias[effect:set_society_grandmaster] = bool
 
 ## scope = character
-###
+### Add special title to scoped character. See also remove_special_character_title.
 alias[effect:set_special_character_title] = key
 
 ## scope = character
