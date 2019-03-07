@@ -40,6 +40,18 @@ alias[color:color] = {
     int[0..255]
 }
 
+### Colour in RGB format, three 0.0-1.0 floats.
+alias[color2:color2] = {
+    ## cardinality = 3..3
+    float[0.0..1.0]
+}
+
+### Colour in RGB format, three 0-255 ints.
+alias[color2:color2] = {
+    ## cardinality = 3..3
+    int[0..255]
+}
+
 # TODO: possibly use a special system for that to ensure everything is in correct amounts?
 # Mostly taken from wiki.
 ### Coat of arms explicit definition.
