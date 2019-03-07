@@ -64,6 +64,23 @@ enums = {
         heavy_cavalry
         galleys
     }
+    enum[troop_types_land_only] = {
+        pikemen
+        knights
+        archers
+        light_infantry
+        heavy_infantry
+        light_cavalry
+        heavy_cavalry
+    }
+    enum[troop_types_sea_only] = {
+        galleys
+    }
+    enum[religion_visibility] = {
+        secret
+        public
+        true
+    }
     # TODO - replace with frames when that happens, if ever
     # Descriptors up to 94 taken from wiki, rest is mine
     enum[event_modifier_icons] = {

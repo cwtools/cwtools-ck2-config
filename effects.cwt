@@ -970,84 +970,98 @@ alias[effect:remove_character_modifier] = TODO
 ### Removes a number of instances of a character modifier (usually a stackable one).
 alias[effect:remove_character_modifiers] = TODO
 
-# STOPPED HERE
-
 ## scope = character
 ### Removes the consort/concubine relationship between the scoped and the given characters. Works in either scope.
-alias[effect:remove_consort] = character
+alias[effect:remove_consort] = scope[character]
 
 ## scope = character
 ### Target character no longer owes a favor to the scoped character. Also see reverse_remove_favor.
-alias[effect:remove_favor] = character
+alias[effect:remove_favor] = scope[character]
 
 ## scope = character
 ### Removes a friend relationship between the scoped and the given characters.
 alias[effect:remove_friend] = scope[character]
 
 ## scope = character
-### Remove the scoped character from the specified bloodline. Note that the right-hand side must be a bloodline, not a bloodline type.
-alias[effect:remove_from_bloodline] = bloodline
+### Remove the scoped character from the specified bloodline.
+alias[effect:remove_from_bloodline] = scope[bloodline]
 
 ## scope = character
-### Remove scoped character's guardian
-alias[effect:remove_guardian] = character
+### Remove scoped character's guardian.
+alias[effect:remove_guardian] = scope[character]
 
 ## scope = character
-### Remove scoped character's lover
-alias[effect:remove_lover] = character
+### Remove scoped character's lover.
+alias[effect:remove_lover] = scope[character]
 
 ## scope = character
-### Remove character's nickname
-alias[effect:remove_nickname] = bool/nickname
+### Remove character's nickname.
+alias[effect:remove_nickname] = yes
 
 ## scope = character
-### Removes an opinion modifier
-alias[effect:remove_opinion] = clause
+### Remove character's nickname if it is the given one.
+alias[effect:remove_nickname] = <nickname>
+
+## scope = character
+### Removes an opinion modifier towards "who" from scoped character.
+alias[effect:remove_opinion] = {
+    who = scope[character]
+    modifier = <opinion_modifier>
+}
 
 ## scope = character
 ### Makes the scoped character no longer rival of the given character. See also add_rival.
-alias[effect:remove_rival] = character
+alias[effect:remove_rival] = scope[character]
 
 ## scope = character
 ### Removes special title from scoped character. See also set_special_character_title.
-alias[effect:remove_special_character_title] = key
+alias[effect:remove_special_character_title] = localisation
 
 ## scope = character
-### remove scoped character's spouse
-alias[effect:remove_spouse] = string/bool/character
+### Remove scoped character's spouse.
+alias[effect:remove_spouse] = yes
+
+## scope = character
+### Remove the scoped character's spouse that matches the given character.
+alias[effect:remove_spouse] = scope[character]
 
 ## scope = character
 ### Remove minor title.
-alias[effect:remove_title] = job/minor_title
+alias[effect:remove_title] = <minor_title>
 
 ## scope = character
 ### Removes a trait, also see add_trait.
 alias[effect:remove_trait] = <trait>
 
 ## scope = character
-### Stop a character to be tributary to its suzerain.
-alias[effect:remove_tributary] = character
+### Stops the scoped character from being a tributary to the given character.
+alias[effect:remove_tributary] = scope[character]
 
 ## scope = character
-### reveal scoped characters plot. The plot discoverer may be specified.
-alias[effect:reveal_plot] = bool/character
+### Reveals the scoped character's plot.
+alias[effect:reveal_plot] = yes
 
+## scope = character
+### Reveals the scoped character's plot to the given character.
+alias[effect:reveal_plot] = scope[character]
+
+# TODO: Figure out
 ## scope = character
 ### reveal scoped characters plot
-alias[effect:reveal_plot_w_message] = bool
+alias[effect:reveal_plot_w_message] = yes
 
 ## scope = character
-### Makes scoped character owe a favor to another character. Also see add_favor.
-alias[effect:reverse_add_favor] = character
+### Makes scoped character owe a favor to the given character. Also see add_favor.
+alias[effect:reverse_add_favor] = scope[character]
 
-## scope = character
 # TODO confirm actual behaviour - where do they actually go, ect.
+## scope = character
 ### Bring scoped character back into court. See also banish.
-alias[effect:reverse_banish] = character
+alias[effect:reverse_banish] = scope[character]
 
 ## scope = character
-### Target character will be imprisoned by the scoped character
-alias[effect:reverse_imprison] = character
+### The given character will be imprisoned by the scoped character
+alias[effect:reverse_imprison] = scope[character]
 
 ## scope = character
 ### Adds an opinion modifier to "who" towards scoped character.
@@ -1066,144 +1080,592 @@ alias[effect:reverse_opinion] = {
 }
 
 ## scope = character
-### Scoped character no longer owes a favor to the target character. Also see remove_favor.
-alias[effect:reverse_remove_favor] = character
+### Scoped character no longer owes a favor to the given character. Also see remove_favor.
+alias[effect:reverse_remove_favor] = scope[character]
 
 ## scope = character
-### Removes an opinion modifier of right side of who argument towards scoped character.
-alias[effect:reverse_remove_opinion] = clause
+### Removes an opinion modifier towards scoped character from "who".
+alias[effect:reverse_remove_opinion] = {
+    who = scope[character]
+    modifier = <opinion_modifier>
+}
+
+# TODO update for thirdparty stuff when I do that
+## scope = character
+### Initiate a war; target is the attacker, the scoped character is the defender. Doesn't check if the casus belli can be used.
+alias[effect:reverse_unsafe_war] = {
+    target = scope[character]
+    casus_belli = <casus_belli>
+    ## cardinality = 0..1
+    thirdparty = scope[character]
+    ## cardinality = 0..1
+    ### Overrides the resulting threat value.
+    infamy = int # TODO: is it really int?
+}
 
 ## scope = character
-### Works like the reverse_war command, but without ensuring the CB can be used.
-alias[effect:reverse_unsafe_war] = clause
+### Modifies piety by percentage (1.0 = 100%) of annual piety increase.
+alias[effect:scaled_piety] = float
 
 ## scope = character
-### Modifies piety by percent (1.0 = 100%) of annual piety increase. min increases final cost to min if result would be lower. max reduces the final cost to max if result would be lower.
-alias[effect:scaled_piety] = double/clause
+### Modifies piety by value percentage (1.0 = 100%) of annual piety increase. min increases final cost to min if result would be lower. max reduces the final cost to max if result would be lower.
+alias[effect:scaled_piety] = {
+    value = float
+    ## cardinality = 0..1
+    min = int
+    ## cardinality = 0..1
+    max = int
+}
 
 ## scope = character
-### Modifies prestige by percent (1.0 = 100%) of annual prestige increase. min increases final cost to min if result would be lower. max reduces the final cost to max if result would be lower.
-alias[effect:scaled_prestige] = double/clause
+### Modifies prestige by percentage (1.0 = 100%) of annual prestige increase.
+alias[effect:scaled_prestige] = float
 
 ## scope = character
-### Modifies wealth by percent (1.0 = 100%) of annual income. min increases final cost to minif result would be lower. max reduces the final cost to max if result would be higher.
-alias[effect:scaled_wealth] = double/clause
+### Modifies prestige by value percentage (1.0 = 100%) of annual prestige increase. min increases final cost to min if result would be lower. max reduces the final cost to max if result would be lower.
+alias[effect:scaled_prestige] = {
+    value = float
+    ## cardinality = 0..1
+    min = int
+    ## cardinality = 0..1
+    max = int
+}
 
+## scope = character
+### Modifies wealth by percentage (1.0 = 100%) of annual wealth increase.
+alias[effect:scaled_wealth] = float
+
+## scope = character
+### Modifies wealth by value percentage (1.0 = 100%) of annual wealth increase. min increases final cost to min if result would be lower. max reduces the final cost to max if result would be lower.
+alias[effect:scaled_wealth] = {
+    value = float
+    ## cardinality = 0..1
+    min = int
+    ## cardinality = 0..1
+    max = int
+}
+
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:send_assassin] = character
+alias[effect:send_assassin] = scope[character]
 
+## scope = character
+### Sets a flag in the scoped character.
+alias[effect:set_character_flag] = value_set[character_flag]
+
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:set_character_flag] = flag
+alias[effect:set_defacto_vassal] = scope[character]
 
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:set_defacto_vassal] = character/title
+alias[effect:set_defacto_vassal] = scope[title]
 
 ## scope = character
-### Sets the character to be ""revealed"" to be part of the specified society, or otherwise their secret society if no society is specified.
-alias[effect:set_discovered_society] = bool/society
+### Sets the character to be revealed to be part of their secret society.
+alias[effect:set_discovered_society] = yes
 
+## scope = character
+### Sets the character to be "revealed" to be part of the given society.
+alias[effect:set_discovered_society] = scope[society]
+
+## scope = character
+### Sets a flag in the scoped character's dynasty.
+alias[effect:set_dynasty_flag] = value_set[dynasty_flag]
+
+## scope = character
+### Change the father of a character.
+alias[effect:set_father] = scope[character]
+
+## scope = character
+### Remove the father of a character.
+alias[effect:set_father] = 0
+
+## scope = character
+### Sets the focus of a character.
+alias[effect:set_focus] = <objective.focus>
+
+## scope = character
+### Sets the scoped character's gender to be male. Warning: messing with a character's gender may have unintended side effects so use with caution.
+alias[effect:set_gender] = male
+
+## scope = character
+### Sets the scoped character's gender to be female. Warning: messing with a character's gender may have unintended side effects so use with caution.
+alias[effect:set_gender] = female
+
+## scope = character
+### Sets the scoped character's gender to be the opposite of what they currently are. Warning: messing with a character's gender may have unintended side effects so use with caution.
+alias[effect:set_gender] = opposite
+
+## scope = character
+### Change the government type of the scoped character.
+alias[effect:set_government_type] = <government>
+
+## scope = character
+### Sets the ethnicity of the scoped character, based on the default graphical_culture of a culture, or of the culture of another character or province.
+alias[effect:set_graphical_culture] = scope[culture]
+
+# TODO: Confirm
 ## scope = character
 ###
-alias[effect:set_dynasty_flag] = flag
-
-## scope = character
-### Change (or remove) the father of a character.
-alias[effect:set_father] = character/0
-
-## scope = character
-### Sets the focus of a character (bypasses 5 year cooldown period)
-alias[effect:set_focus] = clause
-
-## scope = character
-### Xets the scoped character's gender to be male or female or the opposite of what they currently are. Warning: messing with a character's gender may have unintended side effects so use with caution.
-alias[effect:set_gender] = male/female/opposite
-
-## scope = character
-### Change the government type of a character
-alias[effect:set_government_type] = government
-
-## scope = character
-### Sets the ethnicity of character, based on the default graphical_culture of a culture, or of the culture of another character or province.
-alias[effect:set_graphical_culture] = culture/character
-
-## scope = character
-###
-alias[effect:set_guardian] = character
+alias[effect:set_guardian] = scope[character]
 
 ## scope = character
 ### Sets a character as important. They will neither be removed from AI courts nor be deleted from the saved game to reduce file size. WARNING: This cannot be reversed.
-alias[effect:set_immune_to_pruning] = bool
+alias[effect:set_immune_to_pruning] = yes
 
 ## scope = character
 ### Make a character interested in joining the specified society.
-alias[effect:set_interested_society] = society
+alias[effect:set_interested_society] = scope[society]
 
+# TODO: Confirm. I suspect where is optional based on whether the job action is landless or not, but *shrug*
 ## scope = character
 ### Update the current job of a councillor.
-alias[effect:set_job_action] = clause
+alias[effect:set_job_action] = {
+    action = <job_action>
+    where = scope[province]
+}
 
+## scope = character
+### Change the mother of a character.
+alias[effect:set_father] = scope[character]
+
+# TODO: Confirm. Actually copied from mother, dunno if 0 works.
+## scope = character
+### Remove the mother of a character.
+alias[effect:set_father] = 0
+
+## scope = character
+### Sets the scoped character's total amount of offmap currency for the specified offmap power to the value.
+alias[effect:set_offmap_currency] = {
+    offmap = scope[offmap]
+    value = int
+}
+
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:set_mother] = character
+alias[effect:set_opinion_levy_raised_days] = {
+    who = scope[character]
+    days = int
+}
 
 ## scope = character
-### Sets the scoped character's total amount of offmap currency for the specified offmappower to the value.
-alias[effect:set_offmap_currency] = clause
+### The player controlling the scoped character starts controlling the given character instead. Does not enforce remaining within the same dynasty, but chronicle will be lost if dynasty changes. WARNING: It's possible to cause game overs with this so use with care.
+alias[effect:set_player_character] = scope[character]
 
 ## scope = character
-###
-alias[effect:set_opinion_levy_raised_days] = clause
+### Creates a quest for the scoped character.
+alias[effect:set_quest] = value_set[quest]
 
 ## scope = character
-### The player controlling the scoped character starts controlling the given character instead. Does not enforce remaining within the same dynasty. WARNING: It's possible to cause game overs with this so use with care.
-alias[effect:set_player_character] = character
-
-## scope = character
-### Creates a quest for the scoped character. Society can be optionally specified.
-alias[effect:set_quest] = quest_id/clause
+### Creates a quest with the given society for the scoped character.
+alias[effect:set_quest] = {
+    id = value_set[quest]
+    society = scope[society]
+}
 
 ## scope = character
 ### When a child is denounced (no official father), real_father is used to keep track of it.
-alias[effect:set_real_father] = character
+alias[effect:set_real_father] = scope[character]
 
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:set_reincarnation] = character/0
+alias[effect:set_reincarnation] = scope[character]
+
+# TODO: Figure out
+## scope = character
+###
+alias[effect:set_reincarnation] = 0
 
 ## scope = character
-### Sets the secret religion of the character to the right-hand-side (defaulting to secret religion, if applicable). Can be expanded to specify what visibility to use.
-alias[effect:set_secret_religion] = religion/clause
+### Sets the secret religion of the character to the right-hand-side (defaulting to secret religion, if applicable).
+alias[effect:set_secret_religion] = scope[religion]
+
+## scope = character
+### Sets the secret religion of the character to the right-hand-side, using the specified visibility religion of the target.
+alias[effect:set_secret_religion] = {
+    target_type = enum[religion_visibility]
+    target = scope[religion]
+}
 
 ## scope = character
 ### Set or unset the scoped character as the grandmaster of their society.
-alias[effect:set_society_grandmaster] = bool
+alias[effect:set_society_grandmaster] = yes
+
+## scope = character
+### Unset the scoped character as the grandmaster of their society.
+alias[effect:set_society_grandmaster] = no
 
 ## scope = character
 ### Add special title to scoped character. See also remove_special_character_title.
-alias[effect:set_special_character_title] = key
+alias[effect:set_special_character_title] = localisation
+
+# TODO: See if other durations work
+## scope = character
+### Gives a temporary truce to the scoped character towards "who".
+alias[effect:set_truce] = {
+    who = scope[character]
+    years = int
+}
 
 ## scope = character
-### Gives a temporary truce to the scoped character towards right side of who argument
-alias[effect:set_truce] = bool
+### Ranks the scoped character down by the specified number of ranks in their current society.
+alias[effect:society_rank_down] = int
 
 ## scope = character
-### Rank down a character by the specified number of ranks in their current society, or the society specified if applicable.
-alias[effect:society_rank_down] = int/clause
+### Ranks the scoped character down by the specified number of ranks in the given society.
+alias[effect:society_rank_down] = {
+    society = scope[society]
+    rank = int
+}
 
 ## scope = character
-### Rank up a character by the specified number of ranks in their current society, or the society specified if applicable.
-alias[effect:society_rank_up] = int/clause
+### Ranks the scoped character up by the specified number of ranks in their current society.
+alias[effect:society_rank_up] = int
 
 ## scope = character
-### Parameter
-alias[effect:spawn_fleet] = clause
+### Ranks the scoped character up by the specified number of ranks in the given society.
+alias[effect:society_rank_up] = {
+    society = scope[society]
+    rank = int
+}
 
+# TODO: Confirm scope! And figure out what some of the properties mean
 ## scope = character
-### Parameter
-alias[effect:spawn_unit] = clause
+### Spawns a fleet under the given character's control in the specified province.
+alias[effect:spawn_fleet] = {
+    province = scope[province]
+
+    owner = scope[character]
+
+    ### Can be localised somehow probably
+    earmark = value_set[earmark]
+
+    troops = {
+        ## cardinality = 1..inf
+        ### troop_type = { max_value starting_value }
+        enum[troop_types_sea_only] = {
+            ## cardinality = 2..2
+            int[1..inf]
+        }
+    }
+
+    ## cardinality = 0..1
+    match_character = scope[character]
+
+    ## cardinality = 0..1
+    ### "Matches against the total levies of every single holding"
+    match_mult = float
+
+    ## cardinality = 0..1
+    match_min = float
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on peace. Defaults to "no".
+    disband_on_peace = bool
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on owner death. Defaults to "no".
+    cannot_inherit = bool
+}
+
+# TODO: Confirm scope! And figure out what some of the properties mean
+## scope = character
+### Spawns a fleet under the given character's control in the closest province.
+alias[effect:spawn_fleet] = {
+    province = closest
+
+    owner = scope[character]
+
+    ### Can be localised somehow probably
+    earmark = value_set[earmark]
+
+    troops = {
+        ## cardinality = 1..inf
+        ### troop_type = { max_value starting_value }
+        enum[troop_types_sea_only] = {
+            ## cardinality = 2..2
+            int[1..inf]
+        }
+    }
+
+    ## cardinality = 0..1
+    match_character = scope[character]
+
+    ## cardinality = 0..1
+    ### "Matches against the total levies of every single holding"
+    match_mult = float
+
+    ## cardinality = 0..1
+    match_min = float
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on peace. Defaults to "no".
+    disband_on_peace = bool
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on owner death. Defaults to "no".
+    cannot_inherit = bool
+}
+
+# TODO: Confirm scope! And figure out what some of the properties mean
+## scope = character
+### Spawns an army under the given character's control in the specified province.
+alias[effect:spawn_unit] = {
+    province = scope[province]
+
+    home = scope[province]
+
+    owner = scope[character]
+
+    ## cardinality = 0..1
+    ### Defaults to the scoped character. Also can be "none".
+    leader = scope[character]
+
+    ## cardinality = 0..1
+    ### Defaults to the scoped character. Also can be a character scope.
+    leader = none
+
+    ### ID of the unit, to be able to reference them later. Can be localized via $_ARMY and $_ARMY_OF.
+    earmark = value_set[earmark]
+
+    troops = {
+        ## cardinality = 1..inf
+        ### troop_type = { max_value starting_value }
+        enum[troop_types_land_only] = {
+            ## cardinality = 2..2
+            int[1..inf]
+        }
+    }
+
+    ## cardinality = 0..1
+    ### Character to match against for match_mult.
+    match_character = scope[character]
+
+    ## cardinality = 0..1
+    ### Proportional amount of troops to match_character total levy size (levies and event troops).
+    match_mult = float
+
+    ## cardinality = 0..1
+    match_max = float
+
+    ## cardinality = 0..1
+    match_min = float
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on peace. Defaults to "no".
+    disband_on_peace = bool
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on owner death. Defaults to "no".
+    cannot_inherit = bool
+
+    ## cardinality = 0..1
+    ### Attrition multiplier (1.0 for normal, 0 for attrition-less).
+    attrition = float[0.0..inf]
+
+    ## cardinality = 0..1
+    ### Will have normal maintenance cost multiplied by this value.
+    maintenance_multiplier = float
+
+    ## cardinality = 0..1
+    scaled_by_biggest_garrison = float
+
+    ## cardinality = 0..1
+    ### If yes, merge all the regiments in this province together into one army. Defaults to "no".
+    merge = bool
+
+    ## cardinality = 0..1
+    can_toggle_looting = bool
+
+    ## cardinality = 0..1
+    is_looter = bool
+
+    ## cardinality = 0..1
+    ### If yes, the unit can reinforce. Defaults to "no".
+    reinforces = bool
+
+    ## cardinality = 0..1
+    reinforce_rate_multiplier = float
+
+    ## cardinality = 0..1
+    maintenance = bool
+}
+
+# TODO: Confirm scope! And figure out what some of the properties mean
+## scope = character
+### Spawns an army under the given character's control in the closest province.
+alias[effect:spawn_unit] = {
+    province = closest
+
+    home = scope[province]
+
+    owner = scope[character]
+
+    ## cardinality = 0..1
+    ### Defaults to the scoped character. Also can be "none".
+    leader = scope[character]
+
+    ## cardinality = 0..1
+    ### Defaults to the scoped character. Also can be a character scope.
+    leader = none
+
+    ### ID of the unit, to be able to reference them later. Can be localized via $_ARMY and $_ARMY_OF.
+    earmark = value_set[earmark]
+
+    troops = {
+        ## cardinality = 1..inf
+        ### troop_type = { max_value starting_value }
+        enum[troop_types_land_only] = {
+            ## cardinality = 2..2
+            int[1..inf]
+        }
+    }
+
+    ## cardinality = 0..1
+    ### Character to match against for match_mult.
+    match_character = scope[character]
+
+    ## cardinality = 0..1
+    ### Proportional amount of troops to match_character total levy size (levies and event troops).
+    match_mult = float
+
+    ## cardinality = 0..1
+    match_max = float
+
+    ## cardinality = 0..1
+    match_min = float
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on peace. Defaults to "no".
+    disband_on_peace = bool
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on owner death. Defaults to "no".
+    cannot_inherit = bool
+
+    ## cardinality = 0..1
+    ### Attrition multiplier (1.0 for normal, 0 for attrition-less).
+    attrition = float[0.0..inf]
+
+    ## cardinality = 0..1
+    ### Will have normal maintenance cost multiplied by this value.
+    maintenance_multiplier = float
+
+    ## cardinality = 0..1
+    scaled_by_biggest_garrison = float
+
+    ## cardinality = 0..1
+    ### If yes, merge all the regiments in this province together into one army. Defaults to "no".
+    merge = bool
+
+    ## cardinality = 0..1
+    can_toggle_looting = bool
+
+    ## cardinality = 0..1
+    is_looter = bool
+
+    ## cardinality = 0..1
+    ### If yes, the unit can reinforce. Defaults to "no".
+    reinforces = bool
+
+    ## cardinality = 0..1
+    reinforce_rate_multiplier = float
+
+    ## cardinality = 0..1
+    maintenance = bool
+}
+
+# TODO: Confirm scope! And figure out what some of the properties mean
+## scope = character
+### Spawns an army under the given character's control in the the province closest to the capital.
+alias[effect:spawn_unit] = {
+    province = scope[province]
+
+    home = scope[province]
+
+    owner = scope[character]
+
+    ## cardinality = 0..1
+    ### Defaults to the scoped character. Also can be "none".
+    leader = scope[character]
+
+    ## cardinality = 0..1
+    ### Defaults to the scoped character. Also can be a character scope.
+    leader = none
+
+    ### ID of the unit, to be able to reference them later. Can be localized via $_ARMY and $_ARMY_OF.
+    earmark = value_set[earmark]
+
+    troops = {
+        ## cardinality = 1..inf
+        ### troop_type = { max_value starting_value }
+        enum[troop_types_land_only] = {
+            ## cardinality = 2..2
+            int[1..inf]
+        }
+    }
+
+    ## cardinality = 0..1
+    ### Character to match against for match_mult.
+    match_character = scope[character]
+
+    ## cardinality = 0..1
+    ### Proportional amount of troops to match_character total levy size (levies and event troops).
+    match_mult = float
+
+    ## cardinality = 0..1
+    match_max = float
+
+    ## cardinality = 0..1
+    match_min = float
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on peace. Defaults to "no".
+    disband_on_peace = bool
+
+    ## cardinality = 0..1
+    ### Probably - If yes, disbands on owner death. Defaults to "no".
+    cannot_inherit = bool
+
+    ## cardinality = 0..1
+    ### Attrition multiplier (1.0 for normal, 0 for attrition-less).
+    attrition = float[0.0..inf]
+
+    ## cardinality = 0..1
+    ### Will have normal maintenance cost multiplied by this value.
+    maintenance_multiplier = float
+
+    ## cardinality = 0..1
+    scaled_by_biggest_garrison = float
+
+    ## cardinality = 0..1
+    ### If yes, merge all the regiments in this province together into one army. Defaults to "no".
+    merge = bool
+
+    ## cardinality = 0..1
+    can_toggle_looting = bool
+
+    ## cardinality = 0..1
+    is_looter = bool
+
+    ## cardinality = 0..1
+    ### If yes, the unit can reinforce. Defaults to "no".
+    reinforces = bool
+
+    ## cardinality = 0..1
+    reinforce_rate_multiplier = float
+
+    ## cardinality = 0..1
+    maintenance = bool
+}
+
+# STOPPED HERE
 
 ## scope = character
 ### Starts a faction on the liege of the current character scope, if it does not already exist. Different arguments are required depending on the type of the faction being started:
@@ -1233,9 +1695,18 @@ alias[effect:unsafe_impregnate] = character/0
 ###
 alias[effect:unsafe_impregnate_cuckoo] = character/0
 
+# TODO update for thirdparty stuff when I do that
 ## scope = character
-### Works like the war command, but without ensuring the CB can be used.
-alias[effect:unsafe_war] = clause
+### Initiate a war; target is the defender, the scoped character is the attacker.
+alias[effect:war] = {
+    target = scope[character]
+    casus_belli = <casus_belli>
+    ## cardinality = 0..1
+    thirdparty = scope[character]
+    ## cardinality = 0..1
+    ### Overrides the resulting threat value.
+    infamy = int # TODO: is it really int?
+}
 
 ## scope = character
 ### Note: Command shortened in example to avoid stretching the column.
@@ -1245,9 +1716,18 @@ alias[effect:vassalize_or_take_under_title] = clause
 ### Note: Command shortened in example to avoid stretching the column.
 alias[effect:vassalize_or_take_under_title] = clause
 
+# TODO update for thirdparty stuff when I do that
 ## scope = character
-### Initiate a war, with current character as attacker. Also see reverse_war. infamy can be used to override the threat value (for instance infamy = 0).
-alias[effect:war] = clause
+### Initiate a war; target is the defender, the scoped character is the attacker. Doesn't check if the casus belli can be used.
+alias[effect:unsafe_war] = {
+    target = scope[character]
+    casus_belli = <casus_belli>
+    ## cardinality = 0..1
+    thirdparty = scope[character]
+    ## cardinality = 0..1
+    ### Overrides the resulting threat value.
+    infamy = int # TODO: is it really int?
+}
 
 ## scope = character
 ### Modify the wealth of scoped character with the specified amount, or with the wealth of another character.
@@ -1383,9 +1863,18 @@ alias[effect:religion] = religion/clause
 ### Note: assigned value cannot be a scope reference to a title.[1]
 alias[effect:remove_claim] = title/character
 
-## scope = character/title
-### Initiate a war, with current character as defender. infamy can be used to override the threat value (for instance infamy = 0).
-alias[effect:reverse_war] = clause
+# TODO update for thirdparty stuff when I do that
+## scope = character
+### Initiate a war; target is the attacker, the scoped character is the defender.
+alias[effect:reverse_war] = {
+    target = scope[character]
+    casus_belli = <casus_belli>
+    ## cardinality = 0..1
+    thirdparty = scope[character]
+    ## cardinality = 0..1
+    ### Overrides the resulting threat value.
+    infamy = int # TODO: is it really int?
+}
 
 ## scope = character/title
 ### Sets the liege of a character. Can be used to make a character become independent via set_defacto_liege = THIS
