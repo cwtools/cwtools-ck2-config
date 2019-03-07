@@ -10,7 +10,7 @@ enums = {
 types = {
     # WISHLIST: Would be nice to have a rule to not show it in breadcrumbs
     type[title_validation_only] = {
-        path = "thisawadasd"
+        path = "game/common/landed_titles"
         type_per_file = yes
     }
 }
@@ -180,8 +180,19 @@ alias[empire:<title.empire>] = {
     ### How many more troops the AI should assume someone with this as their primary title has. Has no effect on anything except AI. Higher numbers means others are less willing to attack them, and they're more willing to attack others.
     extra_ai_eval_troops = int
 
+    ## cardinality = 0..1
+    ### ??? Defaults to "no".
+    rebel = bool
+
+    ## cardinality = 0..1
+    ### ??? Defaults to "no".
+    pirate = bool
+
     alias_name[coa] = alias_match_left[coa]
     alias_name[pagan_coa] = alias_match_left[pagan_coa]
+
+    alias_name[color] = alias_match_left[color]
+    alias_name[color2] = alias_match_left[color2]
 
     alias_name[kingdom] = alias_match_left[kingdom]
     alias_name[duchy] = alias_match_left[duchy]
@@ -343,6 +354,12 @@ alias[kingdom:<title.kingdom>] = {
     ### How many more troops the AI should assume someone with this as their primary title has. Has no effect on anything except AI. Higher numbers means others are less willing to attack them, and they're more willing to attack others.
     extra_ai_eval_troops = int
 
+    alias_name[coa] = alias_match_left[coa]
+    alias_name[pagan_coa] = alias_match_left[pagan_coa]
+
+    alias_name[color] = alias_match_left[color]
+    alias_name[color2] = alias_match_left[color2]
+
     alias_name[duchy] = alias_match_left[duchy]
     alias_name[duchy_hired] = alias_match_left[duchy_hired]
     alias_name[county] = alias_match_left[county]
@@ -496,6 +513,12 @@ alias[duchy:<title.duchy>] = {
     ## cardinality = 0..1
     ### How many more troops the AI should assume someone with this as their primary title has. Has no effect on anything except AI. Higher numbers means others are less willing to attack them, and they're more willing to attack others.
     extra_ai_eval_troops = int
+
+    alias_name[coa] = alias_match_left[coa]
+    alias_name[pagan_coa] = alias_match_left[pagan_coa]
+
+    alias_name[color] = alias_match_left[color]
+    alias_name[color2] = alias_match_left[color2]
 
     alias_name[county] = alias_match_left[county]
     alias_name[barony] = alias_match_left[barony]
@@ -674,6 +697,12 @@ alias[duchy_hired:<title.duchy_hired>] = {
     hire_range = int[0..inf]
 
     # MERC STUFF END
+
+    alias_name[coa] = alias_match_left[coa]
+    alias_name[pagan_coa] = alias_match_left[pagan_coa]
+
+    alias_name[color] = alias_match_left[color]
+    alias_name[color2] = alias_match_left[color2]
 
     alias_name[county] = alias_match_left[county]
     alias_name[barony] = alias_match_left[barony]
