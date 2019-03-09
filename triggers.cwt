@@ -1787,11 +1787,21 @@ alias[trigger:religion_group] = <religion_group>
 
 ## scope = { character province title }
 ### Checks if the character has this specific culture
-alias[trigger:culture] = culture/character/province/title
+alias[trigger:culture] = <culture>
+
+## scope = { character province title }
+### Checks if the character has this specific culture
+# TODO: Scope version
+alias[trigger:culture] = character/province/title
 
 ## scope = { character province title }
 ### Checks if the character is part of this culture group
-alias[trigger:culture_group] = cultureGroup/character/province/title
+alias[trigger:culture_group] = <culture_group>
+
+## scope = { character province title }
+### Checks if the character is part of this culture group
+# TODO: Scope version
+alias[trigger:culture_group] = character/province/title
 
 ## scope = character/society
 ### (2.8) Number of members who are in the scoped society or scoped character's society. Supports 2.8 <, >=, ==, and <= operators.
@@ -2439,3 +2449,13 @@ alias[trigger:is_fort_decision_potential] = <decision>
 ## scope = any
 alias[trigger:is_hospital_decision_potential] = <decision>
 
+alias[trigger:custom_tooltip] = {
+    text = localisation
+    alias_name[trigger] = alias_match_left[trigger]
+
+}
+
+# TODO: Might be covered by scope_field
+alias[trigger:hidden_tooltip] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}

@@ -150,3 +150,24 @@ alias[duration_my:months] = int[0..inf]
 
 ### Duration in years.
 alias[duration_my:years] = int[0..inf]
+
+# Command modifiers
+
+alias[command_modifier:morale_offence] = float
+alias[command_modifier:morale_defence] = float
+alias[command_modifier:defence] = float
+alias[command_modifier:speed] = float
+alias[command_modifier:retreat] = float
+alias[command_modifier:damage] = float
+alias[command_modifier:siege] = float
+alias[command_modifier:random] = float
+alias[command_modifier:flank] = float
+alias[command_modifier:center] = float
+alias[command_modifier:cavalry] = float
+alias[command_modifier:religious_enemy] = float
+alias[command_modifier:<phase>] = float
+alias[command_modifier:enum[troop_types_land_only]] = float
+alias[command_modifier:terrain] = float
+alias[command_modifier:narrow_flank] = float
+alias[command_modifier:winter_supply] = float
+alias[command_modifier:winter_combat] = float

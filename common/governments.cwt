@@ -192,7 +192,7 @@ government = {
     title_prefix = scalar
 
     ## cardinality = 0..1
-    ### Suffix for the sprite gfx name of the character frame borders to use (so it ends up being <gfx_resource><frame_suffix>).
+    ### Suffix for the sprite gfx name of the character frame borders to use (so it ends up being <sprite><frame_suffix>).
     frame_suffix = scalar
 
     ## replace_scope = { this = character root = character }

@@ -28,13 +28,13 @@ trade_route = {
     ### Start provinces of the trade route.
     start = {
         ## cardinality = 1..inf
-        <province>
+        enum[provinces]
     }
 
     ## cardinality = 1..inf
     ### Specific paths in the trade route.
     path = {
         ## cardinality = 1..inf
-        <province>
+        enum[provinces]
     }
 }

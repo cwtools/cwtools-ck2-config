@@ -16,7 +16,7 @@ government_flavor = {
     name = localisation
 
     ### The 450x150px picture used for the government flavour type.
-    graphics = <gfx_resource>
+    graphics = <sprite>
 
     ### The government flavour type with the highest priority out of those that meet the conditions will be used.
     priority = int

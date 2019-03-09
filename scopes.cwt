@@ -102,14 +102,14 @@ alias[effect:<trait.cached>] = {
 ## scope = any
 ## push_scope = province
 ### Scopes to a province by absolute reference.
-alias[trigger:<province>] = {
+alias[trigger:enum[provinces]] = {
     alias_name[trigger] = alias_match_left[trigger]
 }
 
 ## scope = any
 ## push_scope = province
 ### Scopes to a province by absolute reference.
-alias[effect:<province>] = {
+alias[effect:enum[provinces]] = {
     alias_name[effect] = alias_match_left[effect]
 }
 

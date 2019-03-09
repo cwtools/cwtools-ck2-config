@@ -77,7 +77,7 @@ law_group = {
         right_value = localisation
 
         ### The GFX resource used for positions on the slider.
-        slider_sprite = <gfx_resource>
+        slider_sprite = <sprite>
     }
 }
 

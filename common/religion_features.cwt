@@ -31,7 +31,7 @@ religion_feature_category = {
     ## cardinality = 1..inf
     <religion_feature> = {
         ### What image to use for the picture.
-        picture = <gfx_resource>
+        picture = <sprite>
 
         ## cardinality = 0..1
         ## replace_scope = { this = religion root = religion from = character }

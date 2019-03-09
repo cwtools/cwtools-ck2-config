@@ -296,12 +296,6 @@ modifiers = {
     male_opinion = character
     female_opinion = character
 
-    ### Changes the opinion of all characters of that religion toward the character. Custom religions can be added, but must be defined in 00_modifier_definitions.txt first.
-    <religion>_opinion = character
-
-    ### Changes the opinion of all characters of that religion group toward the character. Custom religions can be added, but must be defined in 00_modifier_definitions.txt first.
-    <religion_group>_opinion = character
-
     ### Changes same religion members' opinion of you
     same_religion_opinion = character
 
@@ -370,18 +364,6 @@ modifiers = {
     ### Increases or decreases the effectiveness of the specified phase, as the defending army.
     phase_<phase>_defense = command?
 
-    ### Adds (or removes in case of a negative number) a specified number of the given unit to the holding's levy, indirectly also increasing the holding's garrison size by the same amount. Flat ✓ ✓
-    <unit> = warfare
-
-    ### archers_max_levy, etc.
-    <unit>_max_levy = warfare
-
-    ### archers_min_levy etc.
-    <unit>_min_levy = warfare
-
-    <unit>_offensive = unit
-    <unit>_defensive = unit
-    <unit>_morale = unit
 
     ### Minimum levy vassals have to provide to their liege. Not cumulative between laws (takes the lowest).
     # TODO: I Don't think this is a modifier, just a law settings
@@ -516,3 +498,124 @@ modifiers = {
     max_population = character
 
 }
+
+# Custom modifiers (e.g ones that are more complicated than above
+### Changes the opinion of all characters of that religion toward the character. Custom religions can be added, but must be defined in 00_modifier_definitions.txt first.
+# scope = character
+# TODO: defined modifiers?
+alias[modifier:<religion>_opinion] = float
+
+### Changes the opinion of all characters of that religion group toward the character. Custom religions can be added, but must be defined in 00_modifier_definitions.txt first.
+# scope = character
+# TODO: defined modifiers?
+alias[modifier:<religion_group>_opinion] = float
+
+# scope = character
+# TODO: defined modifiers?
+alias[modifier:<culture>_opinion] = float
+
+# scope = character
+# TODO: defined modifiers?
+alias[modifier:<culture_group>_opinion] = float
+
+# scope = character
+# TODO: defined modifiers?
+alias[modifier:<trait>_opinion] = float
+
+### Adds (or removes in case of a negative number) a specified number of the given unit to the holding's levy, indirectly also increasing the holding's garrison size by the same amount. Flat ✓ ✓
+# scope = province
+alias[modifier:<special_troop_type>] = float
+### Adds (or removes in case of a negative number) a specified number of the given unit to the holding's levy, indirectly also increasing the holding's garrison size by the same amount. Flat ✓ ✓
+# scope = province
+alias[modifier:enum[troop_types]] = float
+
+
+# TODO: All the rest of the unit modifiers properly (check scopes too)
+
+# TODO: Yes, this is super hacky
+enums = {
+    enum[troop_types_max_levy] = {
+        pikemen_max_levy
+        knights_max_levy
+        archers_max_levy
+        light_infantry_max_levy
+        heavy_infantry_max_levy
+        light_cavalry_max_levy
+        heavy_cavalry_max_levy
+        galleys_max_levy
+    }
+}
+### archers_max_levy, etc.
+# scope = province
+alias[modifier:<special_troop_type>_max_levy] = int
+# scope = province
+alias[modifier:enum[troop_types_max_levy]] = int
+enums = {
+    enum[troop_types_min_levy] = {
+        pikemen_min_levy
+        knights_min_levy
+        archers_min_levy
+        light_infantry_min_levy
+        heavy_infantry_min_levy
+        light_cavalry_min_levy
+        heavy_cavalry_min_levy
+        galleys_min_levy
+    }
+}
+### archers_min_levy, etc.
+# scope = province
+alias[modifier:<special_troop_type>_min_levy] = int
+# scope = province
+alias[modifier:enum[troop_types_min_levy]] = int
+enums = {
+    enum[troop_types_land_only_offensive] = {
+        pikemen_offensive
+        knights_offensive
+        archers_offensive
+        light_infantry_offensive
+        heavy_infantry_offensive
+        light_cavalry_offensive
+        heavy_cavalry_offensive
+    }
+}
+### archers_offensive, etc.
+# scope = unit
+alias[modifier:<special_troop_type>_offensive] = float
+# scope = unit
+alias[modifier:enum[troop_types_land_only_offensive]] = float
+
+enums = {
+    enum[troop_types_land_only_defensive] = {
+        pikemen_defensive
+        knights_defensive
+        archers_defensive
+        light_infantry_defensive
+        heavy_infantry_defensive
+        light_cavalry_defensive
+        heavy_cavalry_defensive
+    }
+}
+### archers_defensive, etc.
+# scope = unit
+alias[modifier:<special_troop_type>_defensive] = float
+# scope = unit
+alias[modifier:enum[troop_types_land_only_defensive]] = float
+
+enums = {
+    enum[troop_types_land_only_morale] = {
+        pikemen_morale
+        knights_morale
+        archers_morale
+        light_infantry_morale
+        heavy_infantry_morale
+        light_cavalry_morale
+        heavy_cavalry_morale
+    }
+}
+
+
+### archers_morale, etc.
+# scope = unit
+alias[modifier:<special_troop_type>_morale] = float
+# scope = unit
+alias[modifier:enum[troop_types_land_only_morale]] = float

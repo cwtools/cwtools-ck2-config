@@ -478,7 +478,7 @@ alias[effect:cancel_pregnancy] = yes
 
 ## scope = character
 ### Moves the capital.
-alias[effect:capital] = <province>
+alias[effect:capital] = enum[provinces]
 
 ## scope = character
 ### Changes base diplomacy stat. Will not decrease base stat below 0.
@@ -557,7 +557,7 @@ alias[effect:chronicle] = {
     portrait = TODO # localisation as scalar?
 
     ## cardinality = 0..1
-    picture = <gfx_resource>
+    picture = <sprite>
 }
 
 ## scope = character

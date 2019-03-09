@@ -83,7 +83,7 @@ society = {
 
     # TODO: Better explanation
     ### GFX resource to use for the society's ranks
-    society_ranks_gfx = <gfx_resource>
+    society_ranks_gfx = <sprite>
 
     ## replace_scope = { this = character root = character from = character }
     ## cardinality = 0..1

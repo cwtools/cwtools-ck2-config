@@ -32,7 +32,7 @@ bookmark = {
 
     subtype[era] = {
         ### The picture used on the era select screen.
-        picture = <gfx_resource>
+        picture = <sprite>
     }
 
     ## cardinality = 0..1
@@ -45,7 +45,7 @@ bookmark = {
     selectable_character = {
         ### The character's ID. Prooobably needs to be alive during the bookmark's date.
         id = <character>
-        
+
         subtype[era] = {
             ### The character's age at the time of the bookmark.
             age = int
@@ -83,7 +83,7 @@ bookmark = {
 
                 ### The character's government.
                 government = <government>
-                
+
                 ### The character's dynasty's ID.
                 dynasty = <dynasty>
             }

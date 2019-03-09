@@ -43,7 +43,7 @@ bloodline = {
 
     ## cardinality = 0..1
     ### 96x93px picture to use in the bloodlines viewer. Defaults to "GFX_bloodlines_placeholder_symbol".
-    picture = <gfx_resource>
+    picture = <sprite>
 
     ## cardinality = 0..1
     ### Flags automatically assigned to each created bloodline of this type.
