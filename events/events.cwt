@@ -60,6 +60,13 @@ event = {
 
     subtype[!hidden] = {
         desc = localisation
+        ## cardinality = 1..inf
+        desc = {
+            trigger = {
+		        alias_name[trigger] = alias_match_left[trigger]
+            }
+            text = localisation
+        }
         picture = <sprite>
         ## cardinality = 1..inf
         picture = {
@@ -141,7 +148,15 @@ event = {
 		}
 		subtype[!hidden] = {
 			## severity = warning
-			name = localisation
+            name = localisation
+            ## cardinality = 1..inf
+            name = {
+                trigger = {
+                    alias_name[trigger] = alias_match_left[trigger]
+                }
+                text = localisation
+            }
+
 		}
 
 		## cardinality = 0..1
@@ -155,7 +170,7 @@ event = {
 		## cardinality = 0..1
 		ai_chance = {
 			factor = float[0..10000]
-			alias_name[modifier_rule] = alias_match_left[modifier_rule]
+			alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
 		}
 	}
 

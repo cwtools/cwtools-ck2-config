@@ -128,11 +128,11 @@ alias[effect:repeat_event] = {
 
 ## scope = any
 ### Saves a scope into a variable, to be re-used later in an event chain
-alias[effect:save_event_target_as] = TODO
+alias[effect:save_event_target_as] = value_set[event_target]
 
 ## scope = any
 ### Saves a scope into a global variable, to be re-used later
-alias[effect:save_global_event_target_as] = TODO
+alias[effect:save_global_event_target_as] = value_set[event_target]
 
 ## scope = any
 ### Creates a global flag.
@@ -182,11 +182,13 @@ alias[effect:unsafe_destroy_landed_title] = scope[title]
 
 ## scope = any with flags
 ### Clears the given flag from the current scope. Works for any scope that can store flags, unlike the more specific clr_scope_flag commands.
-alias[effect:clr_flag] = TODO
+# TODO: More general solution?
+alias[effect:clr_flag] = value[flag]
 
 ## scope = any with flags
 ### Sets a flag in the current scope if it can store flags. Works for any such scope, unlike the more specific set_scope_flag commands.
-alias[effect:set_flag] = TODO
+# TODO: More general solution?
+alias[effect:set_flag] = value_set[flag]
 
 ## scope = artifact
 ### Clears a flag in the currently scoped artifact.
@@ -964,7 +966,8 @@ alias[effect:population] = int
 
 ## scope = character
 ### Removes a character modifier
-alias[effect:remove_character_modifier] = TODO
+# TODO: character event modifiers only
+alias[effect:remove_character_modifier] = <event_modifier>
 
 ## scope = character
 ### Removes a number of instances of a character modifier (usually a stackable one).
@@ -2026,7 +2029,8 @@ alias[effect:reduce_disease] = double
 
 ## scope = province
 ### Removes a province modifier
-alias[effect:remove_province_modifier] = modifier
+# TODO: Add province modifier only
+alias[effect:remove_province_modifier] = <event_modifier>
 
 ## scope = province
 ### Removes a number of instances of a province modifier (usually a stackable one).
