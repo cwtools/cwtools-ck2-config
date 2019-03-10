@@ -89,6 +89,21 @@ types = {
 
         }
 
+        ## starts_with = faction_
+        subtype[faction_character] = {
+            type = character
+        }
+
+        ## starts_with = faction_
+        subtype[faction_liege_titles] = {
+            type = liege_titles
+        }
+
+        ## starts_with = faction_
+        subtype[faction_liege_titles_w_claimant] = {
+            type = liege_titles_w_claimant
+        }
+
         ## starts_with = focus_
         subtype[focus] = {
 

@@ -1668,35 +1668,149 @@ alias[effect:spawn_unit] = {
     maintenance = bool
 }
 
-# STOPPED HERE
+## scope = character
+### Starts a faction on the liege of the current character scope, if it does not already exist.
+alias[effect:start_faction] = {
+    faction = <objective.faction_character>
+
+    ## cardinality = 0..1
+    ### If yes, the character will join an already existing faction if there is one. Defaults to "no".
+    can_join_existing = bool
+}
 
 ## scope = character
-### Starts a faction on the liege of the current character scope, if it does not already exist. Different arguments are required depending on the type of the faction being started:
-alias[effect:start_faction] = clause
+### Starts a faction on the liege of the current character scope, if it does not already exist.
+alias[effect:start_faction] = {
+    faction = <objective.faction_liege_titles>
+
+    title = scope[title]
+
+    ## cardinality = 0..1
+    ### If yes, the character will join an already existing faction if there is one. Defaults to "no".
+    can_join_existing = bool
+}
 
 ## scope = character
-### Steal population from another nomad clan
-alias[effect:steal_population_scaled] = clause
+### Starts a faction on the liege of the current character scope, if it does not already exist.
+alias[effect:start_faction] = {
+    faction = <objective.faction_liege_titles_w_claimant>
 
+    title = scope[title]
+
+    thirdparty = scope[character]
+
+    ## cardinality = 0..1
+    ### If yes, the character will join an already existing faction if there is one. Defaults to "no".
+    can_join_existing = bool
+}
+
+## scope = character
+### Steal population from another nomad clan.
+alias[effect:steal_population_scaled] = {
+    target = scope[character]
+
+    ### 0.0 is 0%, 1.0 is 100%
+    percentage = float[0.001..1.0]
+}
+
+# TODO: Figure out
 ## scope = character
 ###
-alias[effect:subjugate_or_take_under_title] = clause
+alias[effect:subjugate_or_take_under_title] = {
+    title = scope[title]
+    enemy = scope[character]
+}
 
 ## scope = character
-### Parameter
-alias[effect:transfer_scaled_wealth] = clause
+### Transfers all wealth from given character to scoped character.
+alias[effect:transfer_scaled_wealth] = {
+    from = scope[character]
 
+    value = all
+
+    ## cardinality = 0..1
+    ### Minimum amount transferred
+    min = float
+
+    ## cardinality = 0..1
+    ### Maximum amount transferred.
+    max = float
+}
+
+# TODO: Scaled to from or to this?
+## scope = character
+### Transfers a scaled amount of wealth from given character to scoped character.
+alias[effect:transfer_scaled_wealth] = {
+    from = scope[character]
+
+    ### 1.0 equals 1 year of income
+    value = float[0.001..inf]
+
+    ## cardinality = 0..1
+    ### Minimum amount transferred
+    min = float
+
+    ## cardinality = 0..1
+    ### Maximum amount transferred.
+    max = float
+}
+
+## scope = character
+### Transfers all wealth to given character from scoped character.
+alias[effect:transfer_scaled_wealth] = {
+    to = scope[character]
+
+    value = all
+
+    ## cardinality = 0..1
+    ### Minimum amount transferred
+    min = float
+
+    ## cardinality = 0..1
+    ### Maximum amount transferred.
+    max = float
+}
+
+# TODO: Scaled to to or to this?
+## scope = character
+### Transfers all wealth to given character from scoped character.
+alias[effect:transfer_scaled_wealth] = {
+    to = scope[character]
+
+    ### 1.0 equals 1 year of income
+    value = float[0.001..inf]
+
+    ## cardinality = 0..1
+    ### Minimum amount transferred
+    min = float
+
+    ## cardinality = 0..1
+    ### Maximum amount transferred.
+    max = float
+}
+
+# TODO: Figure out
 ## scope = character
 ### Same as wealth ?
 alias[effect:treasury] = int
 
 ## scope = character
-### Scope gets impregnated by the value. This will work even on someone already pregnant.
-alias[effect:unsafe_impregnate] = character/0
+### The scoped character gets impregnated by the given character. This will work even on someone already pregnant.
+alias[effect:unsafe_impregnate] = scope[character]
 
 ## scope = character
+### The scoped character gets impregnated. This will work even on someone already pregnant.
+alias[effect:unsafe_impregnate] = 0
+
+# TODO: Figure out
+## scope = character
 ###
-alias[effect:unsafe_impregnate_cuckoo] = character/0
+alias[effect:unsafe_impregnate_cuckoo] = scope[character]
+
+# TODO: Figure out
+## scope = character
+###
+alias[effect:unsafe_impregnate_cuckoo] = 0
 
 # TODO update for thirdparty stuff when I do that
 ## scope = character
@@ -1711,13 +1825,23 @@ alias[effect:war] = {
     infamy = int # TODO: is it really int?
 }
 
+# TODO: FIgure out
 ## scope = character
-### Note: Command shortened in example to avoid stretching the column.
-alias[effect:vassalize_or_take_under_title] = clause
+###
+alias[effect:vassalize_or_take_under_title] = {
+    title = scope[title]
 
+    enemy = scope[character]
+}
+
+# TODO: FIgure out
 ## scope = character
-### Note: Command shortened in example to avoid stretching the column.
-alias[effect:vassalize_or_take_under_title] = clause
+###
+alias[effect:vassalize_or_take_under_title_destroy_duchies] = {
+    title = scope[title]
+
+    enemy = scope[character]
+}
 
 # TODO update for thirdparty stuff when I do that
 ## scope = character
@@ -1733,32 +1857,62 @@ alias[effect:unsafe_war] = {
 }
 
 ## scope = character
-### Modify the wealth of scoped character with the specified amount, or with the wealth of another character.
-alias[effect:wealth] = double/character
+### Modify the wealth of the scoped character with the specified amount.
+alias[effect:wealth] = float
 
-## scope = character(?)
+# TODO: elaborate
+## scope = character
+### Modify the wealth of the scoped character with the wealth of the given character.
+alias[effect:wealth] = scope[character]
+
+# TODO: confirm scope
+## scope = any
 ### Destroys the hospital in the specified province
-alias[effect:destroy_hospital] = province
+alias[effect:destroy_hospital] = scope[province]
 
-## scope = character/artifact
-### Destroy the scoped or specified artifact. If there is no name given, the scope must be an artifact, and the PREV scope must be the owner. If an artifact name is given, the scope should be the owner of the artifact. If they own more than one, only the first one will be destroyed. Cannot be used to destroy indestructible objects; see unsafe_destroy_artifact
-alias[effect:destroy_artifact] = artifact/bool
+## scope = artifact
+### Destroy the scoped artifact; PREV must be the owner. Cannot be used to destroy indestructible objects; see unsafe_destroy_artifact.
+alias[effect:destroy_artifact] = yes
 
-## scope = character/province
-### Converts to the parent religion
-alias[effect:abandon_heresy] = bool
+# TODO: confirm if it's by type reference
+## scope = character
+### Destroy the artifact specified by name owned by the scoped character. If they own more than one, only the first one will be destroyed. Cannot be used to destroy indestructible objects; see unsafe_destroy_artifact
+alias[effect:destroy_artifact] = <artifact>
 
-## scope = character/province
+## scope = character
+### Converts to the parent religion.
+alias[effect:abandon_heresy] = yes
+
+## scope = province
+### Converts to the parent religion.
+alias[effect:abandon_heresy] = yes
+
+## scope = TODO
 ### Increment (or decrement) a variable with specified value, or another variable
-alias[effect:change_variable] = clause
+alias[effect:change_variable] = TODO
 
-## scope = character/province
-### Removes specified event id with a delayed trigger on current scope.
-alias[effect:clear_delayed_event] = clause
+## scope = character
+### Removes specified event id with a delayed trigger on scoped character.
+alias[effect:clear_delayed_event] = {
+    id = <event.character_scope>
+}
 
-## scope = character/province
-### Clears all flags of the current scope that begin with the specified prefix
+## scope = province
+### Removes specified event id with a delayed trigger on scoped province.
+alias[effect:clear_delayed_event] = {
+    id = <event.province_scope>
+}
+
+# TODO: confirm scopes, wiki's likely outdated here
+## scope = character
+### Clears all flags of the current scope that begin with the specified prefix.
 alias[effect:clear_flags_with_prefix] = scalar
+
+## scope = province
+### Clears all flags of the current scope that begin with the specified prefix.
+alias[effect:clear_flags_with_prefix] = scalar
+
+# STOPPED HERE
 
 ## scope = character/province
 ### Creates a random character with specified parameters.
