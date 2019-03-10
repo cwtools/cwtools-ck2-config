@@ -22,10 +22,10 @@ types = {
     }
 }
 
-## replace_scope = { this = character root = character }
 artifact = {
     ## cardinality = 0..inf
     ### Modifiers the artifact applies to its owner.
+    ## replace_scope = { this = character root = character }
     alias_name[modifier] = alias_match_left[modifier]
 
     ## cardinality = 0..1
@@ -34,6 +34,7 @@ artifact = {
 
     ## cardinality = 0..1
     ### Conditions for the artifact to be active. Unowned artifacts are active only if they don't have this block.
+    ## replace_scope = { this = character root = character }
     active = {
         ## cardinality = 0..inf
         alias_name[trigger] = alias_match_left[trigger]
@@ -63,6 +64,7 @@ artifact = {
 
     ## cardinality = 0..1
     ### Conditions for the artifact_can_be_gifted_to trigger.
+    ## replace_scope = { this = character root = character }
     allowed_gift = {
         ## cardinality = 0..inf
         alias_name[trigger] = alias_match_left[trigger]
@@ -70,6 +72,7 @@ artifact = {
 
     ## cardinality = 0..1
     ### Command modifiers the artifact applies to its owner.
+    ## replace_scope = { this = character root = character }
     command_modifier = {
         alias_name[command_modifier] = alias_match_left[command_modifier]
     }

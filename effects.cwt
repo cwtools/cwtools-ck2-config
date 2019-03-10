@@ -2419,3 +2419,15 @@ alias[effect:troops] = double
 ## scope = war
 ### Possible war ends: invalid, whitepeace, success, reverse_demand
 alias[effect:end_war] = string
+
+
+alias[effect:custom_tooltip] = {
+    text = localisation
+    alias_name[effect] = alias_match_left[effect]
+
+}
+
+# TODO: Might be covered by scope_field
+alias[effect:hidden_tooltip] = {
+    alias_name[effect] = alias_match_left[effect]
+}

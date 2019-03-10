@@ -465,7 +465,8 @@ alias[trigger:has_character_flag] = value[character_flag]
 
 ## scope = character
 ### Checks if the character has a modifier
-alias[trigger:has_character_modifier] = modifier
+# TODO: subtype
+alias[trigger:has_character_modifier] = <event_modifier>
 
 ## scope = character
 ### Checks if the character has children. Functionally identical to num_of_children = 1.
@@ -2074,7 +2075,8 @@ alias[trigger:has_province_flag] = value[province_flag]
 
 ## scope = province
 ### Checks if the province has the given province modifier
-alias[trigger:has_province_modifier] = bool
+# TODO: subtype
+alias[trigger:has_province_modifier] = <event_modifier>
 
 ## scope = province
 ### Checks if a holding is under construction in the province
