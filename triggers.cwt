@@ -288,7 +288,7 @@ alias[trigger:combat_rating_diff] = clause
 
 ## scope = character
 ### Character controls (personally or via a vassal) all the baronies under specified title.
-alias[trigger:completely_controls] = title
+alias[trigger:completely_controls] = <title>
 
 ## scope = character
 ### Similar to completely_controls
