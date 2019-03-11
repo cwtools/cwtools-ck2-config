@@ -390,4 +390,15 @@ enums = {
         ### Females only.
         enatic
     }
+    enum[terrain] = {
+        forest
+        hills
+        mountain
+        plains
+        farmlands
+        steppe
+        desert
+        jungle
+        arctic
+    }
 }
