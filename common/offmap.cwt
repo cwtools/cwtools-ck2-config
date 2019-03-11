@@ -292,7 +292,7 @@ offmap_policy = {
     ### Flags to set/remove when the offmap receives/loses this policy.
     flags = {
         ## cardinality = 1..inf
-        value_set[offmap_flag]
+        value_set[offmap_policy_flag]
     }
 }
 
@@ -304,6 +304,6 @@ offmap_status = {
     ### Flags to set/remove when the offmap receives/loses this status.
     flags = {
         ## cardinality = 1..inf
-        value_set[offmap_flag]
+        value_set[offmap_status_flag]
     }
 }

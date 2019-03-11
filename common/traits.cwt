@@ -161,7 +161,7 @@ trait = {
 
     # TODO: Confirm
     ## cardinality = 0..1
-    ### UNCONFIRMED If set, the character receives this many leadership traits (leader = yes) upon receiving this trait.
+    ### UNCONFIRMED Determines the limit on how many leader = yes traits a character with this trait can have for the can_have_more_leadership_traits condition.
     leadership_traits = int
 
     # TODO: What's that do?

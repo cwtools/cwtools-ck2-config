@@ -19,10 +19,12 @@ types = {
 }
 
 scripted_trigger = {
-    # TODO: Figure out
-    ## cardinality = 0..1
-    ### Check the wiki or something this is super confusing.
-    context = scalar
+    subtype[offmap_like] = {
+        # TODO: Figure out
+        ## cardinality = 0..1
+        ### Check the wiki or something this is super confusing.
+        context = value_set[offmap_like_context]
+    }
 
     alias_name[trigger] = alias_match_left[trigger]
 }

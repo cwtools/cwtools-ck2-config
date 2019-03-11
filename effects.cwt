@@ -2272,8 +2272,6 @@ alias[effect:add_holding_modifier] = {
     enum[duration_dmy] = int
 }
 
-# STOPPED HERE
-
 ## scope = title
 ### Makes the scoped holding the capital of the province. Also see revoke_capital_holding.
 alias[effect:make_capital_holding] = yes
@@ -2302,8 +2300,8 @@ alias[effect:set_trade_route_value_multiplier] = {
 }
 
 ## scope = offmap
-### Clears the given flag from the scoped offmap power.
-alias[effect:clr_offmap_tmp_flag] = value[offmap_flag]
+### Clears the given temporary flag from the scoped offmap power.
+alias[effect:clr_offmap_tmp_flag] = value[offmap_tmp_flag]
 
 ## scope = offmap
 ### Sets the scoped offmap power's current ruler to the target scope, automatically killing the previous ruler.
@@ -2314,8 +2312,8 @@ alias[effect:set_offmap_holder] = scope[character]
 alias[effect:set_offmap_name] = localisation
 
 ## scope = offmap
-### Adds the given flag to the scoped offmap power.
-alias[effect:set_offmap_tmp_flag] = value_set[offmap_flag]
+### Adds the given temporary flag to the scoped offmap power.
+alias[effect:set_offmap_tmp_flag] = value_set[offmap_tmp_flag]
 
 ## scope = offmap
 ### Sets the scoped offmap power's current policy to the given one.
