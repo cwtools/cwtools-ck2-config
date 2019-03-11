@@ -61,11 +61,11 @@ message_interest = {
 message_type = {
     ## cardinality = 0..1
     ### The picture used for this message type.
-    picture = <gfx_resource>
+    picture = <sprite>
 
     ## cardinality = 0..1
     ### The sound used for this message type.
-    sound = <sfx_resource>
+    sound = <sound>
 
     # TODO: Confirm
     ## cardinality = 0..1

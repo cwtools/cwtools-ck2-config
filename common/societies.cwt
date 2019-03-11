@@ -79,7 +79,7 @@ society = {
     society_rank_up_decision = <decision>
 
     ### Sound effect to play while the society is selected in the societies tab.
-    sound = <sfx_resource>
+    sound = <sound>
 
     # TODO: Better explanation
     ### GFX resource to use for the society's ranks

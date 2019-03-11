@@ -56,11 +56,11 @@ death = {
     sound_list = {
         female = {
             ## cardinality = 1..inf
-            <sfx_resource>
+            <sound>
         }
         male = {
             ## cardinality = 1..inf
-            <sfx_resource>
+            <sound>
         }
     }
 }
