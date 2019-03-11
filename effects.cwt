@@ -114,8 +114,7 @@ alias[effect:repeat_event] = {
     id = <event>
 
     ## cardinality = 0..1
-    ### Base number of days to wait before firing the event. If not specified (or 0), event occurs instantly.
-    days = int
+    enum[duration_dy] = int
 
     ## cardinality = 0..1
     ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
@@ -135,7 +134,7 @@ alias[effect:save_event_target_as] = value_set[event_target]
 alias[effect:save_global_event_target_as] = value_set[event_target]
 
 ## scope = any
-### Creates a global flag.
+### Sets a global flag.
 alias[effect:set_global_flag] = value_set[global_flag]
 
 # TODO: possibly scope[religion]?
@@ -528,17 +527,12 @@ alias[effect:change_society_currency] = {
 
 # TODO: See if months works
 ## scope = character
-### Fires an event to scoped character.
+### Fires an event for the scoped character.
 alias[effect:character_event] = {
     id = <event.character>
 
     ## cardinality = 0..1
-    ### How many days to delay.
-    days = int
-
-    ## cardinality = 0..1
-    ### How many years to delay.
-    years = int
+    enum[duration_dy] = int
 
     ## cardinality = 0..1
     ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
@@ -845,12 +839,7 @@ alias[effect:letter_event] = {
     id = <event.letter>
 
     ## cardinality = 0..1
-    ### How many days to delay.
-    days = int
-
-    ## cardinality = 0..1
-    ### How many years to delay.
-    years = int
+    enum[duration_dy] = int
 
     ## cardinality = 0..1
     ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
@@ -899,12 +888,7 @@ alias[effect:narrative_event] = {
     id = <event.narrative>
 
     ## cardinality = 0..1
-    ### How many days to delay.
-    days = int
-
-    ## cardinality = 0..1
-    ### How many years to delay.
-    years = int
+    enum[duration_dy] = int
 
     ## cardinality = 0..1
     ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
@@ -2280,7 +2264,7 @@ alias[effect:clr_dynasty_flag] = value[dynasty_flag]
 ## scope = title
 ### Adds a modifier to the scoped title, if it's a holding.
 alias[effect:add_holding_modifier] = {
-    modifier = <event_modifer>
+    modifier = <event_modifier>
     ## cardinality = 0..1
     hidden = yes
     ## cardinality = 0..1
@@ -2290,403 +2274,558 @@ alias[effect:add_holding_modifier] = {
 
 # STOPPED HERE
 
-## scope = holding
-### Makes the holding the capital of the province. Also see revoke_capital_holding.
-alias[effect:make_capital_holding] = bool
+## scope = title
+### Makes the scoped holding the capital of the province. Also see revoke_capital_holding.
+alias[effect:make_capital_holding] = yes
 
-## scope = holding
-### Also see make_capital_holding
-alias[effect:revoke_capital_holding] = bool
+# TODO: Confirm
+## scope = title
+### Reverts the scoped holding's province's capital to default? Also see make_capital_holding.
+alias[effect:revoke_capital_holding] = yes
 
-## scope = holding title?
-###
-alias[effect:set_trade_route_base_value] = double?
+# TODO: Confirm scope and confirm value variable type (maybe float?).
+## scope = any
+### Changes the amount of wealth brought from off-map; same as the "wealth" parameter in the trade route definition, except can be done dynamically.
+alias[effect:set_trade_route_base_value] = {
+    which = <trade_route>
 
-## scope = holding title?
-###
-alias[effect:set_trade_route_value_multiplier] = double?
+    value = int
+    value = value[variable]
+}
 
-## scope = offmap
-### Wipes the specified flag from the scoped offmap power.
-alias[effect:clr_offmap_tmp_flag] = string
+## scope = any
+### Multiplies the value of the trade route. If set to 0, the province tooltip will explain that the route is inactive.
+alias[effect:set_trade_route_value_multiplier] = {
+    which = <trade_route>
 
-## scope = offmap
-### Sets the scoped offmap power's current ruler to the target scope.
-alias[effect:set_offmap_holder] = character
-
-## scope = offmap
-### Sets the scoped offmap power's name to the localisation key corresponding to the string.
-alias[effect:set_offmap_name] = string
-
-## scope = offmap
-### Adds the specified script flag to the scoped offmap power (check with has_offmap_tmp_flag or has_offmap_flag).
-alias[effect:set_offmap_tmp_flag] = string
+    value = float
+}
 
 ## scope = offmap
-### Sets the scoped offmap power's current policy to the specified ID (corresponding to a policy in /common/offmap_powers/policies).
-alias[effect:set_policy] = id
+### Clears the given flag from the scoped offmap power.
+alias[effect:clr_offmap_tmp_flag] = value[offmap_flag]
 
 ## scope = offmap
-### Sets the scoped offmap power's current status modifier to the specified ID (corresponding to a modifier in /common/offmap_powers/statuses).
-alias[effect:set_status] = id
+### Sets the scoped offmap power's current ruler to the target scope, automatically killing the previous ruler.
+alias[effect:set_offmap_holder] = scope[character]
+
+## scope = offmap
+### Sets the scoped offmap power's name to the given localisation key.
+alias[effect:set_offmap_name] = localisation
+
+## scope = offmap
+### Adds the given flag to the scoped offmap power.
+alias[effect:set_offmap_tmp_flag] = value_set[offmap_flag]
+
+## scope = offmap
+### Sets the scoped offmap power's current policy to the given one.
+alias[effect:set_policy] = <offmap_policy>
+
+## scope = offmap
+### Sets the scoped offmap power's current status modifier to the given one.
+alias[effect:set_status] = <offmap_status>
 
 ## scope = province
-### Adds N constructible settlement to a province. Can be negative. [2]
+### Adds or removes [value] holdings slots to or from the scoped province.
 alias[effect:add_holding_slot] = int
 
 ## scope = province
-### Adds a province modifier
-alias[effect:add_province_modifier] = clause
+### Adds a province modifier to the scoped province.
+alias[effect:add_province_modifier] = {
+    name = <event_modifier>
+    ## cardinality = 0..1
+    hidden = yes
+    ## cardinality = 0..1
+    stacking = yes
+    enum[duration_dmy] = int
+}
 
 ## scope = province
-### Construct a building in a special holding (hospital, fort or trade post).
-alias[effect:add_to_extra_holding] = clause
+### Construct a building in a special holding in the scoped province.
+alias[effect:add_to_extra_holding] = {
+    type = enum[holding_types_special]
+    building = <building>
+}
 
+# TODO: Maybe slightly more docs.
 ## scope = province
-### Builds a new settlement in the province.
-alias[effect:build_holding] = clause
+### Builds a new barony-tier holding in the scoped province; adds holding slots if necessary.
+alias[effect:build_holding] = {
+    ## cardinality = 0..1
+    title = <title.barony>
+    type = enum[holding_types_barony_only]
+    ## cardinality = 0..1
+    holder = scope[character]
+}
 
+# TODO: wtf is this it doesn't show up anywhere
 ## scope = province
 ###
 alias[effect:change_random_civ_tech] = int
 
+# TODO: wtf is this it doesn't show up anywhere
 ## scope = province
 ###
 alias[effect:change_random_eco_tech] = int
 
+# TODO: wtf is this it doesn't show up anywhere
 ## scope = province
 ###
 alias[effect:change_random_mil_tech] = int
 
 ## scope = province
-### Improves technology in the province (referenced in common/technology.txt)
-alias[effect:change_tech] = clause
+### Improves technology in the scoped province.
+alias[effect:change_tech] = {
+    technology = <technology>
+    value = int
+}
 
+# TODO: Elaborate
 ## scope = province
 ###
-alias[effect:clear_revolt] = bool
+alias[effect:clear_revolt] = yes
 
+## scope = province
+### Clears a previously set flag in the scoped province.
+alias[effect:clr_province_flag] = value[province_flag]
+
+## scope = province
+### Destroy the fort in the scoped province.
+alias[effect:destroy_fort] = yes
+
+## scope = province
+### Destroy a building in a special holding in the scoped province.
+alias[effect:destroy_in_extra_holding] = {
+    type = enum[holding_types_special]
+    building = <building>
+}
+
+# TODO: FIgure out what durations can be used
+## scope = province
+### Fires an event for the scoped province.
+alias[effect:province_event] = {
+    id = <event.province>
+
+    ## cardinality = 0..1
+    days = int
+
+    ## cardinality = 0..1
+    ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
+    random = int
+
+    # TODO: Figure out default
+    ## cardinality = 0..1
+    ### Tooltip for the effect. If not specified, ???
+    tooltip = localisation
+}
+
+# TODO: Figure out
 ## scope = province
 ###
-alias[effect:clr_province_flag] = flag
+alias[effect:reduce_disease] = float
 
-## scope = province
-### Destroy the fort in a province.
-alias[effect:destroy_fort] = province
-
-## scope = province
-### Destroy a building in a special holding (hospital, fort or trade post).
-alias[effect:destroy_in_extra_holding] = clause
-
-## scope = province
-### Fires an event to scoped province. See event modding.
-alias[effect:province_event] = clause
-
-## scope = province
-###
-alias[effect:reduce_disease] = double
-
-## scope = province
-### Removes a province modifier
 # TODO: Add province modifier only
+## scope = province
+### Removes a province modifier from the scoped province.
 alias[effect:remove_province_modifier] = <event_modifier>
 
 ## scope = province
-### Removes a number of instances of a province modifier (usually a stackable one).
-alias[effect:remove_province_modifiers] = clause
+### Removes a number of instances of a province modifier from the scoped province.
+alias[effect:remove_province_modifiers] = {
+    modifier = <event_modifier>
+    amount = int[1..inf]
+}
 
+## scope = province
+### Sets a flag in the scoped province.
+alias[effect:set_province_flag] = value_set[province_flag]
+
+## scope = province
+### Spawns a specific disease in the scoped province.
+alias[effect:spawn_disease] = <disease>
+
+# TODO: Figure out
 ## scope = province
 ###
-alias[effect:set_province_flag] = flag
-
-## scope = province
-### Spawns a specific disease in the scoped province
-alias[effect:spawn_disease] = disease
-
-## scope = province
-###
-alias[effect:steal_random_tech] = character
+alias[effect:steal_random_tech] = scope[character]
 
 ## scope = province/character/title/
 ### Deletes a persistent event target previously saved in the currently scoped entity.
-alias[effect:clear_persistent_event_target] = var
+alias[effect:clear_persistent_event_target] = TODO
 
 ## scope = province/character/title/
 ### Saves a scope into a persistent event target in the current scope to be reused later. name is the name of the event target, scope is the scope to save. Relative scoping works.
-alias[effect:save_persistent_event_target] = clause
+alias[effect:save_persistent_event_target] = TODO
 
-## scope = province/holding
-### Destroys a random building. If a building is given as the value, then that building will never be picked for destruction (even if it is the only one left).
-alias[effect:destroy_random_building] = bool/building
+# TODO: Confirm
+## scope = { province title }
+### Destroys a random building in the scoped holding or the scoped province's capital (?).
+alias[effect:destroy_random_building] = yes
+
+# TODO: Confirm
+## scope = { province title }
+### Destroys a random building in the scoped holding or the scoped province's capital (?); the given building will never be picked for destruction, even if it is the only one left.
+alias[effect:destroy_random_building] = <building>
 
 ## scope = religion
 ### Adds an evil god name to the scoped religion.
-alias[effect:add_evil_god_name] = key
+alias[effect:add_evil_god_name] = localisation
 
 ## scope = religion
 ### Adds a god name to the scoped religion.
-alias[effect:add_god_name] = key
+alias[effect:add_god_name] = localisation
 
 ## scope = religion
-### Removes all evil god names from the scoped religion
-alias[effect:remove_evil_god_names] = bool
+### Removes all evil god names from the scoped religion.
+alias[effect:remove_evil_god_names] = yes
 
 ## scope = religion
-### Removes all god names from the scoped religion
-alias[effect:remove_god_names] = bool
+### Removes all god names from the scoped religion.
+alias[effect:remove_god_names] = yes
 
 ## scope = religion
-### Sets the religion's high god's name to the given key.
-alias[effect:set_high_god_name] = key
+### Sets the scoped religion's high god's name to the given key.
+alias[effect:set_high_god_name] = localisation
 
 ## scope = religion
-### Sets the religion's men_can_take_consorts attribute to the given value.
+### Sets the scoped religion's men_can_take_consorts attribute to the given value.
 alias[effect:set_men_can_take_consorts] = bool
 
 ## scope = religion
-### Sets the religion's rel_head_defense attribute to the given value.
+### Sets the scoped religion's rel_head_defense attribute to the given value.
 alias[effect:set_rel_head_defense] = bool
 
 ## scope = religion
-### Sets the religion's women_can_take_consorts attribute to the given value.
+### Sets the scoped religion's women_can_take_consorts attribute to the given value.
 alias[effect:set_women_can_take_consorts] = bool
 
 ## scope = society
-### Adds a given value to the society's current progress.
+### Adds a given value to the scoped society's current progress.
 alias[effect:add_society_progress] = float
 
 ## scope = society
-### Set the society's current progress to a given value.
+### Sets the scoped society's current progress to a given value.
 alias[effect:set_society_progress] = float
 
 ## scope = society
-### Enables the society's progress bar.
-alias[effect:start_society_progress] = bool
+### Enables the scoped society's progress bar.
+alias[effect:start_society_progress] = yes
 
 ## scope = society
-### Disables the society's progress bar.
-alias[effect:stop_society_progress] = bool
+### Disables the scoped society's progress bar.
+alias[effect:stop_society_progress] = yes
 
 ## scope = title
-### Construct a building in a holding. Also constructs the buildings it upgrades from, based on upgrades_from.
-alias[effect:add_building] = building
+### Constructs a building in the scoped holding. Also constructs the buildings it upgrades from, based on upgrades_from.
+alias[effect:add_building] = <building>
+
+# TODO: Confirm if it's ignored in this case
+## scope = title
+### Sets the specified law for the scoped title, ignoring cooldown and opinion effects.
+alias[effect:add_law] = <law>
 
 ## scope = title
-### Sets the specified law for the scoped title. Can optionally specify to ignore cooldown and opinion effects (i.e. on vassals), defaulting to yes.
-alias[effect:add_law] = law/clause
+### Sets the specified law for the scoped title with some extra parameters.
+alias[effect:add_law] = {
+    law = <law>
 
-## scope = title
-###
-alias[effect:add_law_w_cooldown] = law
+    ## cardinality = 0..1
+    ### If yes, cooldown is ignored when executing this command. Defaults to "yes".
+    cooldown = bool
 
-## scope = title
-###
-alias[effect:adjective] = string
+    ## cardinality = 0..1
+    ### If yes, opinion effects on vassals are ignored when executing this command. Defaults to "yes".
+    opinion_effect = bool
+}
 
-## scope = title
-### Update the percentage of income that goes to the creator for a dynamic mercenary company.
-alias[effect:adjust_siphon_factor] = double
-
-## scope = title
-### Change the composition of a dynamic mercenary title.
-alias[effect:change_mercenary_composition] = clause
-
-## scope = title
-### Changes the army size of a mercenary/adventurer title.
-alias[effect:change_title_army_size] = double
-
+# TODO: Figure out
 ## scope = title
 ###
-alias[effect:clan_opinion] = clause
+alias[effect:add_law_w_cooldown] = <law>
 
+# TODO: Confirm
+## scope = title
+### Sets the scoped title's adjective to the given string.
+alias[effect:adjective] = scalar
+
+# TODO: Is it really dynamic only?
+## scope = title
+### Update the percentage of income that goes to the creator for the scoped dynamic mercenary company.
+alias[effect:adjust_siphon_factor] = float
+
+# TODO: Is it really dynamic only? Also, figure out and confirm it's any troop types and not land only
+## scope = title
+### Change the composition of the scoped dynamic mercenary title.
+alias[effect:change_mercenary_composition] = {
+    ## cardinality = 0..1
+    from = enum[troop_types]
+    type = enum[troop_types]
+    change = int
+}
+
+## scope = title
+### Changes the army size of the scoped mercenary/adventurer title.
+alias[effect:change_title_army_size] = float
+
+# TODO: Figure out, check durations
 ## scope = title
 ###
-alias[effect:clan_reverse_opinion] = clause
+alias[effect:clan_opinion] = {
+    who = scope[title]
+    modifier = <opinion_modifer>
+    years = int
+}
 
+# TODO: Figure out, check durations
 ## scope = title
 ###
-alias[effect:clr_title_flag] = flag
+alias[effect:clan_reverse_opinion] = {
+    who = scope[title]
+    modifier = <opinion_modifer>
+    years = int
+}
 
 ## scope = title
-### Copies title history from title on the right to title on the left.
-alias[effect:copy_title_history] = title
+### Clears a previously set flag from the scoped title.
+alias[effect:clr_title_flag] = value[title_flag]
 
 ## scope = title
-### Copies title laws from title on the right to title on the left.
-alias[effect:copy_title_laws] = title
+### Copies title history from the given title to the scoped title.
+alias[effect:copy_title_history] = scope[title]
 
 ## scope = title
-### Create a feud between two clans
-alias[effect:create_feud] = title
+### Copies title laws from the given title to the scoped title.
+alias[effect:copy_title_laws] = scope[title]
 
 ## scope = title
-### Creates a dynamic title with specified parameters. Landless dynamic titles require a landed home province to both hold prisoners and to act as a fallback if the title gets destroyed. This command should be run from the home province scope, otherwise the whole court will end up stuck in province 0 when the holder dies.
-alias[effect:create_title] = clause
+### Create a feud between two clans, the given and the scoped title.
+alias[effect:create_feud] = scope[title]
+
+# TODO: Is it really dynamic only?
+## scope = title
+### Break the scoped dynamic mercenary title free from its creator.
+alias[effect:cut_mercenary_creator_relation] = yes
+
+# TODO: Elaborate
+## scope = title
+### Changes the de jure structure.
+alias[effect:de_jure_liege] = scope[character]
+
+# TODO: Elaborate
+## scope = title
+### Changes the de jure structure.
+alias[effect:de_jure_liege] = scope[title]
+
+# TODO: Elaborate
+## scope = title
+### Changes the de jure structure.
+alias[effect:de_jure_liege] = 0
+
+## scope = any
+### Destroys the given landed title. It can later be re-created by the player or AI, unlike when deactivated via activate_title.
+alias[effect:destroy_landed_title] = scope[title]
+
+## scope = any
+### Destroys the given holding. Also see build_holding.
+alias[effect:destroy_settlement] = scope[title]
 
 ## scope = title
-### Break free the dynamic mercenary title from its creator.
-alias[effect:cut_mercenary_creator_relation] = bool
+### Destroys the scoped holding. Also see build_holding.
+alias[effect:destroy_settlement] = yes
 
-## scope = title
-### Changes the de jure structure
-alias[effect:de_jure_liege] = character/title/0
-
-## scope = title
-### Destroys a landed title. It can later be re-created by the player or AI, at the difference of deactivating it via <code>activate_title.
-alias[effect:destroy_landed_title] = title/bool
-
-## scope = title
-### Destroys scoped holding. Also see build_holding.
-alias[effect:destroy_settlement] = title
-
+# TODO: RHS value? Probably enum
 ## scope = title
 ### Changes council laws. Also see enable_council_voting_on_issue.
-alias[effect:disable_council_voting_on_issue] = votingTopic
+alias[effect:disable_council_voting_on_issue] = scalar
 
+# TODO: RHS value? Probably enum
 ## scope = title
 ### Changes council laws. Also see disable_council_voting_on_issue.
-alias[effect:enable_council_voting_on_issue] = votingTopic
+alias[effect:enable_council_voting_on_issue] = scalar
 
+# TODO: Elaborate
 ## scope = title
-### Ends a blood oath
-alias[effect:end_oath] = title
+### Ends a blood oath.
+alias[effect:end_oath] = scope[title]
 
+# TODO: Elaborate
 ## scope = title
 ### Similar to abdicate_to
-alias[effect:gain_title] = character/title
+alias[effect:gain_title] = scope[character]
 
+# TODO: Elaborate
 ## scope = title
-### Gives opinion bonus toward the title giver
-alias[effect:gain_title_plus_barony_if_unlanded] = character
+### Similar to abdicate_to
+alias[effect:gain_title] = scope[title]
 
+# TODO: Figure out
 ## scope = title
-### cognatic, agnatic, true_cognatic, enatic_cognatic, or enatic
-alias[effect:gender_succ] = string
+### ???
+alias[effect:gain_title_plus_barony_if_unlanded] = scope[character]
 
-## scope = title
-###
-alias[effect:grant_kingdom_w_adjudication] = character
-
-## scope = title
-###
-alias[effect:make_primary_title] = bool
-
+# TODO: Figure out
 ## scope = title
 ###
-alias[effect:press_claim] = character
+alias[effect:gender_succ] = enum[gender_successions]
 
+# TODO: Figure out
 ## scope = title
 ###
-alias[effect:province_capital] = bool
+alias[effect:grant_kingdom_w_adjudication] = scope[character]
 
+# TODO: Figure out
 ## scope = title
 ###
-alias[effect:rebel_defection] = bool
+alias[effect:make_primary_title] = yes
 
+# TODO: Figure out
 ## scope = title
 ###
-alias[effect:refill_holding_levy] = bool
+alias[effect:press_claim] = scope[character]
 
+# TODO: Elaborate
 ## scope = title
 ###
-alias[effect:remove_building] = building
+alias[effect:province_capital] = yes
 
-## scope = title
-### Removes a holding modifier
-alias[effect:remove_holding_modifier] = modifier
-
-## scope = title
-### Removes a number of instances of a holding modifier (usually a stackable one).
-alias[effect:remove_holding_modifiers] = clause
-
-## scope = title
-### Removes the scoped title from being a holy site of the given religion. Warning: this lets you have less than 5 holy sites which might cause weirdness. Also, removing holy sites to a religion but not its heresies will cause their icons to show up individually on other shared holy sites instead of being hidden like normal.
-alias[effect:remove_holy_site] = religion
-
-## scope = title
-### Removes the scoped title from being a holy site of the given religion and its heresies. Warning: this lets you have less than 5 holy sites which might cause weirdness.
-alias[effect:remove_holy_site] = religion
-
+# TODO: Figure out
 ## scope = title
 ###
-alias[effect:reset_coa] = title
+alias[effect:rebel_defection] = yes
 
+# TODO: Figure out
 ## scope = title
 ###
-alias[effect:revoke_law] = law
+alias[effect:refill_holding_levy] = yes
 
+# TODO: Figure out
+## scope = title
+###
+alias[effect:remove_building] = <building>
+
+## scope = title
+### Removes a holding modifier from the scoped holding.
+alias[effect:remove_holding_modifier] = <event_modifier>
+
+## scope = title
+### Removes a number of instances of a holding modifier from the scoped holding.
+alias[effect:remove_holding_modifiers] = {
+    modifier = <event_modifier>
+    amount = int[1..inf]
+}
+
+# TODO: I think mordzuber over at discord found out some stuff about it.
+## scope = title
+### Removes the scoped county from being a holy site of the given religion. Warning: this lets you have less than 5 holy sites which might cause weirdness. Also, removing holy sites to a religion but not its heresies will cause their icons to show up individually on other shared holy sites instead of being hidden like normal.
+alias[effect:remove_holy_site] = scope[religion]
+
+# TODO: I think mordzuber over at discord found out some stuff about it.
+## scope = title
+### Removes the scoped county from being a holy site of the given religion and its heresies. Warning: this lets you have less than 5 holy sites which might cause weirdness.
+alias[effect:remove_holy_site_with_heresies] = scope[religion]
+
+# TODO: Figure out
+## scope = any
+###
+alias[effect:reset_coa] = scope[title]
+
+# TODO: Figure out
+## scope = title
+###
+alias[effect:revoke_law] = <law>
+
+# TODO: Figure out
 ## scope = title
 ###
 alias[effect:set_allow_feminism] = bool
 
+# TODO: Figure out
 ## scope = title
 ### Crown laws
 alias[effect:set_allow_free_duchy_revokation] = bool
 
+# TODO: Figure out
 ## scope = title
 ### Crown laws
 alias[effect:set_allow_free_infidel_revokation] = bool
 
+# TODO: Figure out
 ## scope = title
 ### Crown laws
 alias[effect:set_allow_free_revokation] = bool
 
+# TODO: Figure out
 ## scope = title
 ### Crown laws
 alias[effect:set_allow_free_vice_royalty_revokation] = bool
 
+# TODO: Figure out
 ## scope = title
 ###
 alias[effect:set_allow_gender_laws] = bool
 
+# TODO: Figure out
 ## scope = title
 ### Crown laws
 alias[effect:set_allow_title_revokation] = bool
 
+# TODO: Figure out
 ## scope = title
 ### Crown laws
 alias[effect:set_allow_vice_royalties] = bool/tier
 
+# TODO: Figure out
 ## scope = title
 ###
 alias[effect:set_allows_matrilineal_marriage] = bool
 
+# TODO: Figure out
 ## scope = title
 ### Crown laws
 alias[effect:set_appoint_generals] = bool
 
+# TODO: Figure out
 ## scope = title
 ### Crown laws
 alias[effect:set_appoint_regents] = bool
 
 ## scope = title
-### Set the coats of arms (flag) of a title to that of another title. An otherwise unused ""dummy"" title in landed_titles can be used to define the coats of arms.
-alias[effect:set_coa] = title
+### Set the coats of arms of the scoped title to that of the given title.
+alias[effect:set_coa] = scope[title]
 
+# TODO: I think mordzuber over at discord found out some stuff about it.
 ## scope = title
-### Sets the scoped title to be a holy site of the given religion. Warning: this lets you have more than 5 holy sites which might cause weirdness. Also, adding holy sites to a religion but not its heresies will cause their icons to show up individually on other shared holy sites instead of being hidden like normal.
-alias[effect:set_holy_site] = religion
+### Sets the scoped county to be a holy site of the given religion. Warning: this lets you have more than 5 holy sites which might cause weirdness. Also, adding holy sites to a religion but not its heresies will cause their icons to show up individually on other shared holy sites instead of being hidden like normal.
+alias[effect:set_holy_site] = scope[religion]
 
+# TODO: I think mordzuber over at discord found out some stuff about it.
 ## scope = title
-### Sets the scoped title to be a holy site of the given religion and its heresies. Warning: this lets you have more than 5 holy sites which might cause weirdness.
-alias[effect:set_holy_site_with_heresies] = religion
+### Sets the scoped county to be a holy site of the given religion and its heresies. Warning: this lets you have more than 5 holy sites which might cause weirdness.
+alias[effect:set_holy_site_with_heresies] = scope[religion]
 
-## scope = title
-### Crown laws
-alias[effect:set_investiture] = string
-
+# TODO: Figure out, probably an enum
 ## scope = title
 ###
-alias[effect:set_mercenary_maintenance_modifier] = modifier
+alias[effect:set_investiture] = TODO
+
+# TODO: Figure out
+## scope = title
+###
+alias[effect:set_mercenary_maintenance_modifier] = <static_modifier>
 
 ## scope = title
-### The scoped title becomes under the authority of the specified Pentarch seat
-alias[effect:set_pentarch_title] = title/none
+### The scoped title becomes under the authority of the specified Pentarch seat.
+alias[effect:set_pentarch_title] = scope[title]
 
 ## scope = title
-### Sets the preferred capital of the scoped title to the specified provinces. Works for both dynamic and static titles since patch 2.8.
-alias[effect:set_preferred_capital] = province
+### The scoped title stops being under the authority of the Pentarchy.
+alias[effect:set_pentarch_title] = none
 
+## scope = title
+### Sets the preferred capital of the scoped title to the given province.
+alias[effect:set_preferred_capital] = scoped[province]
+
+# TODO: reword
 ## scope = title
 ### Crown laws: avoid titles leaving the realm upon inheritance
 alias[effect:set_protected_inheritance] = bool
@@ -2695,53 +2834,58 @@ alias[effect:set_protected_inheritance] = bool
 ### Sets the title's short_name parameter to the given value.
 alias[effect:set_short_name] = bool
 
+# TODO: reword
 ## scope = title
-### Crown laws: allow/disallow vassals to wage war
+### Crown laws: allow/disallow vassals to wage war.
 alias[effect:set_the_kings_full_peace] = bool
 
+# TODO: reword
 ## scope = title
-### Crown laws: allow/disallow vassals to wage war between them
+### Crown laws: allow/disallow vassals to wage war between them.
 alias[effect:set_the_kings_peace] = bool
 
+# TODO: reword
 ## scope = title
 ### set/unset title as being an adventurer title.
 alias[effect:set_title_adventurer] = clause
 
 ## scope = title
-### Creates a flag on a title
-alias[effect:set_title_flag] = flag
+### Sets a flag in the scoped title.
+alias[effect:set_title_flag] = value_set[title_flag]
 
+# TODO: reword
 ## scope = title
 ### set/unset title as being a temporary title.
 alias[effect:set_title_landless] = clause
 
+# TODO: reword
 ## scope = title
 ### set/unset title as being a nomad title.
 alias[effect:set_title_nomad] = clause
 
+# TODO: reword
 ## scope = title
 ### Whether liege can directly raise tribal vassal levies
 alias[effect:set_tribal_vassal_levy_control] = bool
 
+# TODO: reword
 ## scope = title
 ### Whether tribal vassals pay taxes to their liege
 alias[effect:set_tribal_vassal_tax_income] = bool
 
+# TODO: Confirm if that hasn't changed with the introduction of moddable successions. Make an enum in either case
 ## scope = title
 ### Valid successions: gavelkind, primogeniture, feudal_elective, seniority, catholic_bishopric, open_elective, turkish_succession, patrician_elective, ultimogeniture, tanistry, appointment, papal_succession, elective_gavelkind
-alias[effect:succession] = succession
+alias[effect:succession] = TODO
 
+# TODO: Figure out
 ## scope = title
 ###
-alias[effect:succession_w_cooldown] = succession
+alias[effect:succession_w_cooldown] = TODO
 
 ## scope = title
-### Gives strong claim to character being usurped
-alias[effect:usurp_title_only] = character/clause
-
-## scope = title(holding)
-### Converts holding to another holding type: CASTLE, CITY, TEMPLE, TRIBAL, NOMAD
-alias[effect:convert_to] = type
+### Converts the scoped barony-tier holding to another type.
+alias[effect:convert_to] = enum[holding_types_barony_only]
 
 # TODO: Confirm if scope references to titles still don't work
 ## scope = character
@@ -2761,38 +2905,56 @@ alias[effect:add_pressed_claim] = <title>
 ### Adds a strong, inheritable claim on scoped title to the given character.
 alias[effect:add_pressed_claim] = scope[character]
 
-## scope = title/province
+# TODO: Figure out
+## scope = { title province }
 ###
-alias[effect:seize_trade_post] = character
+alias[effect:seize_trade_post] = scope[character]
 
 ## scope = unit
-### Creates casualties for an army (whole unit or a specific unit type) by either a fixed amount or percentage. They won't be displayed in a combat report.[3][4]. Using a negative number will heal units instead.
-alias[effect:damage_unit] = clause
+### Creates casualties for an army (whole unit or a specific unit type) by a fixed amount. They won't be displayed in a combat report. Using a negative number will heal units instead.
+alias[effect:damage_unit] = {
+    amount = int
+    ## cardinality = 0..1
+    ### Which type to affect.
+    type = enum[troop_types]
+}
 
 ## scope = unit
-### Removes morale for the army (or adds morale with negative values). Only takes absolute values.
+### Creates casualties for an army (whole unit or a specific unit type) by a percentage. They won't be displayed in a combat report. Using a negative number will heal units instead.
+alias[effect:damage_unit] = {
+    percentage = float
+    ## cardinality = 0..1
+    ### Which type to affect.
+    type = enum[troop_types]
+}
+
+# TODO: Confirm if it "Only takes absolute values." or variables are ok
+## scope = unit
+### Removes morale for the army (or adds morale with negative values).
 alias[effect:damage_unit_morale] = float
 
+# TODO: Write doc
 ## scope = unit
 ###
 alias[effect:set_can_toggle_looting] = bool
 
+# TODO: Reword and write doc
 ## scope = unit
 ### Used with set_can_toggle_looting
 alias[effect:set_looting] = bool
 
-## scope = unit/siege
+## scope = { unit siege }
 ### Changes the morale of the unit by the amount indicated
-alias[effect:morale] = double
+alias[effect:morale] = float
 
-## scope = unit/siege
+## scope = { unit siege }
 ### Changes the size of the unit by the amount indicated
-alias[effect:troops] = double
+alias[effect:troops] = float
 
+# TODO: Enum it up
 ## scope = war
 ### Possible war ends: invalid, whitepeace, success, reverse_demand
-alias[effect:end_war] = string
-
+alias[effect:end_war] = TODO
 
 alias[effect:custom_tooltip] = {
     text = localisation

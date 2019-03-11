@@ -42,6 +42,12 @@ enums = {
         tribal
         nomad
     }
+    enum[holding_types_special] = {
+        hospital
+        fort
+        trade_post
+        family_palace
+    }
     enum[combat_phases] = {
         skirmish
         melee
@@ -370,5 +376,18 @@ enums = {
         duration
         months
         years
+    }
+    # Hope I got this right.
+    enum[gender_successions] = {
+        ### Males only.
+        agnatic
+        ### Males preferred.
+        cognatic
+        ### Equal.
+        true_cognatic
+        ### Females preferred.
+        enatic_cognatic
+        ### Females only.
+        enatic
     }
 }
