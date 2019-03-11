@@ -2096,23 +2096,43 @@ alias[effect:prompt_name] = {
     name_list = <culture>
 }
 
-# STOPPED HERE
+# TODO: Confirm if scope references to titles still don't work
+## scope = character
+### Adds a weak, non-inheritable claim on given title to the scoped character.
+alias[effect:add_weak_claim] = <title>
 
-## scope = character/title
-### Adds a weak, non-inheritable claim. Note: assigned value cannot be a scope reference to a title.[1]
-alias[effect:add_weak_claim] = title/character
+## scope = title
+### Adds a weak, non-inheritable claim on scoped title to the given character.
+alias[effect:add_weak_claim] = scope[character]
 
-## scope = character/title
-### Adds a weak, inheritable claim. Note: assigned value cannot be a scope reference to a title.[1]
-alias[effect:add_weak_pressed_claim] = title/character
+# TODO: Confirm if scope references to titles still don't work
+## scope = character
+### Adds a weak, inheritable claim on given title to the scoped character.
+alias[effect:add_weak_pressed_claim] = <title>
 
-## scope = character/title
+## scope = title
+### Adds a weak, inheritable claim on scoped title to the given character.
+alias[effect:add_weak_pressed_claim] = scope[character]
+
+# TODO: Elaborate; confirm scope
+## scope = { character title }
 ### approve_law = law starts a vote on a law
-alias[effect:approve_law] = law/title
+alias[effect:approve_law] = <law>
 
-## scope = character/title
+# TODO: Figure out
+## scope = { character title }
 ###
-alias[effect:conquest_culture] = culture/character
+alias[effect:approve_law] = scope[title]
+
+# TODO: Figure out
+## scope = { character title }
+### ???
+alias[effect:conquest_culture] = scope[culture]
+
+# TODO: Figure out
+## scope = { character title }
+### ???
+alias[effect:conquest_culture] = scope[character]
 
 # TODO confirm scope
 ## scope = character
@@ -2124,25 +2144,30 @@ alias[effect:create_hospital] = scope[province]
 ### Creates a trade post in the specified province (only works if the character meets requirements such as being under their trade post limit)
 alias[effect:create_tradepost] = scope[province]
 
-## scope = character/title
-### Also grants any vassal owning or below current title
-alias[effect:grant_title] = title/character/clause
-
-## scope = character/title
-### No claim for the giver and no opinion bonus from the receiver.
-alias[effect:grant_title_no_opinion] = title/character
-
-## scope = character/title
-###
+# TODO: Confirm scopes
+## scope = { character title }
+### Grants an amount of prestige to the scoped character (title?).
 alias[effect:prestige] = int
 
-## scope = character/title
-### Changes the (public) religion of scoped character/province/title. Can use a clause to specify which of the scope's religion to use, defaulting to public. See also unsafe_religion.
-alias[effect:religion] = religion/clause
+## scope = { character province title }
+### Changes the public religion of the scoped entity to match the given entity's public religion. See also unsafe_religion.
+alias[effect:religion] = scope[religion]
 
-## scope = character/title
-### Note: assigned value cannot be a scope reference to a title.[1]
-alias[effect:remove_claim] = title/character
+## scope = character
+### Changes the public religion of the scoped entity. The target_type parameter specifies which of the given target's religion to use. See also unsafe_religion.
+alias[effect:religion] = {
+    target = scope[religion]
+    target_type = enum[religion_visibility]
+}
+
+# TODO: Confirm if scope references to titles still don't work
+## scope = character
+### Removes the scoped character's claim on the given title.
+alias[effect:remove_claim] = <title>
+
+## scope = title
+### Removes the given character's claim on the scoped title.
+alias[effect:remove_claim] = scope[character]
 
 # TODO update for thirdparty stuff when I do that
 ## scope = character
@@ -2157,57 +2182,113 @@ alias[effect:reverse_war] = {
     infamy = int # TODO: is it really int?
 }
 
-## scope = character/title
-### Sets the liege of a character. Can be used to make a character become independent via set_defacto_liege = THIS
-alias[effect:set_defacto_liege] = character/title
+# TODO: Confirm scopes
+## scope = { character title }
+### Makes the scoped character independent.
+alias[effect:set_defacto_liege] = THIS
 
-## scope = character/title
-### Override name of character or title. Using set_name = """" resets the original name. You can also use a scope of the same type as the thing being renamed.
-alias[effect:set_name] = string
+# TODO: Confirm scopes
+## scope = { character title }
+### Sets the liege of the scoped character to the given character.
+alias[effect:set_defacto_liege] = scope[character]
 
-## scope = character/title
-### Bypasses some error-checking in set religion, allowing to change the religion of the leader of a holy order, a religious head or a rebel leader. Warning: use this effect with care !
-alias[effect:unsafe_religion] = religion
+# TODO: Confirm scopes
+## scope = { character title }
+### Sets the liege of the scoped character to the holder of the given title.
+alias[effect:set_defacto_liege] = scope[title]
 
-## scope = character/title
-###
-alias[effect:usurp_title] = title/character/clause
+# TODO: Confirm scopes
+## scope = { character title province artifact bloodline }
+### Override the name of the scoped entity.
+alias[effect:set_name] = scalar
 
-## scope = character/title
-### Gives strong claim to character being usurped.
-alias[effect:usurp_title_plus_barony_if_unlanded] = title/character/clause
+# TODO: Confirm scopes
+## scope = { character title province artifact bloodline }
+### Resets the name of the scoped entity to the original name.
+alias[effect:set_name] = ""
 
-## scope = character/title
-### Targeted character will usurp scoped title
-alias[effect:usurp_title_plus_barony_if_unlanded] = title/character/clause
+## scope = character
+### Changes the name of the scoped character to the given character's.
+alias[effect:set_name] = scope[character]
 
-## scope = character/title/clause
-### Targeted character will usurp scoped title
-alias[effect:usurp_title_plus_barony_if_unlanded] = title/character
+## scope = title
+### Changes the name of the scoped title to the given title's.
+alias[effect:set_name] = scope[title]
 
-## scope = character/title/province
+## scope = province
+### Changes the name of the scoped province to the given province's.
+alias[effect:set_name] = scope[province]
+
+## scope = artifact
+### Changes the name of the scoped artifact to the given artifact's.
+alias[effect:set_name] = scope[artifact]
+
+## scope = bloodline
+### Changes the name of the scoped bloodline to the given bloodline's.
+alias[effect:set_name] = scope[bloodline]
+
+# TODO: See if the clause version works
+## scope = { character province title }
+### Changes the public religion of the scoped entity to match the given entity's public religion. Bypasses some error-checking in set religion, allowing to change the religion of the leader of a holy order, a religious head or a rebel leader. Use with care!
+alias[effect:unsafe_religion] = scope[religion]
+
+## scope = TODO
 ### Used to create (or reset) a variable to a the value of a trigger.
-alias[effect:export_to_variable] = clause
+alias[effect:export_to_variable] = TODO
 
-## scope = character/title/province
+## scope = TODO
 ### Divides the variable by the specified value or variable, returning the remainder of the division.
-alias[effect:modulo_variable] = clause
+alias[effect:modulo_variable] = TODO
 
-## scope = character/title/province
-### Creates a quest targeting the current scope or changes the target of an already exist target to the scope.
-alias[effect:set_quest_target] = clause
+## scope = { character province title }
+### Creates a quest targeting the scoped entity or changes the target of an already existing quest to the scoped entity.
+alias[effect:set_quest_target] = {
+    id = value_set[quest]
 
-## scope = character/title?
-### As set_name, but sets name of scope to that of the right side of copy_name = <scope> argument.
-alias[effect:copy_name] = character/title?
+    ### The questor.
+    holder = scope[character]
+
+    ## cardinality = 0..1
+    ### Defaults to the character's society. If the society is not set, and the character is not part of a society, this will send an error and nothing will happen.
+    society = scope[society]
+}
+
+## scope = character
+### Changes the name of the scoped character to the given character's. Redundant with set_name.
+alias[effect:copy_name] = scope[character]
+
+## scope = title
+### Changes the name of the scoped title to the given title's. Redundant with set_name.
+alias[effect:copy_name] = scope[title]
+
+## scope = province
+### Changes the name of the scoped province to the given province's. Redundant with set_name.
+alias[effect:copy_name] = scope[province]
+
+## scope = artifact
+### Changes the name of the scoped artifact to the given artifact's. Redundant with set_name.
+alias[effect:copy_name] = scope[artifact]
+
+## scope = bloodline
+### Changes the name of the scoped bloodline to the given bloodline's. Redundant with set_name.
+alias[effect:copy_name] = scope[bloodline]
 
 ## scope = chararcter
-###
-alias[effect:clr_dynasty_flag] = flag
+### Clears a flag previously set in the scoped character's dynasty.
+alias[effect:clr_dynasty_flag] = value[dynasty_flag]
 
-## scope = holding
-### Adds a holding modifier. Can use optional field stacking = yes.
-alias[effect:add_holding_modifier] = modifier
+## scope = title
+### Adds a modifier to the scoped title, if it's a holding.
+alias[effect:add_holding_modifier] = {
+    modifier = <event_modifer>
+    ## cardinality = 0..1
+    hidden = yes
+    ## cardinality = 0..1
+    stacking = yes
+    alias_name[durationdmy] = int
+}
+
+# STOPPED HERE
 
 ## scope = holding
 ### Makes the holding the capital of the province. Also see revoke_capital_holding.
@@ -2662,13 +2743,23 @@ alias[effect:usurp_title_only] = character/clause
 ### Converts holding to another holding type: CASTLE, CITY, TEMPLE, TRIBAL, NOMAD
 alias[effect:convert_to] = type
 
-## scope = title/character
-### Adds a strong, non-inheritable claim to a character.
-alias[effect:add_claim] = character/title
+# TODO: Confirm if scope references to titles still don't work
+## scope = character
+### Adds a strong, non-inheritable claim on given title to the scoped character.
+alias[effect:add_claim] = <title>
 
-## scope = title/character
-### Adds a strong, inheritable claim. Note: assigned value cannot be a scope reference to a title.[1]
-alias[effect:add_pressed_claim] = character/title
+## scope = title
+### Adds a strong, non-inheritable claim on scoped title to the given character.
+alias[effect:add_claim] = scope[character]
+
+# TODO: Confirm if scope references to titles still don't work
+## scope = character
+### Adds a strong, inheritable claim on given title to the scoped character.
+alias[effect:add_pressed_claim] = <title>
+
+## scope = title
+### Adds a strong, inheritable claim on scoped title to the given character.
+alias[effect:add_pressed_claim] = scope[character]
 
 ## scope = title/province
 ###

@@ -151,6 +151,15 @@ alias[duration_my:months] = int[0..inf]
 ### Duration in years.
 alias[duration_my:years] = int[0..inf]
 
+### Duration in days.
+alias[durationdmy:duration] = int[0..inf]
+
+### Duration in months.
+alias[durationdmy:months] = int[0..inf]
+
+### Duration in years.
+alias[durationdmy:years] = int[0..inf]
+
 # Command modifiers
 
 alias[command_modifier:morale_offence] = float
