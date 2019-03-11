@@ -1879,12 +1879,8 @@ alias[effect:destroy_artifact] = yes
 ### Destroy the artifact specified by name owned by the scoped character. If they own more than one, only the first one will be destroyed. Cannot be used to destroy indestructible objects; see unsafe_destroy_artifact
 alias[effect:destroy_artifact] = <artifact>
 
-## scope = character
-### Converts to the parent religion.
-alias[effect:abandon_heresy] = yes
-
-## scope = province
-### Converts to the parent religion.
+## scope = { character province }
+### Converts scoped entity to the parent religion.
 alias[effect:abandon_heresy] = yes
 
 ## scope = TODO
@@ -1912,67 +1908,195 @@ alias[effect:clear_flags_with_prefix] = scalar
 ### Clears all flags of the current scope that begin with the specified prefix.
 alias[effect:clear_flags_with_prefix] = scalar
 
-# STOPPED HERE
+## scope = { character province }
+### Changes the scoped entity's culture to the given culture.
+alias[effect:culture] = scope[culture]
 
-## scope = character/province
-### Creates a random character with specified parameters.
-alias[effect:create_character] = clause
-
-## scope = character/province
-### creates a random character with diplomacy education
-alias[effect:create_random_diplomat] = clause
-
-## scope = character/province
-### creates a random character with intrigue education
-alias[effect:create_random_intriguer] = clause
-
-## scope = character/province
-### creates a random character with learning education
-alias[effect:create_random_priest] = clause
-
-## scope = character/province
-### creates a random character with martial education
-alias[effect:create_random_soldier] = clause
-
-## scope = character/province
-### creates a random character with stewardship education
-alias[effect:create_random_steward] = clause
-
-## scope = character/province
-###
-alias[effect:culture] = culture/character
+## scope = { character province }
+### Changes the scoped entity's culture to match the given character.
+alias[effect:culture] = scope[character]
 
 ## scope = character/province
 ### Divide a variable with specified value, or with another variable
-alias[effect:divide_variable] = clause
+alias[effect:divide_variable] = TODO
 
 ## scope = character/province
 ### Multiply variable with specified value, or variable.
-alias[effect:multiply_variable] = clause
+alias[effect:multiply_variable] = TODO
 
-## scope = character/province
-### Adds a religion modifier to the religion of scoped character/province
-alias[effect:religion_authority] = double/clause
+# TODO: check scopes
+## scope = { character province }
+### Adds a religion modifier to the religion of scoped entity.
+alias[effect:religion_authority] = float
 
-## scope = character/province
-### Change the target's culture to the one of current scope
-alias[effect:reverse_culture] = character/title/province
+## scope = { character province }
+### Adds the religion modifier to the religion of scoped entity with a given duration.
+alias[effect:religion_authority] = {
+    modifier = <religion_modifier>
+    # TODO: see if other durations work
+    years = int
+}
 
-## scope = character/province
-###
-alias[effect:reverse_religion] = character/title
+## scope = { character province }
+### Change the given character's culture to match the scoped entity's.
+alias[effect:reverse_culture] = scope[character]
+
+## scope = { character province }
+### Change the given title's culture to match the scoped entity's.
+alias[effect:reverse_culture] = scope[title]
+
+## scope = { character province }
+### Change the given province's culture match to the scoped entity's.
+alias[effect:reverse_culture] = scope[province]
+
+# TODO: Probably a province RHS version exists?
+## scope = { character province }
+### Change the given character's religion to match the scoped entity's.
+alias[effect:reverse_religion] = scope[character]
+
+## scope = { character province }
+### Change the given title's religion to match the scoped entity's.
+alias[effect:reverse_religion] = scope[title]
 
 ## scope = character/province
 ### Used to create (or reset) a variable to a value, or to the value of another variable
-alias[effect:set_variable] = clause
+alias[effect:set_variable] = TODO
 
 ## scope = character/province
 ### Subtract specified value or another variable to a variable
-alias[effect:subtract_variable] = clause
+alias[effect:subtract_variable] = TODO
 
-## scope = character/province/landed title/artifact/bloodline
-### Lets the player rename the scoped entity.
-alias[effect:prompt_name] = clause
+## scope = character
+### Lets the player rename the scoped character.
+alias[effect:prompt_name] = {
+    ### What player should get the prompt.
+    player = scope[character]
+
+    ### What message type to use, as defined in messagetypes.txt. This is what defines the text and picture. The text uses the current scopes.
+    type = <message_type>
+
+    ## cardinality = 0..1
+    ### What portrait to show on the right. If not defined, the scoped character will be used.
+    portrait = scope[character]
+
+    ## cardinality = 0..1
+    ### What name list to use. If not specified, the standard buttons for newborns will be used. The loc key should contain a list of names separated by pipes. Custom loc is supported, using the current scopes.
+    name_list = localisation
+
+    ## cardinality = 0..1
+    ### Use the religion's name list.
+    name_list = <religion>
+
+    ## cardinality = 0..1
+    ### Use the culture's name list.
+    name_list = <culture>
+}
+
+## scope = province
+### Lets the player rename the scoped province.
+alias[effect:prompt_name] = {
+    ### What player should get the prompt.
+    player = scope[character]
+
+    ### What message type to use, as defined in messagetypes.txt. This is what defines the text and picture. The text uses the current scopes.
+    type = <message_type>
+
+    ## cardinality = 0..1
+    ### What portrait to show on the right.
+    portrait = scope[character]
+
+    ## cardinality = 0..1
+    ### What name list to use. If not specified, there will be no "randomize name" button. The loc key should contain a list of names separated by pipes. Custom loc is supported, using the current scopes.
+    name_list = localisation
+
+    ## cardinality = 0..1
+    ### Use the religion's name list.
+    name_list = <religion>
+
+    ## cardinality = 0..1
+    ### Use the culture's name list.
+    name_list = <culture>
+}
+
+## scope = title
+### Lets the player rename the scoped title.
+alias[effect:prompt_name] = {
+    ### What player should get the prompt.
+    player = scope[character]
+
+    ### What message type to use, as defined in messagetypes.txt. This is what defines the text and picture. The text uses the current scopes.
+    type = <message_type>
+
+    ## cardinality = 0..1
+    ### What portrait to show on the right.
+    portrait = scope[character]
+
+    ## cardinality = 0..1
+    ### What name list to use. If not specified, there will be no "randomize name" button. The loc key should contain a list of names separated by pipes. Custom loc is supported, using the current scopes.
+    name_list = localisation
+
+    ## cardinality = 0..1
+    ### Use the religion's name list.
+    name_list = <religion>
+
+    ## cardinality = 0..1
+    ### Use the culture's name list.
+    name_list = <culture>
+}
+
+## scope = artifact
+### Lets the player rename the scoped artifact.
+alias[effect:prompt_name] = {
+    ### What player should get the prompt.
+    player = scope[character]
+
+    ### What message type to use, as defined in messagetypes.txt. This is what defines the text and picture. The text uses the current scopes.
+    type = <message_type>
+
+    ## cardinality = 0..1
+    ### What portrait to show on the right.
+    portrait = scope[character]
+
+    ## cardinality = 0..1
+    ### What name list to use. If not specified, there will be no "randomize name" button. The loc key should contain a list of names separated by pipes. Custom loc is supported, using the current scopes.
+    name_list = localisation
+
+    ## cardinality = 0..1
+    ### Use the religion's name list.
+    name_list = <religion>
+
+    ## cardinality = 0..1
+    ### Use the culture's name list.
+    name_list = <culture>
+}
+
+## scope = bloodline
+### Lets the player rename the scoped bloodline.
+alias[effect:prompt_name] = {
+    ### What player should get the prompt.
+    player = scope[character]
+
+    ### What message type to use, as defined in messagetypes.txt. This is what defines the text and picture. The text uses the current scopes.
+    type = <message_type>
+
+    ## cardinality = 0..1
+    ### What portrait to show on the right.
+    portrait = scope[character]
+
+    ## cardinality = 0..1
+    ### What name list to use. If not specified, there will be no "randomize name" button. The loc key should contain a list of names separated by pipes. Custom loc is supported, using the current scopes.
+    name_list = localisation
+
+    ## cardinality = 0..1
+    ### Use the religion's name list.
+    name_list = <religion>
+
+    ## cardinality = 0..1
+    ### Use the culture's name list.
+    name_list = <culture>
+}
+
+# STOPPED HERE
 
 ## scope = character/title
 ### Adds a weak, non-inheritable claim. Note: assigned value cannot be a scope reference to a title.[1]
@@ -2203,7 +2327,7 @@ alias[effect:spawn_disease] = disease
 alias[effect:steal_random_tech] = character
 
 ## scope = province/character/title/
-### Deletes a persistent event target previously saved in the currently scoped object.
+### Deletes a persistent event target previously saved in the currently scoped entity.
 alias[effect:clear_persistent_event_target] = var
 
 ## scope = province/character/title/
