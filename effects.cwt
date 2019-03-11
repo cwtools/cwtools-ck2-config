@@ -307,7 +307,7 @@ alias[effect:add_age] = int
 ### Creates an alliance between characters. Also see break_alliance.
 alias[effect:add_alliance] = {
     who = scope[character]
-    alias_name[duration] = alias_match_left[duration]
+    enum[duration] = int
 }
 
 ## scope = character
@@ -332,7 +332,7 @@ alias[effect:add_character_modifier] = {
     ## cardinality = 0..1
     duration = -1
     ## cardinality = 0..1
-    alias_name[duration] = alias_match_left[duration]
+    enum[duration] = int
     ## cardinality = 0..1
     hidden = bool
     ## cardinality = 0..1
@@ -933,7 +933,7 @@ alias[effect:opinion] = {
 
     ## cardinality = 0..1
     ### Overrides the default duration of the opinion modifier.
-    alias_name[duration_my] = alias_match_left[duration_my]
+    enum[duration_my] = int
 }
 
 # TODO: Confirm
@@ -1079,7 +1079,7 @@ alias[effect:reverse_opinion] = {
 
     ## cardinality = 0..1
     ### Overrides the default duration of the opinion modifier.
-    alias_name[duration_my] = alias_match_left[duration_my]
+    enum[duration_my] = int
 }
 
 ## scope = character
@@ -2285,7 +2285,7 @@ alias[effect:add_holding_modifier] = {
     hidden = yes
     ## cardinality = 0..1
     stacking = yes
-    alias_name[durationdmy] = int
+    enum[duration_dmy] = int
 }
 
 # STOPPED HERE

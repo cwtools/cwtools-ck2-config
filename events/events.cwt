@@ -182,14 +182,14 @@ event = {
 
     subtype[!triggered] = {
 		mean_time_to_happen = {
-			alias_name[duration] = alias_match_left[duration]
+			enum[duration] = int
 			alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
 		}
 	}
 	subtype[triggered] = {
 		## cardinality = 0..1
 		weight_multiplier = {
-			alias_name[duration] = alias_match_left[duration]
+			enum[duration] = int
 			alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
 		}
 	}

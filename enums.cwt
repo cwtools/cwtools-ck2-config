@@ -353,4 +353,22 @@ enums = {
         ### Sun-
         134
     }
+    enum[duration] = {
+        days
+        months
+        years
+    }
+    enum[duration_dy] = {
+        days
+        years
+    }
+    enum[duration_my] = {
+        months
+        years
+    }
+    enum[duration_dmy] = {
+        duration
+        months
+        years
+    }
 }

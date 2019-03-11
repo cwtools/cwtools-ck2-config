@@ -130,36 +130,6 @@ alias[pagan_coa:pagan_coa] = {
     religion = <religion>
 }
 
-### Duration in days.
-alias[duration:days] = int[0..inf]
-
-### Duration in months.
-alias[duration:months] = int[0..inf]
-
-### Duration in years.
-alias[duration:years] = int[0..inf]
-
-### Duration in days.
-alias[duration_dy:days] = int[0..inf]
-
-### Duration in years.
-alias[duration_dy:years] = int[0..inf]
-
-### Duration in months.
-alias[duration_my:months] = int[0..inf]
-
-### Duration in years.
-alias[duration_my:years] = int[0..inf]
-
-### Duration in days.
-alias[durationdmy:duration] = int[0..inf]
-
-### Duration in months.
-alias[durationdmy:months] = int[0..inf]
-
-### Duration in years.
-alias[durationdmy:years] = int[0..inf]
-
 # Command modifiers
 
 alias[command_modifier:morale_offence] = float

@@ -15,7 +15,7 @@ opinion_modifier = {
     opinion = int
 
     ### For how long by default does the modifier last once applied.
-    alias_name[duration] = alias_match_left[duration]
+    enum[duration] = int
 
     ## cardinality = 0..1
     ### If yes, the value will decay to 0 over the duration of the modifier. Defaults to "no".
