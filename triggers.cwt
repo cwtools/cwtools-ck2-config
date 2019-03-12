@@ -2,6 +2,46 @@
 alias[trigger:always] = bool
 
 ## scope = character
+### Compares with the scoped character's own diplomacy.
+alias[trigger:diplomacy] = int
+
+## scope = character
+### Compares with the scoped character's own martial.
+alias[trigger:martial] = int
+
+## scope = character
+### Compares with the scoped character's own stewardship.
+alias[trigger:stewardship] = int
+
+## scope = character
+### Compares with the scoped character's own intrigue.
+alias[trigger:intrigue] = int
+
+## scope = character
+### Compares with the scoped character's own learning.
+alias[trigger:learning] = int
+
+## scope = character
+### Compares with the scoped character's state diplomacy.
+alias[trigger:realm_diplomacy] = int
+
+## scope = character
+### Compares with the scoped character's state martial.
+alias[trigger:realm_martial] = int
+
+## scope = character
+### Compares with the scoped character's state stewardship.
+alias[trigger:realm_stewardship] = int
+
+## scope = character
+### Compares with the scoped character's state intrigue.
+alias[trigger:realm_intrigue] = int
+
+## scope = character
+### Compares with the scoped character's state learning.
+alias[trigger:realm_learning] = int
+
+## scope = character
 ### Compares years with the absolute value of the age difference between the scoped and the given characters.
 alias[trigger:age_diff] = {
     who = scope[character]
@@ -404,10 +444,6 @@ alias[trigger:demesne_size] = int
 ## scope = character
 ### Compares with the scoped character's demesne size divided by their demesne size limit.
 alias[trigger:demesne_size_compared_to_limit] = float
-
-## scope = character
-### Compares with the scoped character's own diplomacy.
-alias[trigger:diplomacy] = int
 
 ## scope = character
 ### Checks if the scoped character has the diplomatic_immunity flag, protecting him from hostile actions.
@@ -949,10 +985,6 @@ alias[trigger:interested_in_society] = <society>
 ### True if the scoped character is interested in the society of the given character.
 alias[trigger:interested_in_society_of_character] = scope[character]
 
-## scope = character
-### Compares with the scoped character's own intrigue.
-alias[trigger:intrigue] = int
-
 # TODO: Confirm doc for independent
 ## scope = character
 ### Checks if the scoped character is not at liege's court.
@@ -1433,10 +1465,6 @@ alias[trigger:leads_faction] = bool
 alias[trigger:leads_faction] = <objective.faction>
 
 ## scope = character
-### Compares with the scoped character's own learning.
-alias[trigger:learning] = int
-
-## scope = character
 ### Compares with the number of traits with lifestyle = yes the scoped character has.
 alias[trigger:lifestyle_traits] = int
 
@@ -1465,486 +1493,708 @@ alias[trigger:lower_real_tier_than] = enum[title_tiers]
 ### True if the scoped character has any non-temporary titles with higher tier than the given character's tier.
 alias[trigger:lower_real_tier_than] = scope[character]
 
-## scope = character
-### Compares with the scoped character's own martial.
-alias[trigger:martial] = int
-
 # STOPPED HERE
 
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:max_manpower] = int
 
 ## scope = character
-### Checks if the month of the character's date of birth is at least this number (January is month 1)
+### Compares with the month of the scoped character's date of birth. Ranges from 0 (January) to 11 (December).
 alias[trigger:month_of_birth] = int
 
 ## scope = character
-### Checks if the character's monthly piety is at least this amount.
+### Compares with the monthly piety income of the scoped character.
 alias[trigger:monthly_piety] = float
 
 ## scope = character
-### Checks if the character's monthly prestige is at least this amount.
+### Compares with the monthly prestige income of the scoped character.
 alias[trigger:monthly_prestige] = float
 
 ## scope = character
-### Number of provinces with given culture
-alias[trigger:num_culture_realm_provs] = clause
+### Compares value with the amount of provinces with the given culture in the scoped character's realm.
+alias[trigger:num_culture_realm_provs] = {
+    culture = scope[culture]
+    value = int
+}
 
 ## scope = character
-### Checks if if scoped character has at least the given number of artifacts.
+### Compares value with the amount of provinces with the given religion in the scoped character's realm.
+alias[trigger:num_religion_realm_provs] = {
+    religion = scope[religion]
+    value = int
+}
+
+## scope = character
+### Compares with the amount of artifacts the scoped character has.
 alias[trigger:num_of_artifacts] = int
 
 ## scope = character
-###
-alias[trigger:num_of_baron_titles] = int
-
-## scope = character
-### Note: Both living and deceased children are counted.
+### Compares with the amount of children the scoped character has.
 alias[trigger:num_of_children] = int
 
+# TODO: Confirm if type doesn't matter
 ## scope = character
-###
+### Compares with the amount of claims the scoped character has.
 alias[trigger:num_of_claims] = int
 
 ## scope = character
-### Checks the number of
+### Compares with the amount of concubines/consorts the scoped character has.
 alias[trigger:num_of_consorts] = int
 
 ## scope = character
-###
+### Compares with the amount of baron-tier titles the scoped character has.
+alias[trigger:num_of_baron_titles] = int
+
+## scope = character
+### Compares with the amount of baron-tier titles in the scoped character's realm.
+alias[trigger:num_of_baron_titles_in_realm] = int
+
+## scope = character
+### Compares with the amount of count-tier titles the scoped character has.
 alias[trigger:num_of_count_titles] = int
 
 ## scope = character
-###
+### Compares with the amount of count-tier titles in the scoped character's realm.
 alias[trigger:num_of_count_titles_in_realm] = int
 
 ## scope = character
-###
+### Compares with the amount of duke-tier titles the scoped character has.
 alias[trigger:num_of_duke_titles] = int
 
 ## scope = character
-###
-alias[trigger:num_of_dynasty_members] = int
+### Compares with the amount of duke-tier titles in the scoped character's realm.
+alias[trigger:num_of_duke_titles_in_realm] = int
 
 ## scope = character
-###
+### Compares with the amount of king-tier titles the scoped character has.
+alias[trigger:num_of_king_titles] = int
+
+## scope = character
+### Compares with the amount of king-tier titles in the scoped character's realm.
+alias[trigger:num_of_king_titles_in_realm] = int
+
+## scope = character
+### Compares with the amount of emperor-tier titles the scoped character has.
 alias[trigger:num_of_emperor_titles] = int
 
+## scope = character
+### Compares with the amount of emperor-tier titles in the scoped character's realm.
+alias[trigger:num_of_emperor_titles_in_realm] = int
+
+# TODO: Is it still worth 2? What about num_of_count_titles, does it work the same way?
+## scope = character
+### Compares with the amount of titles the scoped character has. Note that for this condition each county-tier title is worth 2.
+alias[trigger:num_of_titles] = int
+
+# TODO: Is it still worth 2? What about num_of_count_titles, does it work the same way?
+## scope = character
+### Compares with the amount of titles in the scoped character's realm. Note that for this condition each county-tier title is worth 2.
+alias[trigger:num_of_titles_in_realm] = int
+
+# TODO: Living?
+## scope = character
+### Compares with the amount of members the scoped character's dynasty has.
+alias[trigger:num_of_dynasty_members] = int
+
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:num_of_extra_landed_titles] = int
 
+# TODO: Confirm relation to scoped character
 ## scope = character
-### Checks the number of supporters for a given faction
-alias[trigger:num_of_faction_backers] = clause
+### Compares value with the amount of supporters for a given faction type in the scoped character's realm.
+alias[trigger:num_of_faction_backers] = {
+    faction = <objective.faction>
+    value = int
+}
 
+# TODO: Figure out, not familiar with a "feud"
 ## scope = character
 ###
 alias[trigger:num_of_feuds] = int
 
 ## scope = character
-###
+### Compares with the amount of friends the scoped character has.
 alias[trigger:num_of_friends] = int
 
+# TODO: Confirm
 ## scope = character
-###
-alias[trigger:num_of_government_vassals] = clause
+### Compares value with the amount of vassals with the given government type the scoped character has.
+alias[trigger:num_of_government_vassals] = {
+    government = <government>
+    value = int
+}
 
+# TODO: See if it works in other religion-associated scopes
 ## scope = character
-### Number of holy sites controlled by the religion
+### Compares with the amount of holy sites controlled by the scoped character's religion
 alias[trigger:num_of_holy_sites] = int
 
+# TODO: Directly or realm?
 ## scope = character
-### Number of hospitals the character controls
+### Compares with the amount of hospitals controlled by the scoped character.
 alias[trigger:num_of_hospitals] = int
 
+# TODO: Confirm; no docs or example usages but seems similar to num_of_trade_post_diff; realm or direct ownership?
 ## scope = character
-### Difference in number of hospitals controlled between 2 characters
-alias[trigger:num_of_hospitals_diff] = clause
+### Compares value with the absolute difference between the amounts of controlled hospitals of the scoped and the given characters.
+alias[trigger:num_of_hospitals_diff] = {
+    character = scope[character]
+    value = int
+}
+
+# TODO: Direct or realm ownership?
+## scope = character
+### Compares with the amount of trade posts controlled by the scoped character.
+alias[trigger:num_of_trade_posts] = int
+
+# TODO: realm or direct ownership?
+## scope = character
+### Compares value with the absolute difference between the amounts of controlled trade posts of the scoped and the given characters.
+alias[trigger:num_of_trade_post_diff] = {
+    character = scope[character]
+    value = int
+}
+
+# TODO: Direct or realm ownership?
+## scope = character
+### Compares with the amount of forts controlled by the scoped character.
+alias[trigger:num_of_forts] = int
+
+# TODO: realm or direct ownership?
+## scope = character
+### Compares value with the absolute difference between the amounts of controlled forts of the scoped and the given characters.
+alias[trigger:num_of_forts_diff] = {
+    character = scope[character]
+    value = int
+}
 
 ## scope = character
-###
-alias[trigger:num_of_king_titles] = int
-
-## scope = character
-###
+### Compares with the amount of lovers the scoped character has.
 alias[trigger:num_of_lovers] = int
 
 ## scope = character
-###
+### Compares with the amount of backers the scoped character has for their plot.
 alias[trigger:num_of_plot_backers] = int
 
 ## scope = character
-###
+### Compares with the amount of prisoners the scoped character has.
 alias[trigger:num_of_prisoners] = int
 
 ## scope = character
-### Scoped character controls at least N counties from specified title
-alias[trigger:num_of_realm_counties] = clause
+### Compares value with the amount of counties from the given title the scoped character controls.
+alias[trigger:num_of_realm_counties] = {
+    title = scope[title]
+    value = int
+}
 
 ## scope = character
-###
+### Compares with the amount of rivals the scoped character has.
 alias[trigger:num_of_rivals] = int
 
 ## scope = character
-###
+### Compares with the amount of spouses the scoped character has.
 alias[trigger:num_of_spouses] = int
 
 ## scope = character
-###
+### Compares with the amount of castles in the scoped character's subrealm.
 alias[trigger:num_of_subrealm_castles] = int
 
 ## scope = character
-### Number of traits with is_symptom = yes
+### Compares with the amount of cities in the scoped character's subrealm.
+alias[trigger:num_of_subrealm_cities] = int
+
+# TODO: Confirm this actually works, but I'm 90% sure it does even if it doesn't appear anywhere; test with tribal and nomad too
+## scope = character
+### Compares with the amount of temples in the scoped character's subrealm.
+alias[trigger:num_of_subrealm_temples] = int
+
+## scope = character
+### Compares with the amount of traits with is_symptom = yes the scoped character has.
 alias[trigger:num_of_symptoms] = int
 
 ## scope = character
-### Number of titles directly held by the character. Note that for this condition each County title is worth 2 while Barony, Duchy, Kingdom and Empire-tier titles are worth 1 each.
-alias[trigger:num_of_titles] = int
-
-## scope = character
-### Difference of trade posts between 2 characters
-alias[trigger:num_of_trade_post_diff] = clause
-
-## scope = character
-### Number of trade posts
-alias[trigger:num_of_trade_posts] = int
-
-## scope = character
-### Number of traits
+### Compares with the amount of traits the scoped character has.
 alias[trigger:num_of_traits] = int
 
+# TODO: Direct? Probably, but confirm
 ## scope = character
-### Number of vassals of different dynasties (excluding the dynasty of scoped character).
+### Compares with the amount of different dynasties between the scoped character's direct vassals, excluding their own.
 alias[trigger:num_of_unique_dynasty_vassals] = int
 
 ## scope = character
-### Number of direct vassals
+### Compares with the amount of direct vassals the scoped character has.
 alias[trigger:num_of_vassals] = int
 
 ## scope = character
-### Duplicate of num_of_traits
+### Compares with the amount of traits the scoped character has.
 alias[trigger:num_traits] = int
 
 ## scope = character
-### Checks if the scoped character is obedient to the target character, e.g. has an opinion modifier with obedient = yes toward the target character.
+### True if the scoped character has an opinion modifier with obedient = yes towards the given character.
 alias[trigger:obedient] = scope[character]
 
 ## scope = character
-### Checks if the scope's opinion of who is at least this value
-alias[trigger:opinion] = clause
+### Compares value with the opinion the scoped character has of who.
+alias[trigger:opinion] = {
+    who = scope[character]
+    value = int
+}
 
 ## scope = character
-### True if first target character has a higher opinion of the currently scoped character than second target character by at least value points.
-alias[trigger:opinion_diff] = clause
+### Compares value with the scoped character's opinion of first minus the scoped character's opinion of second.
+alias[trigger:opinion_diff] = {
+    first = scope[character]
+    second = scope[character]
+    value = int
+    ## cardinality = 0..1
+    ### If yes, also applies the liege-vassal opinion modifiers (vassal_opinion, etc.) and is used in factions, to decide if a character would like someone better as liege than another one (and therefore would join a faction seeking to replace him). Defaults to "no".
+    as_if_liege = bool
+}
 
 ## scope = character
-###
-alias[trigger:opinion_levy_raised_days] = clause
+### Compares days with the amount of days who has raised the scoped character's levies for. Doesn't work if the government/religion allows raising vassal troops without opinion penalties.
+alias[trigger:opinion_levy_raised_days] = {
+    who = scope[character]
+    days = int
+}
 
 ## scope = character
-###
+### Compares with the amount of demesne titles the scoped character holds over their limit.
 alias[trigger:over_max_demesne_size] = int
 
 ## scope = character
-###
+### Compares with the amount of direct vassals the scoped character has over their limit.
 alias[trigger:over_vassal_limit] = int
 
+# TODO: Figure out, probably suzerain?
 ## scope = character
 ###
 alias[trigger:overlord_of] = scope[character]
 
 ## scope = character
-### Checks if a character owes a favor to another character. The reverse condition is holds_favor_on.
+### True if the scoped character owes a favor to the given character.
 alias[trigger:owes_favor_to] = scope[character]
 
+# TODO: Direct or realm?
 ## scope = character
-###
+### True if the scoped character owns the given province.
 alias[trigger:owns] = scope[province]
 
+# TODO: Owns as in hired?
 ## scope = character
-### Checks if character owns mercenary units
+### Checks if the scoped character owns mercenary units.
 alias[trigger:owns_mercenary_units] = bool
 
+# TODO: Figure out, probably religious feature
 ## scope = character
 ###
 alias[trigger:pacifist] = bool
 
+# TODO: FIgure out what the difference between this and other tributary stuff is
 ## scope = character
 ###
 alias[trigger:pays_tribute_to] = scope[character]
 
 ## scope = character
-### Similar to opinion, but does not take state diplomacy, laws or any other such state concerns into account
-alias[trigger:personal_opinion] = clause
+### Compares value with the opinion the scoped character has of who. Does not take state diplomacy, laws or any other such state concerns into account
+alias[trigger:personal_opinion] = {
+    who = scope[character]
+    value = int
+}
 
 ## scope = character
-### Similar to opinion_diff, but does not take state diplomacy, laws or any other such state concerns into account
-alias[trigger:personal_opinion_diff] = clause
+### Compares value with the scoped character's opinion of first minus the scoped character's opinion of second. Does not take state diplomacy, laws or any other such state concerns into account
+alias[trigger:personal_opinion_diff] = {
+    first = scope[character]
+    second = scope[character]
+    value = int
+    ## cardinality = 0..1
+    ### If yes, also applies the liege-vassal opinion modifiers (vassal_opinion, etc.) and is used in factions, to decide if a character would like someone better as liege than another one (and therefore would join a faction seeking to replace him). Defaults to "no".
+    as_if_liege = bool
+}
 
 ## scope = character
-### Number of traits with personality = yes
+### Compares with the amount of traits with personality = yes the scoped character has.
 alias[trigger:personality_traits] = int
 
 ## scope = character
-### The amount of piety a character has.
+### Compares with the piety of the scoped character.
 alias[trigger:piety] = int
 
 ## scope = character
-### Tests if a plot is known by another character
+### True if the scoped character's plot is known by the given character.
 alias[trigger:plot_is_known_by] = scope[character]
 
+# TODO: Figure out, though it's kinda obvious
 ## scope = character
 ### Typically ranges from 0.5 to 4.0 in vanilla
 alias[trigger:plot_power] = float
 
+# TODO: Figure out
 ## scope = character
 ###
-alias[trigger:plot_power_contribution] = clause
+alias[trigger:plot_power_contribution] = {
+    plotter = scope[character]
+    value = float
+}
 
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:population] = int
 
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:population_and_manpower] = int
 
+# TODO: Figure out
 ## scope = character
 ### Percentage of maximum population.
 alias[trigger:population_factor] = float
 
 ## scope = character
-### Checks the apparent age of the character, taking immortality into account -- e.g., if the character became immortal at age 40, this will yield 40 rather than their true age.
+### Compares with the practical age (actual if not immortal, age of becoming immortal if immortal) of the scoped character.
 alias[trigger:practical_age] = int
 
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:preparing_invasion] = bool
 
 ## scope = character
-### The amount of prestige a character has.
+### Compares with the prestige of the scoped character.
 alias[trigger:prestige] = int
 
 ## scope = character
-### If no, can't be applied to imprisoned characters. Can also be used as an event pre-trigger.
+### Checks if the scoped character is imprisoned.
 alias[trigger:prisoner] = bool
 
 ## scope = character
-### Same as culture condition. Checks if a character's culture matches that of a specified culture or character. This is different from graphical_culure, i.e when comparing two cultures that have the same culturegfx, race still evaluates to false.
+### True if the scoped character's culture matches the culture of the given character.
 alias[trigger:race] = scope[character]
 
+# TODO: scope[culture]?
 ## scope = character
-### Same as culture condition. Checks if a character's culture matches that of a specified culture or character. This is different from graphical_culure, i.e when comparing two cultures that have the same culturegfx, race still evaluates to false.
+### True if the scoped character's culture matches the given culture.
 alias[trigger:race] = <culture>
 
 ## scope = character
-### Returns true if the percentage of characters in the scoped character's realm fulfilling the condition is equal to or greater than the target.
-alias[trigger:realm_character_percent] = clause
+### Compares target with the percentage of characters in the scoped character's realm that meet the condition.
+alias[trigger:realm_character_percent] = {
+    target = float[0.0..1.0]
+    ## cardinality = 1..inf
+    alias_name[trigger] = alias_match_left[trigger]
+}
 
-## scope = character
-### Compares with the scoped character's state diplomacy.
-alias[trigger:realm_diplomacy] = int
-
-## scope = character
-### Compares with the scoped character's state intrigue.
-alias[trigger:realm_intrigue] = int
-
-## scope = character
-### Compares with the scoped character's state learning.
-alias[trigger:realm_learning] = int
-
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:realm_levies] = int
 
+# TODO: Figure out
 ## scope = character
 ###
-alias[trigger:realm_levy_diff] = clause
+alias[trigger:realm_levy_diff] = {
+    who = scope[character]
+    value = int
+}
 
+# TODO: Landed or just titles?
 ## scope = character
-### Compares with the scoped character's state martial.
-alias[trigger:realm_martial] = int
-
-## scope = character
-### Total number of landed titles in the realm
+### Compares with the total amount of landed titles in the scoped character's realm.
 alias[trigger:realm_size] = int
 
 ## scope = character
-### Compares with the scoped character's state stewardship.
-alias[trigger:realm_stewardship] = int
+### Compares size with the scoped character's realm size divided by who's realm size.
+alias[trigger:relative_realm_size] = {
+    who = scope[character]
+    value = float
+}
+
+# TODO: In levies or what
+## scope = character
+### Compares power to the scoped character's power divided by who's power.
+alias[trigger:relative_power] = {
+    who = scope[character]
+    power = float
+}
+
+# TODO: In levies or what
+## scope = character
+### Compares power to the scoped character's power plus their potential allies in an offensive war divided by who's power.
+alias[trigger:relative_power_including_allies_attacker] = {
+    who = scope[character]
+    power = float
+}
+
+# TODO: In levies or what
+## scope = character
+### Compares power to the scoped character's power plus their potential allies in a defensive war divided by who's power.
+alias[trigger:relative_power_including_allies_defender] = {
+    who = scope[character]
+    power = float
+}
 
 ## scope = character
-### Compares the income of character and of his liege
+### Compares with the scoped character's income divided by their liege's income.
 alias[trigger:relative_income_to_liege] = float
 
+# TODO: In levies or what
 ## scope = character
-### Check that currently scoped character has at least power percentage of who's power.
-alias[trigger:relative_power] = clause
-
-## scope = character
-### Check that currently scoped character (plus its potential allies in an offensive war) have at least power percentage of who's power.
-alias[trigger:relative_power_including_allies_attacker] = clause
-
-## scope = character
-### Check that currently scoped character (plus its potential allies in a defensive war) have at least powerpercentage of who's power.
-alias[trigger:relative_power_including_allies_defender] = clause
-
-## scope = character
-###
+### Compares with the scoped character's power divided by their liege's power.
 alias[trigger:relative_power_to_liege] = float
 
+# TODO: Does religion scope work?
 ## scope = character
-### (2.8) Compares the realm size of the scoped character with the character specified by who. Can use comparison operators (=, >, <, <=, >=, ==).
-alias[trigger:relative_realm_size] = clause
-
-## scope = character
-### Checks religion flag allows_female_temple_holders
+### Checks if the scoped character's religion has allows_female_temple_holders = yes.
 alias[trigger:religion_allows_female_temple_holders] = bool
 
+# TODO: Does religion scope work?
 ## scope = character
-### Checks religion flag allows_male_temple_holders
+### Checks if the scoped character's religion has allows_male_temple_holders = yes.
 alias[trigger:religion_allows_male_temple_holders] = bool
 
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:republic_total_num_of_trade_posts] = int
 
+# TODO: Figure out
 ## scope = character
 ###
-alias[trigger:reverse_clan_opinion] = clause
+alias[trigger:reverse_clan_opinion] = {
+    who = scope[character]
+    value = int
+}
 
 ## scope = character
-### Checks if 'who' character has the given opinion modifier towards scoped character
-alias[trigger:reverse_has_opinion_modifier] = clause
+### Checks if who has the given opinion modifier towards the scoped character.
+alias[trigger:reverse_has_opinion_modifier] = {
+    who = scope[character]
+    modifier = <opinion_modifier>
+}
 
 ## scope = character
-###
+### True if the given character has a truce with the scoped character.
 alias[trigger:reverse_has_truce] = scope[character]
 
 ## scope = character
-### Similar to reverse_opinion, but does not take state diplomacy, laws or any other such state concerns into account
-alias[trigger:reverse_personal_opinion] = clause
+### Compares value with the opinion who has of the scoped character.
+alias[trigger:reverse_opinion] = {
+    who = scope[character]
+    value = int
+}
 
 ## scope = character
-### Does not take state diplomacy, laws or any other such state concerns into account
-alias[trigger:reverse_personal_opinion_diff] = clause
+### Compares value with first's opinion of the scoped character minus second's opinion of the scoped character.
+alias[trigger:reverse_opinion_diff] = {
+    first = scope[character]
+    second = scope[character]
+    value = int
+    ## cardinality = 0..1
+    ### If yes, also applies the liege-vassal opinion modifiers (vassal_opinion, etc.) and is used in factions, to decide if a character would like someone better as liege than another one (and therefore would join a faction seeking to replace him). Defaults to "no".
+    as_if_liege = bool
+}
 
 ## scope = character
-###
+### Compares value with the opinion who has of the scoped character. Does not take state diplomacy, laws or any other such state concerns into account
+alias[trigger:reverse_personal_opinion] = {
+    who = scope[character]
+    value = int
+}
+
+## scope = character
+### Compares value with first's opinion of the scoped character minus second's opinion of the scoped character. Does not take state diplomacy, laws or any other such state concerns into account
+alias[trigger:reverse_personal_opinion_diff] = {
+    first = scope[character]
+    second = scope[character]
+    value = int
+    ## cardinality = 0..1
+    ### If yes, also applies the liege-vassal opinion modifiers (vassal_opinion, etc.) and is used in factions, to decide if a character would like someone better as liege than another one (and therefore would join a faction seeking to replace him). Defaults to "no".
+    as_if_liege = bool
+}
+
+# TODO: Confirm; see what rightful entails - probably not antipope?
+## scope = character
+### True if the given character is the scoped character's rightful religious head.
 alias[trigger:rightful_religious_head] = scope[character]
 
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:risks_minor_clan_rising] = bool
 
 ## scope = character
-###
+### True if the scoped character has the same guardian as the given character.
 alias[trigger:same_guardian] = scope[character]
 
+# TODO: Direct?
 ## scope = character
-###
+### True if the scoped character has the same liege as the given character.
 alias[trigger:same_liege] = scope[character]
 
+# TODO: Reword maybe?
 ## scope = character
-### Checks if two characters have the same regnal name for numbering purposes. Regnal names are currently defined as having the same first first name (E.G., ""Gustav"" and ""Gustav Adolf"" are the same regnal name), or the same cultural first first name (E.G., ""Alfr_Alf"" and ""Alf_Alf"" are the same regnal name).
+### True if the scoped character has the same regnal name as the given character for numbering purposes. Regnal names are currently defined as having the same first name (E.G., "Gustav" and "Gustav Adolf" are the same regnal name), or the same cultural first name (E.G., "Alfr_Alf" and "Alf_Alf" are the same regnal name).
 alias[trigger:same_regnal_name] = scope[character]
 
 ## scope = character
-### Checks if two characters have same sex.
+### True if the scoped character is the same sex as the given character.
 alias[trigger:same_sex] = scope[character]
 
 ## scope = character
-### Checks if scope character is in the same society as target character.
+### True if the scoped character a member of the same society as the given character.
 alias[trigger:same_society_as] = scope[character]
 
+# TODO: Confirm
 ## scope = character
-### Check if character has the given wealth based on percentage of yearly income. Before 2.8, the clause syntax is not available.
-alias[trigger:scaled_wealth] = float/clause
+### Compares with the scoped character's wealth divided by their yearly income.
+alias[trigger:scaled_wealth] = float
+
+# TODO: Confirm
+## scope = character
+### Compares with the scoped character's wealth divided by their yearly income, at least min.
+alias[trigger:scaled_wealth] = {
+    value = float
+    min = float
+}
+
+# TODO: Confirm
+## scope = character
+### Compares with the scoped character's wealth divided by their yearly income, at most max.
+alias[trigger:scaled_wealth] = {
+    value = float
+    max = float
+}
+
+# TODO: Confirm
+## scope = character
+### Compares with the scoped character's wealth divided by their yearly income, at least min and at most max.
+alias[trigger:scaled_wealth] = {
+    value = float
+    min = float
+    max = float
+}
 
 ## scope = character
-### Current score of the player
+### Compares with the score of the scoped character's player.
 alias[trigger:score] = int
 
+# TODO: scope[religion]?
 ## scope = character
-### Checks if character secretly follows the given religion
+### True if the scoped character secretly follows the given religion.
 alias[trigger:secret_religion] = <religion>
 
 ## scope = character
-### Checks if character secretly follows a religion in the given religion group
+### True if the scoped character secretly follows a religion in the given religion group.
 alias[trigger:secret_religion_group] = <religion_group>
 
 ## scope = character
-### Returns true is both characters have at least one bloodline in common
+### True if at least one of the scoped character's bloodlines is the same as one of the given character's bloodlines.
 alias[trigger:shares_any_bloodline_with] = scope[character]
 
 ## scope = character
-### (2.8) Checks if any province in your realm (everything under your titles) borders any province in their realm.
+### True if any province in the scoped character's realm borders any province in the given character's realm.
 alias[trigger:shares_realm_border_with] = scope[character]
 
 ## scope = character
-###
+### True if the scoped character is a sibling of the given character.
 alias[trigger:sibling] = scope[character]
 
 ## scope = character
-### Checks if the character can rank down within their society
+### Checks if the scoped character can rank down within their society.
 alias[trigger:society_can_rank_down] = bool
 
 ## scope = character
-### Checks if the character can rank up within their society
+### Checks if the scoped character can rank up within their society.
 alias[trigger:society_can_rank_up] = bool
 
 ## scope = character
-### Checks if character has the given number of society points. Can add a scaled_by_influence parameter to scale by society influence, going from a 70% reduction when the society is at 100% influence and going linearly to a 0% reduction at 0% influence
-alias[trigger:society_currency] = <society>
+### Compares with the amount of society currency the scoped character has.
+alias[trigger:society_currency] = int
+
+# TODO: scope[society]? Reword the scaled_by_influence parameter
+## scope = character
+### Compares with the amount of society currency the scoped character has, if they're members of the given society.
+alias[trigger:society_currency] = {
+    society = <society>
+    value = int
+    ## cardinality = 0..1
+    ### If yes, the value to compare with will scale by society influence, going from a 70% reduction when the society is at 100% influence and going linearly to a 0% reduction at 0% influence. Defaults to "no".
+    scaled_by_influence = bool
+}
 
 ## scope = character
-### Checks if character's society is criminal or not.
+### Checks if the scoped character's society has criminal = yes.
 alias[trigger:society_is_criminal] = bool
 
 ## scope = character
-### Checks if character's society is a devil worshiping society or not.
+### Checks if the scoped character's society has devil_worshipper = yes.
 alias[trigger:society_is_devil_worshiper] = bool
 
 ## scope = character
 ### Checks if character belongs to the given society
-alias[trigger:society_member_of] = <society>
+alias[trigger:society_member_of] = scope[society]
 
-## scope = character
-### Compares with the scoped character's own stewardship.
-alias[trigger:stewardship] = int
-
+# TODO: Figure out
 ## scope = character
 ###
-alias[trigger:symptom] = trait #(?)
+alias[trigger:their_opinion] = {
+    who = scope[character]
+    value = int
+}
 
+# TODO: Figure out
 ## scope = character
 ###
-alias[trigger:their_opinion] = clause
+alias[trigger:total_claims] = {
+    who = scope[character]
+    # might be cardinality = 0..1
+    strong = bool
+    value = int
+}
+
+# TODO: Doc it up
+## scope = character
+### Compares value with the amount of control the scoped character has over the given trade route's given aspect.
+alias[trigger:trade_route_control] = {
+    trade_route = <trade_route>
+    value = float
+    ## cardinality = 0..1
+    ### Default
+    type = wealth
+    ## cardinality = 0..1
+    type = provinces
+    ## cardinality = 0..1
+    type = trade_posts
+    ## cardinality = 0..1
+    type = trade_post_locations
+    ## cardinality = 0..1
+    ### If yes, includes provinces in one's sub-realm that are owned by vassals. Defaults to "yes".
+    indirectly_owned = bool
+}
 
 ## scope = character
-###
-alias[trigger:total_claims] = clause
-
-## scope = character
-### (2.8) Checks the amount of control of the scoped character (others?) over the specified trade route's wealth, provinces, trade posts, or trade post locations.
-alias[trigger:trade_route_control] = clause
-
-## scope = character
-### Checks if the character has this trait
+### True if the scoped character has the given trait.
 alias[trigger:trait] = <trait>
 
+# TODO: is this yet another wealth/gold alias srsly
 ## scope = character
 ###
 alias[trigger:treasury] = float
 
+# TODO: scope[religion]?
 ## scope = character
-### If the character has a secret religion, checks if character secretly follows the given religion, otherwise checks if the character publicly follows the given religion
+### True if the scoped character truly follows the given religion. That means secret religion if they have one and public religion if they don't
 alias[trigger:true_religion] = <religion>
 
 ## scope = character
-### If the character has a secret religion, checks if character secretly follows a religion in the given religion group, otherwise checks if the character publicly follows a religion in the given religion group
+### True if the scoped character truly follows a religion of the given religion group. That means secret religion if they have one and public religion if they don't
 alias[trigger:true_religion_group] = <religion_group>
 
 ## scope = character
@@ -1976,7 +2226,7 @@ alias[trigger:war_with] = <title>
 alias[trigger:was_conceived_a_bastard] = bool
 
 ## scope = character
-### The minimum amount of gold this character should have
+### Compares with the wealth of the scoped character.
 alias[trigger:wealth] = int
 
 ## scope = character
@@ -1984,7 +2234,7 @@ alias[trigger:wealth] = int
 alias[trigger:will_liege_enforce_peace] = bool
 
 ## scope = character
-### Checks if the character was born in this year or later
+### Compares with the year of the scoped character's date of birth.
 alias[trigger:year_of_birth] = int
 
 ## scope = { character title }
@@ -1994,10 +2244,6 @@ alias[trigger:clan] = bool
 ## scope = character
 ### Checks if character's rank compares correctly to the value or character given. Works with all comparison operators ( <, <=, =, >=, >=). Can use clause to additionally check if character belongs to named society.
 alias[trigger:society_rank] = <society>
-
-## scope = character/new
-### Checks if who's opinion of the scope is at least value. new can be used to reference the new_character scope.
-alias[trigger:reverse_opinion] = clause
 
 ## scope = { character province }
 ### Used in conjunction with change_variable command.
@@ -2167,8 +2413,9 @@ alias[trigger:tier] = string
 ###
 alias[trigger:title] = title/province
 
-## scope = { character title } #(holding)
-###
+# TODO: Scopes? Once done, reword.
+## scope = { character title }
+### Compares with the monthly prestige income of the scoped character or holder of the scoped title.
 alias[trigger:monthly_income] = float
 
 ## scope = { character title } #(holding)
@@ -2457,8 +2704,18 @@ alias[trigger:trade_post_has_building] = <building>
 ### Checks if a province is on the specified trade route.
 alias[trigger:trade_route] = <trade_route>
 
-## scope = { province holding }
-### Check whether the current holding or province has at least this level of technology in a particular tech category.
+# TODO: Confirm capitalness
+## scope = character
+### Compares with the scoped character's capital province's level in the given technology.
+alias[trigger:<technology>] = int
+
+## scope = province
+### Compares with the province's level in the given technology.
+alias[trigger:<technology>] = int
+
+# TODO: Confirm capitalness
+## scope = title
+### Compares with the title's capital province's level in the given technology.
 alias[trigger:<technology>] = int
 
 ## scope = { province title }
