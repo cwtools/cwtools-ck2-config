@@ -1493,8 +1493,6 @@ alias[trigger:lower_real_tier_than] = enum[title_tiers]
 ### True if the scoped character has any non-temporary titles with higher tier than the given character's tier.
 alias[trigger:lower_real_tier_than] = scope[character]
 
-# STOPPED HERE
-
 # TODO: Figure out
 ## scope = character
 ###
@@ -2382,6 +2380,8 @@ alias[trigger:culture] = scope[title]
 ## scope = { character province title }
 ### True if scoped entity has a culture that belongs to the given culture group.
 alias[trigger:culture_group] = <culture_group>
+
+# STOPPED HERE
 
 ## scope = { character province title }
 ### Checks if the character is part of this culture group
