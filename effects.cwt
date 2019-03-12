@@ -45,18 +45,6 @@ alias[effect:activate_title] = {
 }
 
 ## scope = any
-### Deletes a previously saved variable.
-alias[effect:clear_event_target] = var
-
-## scope = any
-### Deletes a previously saved global variable.
-alias[effect:clear_global_event_target] = value[global_variable]
-
-## scope = any
-### Deletes all previously saved global variables.
-alias[effect:clear_global_event_targets] = yes
-
-## scope = any
 ### Clears a previously set global flag.
 alias[effect:clr_global_flag] = value[global_flag]
 
@@ -124,14 +112,6 @@ alias[effect:repeat_event] = {
     ### Localisation key to show as tooltip. If not specified, uses the DEFAULT_SENDEVENT_EVENTOPTION_TOOLTIP key ("Character receives an event").
     tooltip = localisation
 }
-
-## scope = any
-### Saves a scope into a variable, to be re-used later in an event chain
-alias[effect:save_event_target_as] = value_set[event_target]
-
-## scope = any
-### Saves a scope into a global variable, to be re-used later
-alias[effect:save_global_event_target_as] = value_set[event_target]
 
 ## scope = any
 ### Sets a global flag.
@@ -1867,10 +1847,6 @@ alias[effect:destroy_artifact] = <artifact>
 ### Converts scoped entity to the parent religion.
 alias[effect:abandon_heresy] = yes
 
-## scope = TODO
-### Increment (or decrement) a variable with specified value, or another variable
-alias[effect:change_variable] = TODO
-
 ## scope = character
 ### Removes specified event id with a delayed trigger on scoped character.
 alias[effect:clear_delayed_event] = {
@@ -1899,14 +1875,6 @@ alias[effect:culture] = scope[culture]
 ## scope = { character province }
 ### Changes the scoped entity's culture to match the given character.
 alias[effect:culture] = scope[character]
-
-## scope = character/province
-### Divide a variable with specified value, or with another variable
-alias[effect:divide_variable] = TODO
-
-## scope = character/province
-### Multiply variable with specified value, or variable.
-alias[effect:multiply_variable] = TODO
 
 # TODO: check scopes
 ## scope = { character province }
@@ -1941,14 +1909,6 @@ alias[effect:reverse_religion] = scope[character]
 ## scope = { character province }
 ### Change the given title's religion to match the scoped entity's.
 alias[effect:reverse_religion] = scope[title]
-
-## scope = character/province
-### Used to create (or reset) a variable to a value, or to the value of another variable
-alias[effect:set_variable] = TODO
-
-## scope = character/province
-### Subtract specified value or another variable to a variable
-alias[effect:subtract_variable] = TODO
 
 ## scope = character
 ### Lets the player rename the scoped character.
@@ -2216,14 +2176,6 @@ alias[effect:set_name] = scope[bloodline]
 ### Changes the public religion of the scoped entity to match the given entity's public religion. Bypasses some error-checking in set religion, allowing to change the religion of the leader of a holy order, a religious head or a rebel leader. Use with care!
 alias[effect:unsafe_religion] = scope[religion]
 
-## scope = TODO
-### Used to create (or reset) a variable to a the value of a trigger.
-alias[effect:export_to_variable] = TODO
-
-## scope = TODO
-### Divides the variable by the specified value or variable, returning the remainder of the division.
-alias[effect:modulo_variable] = TODO
-
 ## scope = { character province title }
 ### Creates a quest targeting the scoped entity or changes the target of an already existing quest to the scoped entity.
 alias[effect:set_quest_target] = {
@@ -2446,14 +2398,6 @@ alias[effect:spawn_disease] = <disease>
 ## scope = province
 ###
 alias[effect:steal_random_tech] = scope[character]
-
-## scope = province/character/title/
-### Deletes a persistent event target previously saved in the currently scoped entity.
-alias[effect:clear_persistent_event_target] = TODO
-
-## scope = province/character/title/
-### Saves a scope into a persistent event target in the current scope to be reused later. name is the name of the event target, scope is the scope to save. Relative scoping works.
-alias[effect:save_persistent_event_target] = TODO
 
 # TODO: Confirm
 ## scope = { province title }

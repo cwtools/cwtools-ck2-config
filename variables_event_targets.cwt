@@ -1,0 +1,67 @@
+# VARIABLES
+
+## scope = TODO
+### Used to create (or reset) a variable to a the value of a trigger.
+alias[effect:export_to_variable] = TODO
+
+## scope = TODO
+### Divides the variable by the specified value or variable, returning the remainder of the division.
+alias[effect:modulo_variable] = TODO
+
+## scope = character/province
+### Used to create (or reset) a variable to a value, or to the value of another variable
+alias[effect:set_variable] = TODO
+
+## scope = character/province
+### Subtract specified value or another variable to a variable
+alias[effect:subtract_variable] = TODO
+
+## scope = character/province
+### Divide a variable with specified value, or with another variable
+alias[effect:divide_variable] = TODO
+
+## scope = character/province
+### Multiply variable with specified value, or variable.
+alias[effect:multiply_variable] = TODO
+
+## scope = TODO
+### Increment (or decrement) a variable with specified value, or another variable
+alias[effect:change_variable] = TODO
+
+## scope = { character province }
+### Used in conjunction with change_variable command.
+alias[trigger:check_variable] = TODO
+
+## scope = { character province }
+### Checks if a variable has the exact value, instead of standard >= check. See variables.
+alias[trigger:is_variable_equal] = TODO
+
+# EVENT TARGETS
+
+## scope = any
+### Saves a scope into a variable, to be re-used later in an event chain
+alias[effect:save_event_target_as] = value_set[event_target]
+
+## scope = any
+### Saves a scope into a global variable, to be re-used later
+alias[effect:save_global_event_target_as] = value_set[event_target]
+
+## scope = any
+### Deletes a previously saved variable.
+alias[effect:clear_event_target] = var
+
+## scope = any
+### Deletes a previously saved global variable.
+alias[effect:clear_global_event_target] = value[global_variable]
+
+## scope = any
+### Deletes all previously saved global variables.
+alias[effect:clear_global_event_targets] = yes
+
+## scope = province/character/title/
+### Deletes a persistent event target previously saved in the currently scoped entity.
+alias[effect:clear_persistent_event_target] = TODO
+
+## scope = province/character/title/
+### Saves a scope into a persistent event target in the current scope to be reused later. name is the name of the event target, scope is the scope to save. Relative scoping works.
+alias[effect:save_persistent_event_target] = TODO

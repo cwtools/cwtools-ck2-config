@@ -2197,12 +2197,13 @@ alias[trigger:true_religion] = <religion>
 ### True if the scoped character truly follows a religion of the given religion group. That means secret religion if they have one and public religion if they don't
 alias[trigger:true_religion_group] = <religion_group>
 
+# TODO: Figure out
 ## scope = character
 ###
 alias[trigger:unused_manpower] = int
 
 ## scope = character
-### Character has decadence mechanic via religion/government.
+### Checks if the scoped character has a religion/government with uses_decadence = bool.
 alias[trigger:uses_decadence] = bool
 
 ## scope = character
@@ -2214,13 +2215,15 @@ alias[trigger:vassal_of] = scope[character]
 alias[trigger:war] = bool
 
 ## scope = character
-### Returns true if people are hostile due to raiding or if their armies are hostile because of a personal, liege or third party war.[3]
+### True if the scoped character and the given character are hostile to each other due to raiding or if their armies are hostile because of a personal, liege or third party war.
 alias[trigger:war_with] = scope[character]
 
+# TODO: Figure out how that works, probably just scopes to the title holder
 ## scope = character
-### Returns true if people are hostile due to raiding or if their armies are hostile because of a personal, liege or third party war.[3]
-alias[trigger:war_with] = <title>
+### True if the scoped character and the given title's holder are hostile to each other due to raiding or if their armies are hostile because of a personal, liege or third party war.
+alias[trigger:war_with] = scope[title]
 
+# TODO: Write doc
 ## scope = character
 ###
 alias[trigger:was_conceived_a_bastard] = bool
@@ -2229,6 +2232,7 @@ alias[trigger:was_conceived_a_bastard] = bool
 ### Compares with the wealth of the scoped character.
 alias[trigger:wealth] = int
 
+# TODO: Figure out
 ## scope = character
 ### See also has_liege_enforced_peace
 alias[trigger:will_liege_enforce_peace] = bool
@@ -2237,86 +2241,146 @@ alias[trigger:will_liege_enforce_peace] = bool
 ### Compares with the year of the scoped character's date of birth.
 alias[trigger:year_of_birth] = int
 
-## scope = { character title }
-### Whether character is the head of a nomadic clan, or title is a nomadic clan.
+## scope = character
+### Checks if the scoped character is the head of a nomadic clan
+alias[trigger:clan] = bool
+
+## scope = title
+### Checks if the scoped title is a nomadic clan.
 alias[trigger:clan] = bool
 
 ## scope = character
-### Checks if character's rank compares correctly to the value or character given. Works with all comparison operators ( <, <=, =, >=, >=). Can use clause to additionally check if character belongs to named society.
-alias[trigger:society_rank] = <society>
+### Compares to the scoped character's rank in their current society.
+alias[trigger:society_rank] = int[1..4]
 
-## scope = { character province }
-### Used in conjunction with change_variable command.
-alias[trigger:check_variable] = clause
+# TODO: scope[society]?
+## scope = character
+### Compares rank to the scoped character's rank in their current society, if they belong to the given society.
+alias[trigger:society_rank] = {
+    society = <society>
+    rank = int[1..4]
+}
 
+# I'm not doing an enum just for these, so four variants instead of two
+# TODO: Doc it up better
 ## scope = { character province }
 ### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
-alias[trigger:distance] = clause
+alias[trigger:distance] = {
+    where = scope[province]
+    value = int
+}
 
+# TODO: Doc it up better
 ## scope = { character province }
-###
+### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
+alias[trigger:distance] = {
+    where = scope[province]
+    distance = int
+}
+
+# TODO: Doc it up better
+## scope = { character province }
+### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
+alias[trigger:distance] = {
+    who = scope[character]
+    value = int
+}
+
+# TODO: Doc it up better
+## scope = { character province }
+### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
+alias[trigger:distance] = {
+    who = scope[character]
+    distance = int
+}
+
+# TODO: Better doc needed I think
+## scope = { character province }
+### Checks if the scoped entity has any disease.
 alias[trigger:has_disease] = bool
 
-## scope = { character province }
-### Checks for a trait with is_epidemic = yes, and checks if a province has an epidemic.
+## scope = character
+### Checks if the scoped character has any trait with is_epidemic = yes.
 alias[trigger:has_epidemic] = bool
 
+## scope = province
+### Checks if the scoped province has an ongoing epidemic.
+alias[trigger:has_epidemic] = bool
+
+# TODO: Confirm
 ## scope = { character province }
-###
+### Checks if the religion associated with the scoped entity has heresies.
 alias[trigger:has_heresies] = bool
 
+# TODO: Probably allows other religion-associated scopes
 ## scope = { character province }
-### Checks if the character or province's religion has the field hard_to_convert = yes
+### Checks if the religion associated with the scoped entity has hard_to_convert = yes.
 alias[trigger:is_hard_to_convert] = bool
 
+# TODO: Allows other religion-associated scopes, expand once errors arise :)
 ## scope = { character province }
-###
-alias[trigger:is_heresy_of] = character/province/title/religion
+### True if the religion associated with the scoped entity is a heresy of the religion associated with the given entity.
+alias[trigger:is_heresy_of] = scope[religion]
 
 ## scope = { character province }
-###
+### Checks if the religion associated with the scoped entity is a heresy of another religion.
 alias[trigger:is_heretic] = bool
 
+# TODO: Probably allows title scope
 ## scope = { character province }
-###
-alias[trigger:is_liege_or_above] = character/title/province
+### True if the character associated with the scoped entity is liege or above of the given character.
+alias[trigger:is_liege_or_above] = scope[character]
+
+# TODO: Probably allows title scope
+## scope = { character province }
+### True if the character associated with the scoped entity is liege or above of the given title's holder.
+alias[trigger:is_liege_or_above] = scope[title]
+
+# TODO: Probably allows title scope
+## scope = { character province }
+### True if the character associated with the scoped entity is liege or above of the given province's owner.
+alias[trigger:is_liege_or_above] = scope[province]
 
 ## scope = { character province }
-### Checks if the religion of character or province is a reformed pagan religion.
+### Checks if the religion associated with the scoped entity is a reformed religion.
 alias[trigger:is_reformed_religion] = bool
 
+# TODO: Other religion scopes?
 ## scope = { character province }
-### Checks if the religion of character or province is a reformed pagan religion.
-#TODO: Check
+### True if the religion associated with the scoped entity is a reformed version of the given character's religion.
 alias[trigger:is_reformed_religion] = scope[character]
 
 ## scope = { character province }
-### Checks if a variable has the exact value, instead of standard >= check. See variables.
-alias[trigger:is_variable_equal] = clause
+### True if the scoped entity has the religion associated with the given scope.
+alias[trigger:religion] = scope[religion]
 
 ## scope = { character province }
-### Checks if character/province has the given religion
-alias[trigger:religion] = <religion>
+### Compares with the authority of the religion associated with the scoped entity.
+alias[trigger:religion_authority] = float[0.0..1.0]
 
 ## scope = { character province }
-### Ranges from 0 to 1
-alias[trigger:religion_authority] = float
-
-## scope = { character province }
-### Checks if character's/province's religion belongs to the given religion group
+### True if scoped entity has a religion that belongs to the given religion group.
 alias[trigger:religion_group] = <religion_group>
 
 ## scope = { character province title }
-### Checks if the character has this specific culture
+### True if the scoped entity has the given culture.
 alias[trigger:culture] = <culture>
 
 ## scope = { character province title }
-### Checks if the character has this specific culture
-# TODO: Scope version
-alias[trigger:culture] = character/province/title
+### Checks if the scoped entity has the same culture as the given character.
+alias[trigger:culture] = scope[character]
 
 ## scope = { character province title }
-### Checks if the character is part of this culture group
+### Checks if the scoped entity has the same culture as the given province.
+alias[trigger:culture] = scope[province]
+
+# TODO: Holder of title?
+## scope = { character province title }
+### Checks if the scoped entity has the same culture as the given title.
+alias[trigger:culture] = scope[title]
+
+## scope = { character province title }
+### True if scoped entity has a culture that belongs to the given culture group.
 alias[trigger:culture_group] = <culture_group>
 
 ## scope = { character province title }
