@@ -73,6 +73,12 @@ links = {
         input_scopes = character
         output_scope = character
     }
+    consort = {
+        # TODO: Check desc
+        desc = "Scopes to the consort of this character"
+        input_scopes = character
+        output_scope = character
+    }
     controller = {
         desc = "Scopes to the character controlling a barony. Rarely used, more generic scope owner being favored."
         input_scopes = title

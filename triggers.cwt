@@ -726,7 +726,7 @@ alias[trigger:has_job_title] = bool
 
 ## scope = character
 ### True if the scoped character has the given job title.
-alias[trigger:has_job_title] = <job_title>
+alias[trigger:has_job_title] = <minor_title.job>
 
 ## scope = character
 ### Checks if the scoped character has any title.
@@ -2882,7 +2882,7 @@ alias[trigger:province] = scope[province]
 
 ## scope = province
 ### True if the scoped province has the given id.
-alias[trigger:province_id] = <province>
+alias[trigger:province_id] = enum[provinces]
 
 ## scope = province
 ### Compares with the revolt risk in the scoped province.

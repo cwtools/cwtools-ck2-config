@@ -1398,6 +1398,7 @@ alias[effect:spawn_unit] = {
     ### Defaults to the scoped character. Also can be a character scope.
     leader = none
 
+    ## cardinality = 0..1
     ### ID of the unit, to be able to reference them later. Can be localized via $_ARMY and $_ARMY_OF.
     earmark = value_set[earmark]
 
@@ -1482,6 +1483,7 @@ alias[effect:spawn_unit] = {
     ### Defaults to the scoped character. Also can be a character scope.
     leader = none
 
+    ## cardinality = 0..1
     ### ID of the unit, to be able to reference them later. Can be localized via $_ARMY and $_ARMY_OF.
     earmark = value_set[earmark]
 
@@ -1566,6 +1568,7 @@ alias[effect:spawn_unit] = {
     ### Defaults to the scoped character. Also can be a character scope.
     leader = none
 
+    ## cardinality = 0..1
     ### ID of the unit, to be able to reference them later. Can be localized via $_ARMY and $_ARMY_OF.
     earmark = value_set[earmark]
 
@@ -2908,3 +2911,6 @@ alias[effect:custom_tooltip] = {
 alias[effect:hidden_tooltip] = {
     alias_name[effect] = alias_match_left[effect]
 }
+
+### This acts as a return statement, causing everything after it (in the main block: option, immediate, ...) to be ignored
+alias[effect:break] = yes

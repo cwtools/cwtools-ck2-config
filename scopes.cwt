@@ -810,6 +810,30 @@ alias[trigger:any_liege] = {
 alias[effect:any_liege] = {
 	alias_name[effect] = alias_match_left[effect]
 }
+## scope = character
+## push_scope = character
+### Scopes to all dejure lieges a character has, regardless of how many tiers above.
+alias[trigger:any_dejure_liege] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+## scope = character
+## push_scope = character
+### Scopes to all dejure lieges a character has, regardless of how many tiers above.
+alias[effect:any_dejure_liege] = {
+	alias_name[effect] = alias_match_left[effect]
+}
+## scope = character
+## push_scope = character
+### Scopes to all defacto lieges a character has, regardless of how many tiers above.
+alias[trigger:any_dejure_liege] = {
+	alias_name[trigger] = alias_match_left[trigger]
+}
+## scope = character
+## push_scope = character
+### Scopes to all defacto lieges a character has, regardless of how many tiers above.
+alias[effect:any_dejure_liege] = {
+	alias_name[effect] = alias_match_left[effect]
+}
 
 ## scope = character
 ## push_scope = character

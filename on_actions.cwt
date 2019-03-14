@@ -503,13 +503,13 @@ types = {
     }
 }
 on_action = {
-    
+
     ## replace_scope = { this = character root = character }
     subtype[on_startup] = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -518,7 +518,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -527,7 +527,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -546,7 +546,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -555,7 +555,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -564,7 +564,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -583,7 +583,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -592,7 +592,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -601,7 +601,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -620,7 +620,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -629,7 +629,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -638,7 +638,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -657,7 +657,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -666,7 +666,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -675,7 +675,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -694,7 +694,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -703,7 +703,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -712,7 +712,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -731,7 +731,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -740,7 +740,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -749,7 +749,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -768,7 +768,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -777,7 +777,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -786,7 +786,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -805,7 +805,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -814,7 +814,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -823,7 +823,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -842,7 +842,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.province_event>
+            <event.province>
         }
         ## cardinality = 0..1
         random_events = {
@@ -851,7 +851,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.province_event>
+            int = <event.province>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -860,7 +860,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.province_event>
+                int = <event.province>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -879,7 +879,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.province_event>
+            <event.province>
         }
         ## cardinality = 0..1
         random_events = {
@@ -888,7 +888,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.province_event>
+            int = <event.province>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -897,7 +897,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.province_event>
+                int = <event.province>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -916,7 +916,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -925,7 +925,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -934,7 +934,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -953,7 +953,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -962,7 +962,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -971,7 +971,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -990,7 +990,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -999,7 +999,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1008,7 +1008,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1027,7 +1027,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1036,7 +1036,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1045,7 +1045,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1064,7 +1064,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1073,7 +1073,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1082,7 +1082,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1101,7 +1101,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1110,7 +1110,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1119,7 +1119,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1138,7 +1138,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1147,7 +1147,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1156,7 +1156,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1175,7 +1175,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1184,7 +1184,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1193,7 +1193,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1212,7 +1212,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1221,7 +1221,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1230,7 +1230,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1249,7 +1249,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1258,7 +1258,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1267,7 +1267,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1286,7 +1286,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1295,7 +1295,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1304,7 +1304,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1323,7 +1323,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1332,7 +1332,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1341,7 +1341,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1360,7 +1360,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1369,7 +1369,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1378,7 +1378,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1397,7 +1397,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1406,7 +1406,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1415,7 +1415,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1434,7 +1434,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1443,7 +1443,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1452,7 +1452,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1471,7 +1471,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1480,7 +1480,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1489,7 +1489,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1508,7 +1508,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1517,7 +1517,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1526,7 +1526,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1545,7 +1545,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1554,7 +1554,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1563,7 +1563,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1582,7 +1582,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1591,7 +1591,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1600,7 +1600,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1619,7 +1619,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1628,7 +1628,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1637,7 +1637,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1656,7 +1656,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1665,7 +1665,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1674,7 +1674,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1693,7 +1693,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1702,7 +1702,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1711,7 +1711,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1730,7 +1730,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1739,7 +1739,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1748,7 +1748,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1767,7 +1767,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1776,7 +1776,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1785,7 +1785,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1804,7 +1804,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1813,7 +1813,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1822,7 +1822,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1841,7 +1841,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1850,7 +1850,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1859,7 +1859,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1878,7 +1878,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1887,7 +1887,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1896,7 +1896,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1915,7 +1915,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1924,7 +1924,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1933,7 +1933,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1952,7 +1952,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1961,7 +1961,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -1970,7 +1970,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -1989,7 +1989,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -1998,7 +1998,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2007,7 +2007,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2026,7 +2026,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2035,7 +2035,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2044,7 +2044,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2063,7 +2063,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2072,7 +2072,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2081,7 +2081,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2100,7 +2100,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2109,7 +2109,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2118,7 +2118,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2137,7 +2137,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2146,7 +2146,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2155,7 +2155,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2174,7 +2174,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2183,7 +2183,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2192,7 +2192,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2211,7 +2211,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2220,7 +2220,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2229,7 +2229,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2248,7 +2248,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2257,7 +2257,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2266,7 +2266,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2285,7 +2285,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2294,7 +2294,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2303,7 +2303,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2322,7 +2322,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2331,7 +2331,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2340,7 +2340,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2359,7 +2359,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2368,7 +2368,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2377,7 +2377,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2396,7 +2396,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2405,7 +2405,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2414,7 +2414,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2433,7 +2433,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2442,7 +2442,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2451,7 +2451,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2470,7 +2470,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2479,7 +2479,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2488,7 +2488,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2507,7 +2507,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2516,7 +2516,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2525,7 +2525,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2544,7 +2544,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2553,7 +2553,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2562,7 +2562,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2581,7 +2581,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2590,7 +2590,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2599,7 +2599,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2618,7 +2618,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2627,7 +2627,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2636,7 +2636,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2655,7 +2655,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2664,7 +2664,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2673,7 +2673,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2692,7 +2692,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2701,7 +2701,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2710,7 +2710,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2729,7 +2729,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2738,7 +2738,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2747,7 +2747,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2766,7 +2766,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2775,7 +2775,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2784,7 +2784,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2803,7 +2803,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2812,7 +2812,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2821,7 +2821,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2840,7 +2840,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2849,7 +2849,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2858,7 +2858,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2877,7 +2877,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2886,7 +2886,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2895,7 +2895,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2914,7 +2914,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2923,7 +2923,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2932,7 +2932,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2951,7 +2951,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2960,7 +2960,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -2969,7 +2969,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -2988,7 +2988,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.province_event>
+            <event.province>
         }
         ## cardinality = 0..1
         random_events = {
@@ -2997,7 +2997,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.province_event>
+            int = <event.province>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3006,7 +3006,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.province_event>
+                int = <event.province>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3025,7 +3025,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3034,7 +3034,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3043,7 +3043,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3062,7 +3062,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3071,7 +3071,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3080,7 +3080,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3099,7 +3099,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3108,7 +3108,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3117,7 +3117,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3136,7 +3136,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3145,7 +3145,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3154,7 +3154,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3173,7 +3173,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.title_event>
+            <event.title>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3182,7 +3182,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.title_event>
+            int = <event.title>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3191,7 +3191,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.title_event>
+                int = <event.title>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3210,7 +3210,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.title_event>
+            <event.title>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3219,7 +3219,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.title_event>
+            int = <event.title>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3228,7 +3228,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.title_event>
+                int = <event.title>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3247,7 +3247,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3256,7 +3256,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3265,7 +3265,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3284,7 +3284,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3293,7 +3293,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3302,7 +3302,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3321,7 +3321,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.province_event>
+            <event.province>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3330,7 +3330,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.province_event>
+            int = <event.province>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3339,7 +3339,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.province_event>
+                int = <event.province>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3358,7 +3358,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3367,7 +3367,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3376,7 +3376,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3395,7 +3395,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3404,7 +3404,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3413,7 +3413,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3432,7 +3432,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3441,7 +3441,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3450,7 +3450,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3469,7 +3469,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3478,7 +3478,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3487,7 +3487,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3506,7 +3506,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.unit_event>
+            <event.unit>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3515,7 +3515,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.unit_event>
+            int = <event.unit>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3524,7 +3524,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.unit_event>
+                int = <event.unit>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3543,7 +3543,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3552,7 +3552,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3561,7 +3561,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3580,7 +3580,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3589,7 +3589,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3598,7 +3598,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3617,7 +3617,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3626,7 +3626,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3635,7 +3635,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3654,7 +3654,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3663,7 +3663,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3672,7 +3672,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3691,7 +3691,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3700,7 +3700,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3709,7 +3709,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3728,7 +3728,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3737,7 +3737,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3746,7 +3746,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3765,7 +3765,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3774,7 +3774,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3783,7 +3783,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3802,7 +3802,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3811,7 +3811,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3820,7 +3820,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3839,7 +3839,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3848,7 +3848,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3857,7 +3857,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3876,7 +3876,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3885,7 +3885,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3894,7 +3894,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3913,7 +3913,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3922,7 +3922,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3931,7 +3931,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3950,7 +3950,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3959,7 +3959,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -3968,7 +3968,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -3987,7 +3987,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -3996,7 +3996,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4005,7 +4005,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4024,7 +4024,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4033,7 +4033,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4042,7 +4042,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4061,7 +4061,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4070,7 +4070,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4079,7 +4079,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4098,7 +4098,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4107,7 +4107,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4116,7 +4116,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4135,7 +4135,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4144,7 +4144,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4153,7 +4153,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4172,7 +4172,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4181,7 +4181,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4190,7 +4190,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4209,7 +4209,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4218,7 +4218,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4227,7 +4227,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4246,7 +4246,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4255,7 +4255,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4264,7 +4264,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4283,7 +4283,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4292,7 +4292,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4301,7 +4301,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4320,7 +4320,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4329,7 +4329,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4338,7 +4338,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4357,7 +4357,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4366,7 +4366,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4375,7 +4375,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4394,7 +4394,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4403,7 +4403,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4412,7 +4412,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4431,7 +4431,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4440,7 +4440,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4449,7 +4449,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4468,7 +4468,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4477,7 +4477,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4486,7 +4486,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4505,7 +4505,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4514,7 +4514,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4523,7 +4523,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4542,7 +4542,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4551,7 +4551,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4560,7 +4560,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4579,7 +4579,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4588,7 +4588,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4597,7 +4597,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4616,7 +4616,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4625,7 +4625,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4634,7 +4634,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4653,7 +4653,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4662,7 +4662,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4671,7 +4671,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4690,7 +4690,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4699,7 +4699,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4708,7 +4708,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4727,7 +4727,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4736,7 +4736,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4745,7 +4745,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4764,7 +4764,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4773,7 +4773,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4782,7 +4782,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4801,7 +4801,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4810,7 +4810,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4819,7 +4819,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4838,7 +4838,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4847,7 +4847,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4856,7 +4856,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4875,7 +4875,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4884,7 +4884,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4893,7 +4893,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4912,7 +4912,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4921,7 +4921,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4930,7 +4930,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4949,7 +4949,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4958,7 +4958,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -4967,7 +4967,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -4986,7 +4986,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -4995,7 +4995,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5004,7 +5004,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5023,7 +5023,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5032,7 +5032,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5041,7 +5041,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5060,7 +5060,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5069,7 +5069,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5078,7 +5078,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5097,7 +5097,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5106,7 +5106,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5115,7 +5115,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5134,7 +5134,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5143,7 +5143,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5152,7 +5152,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5171,7 +5171,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5180,7 +5180,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5189,7 +5189,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5208,7 +5208,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5217,7 +5217,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5226,7 +5226,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5245,7 +5245,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.society_event>
+            <event.society>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5254,7 +5254,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.society_event>
+            int = <event.society>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5263,7 +5263,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.society_event>
+                int = <event.society>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5282,7 +5282,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5291,7 +5291,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5300,7 +5300,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5319,7 +5319,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5328,7 +5328,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5337,7 +5337,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5356,7 +5356,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5365,7 +5365,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5374,7 +5374,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5393,7 +5393,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5402,7 +5402,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5411,7 +5411,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5430,7 +5430,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5439,7 +5439,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5448,7 +5448,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5467,7 +5467,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5476,7 +5476,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5485,7 +5485,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5504,7 +5504,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5513,7 +5513,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5522,7 +5522,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5541,7 +5541,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5550,7 +5550,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5559,7 +5559,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5578,7 +5578,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5587,7 +5587,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5596,7 +5596,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5615,7 +5615,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5624,7 +5624,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5633,7 +5633,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5652,7 +5652,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5661,7 +5661,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5670,7 +5670,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5689,7 +5689,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5698,7 +5698,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5707,7 +5707,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5726,7 +5726,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5735,7 +5735,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5744,7 +5744,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5763,7 +5763,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5772,7 +5772,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5781,7 +5781,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5800,7 +5800,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5809,7 +5809,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5818,7 +5818,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5837,7 +5837,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5846,7 +5846,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5855,7 +5855,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5874,7 +5874,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5883,7 +5883,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5892,7 +5892,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5911,7 +5911,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5920,7 +5920,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5929,7 +5929,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5948,7 +5948,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5957,7 +5957,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -5966,7 +5966,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -5985,7 +5985,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -5994,7 +5994,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6003,7 +6003,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6022,7 +6022,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6031,7 +6031,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6040,7 +6040,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6059,7 +6059,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6068,7 +6068,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6077,7 +6077,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6096,7 +6096,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6105,7 +6105,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6114,7 +6114,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6133,7 +6133,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6142,7 +6142,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6151,7 +6151,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6170,7 +6170,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6179,7 +6179,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6188,7 +6188,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6207,7 +6207,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6216,7 +6216,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6225,7 +6225,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6244,7 +6244,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6253,7 +6253,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6262,7 +6262,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6281,7 +6281,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6290,7 +6290,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6299,7 +6299,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6318,7 +6318,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6327,7 +6327,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6336,7 +6336,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6355,7 +6355,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6364,7 +6364,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6373,7 +6373,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6392,7 +6392,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6401,7 +6401,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6410,7 +6410,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6429,7 +6429,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.title_event>
+            <event.title>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6438,7 +6438,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.title_event>
+            int = <event.title>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6447,7 +6447,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.title_event>
+                int = <event.title>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6466,7 +6466,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.province_event>
+            <event.province>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6475,7 +6475,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.province_event>
+            int = <event.province>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6484,7 +6484,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.province_event>
+                int = <event.province>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6503,7 +6503,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.artifact_event>
+            <event.artifact>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6512,7 +6512,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.artifact_event>
+            int = <event.artifact>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6521,7 +6521,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.artifact_event>
+                int = <event.artifact>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6540,7 +6540,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.bloodline_event>
+            <event.bloodline>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6549,7 +6549,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.bloodline_event>
+            int = <event.bloodline>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6558,7 +6558,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.bloodline_event>
+                int = <event.bloodline>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6577,7 +6577,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6586,7 +6586,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6595,7 +6595,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
@@ -6614,7 +6614,7 @@ on_action = {
         ## cardinality = 0..1
         events = {
             ## cardinality = 0..inf
-            <event.character_event>
+            <event.character>
         }
         ## cardinality = 0..1
         random_events = {
@@ -6623,7 +6623,7 @@ on_action = {
             int = 0
             ## cardinality = 0..inf
             ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-            int = <event.character_event>
+            int = <event.character>
             ### Each block is evaluated separately and has one (or none if the 0 entry is chosen) event happen.
             scalar = {
                 ## cardinality = 0..1
@@ -6632,7 +6632,7 @@ on_action = {
 
                 ## cardinality = 0..inf
                 ### Left hand is weight, multiplied by the event's weight_multiplier. Right hand is event.
-                int = <event.character_event>
+                int = <event.character>
 
                 ## cardinality = 0..1
                 ### Left hand is weight. Chance of nothing happening.
