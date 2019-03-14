@@ -93,6 +93,7 @@ law = {
     default = bool
 
     # TODO: Confirm scopes in this and the following.
+    ## cardinality = 0..1
     ## replace_scope = { this = title root = title }
     ### Conditions for the law to be enabled. ROOT seems to be title.
     allow = {

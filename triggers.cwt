@@ -92,6 +92,53 @@ alias[trigger:has_religion_features] = bool
 alias[trigger:is_alternate_start] = bool
 
 ## scope = any
+### Checks if the world is randomised.
+alias[trigger:is_random_world] = bool
+
+## scope = any
+### Checks if the world is shattered.
+alias[trigger:is_shattered_world] = bool
+
+# TODO: Enum the parameters up. This is going to be a doozie. Right now let's just stick with scalars.
+## scope = any
+### True if the given alternate start parameter has been set to the given value.
+alias[trigger:has_alternate_start_parameter] = {
+    key = scalar
+    value = scalar
+}
+
+## scope = any
+### True if the given alternate start setting has the given option selected.
+alias[trigger:has_alternate_start_setting] = {
+    setting = <alternate_start_setting.checkbox>
+    option = checked
+    option = unchecked
+}
+
+# TODO: allow only options
+## scope = any
+### True if the given alternate start setting has the given option selected.
+alias[trigger:has_alternate_start_setting] = {
+    setting = <alternate_start_setting.selection>
+    setting = <alternate_start_setting.custom>
+    option = scalar
+}
+
+## scope = any
+### Compares value with the given alternate start setting's value.
+alias[trigger:has_alternate_start_setting] = {
+    setting = <alternate_start_setting.slider>
+    value = int
+}
+
+## scope = any
+### Compares min and max with the given alternate start setting's min and max.
+alias[trigger:has_alternate_start_setting] = {
+    setting = <alternate_start_setting.double_slider>
+    value = int
+}
+
+## scope = any
 ### True if the given society's given rank is full.
 alias[trigger:is_society_rank_full] = {
     society = scope[society]
@@ -2371,6 +2418,10 @@ alias[trigger:religion_authority] = float[0.0..1.0]
 ### True if scoped entity has a religion that belongs to the given religion group.
 alias[trigger:religion_group] = <religion_group>
 
+## scope = religion
+### True if scoped religion belongs to the given religion group.
+alias[trigger:religion_group] = <religion_group>
+
 ## scope = { character province title }
 ### True if the scoped entity has the given culture.
 alias[trigger:culture] = <culture>
@@ -2392,7 +2443,9 @@ alias[trigger:culture] = scope[title]
 ### True if scoped entity has a culture that belongs to the given culture group.
 alias[trigger:culture_group] = <culture_group>
 
-# STOPPED HERE
+## scope = culture
+### True if scoped culture belongs to the given culture group.
+alias[trigger:culture_group] = <culture_group>
 
 ## scope = { character province title }
 ### True if scoped entity has a culture that belongs to the same culture group as the culture of the given character.
