@@ -1,3 +1,4 @@
+# TODO: Will probably need a killer subtype or something once stuff is figured out
 types = {
     type[death] = {
         path_strict = yes

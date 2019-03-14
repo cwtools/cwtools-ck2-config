@@ -1,0 +1,189 @@
+types = {
+    type[character] = {
+        path_strict = yes
+        path = "game/history/characters"
+
+        localisation = {
+            name = name
+        }
+    }
+}
+
+## replace_scope = { this = character }
+character = {
+    ### The character's first name.
+    name = scalar
+
+    ### The character's dynasty.
+    dynasty = <dynasty>
+
+    ### The character's religion.
+    religion = <religion>
+
+    ## cardinality = 0..1
+    ### The character's secret religion.
+    secret_religion = <religion>
+
+    ### The character's culture.
+    culture = <culture>
+
+    ## cardinality = 0..1
+    ### The character's race for graphical culture and appearance.
+    race = <culture>
+
+    ## cardinality = 0..1
+    ### If yes, the character will be female. Defaults to "no".
+    female = bool
+
+    ## cardinality = 0..1
+    ### The character's DNA for their portrait.
+    dna = portrait_dna_field
+
+    ## cardinality = 0..1
+    ### The character's properties for their portrait.
+    properties = portrait_properties_field
+
+    ## cardinality = 0..1
+    ### Specifies the character's father.
+    father = <character>
+
+    ## cardinality = 0..1
+    ### Specifies the character's real father.
+    real_father = <character>
+
+    ## cardinality = 0..1
+    ### Specifies the character's mother.
+    mother = <character>
+
+    ## cardinality = 0..1
+    ### The character's base diplomacy value.
+    diplomacy = int
+
+    ## cardinality = 0..1
+    ### The character's base martial value.
+    martial = int
+
+    ## cardinality = 0..1
+    ### The character's base stewardship value.
+    stewardship = int
+
+    ## cardinality = 0..1
+    ### The character's base intrigue value.
+    intrigue = int
+
+    ## cardinality = 0..1
+    ### The character's base learning value.
+    learning = int
+
+    # TODO: Float maybe?
+    ## cardinality = 0..1
+    ### The character's base health value.
+    health = int
+
+    ## cardinality = 0..1
+    ### The character's base fertility value.
+    fertility = float
+
+    ## cardinality = 0..inf
+    ### The character starts with this trait.
+    add_trait = <trait>
+
+    ## cardinality = 0..inf
+    ### The character starts with this trait.
+    trait = <trait>
+
+    ## cardinality = 0..1
+    ### If yes, prevents additional traits from being randomly assigned to a character by the game, except through subsequent events. Defaults to "no".
+    disallow_random_traits = bool
+
+    ## cardinality = 0..1
+    ### If yes, prevents the character from being assigned to a society at game start. Defaults to "no".
+    easter_egg = bool
+
+    ## cardinality = 0..1
+    ### If yes, replaces the character's portrait with GFX_Muhammad. Defaults to "no".
+    occluded = bool
+
+    date_field = {
+        birth = yes
+        birth = date_field
+
+        ## cardinality = 0..inf
+        alias_name[character_history_effect] = alias_match_left[character_history_effect]
+    }
+
+    ## cardinality = 0..inf
+    date_field = {
+        ## cardinality = 1..inf
+        alias_name[character_history_effect] = alias_match_left[character_history_effect]
+    }
+
+    date_field = {
+        death = yes
+        death = date_field
+        death = {
+            death_reason = <death>
+            ## cardinality = 0..1
+            killer = <character>
+        }
+
+        ## cardinality = 0..inf
+        alias_name[character_history_effect] = alias_match_left[character_history_effect]
+    }
+}
+
+alias[character_history_effect:add_claim] = <title>
+
+alias[character_history_effect:remove_claim] = <title>
+
+alias[character_history_effect:employer] = <character>
+
+alias[character_history_effect:add_spouse] = <character>
+
+alias[character_history_effect:add_matrilineal_spouse] = <character>
+
+alias[character_history_effect:add_consort] = <character>
+
+alias[character_history_effect:add_lover] = <character>
+
+alias[character_history_effect:remove_spouse] = <character>
+
+# remove consort? remove lover?
+
+alias[character_history_effect:give_job_title] = <minor_title.job>
+alias[character_history_effect:give_nickname] = <nickname>
+
+# Floats?
+alias[character_history_effect:wealth] = int
+alias[character_history_effect:piety] = int
+alias[character_history_effect:prestige] = int
+alias[character_history_effect:decadence] = int
+
+alias[character_history_effect:immortal_age] = int
+
+alias[character_history_effect:remove_trait] = <trait>
+alias[character_history_effect:capital] = <title>
+alias[character_history_effect:dynasty] = <dynasty>
+
+alias[character_history_effect:create_bloodline] = {
+    type = <bloodline>
+
+    ## cardinality = 0..inf
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+alias[character_history_effect:effect] = {
+    ## cardinality = 1..inf
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[character_history_effect:effect_even_if_dead] = {
+    ## cardinality = 1..inf
+    alias_name[effect] = alias_match_left[effect]
+}
+alias[character_history_effect:raise_levies] = {
+    ## cardinality = 0..1
+    ### Defaults to "no".
+    dismiss = bool
+    location = enum[province]
+    force_mult = float
+}
