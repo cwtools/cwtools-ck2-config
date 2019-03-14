@@ -5,10 +5,13 @@ types = {
 
         localisation = {
             name = name
+            ## optional
+            wiki = "W_L_$"
         }
     }
 }
 
+# TODO: WIP; cardinality, in particular - needs the project to not be stuck loading first.
 ## replace_scope = { this = character }
 character = {
     ### The character's first name.
@@ -104,67 +107,87 @@ character = {
     ### If yes, replaces the character's portrait with GFX_Muhammad. Defaults to "no".
     occluded = bool
 
+    ## cardinality = 2..inf
     date_field = {
-        birth = yes
-        birth = date_field
-
-        ## cardinality = 0..inf
-        alias_name[character_history_effect] = alias_match_left[character_history_effect]
-    }
-
-    ## cardinality = 0..inf
-    date_field = {
-        ## cardinality = 1..inf
-        alias_name[character_history_effect] = alias_match_left[character_history_effect]
-    }
-
-    date_field = {
+        ## cardinality = 0..1
         death = yes
+        ## cardinality = 0..1
         death = date_field
+        ## cardinality = 0..1
         death = {
             death_reason = <death>
             ## cardinality = 0..1
             killer = <character>
         }
 
+        ## cardinality = 0..1
+        birth = yes
+        ## cardinality = 0..1
+        birth = date_field
+
         ## cardinality = 0..inf
         alias_name[character_history_effect] = alias_match_left[character_history_effect]
     }
 }
 
+### Adds a strong claim on the given title.
 alias[character_history_effect:add_claim] = <title>
 
+### Removes the claim on the given title.
 alias[character_history_effect:remove_claim] = <title>
 
+### Moves the character to the given character's court.
 alias[character_history_effect:employer] = <character>
 
+### Adds the given character as a spouse to the character.
 alias[character_history_effect:add_spouse] = <character>
 
+### Adds the given character as a spouse in a matrilineal marriage to the character.
 alias[character_history_effect:add_matrilineal_spouse] = <character>
 
+### Adds the given character as a consort to the character.
 alias[character_history_effect:add_consort] = <character>
 
+### Adds the given character as a lover to the character.
 alias[character_history_effect:add_lover] = <character>
 
+### Removes the given spouse from the character.
 alias[character_history_effect:remove_spouse] = <character>
 
 # remove consort? remove lover?
 
+### Gives the character the given job.
 alias[character_history_effect:give_job_title] = <minor_title.job>
+
+### Sets the character's nickname to the given one.
 alias[character_history_effect:give_nickname] = <nickname>
 
 # Floats?
+### Changes the character's wealth by the given value.
 alias[character_history_effect:wealth] = int
+
+### Changes the character's piety by the given value.
 alias[character_history_effect:piety] = int
+
+### Changes the character's prestige by the given value.
 alias[character_history_effect:prestige] = int
+
+### Changes the character's decadence by the given value.
 alias[character_history_effect:decadence] = int
 
+### If the character has a trait with immortality = yes, this specifies when the character became immortal.
 alias[character_history_effect:immortal_age] = int
 
+### Removes the given trait from the character.
 alias[character_history_effect:remove_trait] = <trait>
+
+### Changes the character's capital to the given one.
 alias[character_history_effect:capital] = <title>
+
+### Changes the character's dynasty to the given one.
 alias[character_history_effect:dynasty] = <dynasty>
 
+### The character becomes the founder of a given bloodline if conditions are met.
 alias[character_history_effect:create_bloodline] = {
     type = <bloodline>
 
@@ -172,18 +195,27 @@ alias[character_history_effect:create_bloodline] = {
     alias_name[trigger] = alias_match_left[trigger]
 }
 
+### Effects not covered by the other effects to execute on the character if they're not dead. Note that this is only executed after game start, so might cause some discrepancies in the lobby.
 alias[character_history_effect:effect] = {
     ## cardinality = 1..inf
     alias_name[effect] = alias_match_left[effect]
 }
+
+### Effects not covered by the other effects to execute on the character. Note that this is only executed after game start, so might cause some discrepancies in the lobby.
 alias[character_history_effect:effect_even_if_dead] = {
     ## cardinality = 1..inf
     alias_name[effect] = alias_match_left[effect]
 }
+
+### Raises or dismisses levies in the given province.
 alias[character_history_effect:raise_levies] = {
     ## cardinality = 0..1
-    ### Defaults to "no".
+    ### If yes, the levies will be dismissed. If no, the levies will be raised. Defaults to "no".
     dismiss = bool
+
+    ### Where to raise/dismiss the levies.
     location = enum[province]
+
+    ### Multiplies the regular amount of levies by this value.
     force_mult = float
 }
