@@ -1,40 +1,389 @@
-# VARIABLES
+enums = {
+    # TODO: split into scope-based categories; as it is it's just copied from the wiki
+    enum[variable_exports] = {
+        diplomacy
+        martial
+        stewardship
+        intrigue
+        learning
+        base_health
+        health
+        demesne_efficiency
+        decadence
+        dynasty_realm_power
+        fertility
+        infamy
+        mercenary_siphon_factor
+        monthly_income
+        plot_power
+        population_factor
+        relative_power_to_liege
+        religion_authority
+        revolt_risk
+        scaled_wealth
+        treasury/wealth
+        yearly_income
+        age
+        day_of_birth
+        month_of_birth
+        year_of_birth
+        ai_ambition
+        ai_greed
+        ai_honor
+        ai_rationality
+        ai_zeal
+        among_most_powerful_vassals
+        combat_rating
+        demesne_garrison_size
+        demesne_size
+        health_traits
+        imprisoned_days
+        lifestyle_traits
+        max_manpower
+        num_fitting_characters_for_title
+        num_of_baron_titles
+        num_of_buildings
+        num_of_children
+        num_of_claims
+        num_of_consorts
+        num_of_count_titles
+        num_of_count_titles_in_realm
+        num_of_duke_titles
+        num_of_dynasty_members
+        num_of_emperor_titles
+        num_of_empty_holdings
+        num_of_extra_landed_titles
+        num_of_feuds
+        num_of_friends
+        num_of_holy_sites
+        num_of_king_titles
+        num_of_lovers
+        num_of_max_settlements
+        num_of_plot_backers
+        num_of_prisoners
+        num_of_rivals
+        num_of_settlements
+        num_of_subrealm_castles
+        num_of_subrealm_cities
+        num_of_spouses
+        num_of_titles
+        num_of_trade_posts
+        num_of_traits
+        num_of_unique_dynasty_vassals
+        num_of_vassals
+        over_max_demesne_size
+        over_vassal_limit
+        personality_traits
+        piety
+        population
+        population_and_manpower
+        prestige
+        realm_diplomacy
+        realm_intrigue
+        realm_learning
+        realm_martial
+        realm_stewardship
+        realm_levies
+        realm_levies_plus_allies
+        max_realm_levies
+        realm_size
+        republic_total_num_of_trade_posts
+        ruled_years
+        score
+        unused_manpower
+        retinue_points_max
+        retinue_points_used
+        retinue_points_free
+        total_tax_value
+        holding_tax_value
+        dynastic_prestige
+        society_currency
+        day
+        month
+        year
+        holding_garrison
+        holding_garrison_percent
+        holding_raisable_levy
+        holding_raisable_levy_percent
+        holding_total_levy
+        holding_total_levy_percent
+    }
+}
 
-## scope = TODO
-### Used to create (or reset) a variable to a the value of a trigger.
-alias[effect:export_to_variable] = TODO
+# VARIABLES - TODO: local_ (only in an event_chain or at least province/character/title (decisions) scope) and global_ (any scope) stuff
 
-## scope = TODO
-### Divides the variable by the specified value or variable, returning the remainder of the division.
-alias[effect:modulo_variable] = TODO
+## scope = { character province title artifact society offmap culture religion }
+### Creates or updates a variable in the scoped entity with the exported value.
+alias[effect:export_to_variable] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = enum[variable_exports]
+}
 
-## scope = character/province
-### Used to create (or reset) a variable to a value, or to the value of another variable
-alias[effect:set_variable] = TODO
+## scope = { character province title artifact society offmap culture religion }
+### Sets the given variable in the scoped entity to the given value.
+alias[effect:set_variable] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = float
+}
 
-## scope = character/province
-### Subtract specified value or another variable to a variable
-alias[effect:subtract_variable] = TODO
+# TODO: This and the following similar ones are bad; needs to be order-based
+## scope = { character province title artifact society offmap culture religion }
+### Sets the value of the first variable to the value of the second variable in the same scoped entity; or of a same-named variable in the given scope.
+alias[effect:set_variable] = {
+    ## cardinality = 2..2
+    which = value_set[variable]
+    ## cardinality = 2..2
+    which = value[variable]
+    ## cardinality = 2..2
+    which = scope[character]
+    ## cardinality = 2..2
+    which = scope[province]
+    ## cardinality = 2..2
+    which = scope[title]
+    ## cardinality = 2..2
+    which = scope[artifact]
+    ## cardinality = 2..2
+    which = scope[society]
+    ## cardinality = 2..2
+    which = scope[offmap]
+    ## cardinality = 2..2
+    which = scope[culture]
+    ## cardinality = 2..2
+    which = scope[religion]
+}
 
-## scope = character/province
-### Divide a variable with specified value, or with another variable
-alias[effect:divide_variable] = TODO
+## scope = { character province title artifact society offmap culture religion }
+### Increases the given variable in the scoped entity by the given value.
+alias[effect:change_variable] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = float
+}
 
-## scope = character/province
-### Multiply variable with specified value, or variable.
-alias[effect:multiply_variable] = TODO
+## scope = { character province title artifact society offmap culture religion }
+### Increases the first variable in the scoped entity by the second variable in the same entity; or by a same-named variable in the given scope.
+alias[effect:change_variable] = {
+    ## cardinality = 2..2
+    which = value_set[variable]
+    ## cardinality = 2..2
+    which = value[variable]
+    ## cardinality = 2..2
+    which = scope[character]
+    ## cardinality = 2..2
+    which = scope[province]
+    ## cardinality = 2..2
+    which = scope[title]
+    ## cardinality = 2..2
+    which = scope[artifact]
+    ## cardinality = 2..2
+    which = scope[society]
+    ## cardinality = 2..2
+    which = scope[offmap]
+    ## cardinality = 2..2
+    which = scope[culture]
+    ## cardinality = 2..2
+    which = scope[religion]
+}
 
-## scope = TODO
-### Increment (or decrement) a variable with specified value, or another variable
-alias[effect:change_variable] = TODO
+## scope = { character province title artifact society offmap culture religion }
+### Decreases the given variable in the scoped entity by the negative of the given value.
+alias[effect:subtract_variable] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = float
+}
 
-## scope = { character province }
-### Used in conjunction with change_variable command.
-alias[trigger:check_variable] = TODO
+## scope = { character province title artifact society offmap culture religion }
+### Decreases the first variable in the scoped entity by the second variable in the same entity; or by a same-named variable in the given scope.
+alias[effect:subtract_variable] = {
+    ## cardinality = 2..2
+    which = value_set[variable]
+    ## cardinality = 2..2
+    which = value[variable]
+    ## cardinality = 2..2
+    which = scope[character]
+    ## cardinality = 2..2
+    which = scope[province]
+    ## cardinality = 2..2
+    which = scope[title]
+    ## cardinality = 2..2
+    which = scope[artifact]
+    ## cardinality = 2..2
+    which = scope[society]
+    ## cardinality = 2..2
+    which = scope[offmap]
+    ## cardinality = 2..2
+    which = scope[culture]
+    ## cardinality = 2..2
+    which = scope[religion]
+}
 
-## scope = { character province }
-### Checks if a variable has the exact value, instead of standard >= check. See variables.
-alias[trigger:is_variable_equal] = TODO
+## scope = { character province title artifact society offmap culture religion }
+### Multiplies the given variable in the scoped entity by the given value.
+alias[effect:multiply_variable] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = float
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### Multiplies the first variable in the scoped entity by the second variable in the same entity; or by a same-named variable in the given scope.
+alias[effect:multiply_variable] = {
+    ## cardinality = 2..2
+    which = value_set[variable]
+    ## cardinality = 2..2
+    which = value[variable]
+    ## cardinality = 2..2
+    which = scope[character]
+    ## cardinality = 2..2
+    which = scope[province]
+    ## cardinality = 2..2
+    which = scope[title]
+    ## cardinality = 2..2
+    which = scope[artifact]
+    ## cardinality = 2..2
+    which = scope[society]
+    ## cardinality = 2..2
+    which = scope[offmap]
+    ## cardinality = 2..2
+    which = scope[culture]
+    ## cardinality = 2..2
+    which = scope[religion]
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### Divides the given variable in the scoped entity by the given value.
+alias[effect:divide_variable] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = float
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### Divides the first variable in the scoped entity by the second variable in the same entity; or by a same-named variable in the given scope.
+alias[effect:divide_variable] = {
+    ## cardinality = 2..2
+    which = value_set[variable]
+    ## cardinality = 2..2
+    which = value[variable]
+    ## cardinality = 2..2
+    which = scope[character]
+    ## cardinality = 2..2
+    which = scope[province]
+    ## cardinality = 2..2
+    which = scope[title]
+    ## cardinality = 2..2
+    which = scope[artifact]
+    ## cardinality = 2..2
+    which = scope[society]
+    ## cardinality = 2..2
+    which = scope[offmap]
+    ## cardinality = 2..2
+    which = scope[culture]
+    ## cardinality = 2..2
+    which = scope[religion]
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### Sets the given variable in the scoped entity to the remainder of the division of itself by the given value.
+alias[effect:modulo_variable] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = float
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### Sets the first variable in the scoped entity to the remainder of the division of itself by the second variable in the same entity; or by a same-named variable in the given scope.
+alias[effect:modulo_variable] = {
+    ## cardinality = 2..2
+    which = value_set[variable]
+    ## cardinality = 2..2
+    which = value[variable]
+    ## cardinality = 2..2
+    which = scope[character]
+    ## cardinality = 2..2
+    which = scope[province]
+    ## cardinality = 2..2
+    which = scope[title]
+    ## cardinality = 2..2
+    which = scope[artifact]
+    ## cardinality = 2..2
+    which = scope[society]
+    ## cardinality = 2..2
+    which = scope[offmap]
+    ## cardinality = 2..2
+    which = scope[culture]
+    ## cardinality = 2..2
+    which = scope[religion]
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### Compares value with the value of the given variable in the scoped entity.
+alias[trigger:check_variable] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = float
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### True if the first variable in the scoped entity is greater than or equal to the second variable in the same entity; or greater than or equal to a same-named variable in the given scope.
+alias[trigger:check_variable] = {
+    ## cardinality = 2..2
+    which = value_set[variable]
+    ## cardinality = 2..2
+    which = value[variable]
+    ## cardinality = 2..2
+    which = scope[character]
+    ## cardinality = 2..2
+    which = scope[province]
+    ## cardinality = 2..2
+    which = scope[title]
+    ## cardinality = 2..2
+    which = scope[artifact]
+    ## cardinality = 2..2
+    which = scope[society]
+    ## cardinality = 2..2
+    which = scope[offmap]
+    ## cardinality = 2..2
+    which = scope[culture]
+    ## cardinality = 2..2
+    which = scope[religion]
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### True if the given variable in the scoped entity is exactly equal to value.
+alias[trigger:is_variable_equal] = {
+    which = value_set[variable]
+    which = value[variable]
+    value = float
+}
+
+## scope = { character province title artifact society offmap culture religion }
+### True if the first variable in the scoped entity is exactly equal to the second variable in the same entity; or to a same-named variable in the given scope.
+alias[trigger:is_variable_equal] = {
+    ## cardinality = 2..2
+    which = value_set[variable]
+    ## cardinality = 2..2
+    which = value[variable]
+    ## cardinality = 2..2
+    which = scope[character]
+    ## cardinality = 2..2
+    which = scope[province]
+    ## cardinality = 2..2
+    which = scope[title]
+    ## cardinality = 2..2
+    which = scope[artifact]
+    ## cardinality = 2..2
+    which = scope[society]
+    ## cardinality = 2..2
+    which = scope[offmap]
+    ## cardinality = 2..2
+    which = scope[culture]
+    ## cardinality = 2..2
+    which = scope[religion]
+}
 
 # EVENT TARGETS
 
@@ -44,24 +393,24 @@ alias[effect:save_event_target_as] = value_set[event_target]
 
 ## scope = any
 ### Saves a scope into a global variable, to be re-used later
-alias[effect:save_global_event_target_as] = value_set[event_target]
+alias[effect:save_global_event_target_as] = value_set[global_event_target]
+
+## scope = { character province title artifact society offmap culture religion }
+### Saves a scope into a persistent event target in the current scope to be reused later. name is the name of the event target, scope is the scope to save. Relative scoping works.
+alias[effect:save_persistent_event_target] = TODO
 
 ## scope = any
 ### Deletes a previously saved variable.
-alias[effect:clear_event_target] = var
+alias[effect:clear_event_target] = value[event_target]
 
 ## scope = any
 ### Deletes a previously saved global variable.
-alias[effect:clear_global_event_target] = value[global_variable]
+alias[effect:clear_global_event_target] = value[global_event_target]
 
 ## scope = any
 ### Deletes all previously saved global variables.
 alias[effect:clear_global_event_targets] = yes
 
-## scope = province/character/title/
+## scope = { character province title artifact society offmap culture religion }
 ### Deletes a persistent event target previously saved in the currently scoped entity.
 alias[effect:clear_persistent_event_target] = TODO
-
-## scope = province/character/title/
-### Saves a scope into a persistent event target in the current scope to be reused later. name is the name of the event target, scope is the scope to save. Relative scoping works.
-alias[effect:save_persistent_event_target] = TODO
