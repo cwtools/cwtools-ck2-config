@@ -89,5 +89,13 @@ title_history = {
         ## cardinality = 0..inf
         ### Sets the given global flag as active.
         set_global_flag = value_set[global_flag]
+
+        # TODO: Only if active/not destroyed?
+        ## cardinality = 0..1
+        ## replace_scope = { this = title }
+        ### Effects not covered by the other effects to execute on the title. Note that this is only executed after game start, so might cause some discrepancies in the lobby.
+        effect = {
+
+        }
     }
 }
