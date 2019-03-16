@@ -388,29 +388,32 @@ alias[trigger:is_variable_equal] = {
 # EVENT TARGETS
 
 ## scope = any
-### Saves a scope into a variable, to be re-used later in an event chain
+### Saves the scoped entity into a variable that can be used to quickly scope to it later in the event chain. Doesn't persist outside of the chain.
 alias[effect:save_event_target_as] = value_set[event_target]
 
 ## scope = any
-### Saves a scope into a global variable, to be re-used later
+### Saves the scoped entity into a global variable that can be used to quickly scope to it from anywhere in script afterwards.
 alias[effect:save_global_event_target_as] = value_set[global_event_target]
 
 ## scope = { character province title artifact society offmap culture religion }
-### Saves a scope into a persistent event target in the current scope to be reused later. name is the name of the event target, scope is the scope to save. Relative scoping works.
-alias[effect:save_persistent_event_target] = TODO
+### Saves the given scope into a variable in the scoped entity that can be used to quickly scope to it later from the scoped entity.
+alias[effect:save_persistent_event_target] = {
+    name = value_set[persistent_event_target]
+    scope = scope[any]
+}
 
 ## scope = any
-### Deletes a previously saved variable.
+### Clears a previously set event target.
 alias[effect:clear_event_target] = value[event_target]
 
 ## scope = any
-### Deletes a previously saved global variable.
+### Clears a previously set global event target.
 alias[effect:clear_global_event_target] = value[global_event_target]
 
 ## scope = any
-### Deletes all previously saved global variables.
+### Clears all previously set global variables.
 alias[effect:clear_global_event_targets] = yes
 
 ## scope = { character province title artifact society offmap culture religion }
-### Deletes a persistent event target previously saved in the currently scoped entity.
-alias[effect:clear_persistent_event_target] = TODO
+### Clears a persistent event target previously set in the scoped entity.
+alias[effect:clear_persistent_event_target] = value[persistent_event_target]
