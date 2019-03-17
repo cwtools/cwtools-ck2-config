@@ -15,6 +15,17 @@ links = {
     #   data - The type that this link refers to (e.g. province:5)
     #   data = <province>
     # }
+
+    # Custom data links ####
+    religion = {
+        input_scopes = { character province }
+        output_scope = religion
+        from_data = yes
+        data_source = religion
+    }
+
+
+
     capital_scope = {
         desc = "Scopes to the character's (or title's, if a capital has been defined in landed_titles definitions) capital province"
         # input_scopes = { character title }
@@ -545,7 +556,7 @@ links = {
     }
     location = {
         desc = "Scopes to the character's location (or county or barony title's province)"
-        input_scopes = { character title unit }
+        input_scopes = { character title unit province }
         output_scope = province
     }
     plot_target_province = {

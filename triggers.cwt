@@ -3155,7 +3155,7 @@ alias[trigger:had_title_flag] = {
 alias[trigger:has_any_building] = bool
 
 # TODO: province scope? Probably capital holding
-## scope = title
+## scope = { title province }
 ### True if the scoped holding has the given building.
 alias[trigger:has_building] = <building>
 
@@ -3435,3 +3435,7 @@ alias[trigger:custom_tooltip] = {
 alias[trigger:hidden_tooltip] = {
     alias_name[trigger] = alias_match_left[trigger]
 }
+
+alias[trigger:show_scope_change] = no
+alias[trigger:generate_tooltip] = no
+alias[trigger:show_only_failed_conditions] = yes

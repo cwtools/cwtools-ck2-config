@@ -241,6 +241,9 @@ modifiers = {
     ### Time to construct a building in a tribe
     local_build_time_tribal_modifier = province
 
+    #TODO: desc
+    hospital_level = province
+
 
 
     # Opinion ######
@@ -459,7 +462,9 @@ modifiers = {
     tech_growth_modifier_<tech_type> = character
 
     ### Generation of technology points in province
-    <tech_type>_techpoints = province
+    economy_techpoints = province
+    military_techpoints = province
+    culture_techpoints = province
 
 
     ### Maximum number of trade posts

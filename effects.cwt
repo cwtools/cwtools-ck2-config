@@ -81,6 +81,11 @@ alias[effect:random] = {
 alias[effect:random_list] = {
     ## cardinality = 2..inf
     int = {
+        ## cardinality = 0..1
+        trigger = {
+            alias_name[trigger] = alias_match_left[trigger]
+        }
+
         ## cardinality = 0..inf
         alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
 
@@ -164,10 +169,15 @@ alias[effect:unsafe_destroy_landed_title] = scope[title]
 # TODO: More general solution?
 alias[effect:clr_flag] = value[flag]
 
-## scope = any with flags
+## scope = any
 ### Sets a flag in the current scope if it can store flags. Works for any such scope, unlike the more specific set_scope_flag commands.
 # TODO: More general solution?
 alias[effect:set_flag] = value_set[flag]
+
+## scope = title
+### Sets a flag in the current scope if it can store flags. Works for any such scope, unlike the more specific set_scope_flag commands.
+# TODO: More general solution?
+alias[effect:set_flag] = value_set[title_flag]
 
 ## scope = artifact
 ### Clears a flag in the currently scoped artifact.
@@ -2914,3 +2924,6 @@ alias[effect:hidden_tooltip] = {
 
 ### This acts as a return statement, causing everything after it (in the main block: option, immediate, ...) to be ignored
 alias[effect:break] = yes
+
+alias[effect:show_scope_change] = no
+alias[effect:generate_tooltip] = no
