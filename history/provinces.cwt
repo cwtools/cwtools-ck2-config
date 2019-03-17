@@ -3,7 +3,7 @@ types = {
     type[province_history] = {
         path_strict = yes
         path = "game/history/provinces"
-        start_from_root = yes
+        type_per_file = yes
     }
 }
 

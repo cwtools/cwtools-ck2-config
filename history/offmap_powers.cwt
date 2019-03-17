@@ -3,7 +3,7 @@ types = {
     type[offmap_history] = {
         path_strict = yes
         path = "game/history/offmap_powers"
-        start_from_root = yes
+        type_per_file = yes
     }
 }
 

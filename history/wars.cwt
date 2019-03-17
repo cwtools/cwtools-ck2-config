@@ -2,7 +2,7 @@ types = {
     type[war] = {
         path_strict = yes
         path = "game/history/wars"
-        start_from_root = yes
+        type_per_file = yes
 
         localisation = {
             name = name
