@@ -30,6 +30,10 @@ types = {
         #subtype[uses_caste_system] = {
         #    castes = yes
         #}
+        subtype[has_secret_cult] = {
+            ## cardinality = 0..1
+            dynamic_cult = yes
+        }
 
         localisation = {
             name = "$"

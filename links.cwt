@@ -18,10 +18,65 @@ links = {
 
     # Custom data links ####
     religion = {
-        input_scopes = { character province }
         output_scope = religion
         from_data = yes
         data_source = religion
+    }
+
+    religion_group = {
+        output_scope = religion
+        from_data = yes
+        data_source = religion_group
+    }
+
+    culture = {
+        output_scope = culture
+        from_data = yes
+        data_source = culture
+    }
+
+    culture_group = {
+        output_scope = culture
+        from_data = yes
+        data_source = culture_group
+    }
+
+    offmap = {
+        output_scope = offmap
+        from_data = yes
+        data_source = offmap
+    }
+
+    society = {
+        output_scope = society
+        from_data = yes
+        data_source = society
+    }
+
+    secret_religious_society_religion = {
+        prefix = secret_religious_society_
+        output_scope = society
+        from_data = yes
+        data_source = religion # .has_secret_cult
+    }
+
+    trait.cached = {
+        output_scope = character
+        from_data = yes
+        data_source = trait.cached
+    }
+
+    character = {
+        prefix = c_
+        output_scope = character
+        from_data = yes
+        data_source = character
+    }
+
+    title = {
+        output_scope = title
+        from_data = yes
+        data_source = title
     }
 
 

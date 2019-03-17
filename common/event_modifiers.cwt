@@ -24,4 +24,10 @@ event_modifier = {
         ## cardinality = 1..inf
         alias_name[command_modifier] = alias_match_left[command_modifier]
     }
+
+    ## cardinality = 0..1
+    is_visible = {
+        ## cardinality = 1..inf
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 }
