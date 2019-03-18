@@ -651,6 +651,11 @@ links = {
         input_scopes = { character province society }
         output_scope = religion
     }
+    parent_religion = {
+        desc = "Scopes to the parent religion (if any) of the currently scoped entity's religion."
+        input_scopes = { character province religion } # TODO: ensure society works
+        output_scope = religion
+    }
     secret_religion_scope = {
         desc = "Scopes to the secret religion of the character."
         input_scopes = character

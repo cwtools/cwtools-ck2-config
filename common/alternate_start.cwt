@@ -165,7 +165,7 @@ alias[alternate_start_setting_property:nomadic_seeds] = int
 alias[alternate_start_setting_property:value_set[alternate_start_setting_custom_property]] = scalar
 
 types = {
-    ## type_key_filter <> { culture_group_spread culture_spread religion_group_spread religion_spread dejure_kingdom_spread dejure_empire_spread holy_site_spread holding_spread adjacencies religion_name_formats }
+    ## type_key_filter <> { culture_group_spread culture_spread religion_group_spawn religion_group_spread religion_spread dejure_kingdom_spread dejure_empire_spread holy_site_spread holding_spread adjacencies religion_name_formats }
     type[alternate_start_setting] = {
         path_strict = yes
         path = "game/common/alternate_start"
@@ -223,6 +223,11 @@ types = {
     }
     ## type_key_filter = culture_spread
     type[alternate_start_culture_spread] = {
+        path_strict = yes
+        path = "game/common/alternate_start"
+    }
+    ## type_key_filter = religion_group_spawn
+    type[alternate_start_religion_group_spawn] = {
         path_strict = yes
         path = "game/common/alternate_start"
     }
@@ -484,6 +489,14 @@ alternate_start_culture_group_spread = {
 ## replace_scope = { this = culture root = culture from = province }
 ### Just check the documentation in common/alternate_start/_documentation.info for this one. ROOT is the culture, FROM is the province.
 alternate_start_culture_spread = {
+    factor = float
+
+    alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+}
+
+## replace_scope = { this = province root = province }
+### Just check the documentation in common/alternate_start/_documentation.info for this one. ROOT is the province potentially spawning a religion group.
+alternate_start_religion_group_spawn = {
     factor = float
 
     alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]

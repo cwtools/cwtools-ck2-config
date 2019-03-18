@@ -99,6 +99,14 @@ alias[trigger:is_random_world] = bool
 ### Checks if the world is shattered.
 alias[trigger:is_shattered_world] = bool
 
+## scope = province
+### Compares with the distance from the scoped province to the nearest province with a religion. Used exclusively during alternate start setup as normally each province has a religion.
+alias[trigger:any_religion_distance] = float
+
+## scope = religion
+### Compares with the amount of holy sites generated for the religion so far. Used exclusively during alternate start setup as normally each religion has exactly 5 holy sites.
+alias[trigger:num_holy_sites_generated] = int
+
 # TODO: Enum the parameters up. This is going to be a doozie. Right now let's just stick with scalars.
 ## scope = any
 ### True if the given alternate start parameter has been set to the given value.
@@ -2406,6 +2414,10 @@ alias[trigger:is_reformed_religion] = bool
 ### True if the religion associated with the scoped entity is a reformed version of the given character's religion.
 alias[trigger:is_reformed_religion] = scope[character]
 
+## scope = religion
+### True if the scoped religion is the given religion.
+alias[trigger:religion] = scope[religion]
+
 ## scope = { character province }
 ### True if the scoped entity has the religion associated with the given scope.
 alias[trigger:religion] = scope[religion]
@@ -2422,9 +2434,21 @@ alias[trigger:religion_group] = <religion_group>
 ### True if scoped religion belongs to the given religion group.
 alias[trigger:religion_group] = <religion_group>
 
+## scope = { character province }
+### True if scoped entity has a religion that belongs to the same religion group as the given entity.
+alias[trigger:religion_group] = scope[religion]
+
+## scope = religion
+### True if scoped religion belongs to the same religion group as the given entity.
+alias[trigger:religion_group] = scope[religion]
+
+## scope = culture
+### True if the scoped culture is the given culture.
+alias[trigger:culture] = scope[culture]
+
 ## scope = { character province title }
 ### True if the scoped entity has the given culture.
-alias[trigger:culture] = <culture>
+alias[trigger:culture] = scope[culture]
 
 ## scope = { character province title }
 ### True if the scoped entity has the same culture as the given character.
@@ -2929,9 +2953,23 @@ alias[trigger:num_of_settlements] = int
 ### Checks if the scoped province is coastal.
 alias[trigger:port] = bool
 
+# TODO: Confirm
+## scope = { culture religion }
+### True if the given province belongs to the scoped culture or religion.
+alias[trigger:province] = scope[province]
+
+# TODO: Confirm
+## scope = { culture religion }
+### True if the given province belongs to the scoped culture or religion.
+alias[trigger:province] = enum[provinces]
+
 ## scope = province
 ### True if the scoped province is the given province.
 alias[trigger:province] = scope[province]
+
+## scope = province
+### True if the scoped province is the given province.
+alias[trigger:province] = enum[provinces]
 
 ## scope = province
 ### True if the scoped province has the given id.
@@ -3229,12 +3267,19 @@ alias[trigger:is_contested] = bool
 ### Checks if the title can have crown laws.
 alias[trigger:is_crown_law_title] = bool
 
-## scope = title
-### True if the scoped county is a holy site of the given character's religion.
+## scope = province
+### Compares value with the distance to the nearest holy site of the given religion.
+alias[trigger:holy_site_distance] = {
+    target = scope[religion]
+    value = float
+}
+
+## scope = { title province }
+### True if the scoped county or province is a holy site of the given character's religion.
 alias[trigger:is_holy_site] = scope[character]
 
-## scope = title
-### True if the scoped county is a holy site of the given religion.
+## scope = { title province }
+### True if the scoped county or province is a holy site of the given religion.
 alias[trigger:is_holy_site] = scope[religion]
 
 # TODO: Confirm

@@ -2001,7 +2001,7 @@ alias[effect:any_disconnected_province] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## scope = character
+## scope = { character province }
 ## push_scope = province
 ### Scopes to all border provinces, including sea tiles.
 alias[trigger:any_neighbor_province] = {
