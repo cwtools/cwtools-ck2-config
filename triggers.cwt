@@ -3508,4 +3508,4 @@ alias[trigger:days] = int
 # TODO: Doc
 # scope = siege
 ### 
-alias[modifier:is_flanking] = bool
+alias[trigger:is_flanking] = bool
