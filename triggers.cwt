@@ -3499,3 +3499,13 @@ alias[trigger:enum[troop_types]] = float
 ## scope = siege
 ### 
 alias[trigger:<special_troop_type>] = float
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:days] = int
+
+# TODO: Doc
+# scope = siege
+### 
+alias[modifier:is_flanking] = bool
