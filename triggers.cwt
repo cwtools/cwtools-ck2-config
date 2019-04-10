@@ -3484,3 +3484,8 @@ alias[trigger:hidden_tooltip] = {
 alias[trigger:show_scope_change] = no
 alias[trigger:generate_tooltip] = no
 alias[trigger:show_only_failed_conditions] = yes
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:phase] = enum[combat_phases]
