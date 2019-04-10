@@ -3489,3 +3489,13 @@ alias[trigger:show_only_failed_conditions] = yes
 ## scope = siege
 ### 
 alias[trigger:phase] = enum[combat_phases]
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:enum[troop_types]] = float
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:<special_troop_type>] = float
