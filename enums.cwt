@@ -399,6 +399,8 @@ enums = {
         steppe
         desert
         jungle
-        arctic
+        arcticwoods
+        impassable_mountains
+        marsh
     }
 }
