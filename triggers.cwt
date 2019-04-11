@@ -3116,9 +3116,10 @@ alias[trigger:is_attacker] = bool
 ## scope = siege
 ###
 alias[trigger:troops] = {
-    who = troops
+    who = enum[troop_types_land_only]
+    who = <special_troop_type>
     value = float
-    enemy = bool
+    # enemy = bool # TODO: Figure out where this is from
 }
 
 ## scope = society
@@ -3493,7 +3494,7 @@ alias[trigger:phase] = enum[combat_phases]
 # TODO: Doc
 ## scope = siege
 ### 
-alias[trigger:enum[troop_types]] = float
+alias[trigger:enum[troop_types_land_only]] = float
 
 # TODO: Doc
 ## scope = siege
@@ -3514,7 +3515,7 @@ alias[trigger:is_flanking] = bool
 ## scope = siege
 ### 
 alias[trigger:light_troops] = {
-    who = enum[troop_types]
+    who = enum[troop_types_land_only]
     who = <special_troop_type>
     value = float
 }
@@ -3523,7 +3524,7 @@ alias[trigger:light_troops] = {
 ## scope = siege
 ### 
 alias[trigger:heavy_troops] = {
-    who = enum[troop_types]
+    who = enum[troop_types_land_only]
     who = <special_troop_type>
     value = float
 }
