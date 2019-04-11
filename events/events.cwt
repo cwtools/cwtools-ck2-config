@@ -140,7 +140,8 @@ event = {
 		alias_name[effect] = alias_match_left[effect]
     }
 
-    ## cardinality = 1..inf
+    # TODO: Fix this to 1..inf and have a subtype where when hide_window = yes....
+    ## cardinality = 0..inf
 	option = {
 		subtype[hidden] = {
 			## cardinality = 0..1
