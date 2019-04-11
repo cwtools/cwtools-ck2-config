@@ -69,6 +69,10 @@ bookmark = {
 
             ### The character's characteristics.
             character = {
+                ## cardinality = 0..1
+                ### The character's gender is or is not female, optional.
+                female = bool
+
                 ### The character's DNA for their portrait.
                 dna = portrait_dna_field
 
