@@ -16,7 +16,7 @@ enums = {
 }
 
 types = {
-    ## type_key_filter <> { no_tactic flank_retreat_odds flank_pursue_odds }
+    ## type_key_filter <> { no_tactic flank_retreat_odds flank_pursue_odds no_siege_offense_tactic default_siege_offense_tactic no_siege_defense_tactic default_siege_defense_tactic}
     type[combat_tactic] = {
         path_strict = yes
         path = "game/common/combat_tactics"
@@ -76,10 +76,17 @@ combat_tactic = {
         # TODO: Check if additive modifier works
     }
 
-    # Hope this is the correct syntax, will know when I reach dynamic modifiers :)
     ## cardinality = 0..inf
     ### Modifiers applied to the unit while the tactic is active.
     <dynamic_modifier> = float
+    
+    ## cardinality = 0..inf
+    ### Modifiers applied to the unit while the tactic is active.
+    enum[troop_types_land_only_offensive] = float
+    
+    ## cardinality = 0..inf
+    ### Modifiers applied to the unit while the tactic is active.
+    enum[troop_types_land_only_defensive] = float
 
     ## cardinality = 0..1
     ### The combat's phase changes to this when the tactic's used. Defaults to no change.

@@ -3116,9 +3116,10 @@ alias[trigger:is_attacker] = bool
 ## scope = siege
 ###
 alias[trigger:troops] = {
-    who = troops
+    who = enum[troop_types_land_only]
+    who = <special_troop_type>
     value = float
-    enemy = bool
+    # enemy = bool # TODO: Figure out where this is from
 }
 
 ## scope = society
@@ -3484,3 +3485,46 @@ alias[trigger:hidden_tooltip] = {
 alias[trigger:show_scope_change] = no
 alias[trigger:generate_tooltip] = no
 alias[trigger:show_only_failed_conditions] = yes
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:phase] = enum[combat_phases]
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:enum[troop_types_land_only]] = float
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:<special_troop_type>] = float
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:days] = int
+
+# TODO: Doc
+# scope = siege
+### 
+alias[trigger:is_flanking] = bool
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:light_troops] = {
+    who = enum[troop_types_land_only]
+    who = <special_troop_type>
+    value = float
+}
+
+# TODO: Doc
+## scope = siege
+### 
+alias[trigger:heavy_troops] = {
+    who = enum[troop_types_land_only]
+    who = <special_troop_type>
+    value = float
+}
