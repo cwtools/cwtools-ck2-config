@@ -121,6 +121,7 @@ building = {
     alias_name[modifier] = alias_match_left[modifier]
 
     # TODO: See if it's weight or what. Prolly weight.
+    ## cardinality = 0..1
     ### Chances for the AI to choose constructing this building.
     ai_creation_factor = int
 
