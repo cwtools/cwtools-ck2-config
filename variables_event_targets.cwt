@@ -21,7 +21,8 @@ enums = {
         religion_authority
         revolt_risk
         scaled_wealth
-        treasury/wealth
+        treasury
+        wealth
         yearly_income
         age
         day_of_birth
