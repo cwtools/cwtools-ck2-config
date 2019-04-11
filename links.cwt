@@ -178,7 +178,7 @@ links = {
     enemy = {
         desc = "Scopes to the enemy in a siege"
         input_scopes = siege
-        output_scope = flank
+        output_scope = siege
     }
     father = {
         desc = ""
