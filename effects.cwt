@@ -2298,6 +2298,7 @@ alias[effect:add_holding_slot] = int
 ### Adds a province modifier to the scoped province.
 alias[effect:add_province_modifier] = {
     enum[modifier_names] = <event_modifier>
+    enum[modifier_names] = <static_modifier>
     ## cardinality = 0..1
     hidden = yes
     ## cardinality = 0..1
