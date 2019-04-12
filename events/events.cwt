@@ -178,6 +178,9 @@ event = {
         tooltip = {
             alias_name[effect] = alias_match_left[effect]
         }
+
+        ## cardinality = 0..1
+        tooltip_info = int
 	}
 
 
