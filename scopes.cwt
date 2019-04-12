@@ -1257,16 +1257,16 @@ alias[effect:any_unknown_enemy_plotter] = {
 ## push_scope = character
 ### Scopes to all direct vassals of a character or title. Does not include courtiers. To scope to all vassals (direct or not) consider using any_realm_character.
 alias[trigger:any_vassal] = {
-    ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
 	alias_name[trigger] = alias_match_left[trigger]
 }
 ## scope = character
 ## push_scope = character
 ### Scopes to all direct vassals of a character or title. Does not include courtiers. To scope to all vassals (direct or not) consider using any_realm_character.
 alias[effect:any_vassal] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 
