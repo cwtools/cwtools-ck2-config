@@ -1414,6 +1414,7 @@ alias[effect:spawn_unit] = {
     ### ID of the unit, to be able to reference them later. Can be localized via $_ARMY and $_ARMY_OF.
     earmark = value_set[earmark]
 
+    # cardinality = 0..1
     troops = {
         ## cardinality = 1..inf
         ### troop_type = { max_value starting_value }

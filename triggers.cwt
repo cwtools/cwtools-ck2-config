@@ -480,7 +480,10 @@ alias[trigger:decadence] = float
 # TODO: Figure out
 ## scope = character
 ###
-alias[trigger:defending_against_claimant] = clause
+alias[trigger:defending_against_claimant] = {
+    character = scope[character]
+    title = scope[titile]
+}
 
 # TODO: Figure out
 ## scope = character
