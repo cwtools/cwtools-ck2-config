@@ -2927,3 +2927,8 @@ alias[effect:break] = yes
 
 alias[effect:show_scope_change] = no
 alias[effect:generate_tooltip] = no
+
+# TODO: Doc
+alias[effect:tooltip] = {
+    alias_name[effect] = alias_match_left[effect]
+}

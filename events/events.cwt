@@ -172,7 +172,12 @@ event = {
 		ai_chance = {
 			factor = float[0..10000]
 			alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-		}
+        }
+
+        ## cardinality = 0..1
+        tooltip = {
+            alias_name[effect] = alias_match_left[effect]
+        }
 	}
 
 
