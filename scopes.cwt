@@ -618,6 +618,10 @@ alias[effect:any_close_relative] = {
 ## push_scope = character
 ### Scopes to everyone in the same court as the character. Note that it will match prisoners (even if foreign) and councillors (even if landed). If used for a ruler who is a councilor, it will check their liege's court instead of their own!
 alias[trigger:any_courtier] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[trigger] = alias_match_left[trigger]
 }
 ## scope = character
@@ -836,6 +840,10 @@ alias[trigger:any_liege] = {
 ## push_scope = character
 ### Scopes to all lieges a character has, regardless of how many tiers above. This includes liege and top_liege scopes.
 alias[effect:any_liege] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 ## scope = character
