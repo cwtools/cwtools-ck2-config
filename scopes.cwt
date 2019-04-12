@@ -689,6 +689,10 @@ alias[trigger:any_dynasty_member] = {
 ## push_scope = character
 ###
 alias[effect:any_dynasty_member] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 
