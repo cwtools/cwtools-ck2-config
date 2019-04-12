@@ -404,4 +404,10 @@ enums = {
         impassable_mountains
         marsh
     }
+
+    # TODO: Something to check this
+    enum[modifier_names] = {
+        modifier
+        name
+    }
 }

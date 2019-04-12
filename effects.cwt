@@ -317,7 +317,7 @@ alias[effect:add_betrothal] = TODO
 ## scope = character
 ### Adds a character modifier. Specify duration using days, months, years, or duration = -1 (non-expiring). Can use optional fields hidden = yes and stacking = yes.
 alias[effect:add_character_modifier] = {
-    name = <event_modifier>
+    enum[modifier_names] = <event_modifier>
     ## cardinality = 0..1
     duration = -1
     ## cardinality = 0..1
