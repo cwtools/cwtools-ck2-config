@@ -2934,3 +2934,9 @@ alias[effect:generate_tooltip] = no
 alias[effect:tooltip] = {
     alias_name[effect] = alias_match_left[effect]
 }
+
+# TODO: Doc
+alias[effect:set_looter_hostility_days] = {
+    who = scope[character]
+    days = int
+}
