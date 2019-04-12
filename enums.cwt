@@ -400,5 +400,8 @@ enums = {
         desert
         jungle
         arctic
+        woods
+        impassable_mountains
+        marsh
     }
 }

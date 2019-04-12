@@ -178,7 +178,7 @@ links = {
     enemy = {
         desc = "Scopes to the enemy in a siege"
         input_scopes = siege
-        output_scope = character
+        output_scope = siege
     }
     father = {
         desc = ""
@@ -611,7 +611,7 @@ links = {
     }
     location = {
         desc = "Scopes to the character's location (or county or barony title's province)"
-        input_scopes = { character title unit province }
+        input_scopes = { character title unit province siege }
         output_scope = province
     }
     plot_target_province = {
