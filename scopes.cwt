@@ -555,6 +555,10 @@ alias[trigger:any_character] = {
 ## push_scope = character
 ### Scopes to all characters, except for offmap rulers. WARNING CPU HEAVY
 alias[effect:any_character] = {
+	##cardinality = 0..1
+	limit = {
+		 alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
