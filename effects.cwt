@@ -1898,7 +1898,9 @@ alias[effect:religion_authority] = float
 ### Adds the religion modifier to the religion of scoped entity with a given duration.
 alias[effect:religion_authority] = {
     modifier = <religion_modifier>
+
     # TODO: see if other durations work
+    ## cardinality = 0..1
     years = int
 }
 
