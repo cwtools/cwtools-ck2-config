@@ -180,7 +180,10 @@ event = {
         }
 
         ## cardinality = 0..1
-        tooltip_info = int
+        tooltip_info = <trait>
+
+        ## cardinality = 0..1
+        tooltip_info = enum[attributes]
 	}
 
 
