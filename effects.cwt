@@ -2946,3 +2946,10 @@ alias[effect:set_looter_hostility_days] = {
     who = scope[character]
     days = int
 }
+
+# TODO: Doc
+alias[effect:opinion] = {
+    who = scope[title]
+    modifier = <opinion_modifer>
+    months = int
+}
