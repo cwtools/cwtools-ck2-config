@@ -70,7 +70,7 @@ bookmark = {
             ### The character's characteristics.
             character = {
                 ## cardinality = 0..1
-                ### The character's gender is or is not female, optional.
+                ### If yes then the character stated is female.
                 female = bool
 
                 ### The character's DNA for their portrait.
