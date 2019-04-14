@@ -66,6 +66,8 @@ event = {
 		        alias_name[trigger] = alias_match_left[trigger]
             }
             text = localisation
+            ## cardinality = 0..1
+            picture = <sprite>
         }
         picture = <sprite>
         ## cardinality = 1..inf
@@ -138,6 +140,11 @@ event = {
 	## cardinality = 0..1
 	immediate = {
 		alias_name[effect] = alias_match_left[effect]
+    }
+
+	## cardinality = 0..1
+    fail_trigger_effect = {
+        alias_name[effect] = alias_match_left[effect]
     }
 
     # TODO: Fix this to 1..inf and have a subtype where when hide_window = yes....
