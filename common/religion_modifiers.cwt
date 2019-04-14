@@ -14,6 +14,7 @@ religion_modifier = {
     ### How much the religious authority changes.
     authority = int
 
+    # TODO: see if other durations work
     ### For how long by default does the modifier last once applied.
     years = int
 }
