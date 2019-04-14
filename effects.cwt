@@ -2930,6 +2930,14 @@ alias[effect:hidden_tooltip] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
+# TODO: Docs?
+alias[effect:conditional_tooltip] = {
+    trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
 ### This acts as a return statement, causing everything after it (in the main block: option, immediate, ...) to be ignored
 alias[effect:break] = yes
 

@@ -3485,6 +3485,14 @@ alias[trigger:hidden_tooltip] = {
     alias_name[trigger] = alias_match_left[trigger]
 }
 
+# TODO: Docs?
+alias[trigger:conditional_tooltip] = {
+    trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
 alias[trigger:show_scope_change] = no
 alias[trigger:generate_tooltip] = no
 alias[trigger:show_only_failed_conditions] = yes
