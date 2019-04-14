@@ -37,7 +37,7 @@ alias[empire:<title.empire>] = {
     # TODO: Figure out
     ## cardinality = 0..1
     ### ???. Defaults to "no".
-    has_top_de_jure_capital = no
+    has_top_de_jure_capital = bool
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
