@@ -523,6 +523,7 @@ alias[effect:change_society_currency] = {
 alias[effect:character_event] = {
     id = <event.character>
     id = <event.long_character>
+    id = <event.letter_event>
 
     ## cardinality = 0..1
     enum[duration_dy] = int
