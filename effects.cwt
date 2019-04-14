@@ -522,6 +522,7 @@ alias[effect:change_society_currency] = {
 ### Fires an event for the scoped character.
 alias[effect:character_event] = {
     id = <event.character>
+    id = <event.long_character>
 
     ## cardinality = 0..1
     enum[duration_dy] = int
