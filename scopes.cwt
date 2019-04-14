@@ -306,13 +306,13 @@ alias[effect:any_pretender_title] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## scope = character
+## scope = province
 ## push_scope = title
 ### Scopes to all holdings of a province*
 alias[trigger:any_province_holding] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
-## scope = character
+## scope = province
 ## push_scope = title
 ### Scopes to all holdings of a province*
 alias[effect:any_province_holding] = {
@@ -433,7 +433,7 @@ alias[effect:random_potential_tribal_county] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## scope = character
+## scope = province
 ## push_scope = title
 ### Scopes to a random holding of a province
 alias[effect:random_province_holding] = {
@@ -555,6 +555,10 @@ alias[trigger:any_character] = {
 ## push_scope = character
 ### Scopes to all characters, except for offmap rulers. WARNING CPU HEAVY
 alias[effect:any_character] = {
+	##cardinality = 0..1
+	limit = {
+		 alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -620,6 +624,10 @@ alias[trigger:any_courtier] = {
 ## push_scope = character
 ### Scopes to everyone in the same court as the character. Note that it will match prisoners (even if foreign) and councillors (even if landed). If used for a ruler who is a councilor, it will check their liege's court instead of their own!
 alias[effect:any_courtier] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -685,6 +693,10 @@ alias[trigger:any_dynasty_member] = {
 ## push_scope = character
 ###
 alias[effect:any_dynasty_member] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -828,6 +840,10 @@ alias[trigger:any_liege] = {
 ## push_scope = character
 ### Scopes to all lieges a character has, regardless of how many tiers above. This includes liege and top_liege scopes.
 alias[effect:any_liege] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 ## scope = character
@@ -1255,6 +1271,10 @@ alias[trigger:any_vassal] = {
 ## push_scope = character
 ### Scopes to all direct vassals of a character or title. Does not include courtiers. To scope to all vassals (direct or not) consider using any_realm_character.
 alias[effect:any_vassal] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 

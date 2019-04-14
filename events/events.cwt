@@ -140,7 +140,8 @@ event = {
 		alias_name[effect] = alias_match_left[effect]
     }
 
-    ## cardinality = 1..inf
+    # TODO: Fix this to 1..inf and have a subtype where when hide_window = yes....
+    ## cardinality = 0..inf
 	option = {
 		subtype[hidden] = {
 			## cardinality = 0..1
@@ -171,7 +172,18 @@ event = {
 		ai_chance = {
 			factor = float[0..10000]
 			alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-		}
+        }
+
+        ## cardinality = 0..1
+        tooltip = {
+            alias_name[effect] = alias_match_left[effect]
+        }
+
+        ## cardinality = 0..1
+        tooltip_info = <trait>
+
+        ## cardinality = 0..1
+        tooltip_info = enum[attributes]
 	}
 
 

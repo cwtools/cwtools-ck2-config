@@ -317,9 +317,11 @@ alias[effect:add_betrothal] = TODO
 ## scope = character
 ### Adds a character modifier. Specify duration using days, months, years, or duration = -1 (non-expiring). Can use optional fields hidden = yes and stacking = yes.
 alias[effect:add_character_modifier] = {
-    name = <event_modifier>
+    enum[modifier_names] = <event_modifier>
     ## cardinality = 0..1
-    duration = -1
+    enum[duration_dmy] = -1
+    ## cardinality = 0..1
+    enum[duration_dmy] = int
     ## cardinality = 0..1
     enum[duration] = int
     ## cardinality = 0..1
@@ -1412,6 +1414,7 @@ alias[effect:spawn_unit] = {
     ### ID of the unit, to be able to reference them later. Can be localized via $_ARMY and $_ARMY_OF.
     earmark = value_set[earmark]
 
+    ## cardinality = 0..1
     troops = {
         ## cardinality = 1..inf
         ### troop_type = { max_value starting_value }
@@ -2297,7 +2300,8 @@ alias[effect:add_holding_slot] = int
 ## scope = province
 ### Adds a province modifier to the scoped province.
 alias[effect:add_province_modifier] = {
-    name = <event_modifier>
+    enum[modifier_names] = <event_modifier>
+    enum[modifier_names] = <static_modifier>
     ## cardinality = 0..1
     hidden = yes
     ## cardinality = 0..1
@@ -2929,3 +2933,14 @@ alias[effect:break] = yes
 
 alias[effect:show_scope_change] = no
 alias[effect:generate_tooltip] = no
+
+# TODO: Doc
+alias[effect:tooltip] = {
+    alias_name[effect] = alias_match_left[effect]
+}
+
+# TODO: Doc
+alias[effect:set_looter_hostility_days] = {
+    who = scope[character]
+    days = int
+}
