@@ -54,13 +54,12 @@ modifiers = {
 
 
     # Realm #####
-    #Hardcoded not a modifier
     ### Maximum demesne size
-    #demesne_size = realm
+    demesne_size = realm
 
-    #Hardcoded not a modifier
+    # TOD: Docs
     ### Vassal limit
-    #vassal_limit = realm
+    vassal_limit = realm
 
     ### Revolt risk in a ruler's realm (whole provinces, not only demesne)
     global_revolt_risk = character
