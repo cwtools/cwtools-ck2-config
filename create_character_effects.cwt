@@ -88,6 +88,10 @@ alias[effect:enum[create_character_effects]] = {
 
     ## cardinality = 0..1
     ### The character's religion will be this.
+    religion = scope[character]
+
+    ## cardinality = 0..1
+    ### The character's religion will be this.
     culture = scope[character]
 
     ## cardinality = 0..1
