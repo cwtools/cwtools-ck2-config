@@ -2631,7 +2631,7 @@ alias[trigger:mercenary] = bool
 alias[trigger:independent] = bool
 
 # TODO: Confirm if works in title scope; wiki says it does for every other government but every usage I could find scoped to holder first
-## scope = character
+## scope = { character title }
 ### Checks if the government of the scoped character is part of the nomadic_governments group.
 alias[trigger:is_nomadic] = bool
 
