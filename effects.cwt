@@ -2735,7 +2735,12 @@ alias[effect:set_allow_title_revokation] = bool
 # TODO: Figure out
 ## scope = title
 ### Crown laws
-alias[effect:set_allow_vice_royalties] = bool/tier
+alias[effect:set_allow_vice_royalties] = bool
+
+# TODO: Figure out
+## scope = title
+### Crown laws
+alias[effect:set_allow_vice_royalties] = tier
 
 # TODO: Figure out
 ## scope = title
