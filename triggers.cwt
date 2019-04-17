@@ -705,9 +705,14 @@ alias[trigger:has_character_modifier] = <event_modifier>
 ### Checks if the scoped character has children.
 alias[trigger:has_children] = bool
 
-# TODO: Figure out (though this along with many others is kinda obvious)
+# TODO: Figure out (though this along with many others is kinda obvious) ???
 ## scope = character
-###
+### 
+alias[trigger:has_claim] = scope[title]
+
+# TODO: Docs
+## scope = character
+### 
 alias[trigger:has_claim] = title
 
 # TODO: Scopes?
