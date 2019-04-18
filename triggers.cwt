@@ -3544,3 +3544,11 @@ alias[trigger:heavy_troops] = {
     who = <special_troop_type>
     value = float
 }
+
+
+# TODO: Docs
+## scope = character
+### 
+alias[trigger:defender] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
