@@ -934,6 +934,10 @@ alias[trigger:has_secret_religion] = bool
 alias[trigger:has_strong_claim] = <title>
 
 ## scope = character
+### True if the scoped character has a strong claim on the given title.
+alias[trigger:has_strong_claim] = scope[title]
+
+## scope = character
 ### True if the scoped character has a strong pressed claim (i.e., a non-heritable strong claim) on the given title.
 alias[trigger:has_strong_pressed_claim] = <title>
 
