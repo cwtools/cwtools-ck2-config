@@ -319,7 +319,7 @@ casus_belli = {
         alias_name[effect] = alias_match_left[effect]
     }
 
-    ## replace_scope = { this = title root = character from = character }
+    ## replace_scope = { this = war root = character from = character }
     ### The effect of the attacker winning the war, after on_success. THIS is the target title, ROOT is the attacker, FROM is the defender.
     on_success_title = {
         alias_name[effect] = alias_match_left[effect]
