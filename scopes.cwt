@@ -520,6 +520,10 @@ alias[trigger:any_attacker] = {
 ## push_scope = character
 ### Scopes to all attackers in a war
 alias[effect:any_attacker] = {
+	## cardianlity = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
