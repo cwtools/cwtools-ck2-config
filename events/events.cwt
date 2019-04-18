@@ -209,14 +209,8 @@ event = {
 		## cardinality = 0..1
 		weight_multiplier = {
             enum[duration] = int
-
-            # TODO: Docs
-            ## cardinality = 0..1
-            bad_soldier_outcome_score = bool
-            ## cardinality = 0..1
-            title_tier_reduction_score = bool
             
-			alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+            alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
 		}
 	}
 
