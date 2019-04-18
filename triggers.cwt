@@ -3545,7 +3545,6 @@ alias[trigger:heavy_troops] = {
     value = float
 }
 
-
 # TODO: Docs
 ## scope = character
 ### 
