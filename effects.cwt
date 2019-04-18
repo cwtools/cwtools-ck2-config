@@ -2965,10 +2965,6 @@ alias[effect:set_looter_hostility_days] = {
     days = int
 }
 
-## scope = character
-### True if the scoped character has a strong claim on the given title.
-alias[effect:has_strong_claim] = scope[title]
-
 # TODO: Doc
 ## scope = character
 ### 
