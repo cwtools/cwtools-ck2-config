@@ -2138,6 +2138,10 @@ alias[effect:remove_claim] = <title>
 ### Removes the given character's claim on the scoped title.
 alias[effect:remove_claim] = scope[character]
 
+## scope = character
+### Removes the given claim on the scoped character.
+alias[effect:remove_claim] = scope[title]
+
 # TODO update for thirdparty stuff when I do that
 ## scope = character
 ### Initiate a war; target is the attacker, the scoped character is the defender.
