@@ -2959,3 +2959,14 @@ alias[effect:set_looter_hostility_days] = {
     who = scope[character]
     days = int
 }
+
+## scope = character
+### True if the scoped character has a strong claim on the given title.
+alias[effect:has_strong_claim] = scope[title]
+
+# TODO: Doc
+## scope = character
+### 
+alias[effect:attacker] = {
+    alias_name[effect] = alias_match_left[effect]
+}
