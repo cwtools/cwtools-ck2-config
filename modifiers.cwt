@@ -57,7 +57,7 @@ modifiers = {
     ### Maximum demesne size
     demesne_size = realm
 
-    # TOD: Docs
+    # TODO: Docs
     ### Vassal limit
     vassal_limit = realm
 
