@@ -2968,10 +2968,3 @@ alias[effect:set_looter_hostility_days] = {
     who = scope[character]
     days = int
 }
-
-# TODO: Doc
-## scope = character
-### 
-alias[effect:attacker] = {
-    alias_name[effect] = alias_match_left[effect]
-}
