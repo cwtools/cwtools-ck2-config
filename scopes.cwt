@@ -199,6 +199,10 @@ alias[trigger:any_claim] = {
 ## push_scope = title
 ### Scopes to all titles a character has claims upon
 alias[effect:any_claim] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -512,10 +516,14 @@ alias[effect:any_artifact_owner] = {
 alias[trigger:any_attacker] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
-## scope = character
+## scope = { character war }
 ## push_scope = character
 ### Scopes to all attackers in a war
 alias[effect:any_attacker] = {
+	## cardinality = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -680,6 +688,10 @@ alias[trigger:any_defender] = {
 ## push_scope = character
 ### Scopes to all defenders in a war
 alias[effect:any_defender] = {
+	## cardianlity = 0..1
+	limit = {
+		alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 

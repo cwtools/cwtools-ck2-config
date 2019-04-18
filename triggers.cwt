@@ -705,9 +705,14 @@ alias[trigger:has_character_modifier] = <event_modifier>
 ### Checks if the scoped character has children.
 alias[trigger:has_children] = bool
 
-# TODO: Figure out (though this along with many others is kinda obvious)
+# TODO: Figure out (though this along with many others is kinda obvious) ???
 ## scope = character
-###
+### 
+alias[trigger:has_claim] = scope[title]
+
+# TODO: Docs
+## scope = character
+### 
 alias[trigger:has_claim] = title
 
 # TODO: Scopes?
@@ -927,6 +932,10 @@ alias[trigger:has_secret_religion] = bool
 ## scope = character
 ### True if the scoped character has a strong claim on the given title.
 alias[trigger:has_strong_claim] = <title>
+
+## scope = character
+### True if the scoped character has a strong claim on the given title.
+alias[trigger:has_strong_claim] = scope[title]
 
 ## scope = character
 ### True if the scoped character has a strong pressed claim (i.e., a non-heritable strong claim) on the given title.
@@ -2631,7 +2640,7 @@ alias[trigger:mercenary] = bool
 alias[trigger:independent] = bool
 
 # TODO: Confirm if works in title scope; wiki says it does for every other government but every usage I could find scoped to holder first
-## scope = character
+## scope = { character title }
 ### Checks if the government of the scoped character is part of the nomadic_governments group.
 alias[trigger:is_nomadic] = bool
 
@@ -3482,6 +3491,14 @@ alias[trigger:custom_tooltip] = {
 
 # TODO: Might be covered by scope_field
 alias[trigger:hidden_tooltip] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+# TODO: Docs?
+alias[trigger:conditional_tooltip] = {
+    trigger = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
     alias_name[trigger] = alias_match_left[trigger]
 }
 

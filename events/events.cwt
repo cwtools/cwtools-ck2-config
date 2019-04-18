@@ -66,6 +66,8 @@ event = {
 		        alias_name[trigger] = alias_match_left[trigger]
             }
             text = localisation
+            ## cardinality = 0..1
+            picture = <sprite>
         }
         picture = <sprite>
         ## cardinality = 1..inf
@@ -140,6 +142,11 @@ event = {
 		alias_name[effect] = alias_match_left[effect]
     }
 
+	## cardinality = 0..1
+    fail_trigger_effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
     # TODO: Fix this to 1..inf and have a subtype where when hide_window = yes....
     ## cardinality = 0..inf
 	option = {
@@ -201,8 +208,9 @@ event = {
 	subtype[triggered] = {
 		## cardinality = 0..1
 		weight_multiplier = {
-			enum[duration] = int
-			alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+            enum[duration] = int
+            
+            alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
 		}
 	}
 
