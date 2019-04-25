@@ -340,7 +340,7 @@ casus_belli = {
     }
 
     ## cardinality = 0..1
-    ## replace_scope = { this = title root = character from = character }
+    ## replace_scope = { this = war root = character from = character }
     ### The effect of a white peace, after on_fail. THIS is the target title, ROOT is the attacker, FROM is the defender.
     on_fail_title = {
         alias_name[effect] = alias_match_left[effect]
