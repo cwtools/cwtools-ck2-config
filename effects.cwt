@@ -2973,3 +2973,9 @@ alias[effect:set_looter_hostility_days] = {
     who = scope[character]
     days = int
 }
+
+# TODO: Doc
+alias[effect:transfer_scaled_wealth] = {
+    to = scope[character]
+    value = float
+}
