@@ -917,6 +917,11 @@ alias[effect:opinion] = {
     ## cardinality = 0..1
     ### Overrides the default duration of the opinion modifier.
     enum[duration_my] = int
+
+    # TODO: Docs and confirm int rather than multiplier
+    ## cardinality = 0..1
+    ###
+    multiplier = int
 }
 
 # TODO: Confirm
