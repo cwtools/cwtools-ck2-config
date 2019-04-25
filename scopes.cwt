@@ -1184,6 +1184,10 @@ alias[trigger:any_spouse] = {
 ## push_scope = character
 ###
 alias[effect:any_spouse] = {
+	##cardinality = 0..1
+	limit = {
+		 alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
