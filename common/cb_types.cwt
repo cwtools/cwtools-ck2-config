@@ -58,6 +58,7 @@ casus_belli = {
         full_hostility = bool
     }
 
+    ## cardinality = 0..1
     ### If yes, other rulers can ask to join the war.
     can_ask_to_join_war = bool
 
