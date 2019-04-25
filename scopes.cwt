@@ -1214,6 +1214,10 @@ alias[trigger:any_consort] = {
 ## push_scope = character
 ### Scopes to all of a character's consorts (not only concubines, works for both genders)
 alias[effect:any_consort] = {
+	##cardinality = 0..1
+	limit = {
+		 alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
