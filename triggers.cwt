@@ -799,6 +799,10 @@ alias[trigger:has_landed_title] = bool
 ### True if the scoped character has the given title.
 alias[trigger:has_landed_title] = scope[title]
 
+## scope = character
+### True if the scoped character has the given title.
+alias[trigger:has_landed_title] = <title>
+
 # TODO: Reword
 ## scope = character
 ### Prevents wars, also see will_liege_enforce_peace.
