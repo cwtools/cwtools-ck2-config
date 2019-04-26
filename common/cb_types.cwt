@@ -50,7 +50,7 @@ casus_belli = {
     is_independence = bool
 
     ## cardinality = 0..1
-    ### If yes, others attacking the same target will be considered enemies.
+    ### If yes, others attacking the same target will be considered enemies. Defaults to "no".
     hostile_against_others = bool
 
     subtype[hostile_against_others] = {
