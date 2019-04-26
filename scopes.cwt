@@ -698,7 +698,7 @@ alias[trigger:any_defender] = {
 ## push_scope = character
 ### Scopes to all defenders in a war
 alias[effect:any_defender] = {
-	## cardianlity = 0..1
+	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
