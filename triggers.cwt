@@ -2603,6 +2603,11 @@ alias[trigger:de_jure_liege] = scope[title]
 
 # TODO: docs
 ## scope = { character title province }
+### True if the scoped entity is a direct de jure vassal of the given title.
+alias[trigger:de_jure_liege] = <title>
+
+# TODO: docs
+## scope = { character title province }
 ### True if the scoped entity is a de jure vassal of the given character.
 alias[trigger:de_jure_liege_or_above] = scope[character]
 
