@@ -49,6 +49,7 @@ casus_belli = {
     ### UNKNOWN. Defaults to "no".
     is_independence = bool
 
+    ## cardinality = 0..1
     ### If yes, others attacking the same target will be considered enemies.
     hostile_against_others = bool
 
@@ -90,6 +91,7 @@ casus_belli = {
     ### If no, a tributary can't target their suzerain with this CB. UNCONFIRMED Defaults to "yes"? Never used in vanilla.
     allowed_to_target_suzerains = bool
 
+    ## cardinality = 0..1
     ### If no, a suzerain can't target their tributary with this CB.
     allowed_to_target_tributaries = bool
 
@@ -257,6 +259,7 @@ casus_belli = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
+    ## cardinality = 0..1
     ## replace_scope = { this = title root = character from = character }
     ### Conditions for the CB to show up in the declare war interaction with a target title. THIS is the target title, ROOT is the attacker, FROM is the defender.
     can_use_title = {
@@ -320,6 +323,7 @@ casus_belli = {
         alias_name[effect] = alias_match_left[effect]
     }
 
+    ## cardinality = 0..1
     ## replace_scope = { this = title root = character from = character }
     ### The effect of the attacker winning the war, after on_success. THIS is the target title, ROOT is the attacker, FROM is the defender.
     on_success_title = {
