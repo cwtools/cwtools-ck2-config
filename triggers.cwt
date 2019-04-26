@@ -1966,6 +1966,10 @@ alias[trigger:prestige] = int
 alias[trigger:prisoner] = bool
 
 ## scope = character
+### Checks if the scoped character is a captor of another character.
+alias[trigger:prisoner] = scope[character]
+
+## scope = character
 ### True if the scoped character's culture matches the culture of the given character.
 alias[trigger:race] = scope[character]
 
