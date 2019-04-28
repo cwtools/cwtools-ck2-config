@@ -917,6 +917,11 @@ alias[effect:opinion] = {
     ## cardinality = 0..1
     ### Overrides the default duration of the opinion modifier.
     enum[duration_my] = int
+
+    # TODO: Docs and confirm int rather than multiplier
+    ## cardinality = 0..1
+    ###
+    multiplier = int
 }
 
 # TODO: Confirm
@@ -2122,6 +2127,10 @@ alias[effect:prestige] = int
 ### Changes the public religion of the scoped entity to match the given entity's public religion. See also unsafe_religion.
 alias[effect:religion] = scope[religion]
 
+## scope = { character province title }
+### Changes the public religion of the scoped entity to match the given religion.
+alias[effect:religion] = <religion>
+
 ## scope = character
 ### Changes the public religion of the scoped entity. The target_type parameter specifies which of the given target's religion to use. See also unsafe_religion.
 alias[effect:religion] = {
@@ -2968,3 +2977,12 @@ alias[effect:set_looter_hostility_days] = {
     who = scope[character]
     days = int
 }
+
+# TODO: Doc
+alias[effect:transfer_scaled_wealth] = {
+    to = scope[character]
+    value = float
+}
+
+# TODO: Doc
+alias[effect:prisoner] = scope[character]

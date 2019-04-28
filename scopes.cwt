@@ -238,10 +238,15 @@ alias[effect:any_direct_de_jure_vassal_title] = {
 alias[trigger:any_demesne_title] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
+
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles a character holds
 alias[effect:any_demesne_title] = {
+    ## cardinality = 0..1
+    limit = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -580,6 +585,10 @@ alias[trigger:any_child] = {
 ## push_scope = character
 ###
 alias[effect:any_child] = {
+	##cardinality = 0..1
+	limit = {
+		 alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -678,17 +687,18 @@ alias[effect:any_de_jure_vassal] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## scope = character
+## scope = war
 ## push_scope = character
 ### Scopes to all defenders in a war
 alias[trigger:any_defender] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
-## scope = character
+
+## scope = war
 ## push_scope = character
 ### Scopes to all defenders in a war
 alias[effect:any_defender] = {
-	## cardianlity = 0..1
+	## cardinality = 0..1
 	limit = {
 		alias_name[trigger] = alias_match_left[trigger]
 	}
@@ -1179,6 +1189,10 @@ alias[trigger:any_spouse] = {
 ## push_scope = character
 ###
 alias[effect:any_spouse] = {
+	##cardinality = 0..1
+	limit = {
+		 alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -1205,6 +1219,10 @@ alias[trigger:any_consort] = {
 ## push_scope = character
 ### Scopes to all of a character's consorts (not only concubines, works for both genders)
 alias[effect:any_consort] = {
+	##cardinality = 0..1
+	limit = {
+		 alias_name[trigger] = alias_match_left[trigger]
+	}
 	alias_name[effect] = alias_match_left[effect]
 }
 

@@ -49,7 +49,8 @@ casus_belli = {
     ### UNKNOWN. Defaults to "no".
     is_independence = bool
 
-    ### If yes, others attacking the same target will be considered enemies.
+    ## cardinality = 0..1
+    ### If yes, others attacking the same target will be considered enemies. Defaults to "no".
     hostile_against_others = bool
 
     subtype[hostile_against_others] = {
@@ -58,6 +59,7 @@ casus_belli = {
         full_hostility = bool
     }
 
+    ## cardinality = 0..1
     ### If yes, other rulers can ask to join the war.
     can_ask_to_join_war = bool
 
@@ -89,6 +91,7 @@ casus_belli = {
     ### If no, a tributary can't target their suzerain with this CB. UNCONFIRMED Defaults to "yes"? Never used in vanilla.
     allowed_to_target_suzerains = bool
 
+    ## cardinality = 0..1
     ### If no, a suzerain can't target their tributary with this CB.
     allowed_to_target_tributaries = bool
 
@@ -256,6 +259,7 @@ casus_belli = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
+    ## cardinality = 0..1
     ## replace_scope = { this = title root = character from = character }
     ### Conditions for the CB to show up in the declare war interaction with a target title. THIS is the target title, ROOT is the attacker, FROM is the defender.
     can_use_title = {
@@ -292,7 +296,7 @@ casus_belli = {
     }
 
     ## cardinality = 0..1
-    ## replace_scope = { this = character root = character from = character }
+    ## replace_scope = { this = war root = character from = character }
     ### The immediate effect of declaring war using this CB. ROOT is the attacker, FROM is the defender.
     on_add = {
         alias_name[effect] = alias_match_left[effect]
@@ -319,7 +323,8 @@ casus_belli = {
         alias_name[effect] = alias_match_left[effect]
     }
 
-    ## replace_scope = { this = war root = character from = character }
+    ## cardinality = 0..1
+    ## replace_scope = { this = title root = character from = character }
     ### The effect of the attacker winning the war, after on_success. THIS is the target title, ROOT is the attacker, FROM is the defender.
     on_success_title = {
         alias_name[effect] = alias_match_left[effect]
@@ -333,14 +338,14 @@ casus_belli = {
     }
 
     ## cardinality = 0..1
-    ## replace_scope = { this = character root = character from = character }
+    ## replace_scope = { this = war root = character from = character }
     ### The effect of a white peace. ROOT is the attacker, FROM is the defender.
     on_fail = {
         alias_name[effect] = alias_match_left[effect]
     }
 
     ## cardinality = 0..1
-    ## replace_scope = { this = title root = character from = character }
+    ## replace_scope = { this = war root = character from = character }
     ### The effect of a white peace, after on_fail. THIS is the target title, ROOT is the attacker, FROM is the defender.
     on_fail_title = {
         alias_name[effect] = alias_match_left[effect]
@@ -353,7 +358,7 @@ casus_belli = {
         alias_name[effect] = alias_match_left[effect]
     }
 
-    ## replace_scope = { this = character root = character from = character }
+    ## replace_scope = { this = war root = character from = character }
     ### The effect of the attacker losing the war. ROOT is the attacker, FROM is the defender.
     on_reverse_demand = {
         alias_name[effect] = alias_match_left[effect]
@@ -373,16 +378,17 @@ casus_belli = {
         alias_name[effect] = alias_match_left[effect]
     }
 
+    # TODO: Docs
     ## cardinality = 0..1
-    ## replace_scope = { this = war root = war }
+    ## replace_scope = { this = war root = character }
     ### The effect of the leader of the attacking forces dying. ROOT is the war, which can scope to attacker, defender, thirdparty (if involved) and thirdparty_title (if involved).
     on_attacker_leader_death = {
         alias_name[effect] = alias_match_left[effect]
     }
 
     ## cardinality = 0..1
-    ## replace_scope = { this = war root = war }
-    ### The effect of the leader of the defending forces dying. ROOT is the war, which can scope to attacker, defender, thirdparty (if involved) and thirdparty_title (if involved).
+    ## replace_scope = { this = war root = character }
+    ### The effect of the leader of the defending forces dying. ROOT is the character.
     on_defender_leader_death = {
         alias_name[effect] = alias_match_left[effect]
     }
