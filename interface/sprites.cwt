@@ -1,5 +1,5 @@
-#sprites are saved in *.gfx files (like meshes) and are by and large stored in /interface
-#I don't know anything about interface modding. For now I have just rigged up the sprites to show because that is rather useful.
+# Sprites are saved in *.gfx files (like meshes) and are by and large stored in /interface
+# I don't know anything about interface modding. For now I have just rigged up the sprites to show because that is rather useful.
 
 types = {
 	## type_key_filter = spriteType
