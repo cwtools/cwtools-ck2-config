@@ -132,7 +132,7 @@ alias[effect:set_parent_religion] = {
 
 ## scope = any
 ### Plays the specified sound, as defined in interface/sound.sfx
-alias[effect:sound_effect] = TODO
+alias[effect:sound_effect] = <sound>
 
 ## scope = any
 ### Forces an outbreak, but follows the scenarios set up in the disease.txt file.
