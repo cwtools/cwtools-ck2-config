@@ -138,19 +138,19 @@ minor_title = {
         ## cardinality = 0..1
         ### Conditions for a character to be eligible for the title. ROOT is the title holder, FROM is the title granter. Possibly the same as allow = {}.
         allowed_to_hold = {
-
+            alias_name[trigger] = alias_match_left[trigger]
         }
 
         ## cardinality = 0..1
         ### Conditions for the title to show up on the liege's minor titles list to grant. ROOT is the liege.
         allowed_to_grant = {
-
+            alias_name[trigger] = alias_match_left[trigger]
         }
 
         ## cardinality = 0..1
         ### Conditions for allowing the revokation of the title. ROOT is the title holder, FROM is the title granter.
         revoke_trigger = {
-
+            alias_name[trigger] = alias_match_left[trigger]
         }
 
         # TODO: Confirm
