@@ -77,4 +77,8 @@ artifact = {
         alias_name[command_modifier] = alias_match_left[command_modifier]
     }
 
+    # TODO: Docs only used once though
+    ## cardinality = 0..1
+    ### 
+    history = bool
 }

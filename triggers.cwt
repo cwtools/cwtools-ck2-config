@@ -2500,6 +2500,10 @@ alias[trigger:culture] = scope[province]
 alias[trigger:culture] = scope[title]
 
 ## scope = { character province title }
+### True if the scoped entity has the same culture as the given culture.
+alias[trigger:culture] = <culture>
+
+## scope = { character province title }
 ### True if scoped entity has a culture that belongs to the given culture group.
 alias[trigger:culture_group] = <culture_group>
 
