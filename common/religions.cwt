@@ -197,7 +197,6 @@ religion_group = {
 
             ## cardinality = 0..1
             ### The name of this religion's evil gods/alternative names for the devil. Not required for heresies (parent = <religion>).
-            ## cardinality = 0..1
             evil_god_names = {
                 ## cardinality = 1..inf
                 localisation
