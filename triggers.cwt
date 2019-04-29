@@ -2240,6 +2240,10 @@ alias[trigger:society_is_devil_worshiper] = bool
 ### Checks if character belongs to the given society
 alias[trigger:society_member_of] = scope[society]
 
+## scope = character
+### Checks if character belongs to the given society
+alias[trigger:society_member_of] = <society>
+
 # TODO: Figure out
 ## scope = character
 ###
