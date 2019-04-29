@@ -27,4 +27,8 @@ dynasty = {
     ## cardinality = 0..1
     ### If no, the dynasty will not be picked for a randomly-generated character. Defaults to "yes".
     used_for_random = bool
+
+    ## cardinality = 0..1
+    ### The frame that is always used for this dynasty.
+    forced_coa_religiongroup = <religion_group>
 }

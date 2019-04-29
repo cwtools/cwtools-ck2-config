@@ -3593,3 +3593,13 @@ alias[trigger:heavy_troops] = {
     who = <special_troop_type>
     value = float
 }
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:is_wicked] = bool
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:is_virtous] = bool
