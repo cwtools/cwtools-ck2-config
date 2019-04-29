@@ -2737,6 +2737,14 @@ alias[trigger:title] = scope[title]
 ###
 alias[trigger:title] = scope[province]
 
+## scope = character
+### True if the scoped character owns the given title.
+alias[trigger:title] = <title>
+
+## scope = title
+### True if the scoped title is the given title.
+alias[trigger:title] = <title>
+
 # TODO: Scopes? Once done, reword.
 ## scope = { character title }
 ### Compares with the monthly income of the scoped character or holder of the scoped title.
