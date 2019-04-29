@@ -2194,6 +2194,10 @@ alias[trigger:score] = int
 alias[trigger:secret_religion] = <religion>
 
 ## scope = character
+### True if the scoped character secretly follows the same religion as the given character.
+alias[trigger:secret_religion] = scope[character]
+
+## scope = character
 ### True if the scoped character secretly follows a religion in the given religion group.
 alias[trigger:secret_religion_group] = <religion_group>
 
