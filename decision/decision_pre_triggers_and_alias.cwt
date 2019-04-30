@@ -31,7 +31,9 @@ single_alias[general_decisions] = {
     # TODO: check all this which factors are needed
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = {
-        factor = float[0..100]
+        factor = float
+
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
     }
 }
 
@@ -49,6 +51,7 @@ single_alias[filtered_decisions] = {
 
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
+    ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
     from_potential = {
         alias_name[trigger] = alias_match_left[trigger]
@@ -59,6 +62,7 @@ single_alias[filtered_decisions] = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
+    ## cardinality = 0..1
     ### Conditions for the decision to be enabled
     allow = {
         alias_name[trigger] = alias_match_left[trigger]
@@ -76,7 +80,9 @@ single_alias[filtered_decisions] = {
     # TODO: check all this which factors are needed
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = {
-        factor = float[0..100]
+        factor = float
+
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
     }
 }
 
