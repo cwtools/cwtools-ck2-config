@@ -2829,7 +2829,7 @@ alias[trigger:has_offmap_tmp_flag] = value[offmap_tmp_flag]
 
 ## scope = offmap
 ### True if the scoped offmap power currently has the given offmap policy.
-alias[trigger:has_policy] = <policy>
+alias[trigger:has_policy] = <offmap_policy>
 
 # TODO: Docs; specify previously as literally the previous one if that's the case
 ## scope = offmap
