@@ -25,4 +25,4 @@ types = {
 # TODO: Docs 
 decision = single_alias_right[general_decisions]  
 # TODO: Docs 
-targetted_decision = single_alias_right[general_decisions]  
+targetted_decision = single_alias_right[filtered_decisions]  
