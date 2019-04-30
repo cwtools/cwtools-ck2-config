@@ -1,7 +1,10 @@
 types = {
     type[decision] = {
         path = "game/decisions"
-        skip_root_key = { decisions plot_decisions }
+        skip_root_key = {
+            decisions
+            plot_decisions
+        }
             
         localisation = {
             name = "$"
