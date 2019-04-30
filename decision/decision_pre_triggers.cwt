@@ -1,0 +1,19 @@
+###
+# scope = character
+alias[decision_pre_trigger:only_playable] = bool
+
+### 
+# scope = character
+alias[decision_pre_trigger:only_rulers] = bool
+
+### 
+# scope = character
+alias[decision_pre_trigger:only_independent] = bool
+
+###
+# scope = character
+alias[decision_pre_trigger:is_in_society] = bool
+
+###
+# scope = character
+alias[decision_pre_trigger:ai] = bool
