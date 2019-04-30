@@ -2190,6 +2190,10 @@ alias[trigger:score] = int
 alias[trigger:secret_religion] = <religion>
 
 ## scope = character
+### True if the scoped character secretly follows the same religion as the given character.
+alias[trigger:secret_religion] = scope[character]
+
+## scope = character
 ### True if the scoped character secretly follows a religion in the given religion group.
 alias[trigger:secret_religion_group] = <religion_group>
 
@@ -2239,6 +2243,10 @@ alias[trigger:society_is_devil_worshiper] = bool
 ## scope = character
 ### Checks if character belongs to the given society
 alias[trigger:society_member_of] = scope[society]
+
+## scope = character
+### Checks if character belongs to the given society
+alias[trigger:society_member_of] = <society>
 
 # TODO: Figure out
 ## scope = character
@@ -2496,6 +2504,10 @@ alias[trigger:culture] = scope[province]
 alias[trigger:culture] = scope[title]
 
 ## scope = { character province title }
+### True if the scoped entity has the same culture as the given culture.
+alias[trigger:culture] = <culture>
+
+## scope = { character province title }
 ### True if scoped entity has a culture that belongs to the given culture group.
 alias[trigger:culture_group] = <culture_group>
 
@@ -2737,6 +2749,14 @@ alias[trigger:title] = scope[title]
 ###
 alias[trigger:title] = scope[province]
 
+## scope = character
+### True if the scoped character owns the given title.
+alias[trigger:title] = <title>
+
+## scope = title
+### True if the scoped title is the given title.
+alias[trigger:title] = <title>
+
 # TODO: Scopes? Once done, reword.
 ## scope = { character title }
 ### Compares with the monthly income of the scoped character or holder of the scoped title.
@@ -2809,12 +2829,12 @@ alias[trigger:has_offmap_tmp_flag] = value[offmap_tmp_flag]
 
 ## scope = offmap
 ### True if the scoped offmap power currently has the given offmap policy.
-alias[trigger:has_policy] = <policy>
+alias[trigger:has_policy] = <offmap_policy>
 
 # TODO: Docs; specify previously as literally the previous one if that's the case
 ## scope = offmap
 ### True if the scoped offmap power previously had the specified offmap policy.
-alias[trigger:prev_policy] = <policy>
+alias[trigger:prev_policy] = <offmap_policy>
 
 ## scope = offmap
 ### Compares with the amount of days that have passed since the last policy change of the scoped offmap power.
@@ -3573,3 +3593,13 @@ alias[trigger:heavy_troops] = {
     who = <special_troop_type>
     value = float
 }
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:is_wicked] = bool
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:is_virtous] = bool

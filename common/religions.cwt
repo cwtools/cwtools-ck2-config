@@ -42,7 +42,7 @@ types = {
     }
 }
 
-## replace_scope = { this = character root = character from = character}
+## replace_scope = { this = character root = character from = character }
 ### This trigger defines who can see a character's secret religion. The character with the secret religion is FROM, while the viewer is ROOT.
 secret_religion_visibility_trigger = {
     alias_name[trigger] = alias_match_left[trigger]
@@ -197,7 +197,6 @@ religion_group = {
 
             ## cardinality = 0..1
             ### The name of this religion's evil gods/alternative names for the devil. Not required for heresies (parent = <religion>).
-            ## cardinality = 0..1
             evil_god_names = {
                 ## cardinality = 1..inf
                 localisation

@@ -457,6 +457,7 @@ modifiers = {
     # TODO: Character?
     commander_limit = character
 
+    # TODO: fix
     ### Growth rate of cultural/military/economy technology. Cumulative with tech_growth_modifier.
     tech_growth_modifier_<tech_type> = character
 

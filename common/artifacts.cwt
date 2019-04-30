@@ -32,9 +32,10 @@ artifact = {
     ### The artifact's quality. Vanilla uses 1-5.
     quality = int
 
+    # TODO: figure out who fromfrom is, afaik it's the original author, used in on_government_type_warfare
     ## cardinality = 0..1
     ### Conditions for the artifact to be active. Unowned artifacts are active only if they don't have this block.
-    ## replace_scope = { this = character root = character }
+    ## replace_scope = { this = character root = character fromfrom = character }
     active = {
         ## cardinality = 0..inf
         alias_name[trigger] = alias_match_left[trigger]
@@ -77,4 +78,8 @@ artifact = {
         alias_name[command_modifier] = alias_match_left[command_modifier]
     }
 
+    # TODO: Docs only used once though
+    ## cardinality = 0..1
+    ### 
+    history = bool
 }
