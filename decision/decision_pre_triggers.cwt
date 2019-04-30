@@ -1,3 +1,5 @@
+# TODO: Docs for all
+
 ###
 # scope = character
 alias[decision_pre_trigger:only_playable] = bool

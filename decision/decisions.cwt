@@ -1,7 +1,13 @@
 types = {
     type[decision] = {
         path = "game/decisions"
-        skip_root_key = decisions
+        skip_root_key = { decisions plot_decisions }
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+            extra_description = "$_desc_extra"
+        }
     }
 }
 
@@ -14,15 +20,15 @@ decision = {
     ## cardinality = 0..1
     ### Determines how seldom the AI checks whether they can and should do the decision, in months. Defult is 1(every month).
     ai_check_interval = int
-    
-
 
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
-
+    
+    ### Conditions for the decision to appear
     potential = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
+    ### Conditions for the decision to be enabled
     allow = {
         alias_name[trigger] = alias_match_left[trigger]
     }
@@ -31,12 +37,14 @@ decision = {
         alias_name[effect] = alias_match_left[effect]
     }
 
+    ### Commands executed when taking the decision
     revoke_allowed = {
         alias_name[trigger] = alias_match_left[trigger]
     }
 
     # TODO: check all this which factors are needed
+    ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = {
-        factor = float
+        factor = float[0..100]
     }
 }
