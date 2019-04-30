@@ -2834,7 +2834,7 @@ alias[trigger:has_policy] = <offmap_policy>
 # TODO: Docs; specify previously as literally the previous one if that's the case
 ## scope = offmap
 ### True if the scoped offmap power previously had the specified offmap policy.
-alias[trigger:prev_policy] = <policy>
+alias[trigger:prev_policy] = <offmap_policy>
 
 ## scope = offmap
 ### Compares with the amount of days that have passed since the last policy change of the scoped offmap power.
