@@ -1,8 +1,42 @@
 types = {
-	type[decision] = {
+    type[decision] = {
         path = "game/decisions"
-	}
+        skip_root_key = decisions
+    }
 }
 
+# TODO: Docs 
 decision = {
+    ## cardinality = 0..1
+    ### Will show an alert once decision is enabled
+    is_high_prio = bool
+
+    ## cardinality = 0..1
+    ### Determines how seldom the AI checks whether they can and should do the decision, in months. Defult is 1(every month).
+    ai_check_interval = int
+    
+
+
+    alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
+
+    potential = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    allow = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    revoke_allowed = {
+        alias_name[trigger] = alias_match_left[trigger]
+    }
+
+    # TODO: check all this which factors are needed
+    ai_will_do = {
+        factor = float
+    }
 }

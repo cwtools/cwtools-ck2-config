@@ -1898,7 +1898,7 @@ alias[effect:clear_flags_with_prefix] = scalar
 
 ## scope = { character province }
 ### Changes the scoped entity's culture to the given culture.
-alias[effect:culture] = scope[culture]
+alias[effect:culture] = <culture>
 
 ## scope = { character province }
 ### Changes the scoped entity's culture to match the given character.
