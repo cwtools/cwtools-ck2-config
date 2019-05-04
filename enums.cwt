@@ -410,4 +410,36 @@ enums = {
         modifier
         name
     }
+
+    # TODO: Docs
+    enum[filter_targets] = {
+        self
+        spouse
+        court
+        home_court
+        liege
+        vassals
+        sub_realm
+        realm
+        dynasty
+        close_relatives
+        rivals
+        friends
+        liege
+        rel_head
+        society
+        vassal_wars
+        independent_rulers
+        all
+        none
+        all_including_me
+        court_including_me
+        home_court_including_me
+        sub_realm_including_me
+        realm_including_me
+        dynasty_including_me
+        rel_head_including_me
+        independent_rulers_including_me
+        society_including_me
+    }
 }

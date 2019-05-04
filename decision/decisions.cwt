@@ -1,8 +1,28 @@
 types = {
-	type[decision] = {
+    type[decision] = {
         path = "game/decisions"
-	}
+        skip_root_key = decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+            extra_description = "$_desc_extra"
+        }
+    }
+
+    type[targetted_decision] = {
+        path = "game/decisions"
+        skip_root_key = targetted_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+            extra_description = "$_desc_extra"
+        }
+    }
 }
 
-decision = {
-}
+# TODO: Docs 
+decision = single_alias_right[general_decisions]  
+# TODO: Docs 
+targetted_decision = single_alias_right[filtered_decisions]  
