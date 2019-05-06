@@ -2,7 +2,29 @@ types = {
     type[decision] = {
         path = "game/decisions"
         skip_root_key = decisions
-            
+        
+        localisation = {
+            name = "$"
+            description = "$_desc"
+            extra_description = "$_desc_extra"
+        }
+    }
+
+    type[plot_decision] = {
+        path = "game/decisions"
+        skip_root_key = plot_decisions
+        
+        localisation = {
+            name = "$"
+            description = "$_desc"
+            extra_description = "$_desc_extra"
+        }
+    }
+
+    type[society_decision] = {
+        path = "game/decisions"
+        skip_root_key = society_decisions
+        
         localisation = {
             name = "$"
             description = "$_desc"
@@ -23,8 +45,35 @@ types = {
     type[settlement_decision] = {
         path = "game/decisions"
         skip_root_key = settlement_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[trade_post_decision] = {
+        path = "game/decisions"
         skip_root_key = trade_post_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[fort_decision] = {
+        path = "game/decisions"
         skip_root_key = fort_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[hospital_decision] = {
+        path = "game/decisions"
         skip_root_key = hospital_decisions
             
         localisation = {
@@ -36,6 +85,16 @@ types = {
     type[title_decision] = {
         path = "game/decisions"
         skip_root_key = title_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[offmap_decision] = {
+        path = "game/decisions"
+        skip_root_key = offmap_decisions
             
         localisation = {
             name = "$"
@@ -66,16 +125,23 @@ types = {
 
 # TODO: Docs
 decision = single_alias_right[general_decisions]
+plot_decision = single_alias_right[general_decisions]
+society_decision = single_alias_right[general_decisions]
 # TODO: Docs
 targetted_decision = single_alias_right[filtered_decisions]
 # TODO: Docs
 settlement_decision = single_alias_right[filtered_decisions_settlements]
+trade_post_decision = single_alias_right[filtered_decisions_settlements]
+fort_decision = single_alias_right[filtered_decisions_settlements]
+hospital_decision = single_alias_right[filtered_decisions_settlements]
 # TODO: Docs
 title_decision = single_alias_right[filtered_decisions_titles]
+offmap_decision = single_alias_right[general_offmap_decisions]
+# TODO: Docs
+offmap_decision = single_alias_right[general_offmap_decisions]
 
 # TODO: Docs
 ### deprecated
 vassal_decision = single_alias_right[from_potential_decisions]
-# TODO: Docs
 ### deprecated
 dynasty_decision = single_alias_right[from_potential_decisions]
