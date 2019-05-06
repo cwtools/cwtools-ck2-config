@@ -10,31 +10,18 @@ single_alias[general_decisions] = {
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
     ### Conditions for the decision to appear
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[general_decision_triggers]
 
     ### Conditions for the decision to be enabled
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[general_decision_triggers]
 
-    effect = {
-        alias_name[effect] = alias_match_left[effect]
-    }
+    effect = single_alias_right[general_decision_triggers]
 
     ### Commands executed when taking the decision
-    revoke_allowed = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    revoke_allowed = single_alias_right[general_decision_triggers]
 
-    # TODO: check all this which factors are needed
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = {
-        factor = float
-
-        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-    }
+    ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
 
 single_alias[filtered_decisions] = {
@@ -53,37 +40,22 @@ single_alias[filtered_decisions] = {
     
     ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    from_potential = single_alias_right[general_decision_triggers]
 
     ### Conditions for the decision to appear
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[general_decision_triggers]
 
     ## cardinality = 0..1
     ### Conditions for the decision to be enabled
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[general_decision_triggers]
 
-    effect = {
-        alias_name[effect] = alias_match_left[effect]
-    }
+    effect = single_alias_right[general_decision_triggers]
 
     ### Commands executed when taking the decision
-    revoke_allowed = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    revoke_allowed = single_alias_right[general_decision_triggers]
 
-    # TODO: check all this which factors are needed
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = {
-        factor = float
-
-        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-    }
+    ai_will_do = single_alias_right[general_decision_ai_will_do]
 
     # TODO: ai_accceptance
 }
@@ -104,37 +76,22 @@ single_alias[filtered_decisions_settlements] = {
     
     ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    from_potential = single_alias_right[general_decision_triggers]
 
     ### Conditions for the decision to appear
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[general_decision_triggers]
 
     ## cardinality = 0..1
     ### Conditions for the decision to be enabled
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[general_decision_triggers]
 
-    effect = {
-        alias_name[effect] = alias_match_left[effect]
-    }
+    effect = single_alias_right[general_decision_triggers]
 
     ### Commands executed when taking the decision
-    revoke_allowed = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    revoke_allowed = single_alias_right[general_decision_triggers]
 
-    # TODO: check all this which factors are needed
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = {
-        factor = float
-
-        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-    }
+    ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
 
 single_alias[filtered_decisions_titles] = {
@@ -153,37 +110,22 @@ single_alias[filtered_decisions_titles] = {
     
     ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    from_potential = single_alias_right[general_decision_triggers]
 
     ### Conditions for the decision to appear
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[general_decision_triggers]
 
     ## cardinality = 0..1
     ### Conditions for the decision to be enabled
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[general_decision_triggers]
 
-    effect = {
-        alias_name[effect] = alias_match_left[effect]
-    }
+    effect = single_alias_right[general_decision_triggers]
 
     ### Commands executed when taking the decision
-    revoke_allowed = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    revoke_allowed = single_alias_right[general_decision_triggers]
 
-    # TODO: check all this which factors are needed
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = {
-        factor = float
-
-        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-    }
+    ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
 
 single_alias[from_potential_decisions] = {
@@ -199,37 +141,22 @@ single_alias[from_potential_decisions] = {
         
     ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    from_potential = single_alias_right[general_decision_triggers]
 
     ### Conditions for the decision to appear
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[general_decision_triggers]
 
     ## cardinality = 0..1
     ### Conditions for the decision to be enabled
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[general_decision_triggers]
 
-    effect = {
-        alias_name[effect] = alias_match_left[effect]
-    }
+    effect = single_alias_right[general_decision_triggers]
 
     ### Commands executed when taking the decision
-    revoke_allowed = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    revoke_allowed = single_alias_right[general_decision_triggers]
 
-    # TODO: check all this which factors are needed
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = {
-        factor = float
-
-        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-    }
+    ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
 
 single_alias[general_offmap_decisions] = {
@@ -246,31 +173,18 @@ single_alias[general_offmap_decisions] = {
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
     ### Conditions for the decision to appear
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[general_decision_triggers]
 
     ### Conditions for the decision to be enabled
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[general_decision_triggers]
 
-    effect = {
-        alias_name[effect] = alias_match_left[effect]
-    }
+    effect = single_alias_right[general_decision_triggers]
 
     ### Commands executed when taking the decision
-    revoke_allowed = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    revoke_allowed = single_alias_right[general_decision_triggers]
 
-    # TODO: check all this which factors are needed
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = {
-        factor = float
-
-        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
-    }
+    ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
 
 # TODO: Docs for all
