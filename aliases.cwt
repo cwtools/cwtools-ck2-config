@@ -156,7 +156,9 @@ alias[command_modifier:actual_heavy_infantry] = float
 
 # Single aliases
 
-single_alias[trigger_clause] = single_alias_right[trigger_clause]
+single_alias[trigger_clause] = {
+    alias_name[trigger] = alias_match_left[trigger]
+}
 
 single_alias[effect_clause] = {
     alias_name[effect] = alias_match_left[effect]
