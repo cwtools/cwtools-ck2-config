@@ -1,4 +1,5 @@
 types = {
+    # TODO: third party
     type[decision] = {
         path = "game/decisions"
         skip_root_key = decisions
@@ -136,7 +137,6 @@ fort_decision = single_alias_right[filtered_decisions_settlements]
 hospital_decision = single_alias_right[filtered_decisions_settlements]
 # TODO: Docs
 title_decision = single_alias_right[filtered_decisions_titles]
-offmap_decision = single_alias_right[general_offmap_decisions]
 # TODO: Docs
 offmap_decision = single_alias_right[general_offmap_decisions]
 
