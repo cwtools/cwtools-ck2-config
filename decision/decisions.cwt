@@ -139,9 +139,3 @@ hospital_decision = single_alias_right[filtered_decisions_settlements]
 title_decision = single_alias_right[filtered_decisions_titles]
 # TODO: Docs
 offmap_decision = single_alias_right[general_offmap_decisions]
-
-# TODO: Docs
-### deprecated
-vassal_decision = single_alias_right[from_potential_decisions]
-### deprecated
-dynasty_decision = single_alias_right[from_potential_decisions]

@@ -1,4 +1,5 @@
 single_alias[general_decisions] = {
+
     ## cardinality = 0..1
     ### Will show an alert once decision is enabled
     is_high_prio = bool
@@ -9,17 +10,22 @@ single_alias[general_decisions] = {
 
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
+    ## replace_scope = { this = character root = character }
     ### Conditions for the decision to appear
     potential = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = character }
     ### Conditions for the decision to be enabled
     allow = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = character }
     effect = single_alias_right[general_effects]
 
+    ## replace_scope = { this = character root = character }
     ### Commands executed when taking the decision
     revoke_allowed = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = character }
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
@@ -39,21 +45,27 @@ single_alias[filtered_decisions] = {
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
     ## cardinality = 0..1
+    ## replace_scope = { this = character root = character from = character }
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
     from_potential = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = character from = character }
     ### Conditions for the decision to appear
     potential = single_alias_right[general_triggers]
 
     ## cardinality = 0..1
+    ## replace_scope = { this = character root = character from = character }
     ### Conditions for the decision to be enabled
     allow = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = character from = character }
     effect = single_alias_right[general_effects]
 
+    ## replace_scope = { this = character root = character from = character }
     ### Commands executed when taking the decision
     revoke_allowed = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = character from = character }
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
 
@@ -75,21 +87,27 @@ single_alias[filtered_decisions_settlements] = {
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
     ## cardinality = 0..1
+    ## replace_scope = { this = character root = holding from = character }
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
     from_potential = single_alias_right[general_triggers]
 
     ### Conditions for the decision to appear
+    ## replace_scope = { this = character root = holding from = character }
     potential = single_alias_right[general_triggers]
 
     ## cardinality = 0..1
+    ## replace_scope = { this = character root = holding from = character }
     ### Conditions for the decision to be enabled
     allow = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = holding from = character }
     effect = single_alias_right[general_effects]
 
+    ## replace_scope = { this = character root = holding from = character }
     ### Commands executed when taking the decision
     revoke_allowed = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = holding from = character }
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
@@ -109,52 +127,27 @@ single_alias[filtered_decisions_titles] = {
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
     ## cardinality = 0..1
+    ## replace_scope = { this = character root = title from = character }
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
     from_potential = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = title from = character }
     ### Conditions for the decision to appear
     potential = single_alias_right[general_triggers]
 
     ## cardinality = 0..1
+    ## replace_scope = { this = character root = title from = character }
     ### Conditions for the decision to be enabled
     allow = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = title from = character }
     effect = single_alias_right[general_effects]
 
+    ## replace_scope = { this = character root = title from = character }
     ### Commands executed when taking the decision
     revoke_allowed = single_alias_right[general_triggers]
 
-    ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = single_alias_right[general_decision_ai_will_do]
-}
-
-single_alias[from_potential_decisions] = {
-    ## cardinality = 0..1
-    ### Will show an alert once decision is enabled
-    is_high_prio = bool
-
-    ## cardinality = 0..1
-    ### Determines how seldom the AI checks whether they can and should do the decision, in months. Defult is 1(every month).
-    ai_check_interval = int
-
-    alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
-        
-    ## cardinality = 0..1
-    ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = single_alias_right[general_triggers]
-
-    ### Conditions for the decision to appear
-    potential = single_alias_right[general_triggers]
-
-    ## cardinality = 0..1
-    ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_triggers]
-
-    effect = single_alias_right[general_effects]
-
-    ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_triggers]
-
+    ## replace_scope = { this = character root = title from = character }
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
@@ -172,17 +165,22 @@ single_alias[general_offmap_decisions] = {
 
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
+    ## replace_scope = { this = character root = title }
     ### Conditions for the decision to appear
     potential = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = title }
     ### Conditions for the decision to be enabled
     allow = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = title }
     effect = single_alias_right[general_effects]
 
+    ## replace_scope = { this = character root = title }
     ### Commands executed when taking the decision
     revoke_allowed = single_alias_right[general_triggers]
 
+    ## replace_scope = { this = character root = title }
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
 }
