@@ -10,6 +10,26 @@ types = {
         }
     }
 
+    type[vassal_decisions] = {
+        path = "game/decisions"
+        skip_root_key = vassal_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[dynasty_decisions] = {
+        path = "game/decisions"
+        skip_root_key = dynasty_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
     type[targetted_decision] = {
         path = "game/decisions"
         skip_root_key = targetted_decisions
@@ -23,6 +43,10 @@ types = {
 }
 
 # TODO: Docs 
-decision = single_alias_right[general_decisions]  
+decision = single_alias_right[general_decisions]
 # TODO: Docs 
-targetted_decision = single_alias_right[filtered_decisions]  
+targetted_decision = single_alias_right[filtered_decisions]
+# TODO: Docs
+dynasty_decision = single_alias_right[from_potential_decisions]
+# TODO: Docs
+vassal_decision = single_alias_right[from_potential_decisions]

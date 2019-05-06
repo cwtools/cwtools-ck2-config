@@ -412,7 +412,7 @@ enums = {
     }
 
     # TODO: Docs
-    enum[filter_targets] = {
+    enum[filter_targets_character] = {
         self
         spouse
         court
