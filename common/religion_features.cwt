@@ -36,16 +36,12 @@ religion_feature_category = {
         ## cardinality = 0..1
         ## replace_scope = { this = religion root = religion from = character }
         ### Conditions for the feature to appear in the UI. ROOT is the religion, FROM is the reformer (empty if this is a randomised religion).
-        potential = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        potential = single_alias_right[trigger_clause]
 
         ## cardinality = 0..1
         ## replace_scope = { this = religion root = religion from = character }
         ### Conditions for the feature to be able to be picked. ROOT is the religion, FROM is the reformer (empty if this is a randomised religion).
-        trigger = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        trigger = single_alias_right[trigger_clause]
 
         ## replace_scope = { this = religion root = religion from = character }
         ### The effects of the feature. ROOT is the religion, FROM is the reformer (empty if this is a randomised religion).

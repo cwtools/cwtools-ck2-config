@@ -434,9 +434,7 @@ alias[trigger:any_attacker] = single_alias_right[trigger_clause]
 ### Scopes to all attackers in a war
 alias[effect:any_attacker] = {
 	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -471,9 +469,7 @@ alias[trigger:any_character] = single_alias_right[trigger_clause]
 ### Scopes to all characters, except for offmap rulers. WARNING CPU HEAVY
 alias[effect:any_character] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -486,9 +482,7 @@ alias[trigger:any_child] = single_alias_right[trigger_clause]
 ###
 alias[effect:any_child] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -581,9 +575,7 @@ alias[trigger:any_defender] = single_alias_right[trigger_clause]
 ### Scopes to all defenders in a war
 alias[effect:any_defender] = {
 	## cardinality = 0..1
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -994,9 +986,7 @@ alias[trigger:any_spouse] = single_alias_right[trigger_clause]
 ###
 alias[effect:any_spouse] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -1020,9 +1010,7 @@ alias[trigger:any_consort] = single_alias_right[trigger_clause]
 ### Scopes to all of a character's consorts (not only concubines, works for both genders)
 alias[effect:any_consort] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -1122,9 +1110,7 @@ alias[effect:any_ward] = {
 ### Scopes to an ally
 alias[effect:random_allied_character] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1137,9 +1123,7 @@ alias[effect:random_allied_character] = {
 ### Scopes to a random character from those who have ever owned the artifact, including the current owner. Does not work on artifacts that have the history = no parameter.
 alias[effect:random_artifact_owner] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1152,9 +1136,7 @@ alias[effect:random_artifact_owner] = {
 ### Scopes to a random character the character is backing. Cannot be used as a trigger
 alias[effect:random_backed_character] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1167,9 +1149,7 @@ alias[effect:random_backed_character] = {
 ### Scopes to a random member of the current bloodline
 alias[effect:random_bloodline_member] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1182,9 +1162,7 @@ alias[effect:random_bloodline_member] = {
 ### Scopes a random character in the game, excluding offmap rulers. Cannot be used as a trigger. Note: This scope doesn't apply commands to ROOT.
 alias[effect:random_character] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1197,9 +1175,7 @@ alias[effect:random_character] = {
 ###
 alias[effect:random_child] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1212,9 +1188,7 @@ alias[effect:random_child] = {
 ### Scopes to a random child of the character. Cannot be used as a trigger
 alias[effect:random_child_even_if_dead] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1227,9 +1201,7 @@ alias[effect:random_child_even_if_dead] = {
 ### Scopes to a random close relative of the character.
 alias[effect:random_close_relative] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1242,9 +1214,7 @@ alias[effect:random_close_relative] = {
 ### Scopes to a random courtier of the character, including prisoners. Cannot be used as a trigger.
 alias[effect:random_courtier] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1257,9 +1227,7 @@ alias[effect:random_courtier] = {
 ### Scopes to a random courtier or vassal of the character. Cannot be used as a trigger.
 alias[effect:random_courtier_or_vassal] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1272,9 +1240,7 @@ alias[effect:random_courtier_or_vassal] = {
 ### Scopes to a random enemy of the character. Both characters must be participating directly in the war, not as vassals.
 alias[effect:random_current_enemy] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1287,9 +1253,7 @@ alias[effect:random_current_enemy] = {
 ###
 alias[effect:random_dynasty_member] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1302,9 +1266,7 @@ alias[effect:random_dynasty_member] = {
 ### Scopes to a random member of the character's dynasty.
 alias[effect:random_dynasty_member_even_if_dead] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1317,9 +1279,7 @@ alias[effect:random_dynasty_member_even_if_dead] = {
 ###
 alias[effect:random_enemy_plotter] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1332,9 +1292,7 @@ alias[effect:random_enemy_plotter] = {
 ### Scopes to a random friend of the character.
 alias[effect:random_friend] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1347,9 +1305,7 @@ alias[effect:random_friend] = {
 ### Scopes to a random character in the same court. Shorter version of host = { random_courtier = { ... } }
 alias[effect:random_host_courtier] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1362,9 +1318,7 @@ alias[effect:random_host_courtier] = {
 ### Scopes to a random independent ruler. Doesn't include ROOT.
 alias[effect:random_independent_ruler] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1377,9 +1331,7 @@ alias[effect:random_independent_ruler] = {
 ###
 alias[effect:random_known_enemy_plotter] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1392,9 +1344,7 @@ alias[effect:random_known_enemy_plotter] = {
 ### Scopes to a random lover.
 alias[effect:random_lover] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1407,9 +1357,7 @@ alias[effect:random_lover] = {
 ### Scopes to a random independent ruler whose realm neighbors the realm you are in.
 alias[effect:random_neighbor_independent_ruler] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1422,9 +1370,7 @@ alias[effect:random_neighbor_independent_ruler] = {
 ### Scopes to a random character with a non-aggression pact toward current character.
 alias[effect:random_non_aggression_pact_character] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1437,9 +1383,7 @@ alias[effect:random_non_aggression_pact_character] = {
 ### Scopes to a random character with an opinion modifier toward scoped character
 alias[effect:random_opinion_modifier_target] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1452,9 +1396,7 @@ alias[effect:random_opinion_modifier_target] = {
 ### Scopes to a random playable ruler.
 alias[effect:random_playable_ruler] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1467,9 +1409,7 @@ alias[effect:random_playable_ruler] = {
 ### Scopes to a random player.
 alias[effect:random_player] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1482,9 +1422,7 @@ alias[effect:random_player] = {
 ### Scopes to a random character in the province.
 alias[effect:random_province_character] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1497,9 +1435,7 @@ alias[effect:random_province_character] = {
 ### Scopes to a random landed character in the province.
 alias[effect:random_province_lord] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1512,9 +1448,7 @@ alias[effect:random_province_lord] = {
 ### Scopes to a random character that the scope is educating.
 alias[effect:random_pupil] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1527,9 +1461,7 @@ alias[effect:random_pupil] = {
 ### Scopes to a random character with a quest.
 alias[effect:random_quester] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1542,9 +1474,7 @@ alias[effect:random_quester] = {
 ### Scopes to a random character with a quest targeting the current scope.
 alias[effect:random_quester_targetting_this] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1557,9 +1487,7 @@ alias[effect:random_quester_targetting_this] = {
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
 alias[effect:random_quest_target] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1572,9 +1500,7 @@ alias[effect:random_quest_target] = {
 ### Scopes to a random character in the character or title's realm.
 alias[effect:random_realm_character] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1587,9 +1513,7 @@ alias[effect:random_realm_character] = {
 ### Scopes to a random landed character in the character or title's realm.
 alias[effect:random_realm_lord] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1602,9 +1526,7 @@ alias[effect:random_realm_lord] = {
 ### Scopes to a random rival of the character.
 alias[effect:random_rival] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1617,9 +1539,7 @@ alias[effect:random_rival] = {
 ###
 alias[effect:random_sibling] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1632,9 +1552,7 @@ alias[effect:random_sibling] = {
 ### Scopes to a random sibling of the character.
 alias[effect:random_sibling_even_if_dead] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1647,9 +1565,7 @@ alias[effect:random_sibling_even_if_dead] = {
 ### Scopes to a random member of the society. Note: if current scope is not a society, will scope to a random character that is in any society (?).
 alias[effect:random_society_member] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1662,9 +1578,7 @@ alias[effect:random_society_member] = {
 ###
 alias[effect:random_spouse] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1677,9 +1591,7 @@ alias[effect:random_spouse] = {
 ### Scopes to a random spouse of the character.
 alias[effect:random_spouse_even_if_dead] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1692,9 +1604,7 @@ alias[effect:random_spouse_even_if_dead] = {
 ### Scopes to a random consort of the character (not only concubines, works for both genders).
 alias[effect:random_consort] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1707,9 +1617,7 @@ alias[effect:random_consort] = {
 ### Scopes to all tributaries of the scope
 alias[effect:random_tributary] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1722,9 +1630,7 @@ alias[effect:random_tributary] = {
 ### Scopes to a random leader (flank or subunit) in a unit scope. In character uses the unit that character is in. If the unit is in combat, every unit on the same side in the battle is included.
 alias[effect:random_unit_leader] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1737,9 +1643,7 @@ alias[effect:random_unit_leader] = {
 ###
 alias[effect:random_unknown_enemy_plotter] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1752,9 +1656,7 @@ alias[effect:random_unknown_enemy_plotter] = {
 ### Scopes to a random vassal of the character or title.
 alias[effect:random_vassal] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1767,9 +1669,7 @@ alias[effect:random_vassal] = {
 ### Scopes to a random voter on the council
 alias[effect:random_voter] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1782,9 +1682,7 @@ alias[effect:random_voter] = {
 ### Scopes to a random ward of the character.
 alias[effect:random_ward] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1921,9 +1819,7 @@ alias[effect:any_trade_route_province] = {
 ### Scopes to a random province in the targeted sub-realm that is connected to this province. Takes the same parameters as the is_connected_to trigger, except for target.
 alias[effect:random_connected_province] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1936,9 +1832,7 @@ alias[effect:random_connected_province] = {
 ### Scopes to a random province in the character's demesne.
 alias[effect:random_demesne_province] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1951,9 +1845,7 @@ alias[effect:random_demesne_province] = {
 ### Scopes to a random province in the targeted sub-realm that isn't connected to this province. Takes the same parameters as the is_connected_to trigger, except for target.
 alias[effect:random_disconnected_province] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1966,9 +1858,7 @@ alias[effect:random_disconnected_province] = {
 ### Scopes to a random bordering province. Unlike any_neighbor_province, this does NOT scope to sea tiles!
 alias[effect:random_neighbor_province] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1981,9 +1871,7 @@ alias[effect:random_neighbor_province] = {
 ### Scopes to a random province province
 alias[effect:random_province] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -1996,9 +1884,7 @@ alias[effect:random_province] = {
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
 alias[effect:random_quest_target] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2011,9 +1897,7 @@ alias[effect:random_quest_target] = {
 ### Scopes to a random province in the character or title's realm.
 alias[effect:random_realm_province] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2026,9 +1910,7 @@ alias[effect:random_realm_province] = {
 ### Scopes to a random trade post of the character or province.
 alias[effect:random_trade_post] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2100,9 +1982,7 @@ alias[effect:any_unit] = {
 ### Scopes to an armies belonging to the character.
 alias[effect:random_army] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2115,9 +1995,7 @@ alias[effect:random_army] = {
 ### Scopes to a unit controlled by the character (?).
 alias[effect:random_controlled_unit] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2130,9 +2008,7 @@ alias[effect:random_controlled_unit] = {
 ### Scopes to a fleet belonging to the character.	X
 alias[effect:random_fleet] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2145,9 +2021,7 @@ alias[effect:random_fleet] = {
 ### Scopes to a unit belonging to the character.
 alias[effect:random_unit] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2172,9 +2046,7 @@ alias[effect:any_artifact] = {
 ### Scopes to a random artifact. Used within character scope.
 alias[effect:random_artifact] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2209,9 +2081,7 @@ alias[effect:any_owned_bloodline] = {
 ### Scopes to a random created bloodline
 alias[effect:random_bloodline] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]
@@ -2224,9 +2094,7 @@ alias[effect:random_bloodline] = {
 ### Scopes to any bloodline owned by the character
 alias[effect:random_owned_bloodline] = {
 	##cardinality = 0..1
-	limit = {
-		 alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	## cardinality = 0..inf
 	preferred_limit = {
 		alias_name[trigger]=alias_match_left[trigger]

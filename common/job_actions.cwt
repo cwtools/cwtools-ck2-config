@@ -39,9 +39,7 @@ job_action = {
 
             ## replace_scope = { this = province root = province from = character fromfrom = character }
             ### Conditions for this display to be used. ROOT is the province, FROM is the liege, FROMFROM is the character with the job.
-            trigger = {
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            trigger = single_alias_right[trigger_clause]
 
             alias_name[color] = alias_match_left[color]
         }

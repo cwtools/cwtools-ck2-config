@@ -137,21 +137,15 @@ minor_title = {
 
         ## cardinality = 0..1
         ### Conditions for a character to be eligible for the title. ROOT is the title holder, FROM is the title granter. Possibly the same as allow = {}.
-        allowed_to_hold = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        allowed_to_hold = single_alias_right[trigger_clause]
 
         ## cardinality = 0..1
         ### Conditions for the title to show up on the liege's minor titles list to grant. ROOT is the liege.
-        allowed_to_grant = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        allowed_to_grant = single_alias_right[trigger_clause]
 
         ## cardinality = 0..1
         ### Conditions for allowing the revokation of the title. ROOT is the title holder, FROM is the title granter.
-        revoke_trigger = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        revoke_trigger = single_alias_right[trigger_clause]
 
         # TODO: Confirm
         # regent = bool # Vaguely documented, but unused in vanilla even for regent titles
@@ -188,9 +182,7 @@ minor_title = {
         # TODO: Check if it's the same as allowed_to_hold
         ## replace_scope = { this = character root = character }
         ### Conditions for a character to be eligible for this position. ROOT is the title holder. Possibly the same as allow = {}.
-        allow = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        allow = single_alias_right[trigger_clause]
     }
 
     subtype[job] = {
@@ -203,14 +195,10 @@ minor_title = {
         # TODO: Check if it's the same as allowed_to_hold
         ## replace_scope = { this = character root = character }
         ### Conditions for a character to be eligible for this position. ROOT is the title holder. Possibly the same as allow = {}.
-        allow = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        allow = single_alias_right[trigger_clause]
 
         ### Conditions for allowing dismissing the character from this job. ROOT is the title holder, FROM is the title granter.
-        dismiss_trigger = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        dismiss_trigger = single_alias_right[trigger_clause]
 
         ## cardinality = 0..inf
         ### Actions the job can perform.
