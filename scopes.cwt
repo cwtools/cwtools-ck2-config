@@ -52,7 +52,9 @@ alias[trigger:<society>] = single_alias_right[trigger_clause]
 ## scope = any
 ## push_scope = society
 ### Scopes to a society by absolute reference.
-alias[effect:<society>] = single_alias_right[trigger_clause]
+alias[effect:<society>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
 
 ## scope = any
 ## push_scope = offmap
@@ -62,7 +64,9 @@ alias[trigger:<offmap>] = single_alias_right[trigger_clause]
 ## scope = any
 ## push_scope = offmap
 ### Scopes to an offmap power by absolute reference.
-alias[effect:<offmap>] = single_alias_right[trigger_clause]
+alias[effect:<offmap>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
 
 ## scope = any
 ## push_scope = title
@@ -97,7 +101,9 @@ alias[trigger:<trait.cached>] = single_alias_right[trigger_clause]
 ## scope = any
 ## push_scope = character
 ### Scopes to all characters with a cached trait.
-alias[effect:<trait.cached>] = single_alias_right[trigger_clause]
+alias[effect:<trait.cached>] = {
+    alias_name[effect] = alias_match_left[effect]
+}
 
 ## scope = any
 ## push_scope = province
@@ -107,7 +113,9 @@ alias[trigger:enum[provinces]] = single_alias_right[trigger_clause]
 ## scope = any
 ## push_scope = province
 ### Scopes to a province by absolute reference.
-alias[effect:enum[provinces]] = single_alias_right[trigger_clause]
+alias[effect:enum[provinces]] = {
+    alias_name[effect] = alias_match_left[effect]
+}
 
 ## scope = any
 ## push_scope = religion
