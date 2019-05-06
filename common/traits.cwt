@@ -65,9 +65,7 @@ types = {
 trait = {
     ## cardinality = 0..1
     ### Conditions for randomly starting the campaign with the trait, being randomly generated with the trait or being randomly given it when coming of age. add_trait can circumvent it.
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     # TODO: What happens when assigning new opposite trait - old replaced or new not added? What other effects are there?
     ## cardinality = 0..1

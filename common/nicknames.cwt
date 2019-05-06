@@ -14,9 +14,7 @@ nickname = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
     ### Conditions for the character to be eligible for the nickname.
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### Yearly chance to gain the nickname if the character doesn't have a nickname yet.

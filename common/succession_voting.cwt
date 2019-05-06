@@ -65,9 +65,7 @@ succession_voting = {
     }
 
     ### Conditions for a character to be eligible as a candidate.
-    candidate_trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    candidate_trigger = single_alias_right[trigger_clause]
 
     ### Scoring for an elector picking a candidate. The candidate with the highest resulting score will be picked.
     candidate_vote_score = {

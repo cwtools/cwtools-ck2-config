@@ -174,9 +174,7 @@ alias[trigger:any_claim] = single_alias_right[trigger_clause]
 ### Scopes to all titles a character has claims upon
 alias[effect:any_claim] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -212,9 +210,7 @@ alias[trigger:any_demesne_title] = single_alias_right[trigger_clause]
 ### Scopes to all titles a character holds
 alias[effect:any_demesne_title] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -322,13 +318,9 @@ alias[effect:any_title] = {
 ### Scopes to a random title the character has a claim upon.
 alias[effect:random_claim] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
     ## cardinality = 0..inf
-    preferred_limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    preferred_limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -337,13 +329,9 @@ alias[effect:random_claim] = {
 ### Scopes to a random title the character holds.
 alias[effect:random_demesne_title] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
     ## cardinality = 0..inf
-    preferred_limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    preferred_limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -352,13 +340,9 @@ alias[effect:random_demesne_title] = {
 ### Scopes to a random title that is dejure part of the scoped title's realm
 alias[effect:random_direct_de_jure_vassal_title] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
     ## cardinality = 0..inf
-    preferred_limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    preferred_limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -367,13 +351,9 @@ alias[effect:random_direct_de_jure_vassal_title] = {
 ### Scopes to a random landed title
 alias[effect:random_landed_title] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
     ## cardinality = 0..inf
-    preferred_limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    preferred_limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -382,13 +362,9 @@ alias[effect:random_landed_title] = {
 ### Scopes to a county suitable for tribal takeover
 alias[effect:random_potential_tribal_county] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
     ## cardinality = 0..inf
-    preferred_limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    preferred_limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -397,13 +373,9 @@ alias[effect:random_potential_tribal_county] = {
 ### Scopes to a random holding of a province
 alias[effect:random_province_holding] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
     ## cardinality = 0..inf
-    preferred_limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    preferred_limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -412,13 +384,9 @@ alias[effect:random_province_holding] = {
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
 alias[effect:random_quest_target] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
     ## cardinality = 0..inf
-    preferred_limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    preferred_limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -427,13 +395,9 @@ alias[effect:random_quest_target] = {
 ### Scopes to a random title in realm.
 alias[effect:random_realm_title] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
     ## cardinality = 0..inf
-    preferred_limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    preferred_limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -570,9 +534,7 @@ alias[trigger:any_courtier] = single_alias_right[trigger_clause]
 ### Scopes to everyone in the same court as the character. Note that it will match prisoners (even if foreign) and councillors (even if landed). If used for a ruler who is a councilor, it will check their liege's court instead of their own!
 alias[effect:any_courtier] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -634,9 +596,7 @@ alias[trigger:any_dynasty_member] = single_alias_right[trigger_clause]
 ###
 alias[effect:any_dynasty_member] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -759,9 +719,7 @@ alias[trigger:any_liege] = single_alias_right[trigger_clause]
 ### Scopes to all lieges a character has, regardless of how many tiers above. This includes liege and top_liege scopes.
 alias[effect:any_liege] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 ## scope = character
@@ -1132,9 +1090,7 @@ alias[trigger:any_vassal] = single_alias_right[trigger_clause]
 ### Scopes to all direct vassals of a character or title. Does not include courtiers. To scope to all vassals (direct or not) consider using any_realm_character.
 alias[effect:any_vassal] = {
     ## cardinality = 0..1
-    limit = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 

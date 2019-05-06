@@ -70,9 +70,7 @@ retinue_subunit = {
     # TODO: Confirm
     ## replace_scope = { this = character root = character }
     ### Conditions for the retinue to appear on the list for hiring. UNCONFIRMED ROOT is the ruler selecting the retinue.
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### The cost of the retinue. Gold by default, costs_piety = yes or costs_prestige = yes for other resources.

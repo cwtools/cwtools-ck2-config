@@ -26,9 +26,7 @@ types = {
 holding = {
     ## replace_scope = { this = province root = province from = character }
     ### Conditions for the holding to be available for building. ROOT is the province, FROM is the builder.
-    trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger = single_alias_right[trigger_clause]
 }
 
 forbidden_extra_holding = {
