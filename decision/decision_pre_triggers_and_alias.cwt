@@ -10,15 +10,15 @@ single_alias[general_decisions] = {
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_decision_triggers]
+    potential = single_alias_right[general_triggers]
 
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_decision_triggers]
+    allow = single_alias_right[general_triggers]
 
-    effect = single_alias_right[general_decision_triggers]
+    effect = single_alias_right[general_effects]
 
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_decision_triggers]
+    revoke_allowed = single_alias_right[general_triggers]
 
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
@@ -40,19 +40,19 @@ single_alias[filtered_decisions] = {
     
     ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = single_alias_right[general_decision_triggers]
+    from_potential = single_alias_right[general_triggers]
 
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_decision_triggers]
+    potential = single_alias_right[general_triggers]
 
     ## cardinality = 0..1
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_decision_triggers]
+    allow = single_alias_right[general_triggers]
 
-    effect = single_alias_right[general_decision_triggers]
+    effect = single_alias_right[general_effects]
 
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_decision_triggers]
+    revoke_allowed = single_alias_right[general_triggers]
 
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
@@ -76,19 +76,19 @@ single_alias[filtered_decisions_settlements] = {
     
     ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = single_alias_right[general_decision_triggers]
+    from_potential = single_alias_right[general_triggers]
 
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_decision_triggers]
+    potential = single_alias_right[general_triggers]
 
     ## cardinality = 0..1
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_decision_triggers]
+    allow = single_alias_right[general_triggers]
 
-    effect = single_alias_right[general_decision_triggers]
+    effect = single_alias_right[general_effects]
 
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_decision_triggers]
+    revoke_allowed = single_alias_right[general_triggers]
 
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
@@ -110,19 +110,19 @@ single_alias[filtered_decisions_titles] = {
     
     ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = single_alias_right[general_decision_triggers]
+    from_potential = single_alias_right[general_triggers]
 
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_decision_triggers]
+    potential = single_alias_right[general_triggers]
 
     ## cardinality = 0..1
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_decision_triggers]
+    allow = single_alias_right[general_triggers]
 
-    effect = single_alias_right[general_decision_triggers]
+    effect = single_alias_right[general_effects]
 
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_decision_triggers]
+    revoke_allowed = single_alias_right[general_triggers]
 
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
@@ -141,19 +141,19 @@ single_alias[from_potential_decisions] = {
         
     ## cardinality = 0..1
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = single_alias_right[general_decision_triggers]
+    from_potential = single_alias_right[general_triggers]
 
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_decision_triggers]
+    potential = single_alias_right[general_triggers]
 
     ## cardinality = 0..1
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_decision_triggers]
+    allow = single_alias_right[general_triggers]
 
-    effect = single_alias_right[general_decision_triggers]
+    effect = single_alias_right[general_effects]
 
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_decision_triggers]
+    revoke_allowed = single_alias_right[general_triggers]
 
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
@@ -173,15 +173,15 @@ single_alias[general_offmap_decisions] = {
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_decision_triggers]
+    potential = single_alias_right[general_triggers]
 
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_decision_triggers]
+    allow = single_alias_right[general_triggers]
 
-    effect = single_alias_right[general_decision_triggers]
+    effect = single_alias_right[general_effects]
 
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_decision_triggers]
+    revoke_allowed = single_alias_right[general_triggers]
 
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[general_decision_ai_will_do]
