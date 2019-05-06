@@ -412,7 +412,7 @@ enums = {
     }
 
     # TODO: Docs
-    enum[filter_targets] = {
+    enum[filter_targets_character] = {
         self
         spouse
         court
@@ -441,5 +441,28 @@ enums = {
         rel_head_including_me
         independent_rulers_including_me
         society_including_me
+    }
+
+    # TODO: Docs
+    enum[filter_targets_settlements] = {
+        capital,
+        owned,
+        vassal_owned,
+        sub_realm_owned,
+        realm_owned,
+        dynasty_owned,
+        all
+    }
+
+    # TODO: Docs
+    enum[filter_targets_titles] = {
+        capital,
+        primary_title,
+        owned,
+        vassal_owned,
+        sub_realm_owned,
+        realm_owned,
+        dynasty_owned,
+        all
     }
 }
