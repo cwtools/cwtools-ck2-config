@@ -10,7 +10,40 @@ types = {
         }
     }
 
-    type[vassal_decisions] = {
+    type[targetted_decision] = {
+        path = "game/decisions"
+        skip_root_key = targetted_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_named"
+        }
+    }
+
+    type[settlement_decision] = {
+        path = "game/decisions"
+        skip_root_key = settlement_decisions
+        skip_root_key = trade_post_decisions
+        skip_root_key = fort_decisions
+        skip_root_key = hospital_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[title_decision] = {
+        path = "game/decisions"
+        skip_root_key = title_decisions
+            
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[vassal_decision] = {
         path = "game/decisions"
         skip_root_key = vassal_decisions
             
@@ -20,7 +53,7 @@ types = {
         }
     }
 
-    type[dynasty_decisions] = {
+    type[dynasty_decision] = {
         path = "game/decisions"
         skip_root_key = dynasty_decisions
             
@@ -29,24 +62,20 @@ types = {
             description = "$_desc"
         }
     }
-
-    type[targetted_decision] = {
-        path = "game/decisions"
-        skip_root_key = targetted_decisions
-            
-        localisation = {
-            name = "$"
-            description = "$_desc"
-            extra_description = "$_desc_extra"
-        }
-    }
 }
 
-# TODO: Docs 
+# TODO: Docs
 decision = single_alias_right[general_decisions]
-# TODO: Docs 
+# TODO: Docs
 targetted_decision = single_alias_right[filtered_decisions]
 # TODO: Docs
-dynasty_decision = single_alias_right[from_potential_decisions]
+settlement_decision = single_alias_right[filtered_decisions_settlements]
 # TODO: Docs
+title_decision = single_alias_right[filtered_decisions_titles]
+
+# TODO: Docs
+### deprecated
 vassal_decision = single_alias_right[from_potential_decisions]
+# TODO: Docs
+### deprecated
+dynasty_decision = single_alias_right[from_potential_decisions]
