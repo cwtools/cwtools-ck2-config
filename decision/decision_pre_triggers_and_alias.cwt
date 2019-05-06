@@ -12,22 +12,22 @@ single_alias[general_decisions] = {
     
     ## replace_scope = { this = character root = character }
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_triggers]
+    potential = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = character }
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_triggers]
+    allow = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = character }
-    effect = single_alias_right[general_effects]
+    effect = single_alias_right[effect_clause]
 
     ## replace_scope = { this = character root = character }
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_triggers]
+    revoke_allowed = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = character }
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = single_alias_right[general_decision_ai_will_do]
+    ai_will_do = single_alias_right[decision_ai_will_do_clause]
 }
 
 single_alias[filtered_decisions] = {
@@ -47,27 +47,27 @@ single_alias[filtered_decisions] = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character from = character }
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = single_alias_right[general_triggers]
+    from_potential = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = character from = character }
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_triggers]
+    potential = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character from = character }
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_triggers]
+    allow = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = character from = character }
-    effect = single_alias_right[general_effects]
+    effect = single_alias_right[effect_clause]
 
     ## replace_scope = { this = character root = character from = character }
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_triggers]
+    revoke_allowed = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = character from = character }
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = single_alias_right[general_decision_ai_will_do]
+    ai_will_do = single_alias_right[decision_ai_will_do_clause]
 
     # TODO: ai_accceptance
 }
@@ -89,27 +89,27 @@ single_alias[filtered_decisions_settlements] = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = holding from = character }
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = single_alias_right[general_triggers]
+    from_potential = single_alias_right[trigger_clause]
 
     ### Conditions for the decision to appear
     ## replace_scope = { this = character root = holding from = character }
-    potential = single_alias_right[general_triggers]
+    potential = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = holding from = character }
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_triggers]
+    allow = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = holding from = character }
-    effect = single_alias_right[general_effects]
+    effect = single_alias_right[effect_clause]
 
     ## replace_scope = { this = character root = holding from = character }
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_triggers]
+    revoke_allowed = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = holding from = character }
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = single_alias_right[general_decision_ai_will_do]
+    ai_will_do = single_alias_right[decision_ai_will_do_clause]
 }
 
 single_alias[filtered_decisions_titles] = {
@@ -129,27 +129,27 @@ single_alias[filtered_decisions_titles] = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = title from = character }
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
-    from_potential = single_alias_right[general_triggers]
+    from_potential = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = title from = character }
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_triggers]
+    potential = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = title from = character }
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_triggers]
+    allow = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = title from = character }
-    effect = single_alias_right[general_effects]
+    effect = single_alias_right[effect_clause]
 
     ## replace_scope = { this = character root = title from = character }
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_triggers]
+    revoke_allowed = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = title from = character }
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = single_alias_right[general_decision_ai_will_do]
+    ai_will_do = single_alias_right[decision_ai_will_do_clause]
 }
 
 single_alias[general_offmap_decisions] = {
@@ -167,22 +167,22 @@ single_alias[general_offmap_decisions] = {
     
     ## replace_scope = { this = character root = title }
     ### Conditions for the decision to appear
-    potential = single_alias_right[general_triggers]
+    potential = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = title }
     ### Conditions for the decision to be enabled
-    allow = single_alias_right[general_triggers]
+    allow = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = title }
-    effect = single_alias_right[general_effects]
+    effect = single_alias_right[effect_clause]
 
     ## replace_scope = { this = character root = title }
     ### Commands executed when taking the decision
-    revoke_allowed = single_alias_right[general_triggers]
+    revoke_allowed = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = title }
     ### Factors for an AI character to take the decision (1 = 100% chance)
-    ai_will_do = single_alias_right[general_decision_ai_will_do]
+    ai_will_do = single_alias_right[decision_ai_will_do_clause]
 }
 
 # TODO: Docs for all

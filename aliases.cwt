@@ -156,16 +156,16 @@ alias[command_modifier:actual_heavy_infantry] = float
 
 # Single aliases
 
-single_alias[general_triggers] = {
+single_alias[trigger_clause] = {
     alias_name[trigger] = alias_match_left[trigger]
 }
 
-single_alias[general_effects] = {
+single_alias[effect_clause] = {
     alias_name[effect] = alias_match_left[effect]
 }
 
 # TODO: Check factors are multiplicative
-single_alias[general_decision_ai_will_do] = {
+single_alias[decision_ai_will_do_clause] = {
     factor = float
 
     alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
