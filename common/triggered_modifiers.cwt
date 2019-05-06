@@ -17,14 +17,10 @@ triggered_modifier = {
     icon = enum[event_modifier_icons]
 
     ### Conditions for the character to be eligible for checking the trigger.
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     ### Conditions for the character to receive the modifier.
-    trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger = single_alias_right[trigger_clause]
 
     ## cardinality = 0..inf
     alias_name[modifier] = alias_match_left[modifier]

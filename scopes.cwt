@@ -1,7 +1,7 @@
 #Scopes and Logical Operators
 
 #CWTools magic scope
-alias[trigger:scope_field] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:scope_field] = single_alias_right[trigger_clause]
 alias[effect:scope_field] = { alias_name[effect] = alias_match_left[effect] }
 
 alias[trigger:NOT] = {
@@ -9,10 +9,10 @@ alias[trigger:NOT] = {
 	alias_name[trigger] = alias_match_left[trigger]
 }
 
-alias[trigger:NOR] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:NAND] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:AND] = { alias_name[trigger] = alias_match_left[trigger] }
-alias[trigger:OR] = { alias_name[trigger] = alias_match_left[trigger] }
+alias[trigger:NOR] = single_alias_right[trigger_clause]
+alias[trigger:NAND] = single_alias_right[trigger_clause]
+alias[trigger:AND] = single_alias_right[trigger_clause]
+alias[trigger:OR] = single_alias_right[trigger_clause]
 
 alias[effect:NOT] = {
 	## cardinality = 1..1
@@ -26,18 +26,14 @@ alias[effect:OR] = { alias_name[effect] = alias_match_left[effect] }
 
 ## scope = any
 alias[effect:if] = {
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
 ## scope = any
 alias[effect:else_if] = {
 	## severity = info
-	limit = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
@@ -51,37 +47,27 @@ alias[effect:else] = {
 ## scope = any
 ## push_scope = society
 ### Scopes to a society by absolute reference.
-alias[trigger:<society>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:<society>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = society
 ### Scopes to a society by absolute reference.
-alias[effect:<society>] = {
-    alias_name[effect] = alias_match_left[effect]
-}
+alias[effect:<society>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = offmap
 ### Scopes to an offmap power by absolute reference.
-alias[trigger:<offmap>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:<offmap>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = offmap
 ### Scopes to an offmap power by absolute reference.
-alias[effect:<offmap>] = {
-    alias_name[effect] = alias_match_left[effect]
-}
+alias[effect:<offmap>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = title
 ### Scopes to a landed title by absolute reference.
-alias[trigger:<title>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:<title>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = title
@@ -93,9 +79,7 @@ alias[effect:<title>] = {
 ## scope = any
 ## push_scope = character
 ### Scopes to a character by absolute reference.
-alias[trigger:c_<character>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:c_<character>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = character
@@ -108,37 +92,27 @@ alias[effect:c_<character>] = {
 ## scope = any
 ## push_scope = character
 ### Scopes to all characters with a cached trait.
-alias[trigger:<trait.cached>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:<trait.cached>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = character
 ### Scopes to all characters with a cached trait.
-alias[effect:<trait.cached>] = {
-    alias_name[effect] = alias_match_left[effect]
-}
+alias[effect:<trait.cached>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = province
 ### Scopes to a province by absolute reference.
-alias[trigger:enum[provinces]] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:enum[provinces]] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = province
 ### Scopes to a province by absolute reference.
-alias[effect:enum[provinces]] = {
-    alias_name[effect] = alias_match_left[effect]
-}
+alias[effect:enum[provinces]] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = religion
 ### Scopes to a religion by absolute reference.
-alias[trigger:<religion>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:<religion>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = religion
@@ -150,9 +124,7 @@ alias[effect:<religion>] = {
 ## scope = any
 ## push_scope = religion
 ### Scopes to the first religion in a group by absolute reference.
-alias[trigger:<religion_group>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:<religion_group>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = religion
@@ -164,9 +136,7 @@ alias[effect:<religion_group>] = {
 ## scope = any
 ## push_scope = culture
 ### Scopes to a culture by absolute reference.
-alias[trigger:<culture>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:<culture>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = culture
@@ -178,9 +148,7 @@ alias[effect:<culture>] = {
 ## scope = any
 ## push_scope = culture
 ### Scopes to the first culture in a group by absolute reference.
-alias[trigger:<culture_group>] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:<culture_group>] = single_alias_right[trigger_clause]
 
 ## scope = any
 ## push_scope = culture
@@ -192,9 +160,7 @@ alias[effect:<culture_group>] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles a character has claims upon
-alias[trigger:any_claim] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_claim] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles a character has claims upon
@@ -209,9 +175,7 @@ alias[effect:any_claim] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles that are dejure part of a character or title's realm
-alias[trigger:any_de_jure_vassal_title] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_de_jure_vassal_title] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles that are dejure part of a character or title's realm
@@ -222,9 +186,7 @@ alias[effect:any_de_jure_vassal_title] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles that are dejure part of a title's realm
-alias[trigger:any_direct_de_jure_vassal_title] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_direct_de_jure_vassal_title] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles that are dejure part of a title's realm
@@ -235,9 +197,7 @@ alias[effect:any_direct_de_jure_vassal_title] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles a character holds
-alias[trigger:any_demesne_title] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_demesne_title] = single_alias_right[trigger_clause]
 
 ## scope = character
 ## push_scope = title
@@ -253,9 +213,7 @@ alias[effect:any_demesne_title] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles to which the character is the current heir
-alias[trigger:any_heir_title] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_heir_title] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles to which the character is the current heir
@@ -266,9 +224,7 @@ alias[effect:any_heir_title] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all landed titles. Warning CPU HEAVY
-alias[trigger:any_landed_title] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_landed_title] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all landed titles. Warning CPU HEAVY
@@ -279,9 +235,7 @@ alias[effect:any_landed_title] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all mercenary bands
-alias[trigger:any_mercenary_band] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_mercenary_band] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all mercenary bands
@@ -292,9 +246,7 @@ alias[effect:any_mercenary_band] = {
 ## scope = character
 ## push_scope = title
 ###
-alias[trigger:any_potential_tribal_county] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_potential_tribal_county] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ###
@@ -305,9 +257,7 @@ alias[effect:any_potential_tribal_county] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles held by pretenders
-alias[trigger:any_pretender_title] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_pretender_title] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles held by pretenders
@@ -318,9 +268,7 @@ alias[effect:any_pretender_title] = {
 ## scope = province
 ## push_scope = title
 ### Scopes to all holdings of a province*
-alias[trigger:any_province_holding] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_province_holding] = single_alias_right[trigger_clause]
 ## scope = province
 ## push_scope = title
 ### Scopes to all holdings of a province*
@@ -331,9 +279,7 @@ alias[effect:any_province_holding] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
-alias[trigger:any_quest_target] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_quest_target] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
@@ -344,9 +290,7 @@ alias[effect:any_quest_target] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles within a character or title's realm
-alias[trigger:any_realm_title] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_realm_title] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles within a character or title's realm
@@ -357,9 +301,7 @@ alias[effect:any_realm_title] = {
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles
-alias[trigger:any_title] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_title] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles
@@ -492,9 +434,7 @@ alias[effect:random_realm_title] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all allies. Expensive calculation, use with care[2]
-alias[trigger:any_allied_character] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_allied_character] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all allies. Expensive calculation, use with care[2]
@@ -505,9 +445,7 @@ alias[effect:any_allied_character] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to anyone who has ever owned the artifact, including the current owner. Does not work on artifacts that have the history = no parameter.
-alias[trigger:any_artifact_owner] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_artifact_owner] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to anyone who has ever owned the artifact, including the current owner. Does not work on artifacts that have the history = no parameter.
@@ -518,9 +456,7 @@ alias[effect:any_artifact_owner] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all attackers in a war
-alias[trigger:any_attacker] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_attacker] = single_alias_right[trigger_clause]
 ## scope = { character war }
 ## push_scope = character
 ### Scopes to all attackers in a war
@@ -535,9 +471,7 @@ alias[effect:any_attacker] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters whose plots a character is supporting
-alias[trigger:any_backed_character] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_backed_character] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters whose plots a character is supporting
@@ -548,9 +482,7 @@ alias[effect:any_backed_character] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all members of the current bloodline
-alias[trigger:any_bloodline_member] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_bloodline_member] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all members of the current bloodline
@@ -561,9 +493,7 @@ alias[effect:any_bloodline_member] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters, except for offmap rulers. WARNING CPU HEAVY
-alias[trigger:any_character] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_character] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters, except for offmap rulers. WARNING CPU HEAVY
@@ -578,9 +508,7 @@ alias[effect:any_character] = {
 ## scope = character
 ## push_scope = character
 ###
-alias[trigger:any_child] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_child] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ###
@@ -595,9 +523,7 @@ alias[effect:any_child] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's children
-alias[trigger:any_child_even_if_dead] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_child_even_if_dead] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's children
@@ -608,9 +534,7 @@ alias[effect:any_child_even_if_dead] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all claimants of a title
-alias[trigger:any_claimant] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_claimant] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all claimants of a title
@@ -621,9 +545,7 @@ alias[effect:any_claimant] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all living close relatives of a character. Includes anyone with a 'red blood' icon in their dynasty (siblings, children, grandchildren, parents, grandparents, etc.), as well as bastards of their closest relatives. Does not include spouse.
-alias[trigger:any_close_relative] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_close_relative] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all living close relatives of a character. Includes anyone with a 'red blood' icon in their dynasty (siblings, children, grandchildren, parents, grandparents, etc.), as well as bastards of their closest relatives. Does not include spouse.
@@ -634,9 +556,7 @@ alias[effect:any_close_relative] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to everyone in the same court as the character. Note that it will match prisoners (even if foreign) and councillors (even if landed). If used for a ruler who is a councilor, it will check their liege's court instead of their own!
-alias[trigger:any_courtier] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_courtier] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to everyone in the same court as the character. Note that it will match prisoners (even if foreign) and councillors (even if landed). If used for a ruler who is a councilor, it will check their liege's court instead of their own!
@@ -651,9 +571,7 @@ alias[effect:any_courtier] = {
 ## scope = character
 ## push_scope = character
 ### Primarily used to find minor title holders:
-alias[trigger:any_courtier_or_vassal] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_courtier_or_vassal] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Primarily used to find minor title holders:
@@ -664,9 +582,7 @@ alias[effect:any_courtier_or_vassal] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters actively at war with a character. Both characters have to be participating directly in the war, not as vassals
-alias[trigger:any_current_enemy] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_current_enemy] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters actively at war with a character. Both characters have to be participating directly in the war, not as vassals
@@ -677,9 +593,7 @@ alias[effect:any_current_enemy] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all de jure vassals of a character or title.
-alias[trigger:any_de_jure_vassal] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_de_jure_vassal] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all de jure vassals of a character or title.
@@ -690,9 +604,7 @@ alias[effect:any_de_jure_vassal] = {
 ## scope = war
 ## push_scope = character
 ### Scopes to all defenders in a war
-alias[trigger:any_defender] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_defender] = single_alias_right[trigger_clause]
 
 ## scope = war
 ## push_scope = character
@@ -708,9 +620,7 @@ alias[effect:any_defender] = {
 ## scope = character
 ## push_scope = character
 ###
-alias[trigger:any_dynasty_member] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_dynasty_member] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ###
@@ -725,9 +635,7 @@ alias[effect:any_dynasty_member] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all members of a character's dynasty.
-alias[trigger:any_dynasty_member_even_if_dead] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_dynasty_member_even_if_dead] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all members of a character's dynasty.
@@ -738,9 +646,7 @@ alias[effect:any_dynasty_member_even_if_dead] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to any character (known/unknown) plotting against the character in scope
-alias[trigger:any_enemy_plotter] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_enemy_plotter] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to any character (known/unknown) plotting against the character in scope
@@ -751,9 +657,7 @@ alias[effect:any_enemy_plotter] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to faction members. Faction field can be used to specify faction (ex: faction = faction_lower_tribal_organization)
-alias[trigger:any_faction_backer] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_faction_backer] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to faction members. Faction field can be used to specify faction (ex: faction = faction_lower_tribal_organization)
@@ -764,9 +668,7 @@ alias[effect:any_faction_backer] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters to which a character owes a favor
-alias[trigger:any_favor_holder] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_favor_holder] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters to which a character owes a favor
@@ -777,9 +679,7 @@ alias[effect:any_favor_holder] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters that owe a favor to the character
-alias[trigger:any_favor_ower] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_favor_ower] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters that owe a favor to the character
@@ -790,9 +690,7 @@ alias[effect:any_favor_ower] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's friends
-alias[trigger:any_friend] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_friend] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's friends
@@ -803,9 +701,7 @@ alias[effect:any_friend] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters in the same court. Shorter version of host = { any_courtier = { ... } }
-alias[trigger:any_host_courtier] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_host_courtier] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters in the same court. Shorter version of host = { any_courtier = { ... } }
@@ -816,9 +712,7 @@ alias[effect:any_host_courtier] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all independent rulers. Doesn't include ROOT. Excludes revolts; to include them, use a broader scope with limit = { liege = { character = PREV } }.
-alias[trigger:any_independent_ruler] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_independent_ruler] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all independent rulers. Doesn't include ROOT. Excludes revolts; to include them, use a broader scope with limit = { liege = { character = PREV } }.
@@ -829,9 +723,7 @@ alias[effect:any_independent_ruler] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to any known character plotting against the character in scope
-alias[trigger:any_known_enemy_plotter] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_known_enemy_plotter] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to any known character plotting against the character in scope
@@ -842,9 +734,7 @@ alias[effect:any_known_enemy_plotter] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to any plotter character whose plot the character in scope knows about
-alias[trigger:any_known_plotter] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_known_plotter] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to any plotter character whose plot the character in scope knows about
@@ -855,9 +745,7 @@ alias[effect:any_known_plotter] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all lieges a character has, regardless of how many tiers above. This includes liege and top_liege scopes.
-alias[trigger:any_liege] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_liege] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all lieges a character has, regardless of how many tiers above. This includes liege and top_liege scopes.
@@ -871,9 +759,7 @@ alias[effect:any_liege] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all dejure lieges a character has, regardless of how many tiers above.
-alias[trigger:any_dejure_liege] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_dejure_liege] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all dejure lieges a character has, regardless of how many tiers above.
@@ -883,9 +769,7 @@ alias[effect:any_dejure_liege] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all defacto lieges a character has, regardless of how many tiers above.
-alias[trigger:any_dejure_liege] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_dejure_liege] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all defacto lieges a character has, regardless of how many tiers above.
@@ -896,9 +780,7 @@ alias[effect:any_dejure_liege] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all lovers a character has
-alias[trigger:any_lover] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_lover] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all lovers a character has
@@ -909,9 +791,7 @@ alias[effect:any_lover] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all independent rulers whose realm neighbors the realm you are in.
-alias[trigger:any_neighbor_independent_ruler] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_neighbor_independent_ruler] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all independent rulers whose realm neighbors the realm you are in.
@@ -922,9 +802,7 @@ alias[effect:any_neighbor_independent_ruler] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters to which someone has a non-aggression pact
-alias[trigger:any_non_aggression_pact_character] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_non_aggression_pact_character] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters to which someone has a non-aggression pact
@@ -935,9 +813,7 @@ alias[effect:any_non_aggression_pact_character] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters having an opinion modifier toward scoped characterany_opinion_modifier_target = {
-alias[trigger:any_opinion_modifier_target] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_opinion_modifier_target] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters having an opinion modifier toward scoped characterany_opinion_modifier_target = {
@@ -948,9 +824,7 @@ alias[effect:any_opinion_modifier_target] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all playable rulers currently alive. Combined with limit = { ai = no }, it allows to broadcast events to human players.
-alias[trigger:any_playable_ruler] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_playable_ruler] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all playable rulers currently alive. Combined with limit = { ai = no }, it allows to broadcast events to human players.
@@ -961,9 +835,7 @@ alias[effect:any_playable_ruler] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all players.
-alias[trigger:any_player] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_player] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all players.
@@ -974,9 +846,7 @@ alias[effect:any_player] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to everyone backing the character's plot
-alias[trigger:any_plot_backer] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_plot_backer] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to everyone backing the character's plot
@@ -987,9 +857,7 @@ alias[effect:any_plot_backer] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all plotters (anywhere?). Vanilla usage uses 'target = ROOT' on the first line of the scope to limit the search. (?)any_plotter = {
-alias[trigger:any_plotter] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_plotter] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all plotters (anywhere?). Vanilla usage uses 'target = ROOT' on the first line of the scope to limit the search. (?)any_plotter = {
@@ -1000,9 +868,7 @@ alias[effect:any_plotter] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to previous holders of a title
-alias[trigger:any_previous_holder] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_previous_holder] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to previous holders of a title
@@ -1013,9 +879,7 @@ alias[effect:any_previous_holder] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters in the province
-alias[trigger:any_province_character] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_province_character] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters in the province
@@ -1026,9 +890,7 @@ alias[effect:any_province_character] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all landed characters in the province
-alias[trigger:any_province_lord] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_province_lord] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all landed characters in the province
@@ -1039,9 +901,7 @@ alias[effect:any_province_lord] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters that the scope is educating.
-alias[trigger:any_pupil] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_pupil] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters that the scope is educating.
@@ -1052,9 +912,7 @@ alias[effect:any_pupil] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters with a quest.
-alias[trigger:any_quester] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_quester] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters with a quest.
@@ -1065,9 +923,7 @@ alias[effect:any_quester] = {
 ## scope = character
 ## push_scope = character
 ###
-alias[trigger:any_quester_targeting_this] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_quester_targeting_this] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ###
@@ -1078,9 +934,7 @@ alias[effect:any_quester_targeting_this] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters with a quest targeting the current scope.
-alias[trigger:any_quester_targetting_this] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_quester_targetting_this] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters with a quest targeting the current scope.
@@ -1091,9 +945,7 @@ alias[effect:any_quester_targetting_this] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
-alias[trigger:any_quest_target] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_quest_target] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
@@ -1104,9 +956,7 @@ alias[effect:any_quest_target] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters within the current character or title's sub-realm. Includes both vassals and courtiers, but not the liege of the realm. Like any_courtier, it does not include prisoners abroad.
-alias[trigger:any_realm_character] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_realm_character] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters within the current character or title's sub-realm. Includes both vassals and courtiers, but not the liege of the realm. Like any_courtier, it does not include prisoners abroad.
@@ -1117,9 +967,7 @@ alias[effect:any_realm_character] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all landed characters within the current character's realm. It doesn't include the liege of the realm.
-alias[trigger:any_realm_lord] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_realm_lord] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all landed characters within the current character's realm. It doesn't include the liege of the realm.
@@ -1130,9 +978,7 @@ alias[effect:any_realm_lord] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's rivals
-alias[trigger:any_rival] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_rival] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's rivals
@@ -1143,9 +989,7 @@ alias[effect:any_rival] = {
 ## scope = character
 ## push_scope = character
 ###
-alias[trigger:any_sibling] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_sibling] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ###
@@ -1156,9 +1000,7 @@ alias[effect:any_sibling] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's siblings
-alias[trigger:any_sibling_even_if_dead] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_sibling_even_if_dead] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's siblings
@@ -1169,9 +1011,7 @@ alias[effect:any_sibling_even_if_dead] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all members of the society. Note: if current scope is not a society, will scope to all characters in any society (?).
-alias[trigger:any_society_member] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_society_member] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all members of the society. Note: if current scope is not a society, will scope to all characters in any society (?).
@@ -1182,9 +1022,7 @@ alias[effect:any_society_member] = {
 ## scope = character
 ## push_scope = character
 ###
-alias[trigger:any_spouse] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_spouse] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ###
@@ -1199,9 +1037,7 @@ alias[effect:any_spouse] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's spouses
-alias[trigger:any_spouse_even_if_dead] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_spouse_even_if_dead] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's spouses
@@ -1212,9 +1048,7 @@ alias[effect:any_spouse_even_if_dead] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's consorts (not only concubines, works for both genders)
-alias[trigger:any_consort] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_consort] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's consorts (not only concubines, works for both genders)
@@ -1229,9 +1063,7 @@ alias[effect:any_consort] = {
 ## scope = character
 ## push_scope = character
 ###
-alias[trigger:any_suzerain] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_suzerain] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ###
@@ -1242,9 +1074,7 @@ alias[effect:any_suzerain] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all tributaries of the scope
-alias[trigger:any_tributary] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_tributary] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all tributaries of the scope
@@ -1255,9 +1085,7 @@ alias[effect:any_tributary] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all leaders (flank or subunit) in a unit scope. In character uses the unit that character is in. If the unit is in combat, every unit on the same side in the battle is included.
-alias[trigger:any_unit_leader] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_unit_leader] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all leaders (flank or subunit) in a unit scope. In character uses the unit that character is in. If the unit is in combat, every unit on the same side in the battle is included.
@@ -1268,9 +1096,7 @@ alias[effect:any_unit_leader] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to vassals with different dynasties (excluding dynasty of scoped character).
-alias[trigger:any_unique_dynasty_vassal] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_unique_dynasty_vassal] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to vassals with different dynasties (excluding dynasty of scoped character).
@@ -1281,9 +1107,7 @@ alias[effect:any_unique_dynasty_vassal] = {
 ## scope = character
 ## push_scope = character
 ### Only scopes to the plotters of the Character in scope that are unknown
-alias[trigger:any_unknown_enemy_plotter] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_unknown_enemy_plotter] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Only scopes to the plotters of the Character in scope that are unknown
@@ -1294,9 +1118,7 @@ alias[effect:any_unknown_enemy_plotter] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all direct vassals of a character or title. Does not include courtiers. To scope to all vassals (direct or not) consider using any_realm_character.
-alias[trigger:any_vassal] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_vassal] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all direct vassals of a character or title. Does not include courtiers. To scope to all vassals (direct or not) consider using any_realm_character.
@@ -1311,9 +1133,7 @@ alias[effect:any_vassal] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all voters in a character's council
-alias[trigger:any_voter] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_voter] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all voters in a character's council
@@ -1324,9 +1144,7 @@ alias[effect:any_voter] = {
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's wards
-alias[trigger:any_ward] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_ward] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all of a character's wards
@@ -2015,9 +1833,7 @@ alias[effect:random_ward] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in the targeted sub-realm that are connected to this province. Takes the same parameters as the is_connected_to trigger, except for target.
-alias[trigger:any_connected_province] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_connected_province] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in the targeted sub-realm that are connected to this province. Takes the same parameters as the is_connected_to trigger, except for target.
@@ -2028,9 +1844,7 @@ alias[effect:any_connected_province] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in a character's demesne.
-alias[trigger:any_demesne_province] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_demesne_province] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in a character's demesne.
@@ -2041,9 +1855,7 @@ alias[effect:any_demesne_province] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in the targeted sub-realm that aren't connected to this province. Takes the same parameters as the is_connected_to trigger, except for target.
-alias[trigger:any_disconnected_province] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_disconnected_province] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in the targeted sub-realm that aren't connected to this province. Takes the same parameters as the is_connected_to trigger, except for target.
@@ -2054,9 +1866,7 @@ alias[effect:any_disconnected_province] = {
 ## scope = { character province }
 ## push_scope = province
 ### Scopes to all border provinces, including sea tiles.
-alias[trigger:any_neighbor_province] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_neighbor_province] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all border provinces, including sea tiles.
@@ -2067,9 +1877,7 @@ alias[effect:any_neighbor_province] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces. WARNING CPU HEAVY
-alias[trigger:any_province] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_province] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces. WARNING CPU HEAVY
@@ -2080,9 +1888,7 @@ alias[effect:any_province] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all of a character's forts
-alias[trigger:any_fort] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_fort] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all of a character's forts
@@ -2093,9 +1899,7 @@ alias[effect:any_fort] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all of a character's hospitals
-alias[trigger:any_hospital] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_hospital] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all of a character's hospitals
@@ -2106,9 +1910,7 @@ alias[effect:any_hospital] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
-alias[trigger:any_quest_target] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_quest_target] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all characters, provinces, and titles that are a target of a quest. Note that the script should either be able to handle all three types or filter the target type in the limit.
@@ -2119,9 +1921,7 @@ alias[effect:any_quest_target] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in a character or title's realm
-alias[trigger:any_realm_province] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_realm_province] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in a character or title's realm
@@ -2132,9 +1932,7 @@ alias[effect:any_realm_province] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all of a character's trade posts
-alias[trigger:any_trade_post] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_trade_post] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all of a character's trade posts
@@ -2145,9 +1943,7 @@ alias[effect:any_trade_post] = {
 ## scope = character
 ## push_scope = province
 ### Scopes to all other provinces on a trade route
-alias[trigger:any_trade_route_province] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_trade_route_province] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all other provinces on a trade route
@@ -2281,9 +2077,7 @@ alias[effect:random_trade_post] = {
 ## scope = { character title }
 ## push_scope = war
 ### Scopes to any war the character is participating in as an active member; a liege participating would not count. When used in title scope, checks all wars for that title.
-alias[trigger:any_war] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_war] = single_alias_right[trigger_clause]
 ## scope = { character title }
 ## push_scope = war
 ### Scopes to any war the character is participating in as an active member; a liege participating would not count. When used in title scope, checks all wars for that title.
@@ -2296,9 +2090,7 @@ alias[effect:any_war] = {
 ## scope = character
 ## push_scope = unit
 ### Scopes to all armies belonging to the character.
-alias[trigger:any_army] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_army] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = unit
 ### Scopes to all armies belonging to the character.
@@ -2309,9 +2101,7 @@ alias[effect:any_army] = {
 ## scope = character
 ## push_scope = unit
 ### Scopes to all units controlled by the character (?).
-alias[trigger:any_controlled_unit] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_controlled_unit] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = unit
 ### Scopes to all units controlled by the character (?).
@@ -2322,9 +2112,7 @@ alias[effect:any_controlled_unit] = {
 ## scope = character
 ## push_scope = unit
 ### Scopes to all fleet belonging to the character.
-alias[trigger:any_fleet] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_fleet] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = unit
 ### Scopes to all fleet belonging to the character.
@@ -2335,9 +2123,7 @@ alias[effect:any_fleet] = {
 ## scope = character
 ## push_scope = unit
 ### Scopes to all units belonging to the character.
-alias[trigger:any_unit] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_unit] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = unit
 ### Scopes to all units belonging to the character.
@@ -2409,9 +2195,7 @@ alias[effect:random_unit] = {
 ## scope = character
 ## push_scope = artifact
 ### Scopes to any artifact. Used within character scope.
-alias[trigger:any_artifact] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_artifact] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = artifact
 ### Scopes to any artifact. Used within character scope.
@@ -2438,9 +2222,7 @@ alias[effect:random_artifact] = {
 
 ## push_scope = bloodline
 ### Scopes to any created bloodline
-alias[trigger:any_bloodline] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_bloodline] = single_alias_right[trigger_clause]
 ## push_scope = bloodline
 ### Scopes to any created bloodline
 alias[effect:any_bloodline] = {
@@ -2451,9 +2233,7 @@ alias[effect:any_bloodline] = {
 ## push_scope = bloodline
 ## scope = character
 ### Scopes to any bloodline owned by the character
-alias[trigger:any_owned_bloodline] = {
-	alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:any_owned_bloodline] = single_alias_right[trigger_clause]
 ## push_scope = bloodline
 ## scope = character
 ### Scopes to any bloodline owned by the character

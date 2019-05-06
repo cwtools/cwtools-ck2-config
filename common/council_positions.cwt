@@ -22,9 +22,7 @@ council_position = {
 
     ## replace_scope = { this = character root = character }
     ### Conditions for the councilor to be able to select this position.
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = character }
     ### Used by the AI when there is no possible position with a resulting selection score higher than 0. The possible position with the highest default_selection score will be selected.
@@ -83,9 +81,7 @@ council_position = {
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ## cardinality = 0..1
     ### Selects a preferred war target for the character.
-    war_target = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    war_target = single_alias_right[trigger_clause]
 
     # TODO: Confirm it's order and not for first, against second.
     ### Voting patterns the position uses in interactions it's allowed to. It'll go through patterns in order, to see if they vote for or against. If nothing matches, they'll be undecided.

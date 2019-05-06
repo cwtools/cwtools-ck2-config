@@ -49,9 +49,7 @@ building = {
     ## cardinality = 0..1
     ## replace_scope = { this = province root = province from = character fromfrom = title}
     ### Conditions for the building to appear on the holding's buildings list.
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### If yes, the game will use the name of the first building in the chain and add the level after it in roman numerals. Defaults to "yes".
@@ -64,16 +62,12 @@ building = {
     ## cardinality = 0..1
     ## replace_scope = { this = province root = province from = character fromfrom = title }
     ### Conditions for the building to be constructible. If not met, an icon will show up in place of the build button showing what's missing.
-    trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ## replace_scope = { this = province root = province from = character fromfrom = title }
     ### Conditions for the building to apply its effects. Defaults to always active.
-    is_active_trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    is_active_trigger = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### If yes, can only be built in a coastal province. Defaults to "no".

@@ -24,61 +24,45 @@ council_voting_pattern = {
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character fromfromfrom = character fromfromfromfrom = title }
     ### Voting on war declaration. Attacker is FROM, defender is FROMFROM, third party is FROMFROMFROM, third party title is FROMFROMFROMFROM; stored_token_trigger is cb_type (available from ROOT and FROM).
-    declare_war_interaction = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    declare_war_interaction = single_alias_right[trigger_clause]
 
     # TODO: Confirm scopes, but it looks correct from usage.
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ### Voting on imprisonment. Liege is FROM, target is FROMFROM.
-    imprison_character_interaction = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    imprison_character_interaction = single_alias_right[trigger_clause]
 
     # TODO: Confirm scopes, but it looks correct from usage.
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ### Voting on exiling. Liege is FROM, target is FROMFROM.
-    exile_imprisoned_interaction = {
-        alias_name[trigger] = alias_match_left[trigger]        
-    }
+    exile_imprisoned_interaction = single_alias_right[trigger_clause]
 
     # TODO: Confirm scopes, but it looks correct from usage.
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ### Voting on execution. Liege is FROM, target is FROMFROM.
-    execute_imprisoned_interaction = {
-        alias_name[trigger] = alias_match_left[trigger]        
-    }
+    execute_imprisoned_interaction = single_alias_right[trigger_clause]
 
     # TODO: Confirm scopes, but it looks correct from usage.
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ### Voting on title revokation. Liege is FROM, target is FROMFROM.
-    revoke_title_interaction = {
-        alias_name[trigger] = alias_match_left[trigger]        
-    }
+    revoke_title_interaction = single_alias_right[trigger_clause]
 
     # TODO: Confirm scopes, but it looks correct from usage.
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ### Voting on title granting. Liege is FROM, target is FROMFROM.
-    grant_landed_title_interaction = {
-        alias_name[trigger] = alias_match_left[trigger]        
-    }
+    grant_landed_title_interaction = single_alias_right[trigger_clause]
 
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ### Voting on enforcing peace. Liege is FROM, vote starter is FROMFROM.
-    enforce_peace = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    enforce_peace = single_alias_right[trigger_clause]
 
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ### Voting on laws of the given type. Liege is FROM, vote starter is FROMFROM.
-    <law> = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    <law> = single_alias_right[trigger_clause]
 }

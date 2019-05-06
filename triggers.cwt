@@ -3535,15 +3535,11 @@ alias[trigger:custom_tooltip] = {
 }
 
 # TODO: Might be covered by scope_field
-alias[trigger:hidden_tooltip] = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+alias[trigger:hidden_tooltip] = single_alias_right[trigger_clause]
 
 # TODO: Docs?
 alias[trigger:conditional_tooltip] = {
-    trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger = single_alias_right[trigger_clause]
     alias_name[trigger] = alias_match_left[trigger]
 }
 
