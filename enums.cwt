@@ -454,6 +454,7 @@ enums = {
         all
     }
 
+    # TODO: Docs
     enum[filter_targets_titles] = {
         capital,
         primary_title,
