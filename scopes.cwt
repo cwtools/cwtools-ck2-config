@@ -540,6 +540,7 @@ alias[trigger:any_courtier_or_vassal] = single_alias_right[trigger_clause]
 ## push_scope = character
 ### Primarily used to find minor title holders:
 alias[effect:any_courtier_or_vassal] = {
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
