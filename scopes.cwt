@@ -930,6 +930,7 @@ alias[trigger:any_realm_lord] = single_alias_right[trigger_clause]
 ## push_scope = character
 ### Scopes to all landed characters within the current character's realm. It doesn't include the liege of the realm.
 alias[effect:any_realm_lord] = {
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
