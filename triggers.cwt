@@ -2440,6 +2440,11 @@ alias[trigger:is_hard_to_convert] = bool
 ### True if the religion associated with the scoped entity is a heresy of the religion associated with the given entity.
 alias[trigger:is_heresy_of] = scope[religion]
 
+# TODO: Allows other religion-associated scopes, expand once errors arise :)
+## scope = { character province }
+### True if the religion associated with the scoped entity is a heresy of the religion associated with the given entity.
+alias[trigger:is_heresy_of] = scope[character]
+
 ## scope = { character province }
 ### Checks if the religion associated with the scoped entity is a heresy of another religion.
 alias[trigger:is_heretic] = bool
