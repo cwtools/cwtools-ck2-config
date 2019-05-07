@@ -1711,6 +1711,7 @@ alias[trigger:any_demesne_province] = single_alias_right[trigger_clause]
 ## push_scope = province
 ### Scopes to all provinces in a character's demesne.
 alias[effect:any_demesne_province] = {
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
