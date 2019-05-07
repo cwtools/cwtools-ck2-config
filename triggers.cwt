@@ -2304,6 +2304,10 @@ alias[trigger:true_religion] = <religion>
 ### True if the scoped character truly follows a religion of the given religion group. That means secret religion if they have one and public religion if they don't
 alias[trigger:true_religion_group] = <religion_group>
 
+## scope = province
+### True if the scoped province truly follows a religion of the given character. That means secret religion if they have one and public religion if they don't.
+alias[trigger:true_religion_group] = scope[character]
+
 # TODO: Figure out
 ## scope = character
 ###
@@ -2314,7 +2318,7 @@ alias[trigger:unused_manpower] = int
 alias[trigger:uses_decadence] = bool
 
 ## scope = character
-###
+### True if the scoped character is a vassal of the given character.
 alias[trigger:vassal_of] = scope[character]
 
 ## scope = character
