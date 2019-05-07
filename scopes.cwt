@@ -919,6 +919,7 @@ alias[trigger:any_realm_character] = single_alias_right[trigger_clause]
 ## push_scope = character
 ### Scopes to all characters within the current character or title's sub-realm. Includes both vassals and courtiers, but not the liege of the realm. Like any_courtier, it does not include prisoners abroad.
 alias[effect:any_realm_character] = {
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
