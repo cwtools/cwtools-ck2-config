@@ -1615,6 +1615,13 @@ alias[trigger:num_culture_realm_provs] = {
 }
 
 ## scope = character
+### Compares value with the amount of provinces with the given culture in the scoped character's realm.
+alias[trigger:num_culture_realm_provs] = {
+    culture = <culture>
+    value = int
+}
+
+## scope = character
 ### Compares value with the amount of provinces with the given religion in the scoped character's realm.
 alias[trigger:num_religion_realm_provs] = {
     religion = scope[religion]
