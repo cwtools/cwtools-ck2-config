@@ -1929,6 +1929,7 @@ alias[trigger:any_war] = single_alias_right[trigger_clause]
 ## push_scope = war
 ### Scopes to any war the character is participating in as an active member; a liege participating would not count. When used in title scope, checks all wars for that title.
 alias[effect:any_war] = {
+	limit = single_alias_right[trigger_clause]
 	alias_name[effect] = alias_match_left[effect]
 }
 
