@@ -27,7 +27,5 @@ execution_method = {
 
     ## replace_scope = { this = character root = character from = character }
     ### Conditions for the execution method to be eligible for selection. ROOT is the character being executed, FROM is the executor.
-    trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger = single_alias_right[trigger_clause]
 }

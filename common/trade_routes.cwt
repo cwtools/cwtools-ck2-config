@@ -15,9 +15,7 @@ trade_route = {
 
     ## replace_scope = { this = province root = province }
     ### Conditions for a province to show the trade center icon; no game effect. ROOT is the province.
-    trade_post_display_trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trade_post_display_trigger = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = province root = province }
     ### How the trade route modifies the provinces it passes. ROOT is the province.

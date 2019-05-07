@@ -59,9 +59,7 @@ combat_tactic = {
     # According to wiki, the scope for ongoing battles is siege; not actually sure that's true
     ## replace_scope = { this = siege root = siege }
     ### The conditions for the combat tactic to be eligible for selection.
-    trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger = single_alias_right[trigger_clause]
 
     # TODO: Confirm
     ## replace_scope = { this = siege root = siege }

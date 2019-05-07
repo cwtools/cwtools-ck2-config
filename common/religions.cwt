@@ -44,9 +44,7 @@ types = {
 
 ## replace_scope = { this = character root = character from = character }
 ### This trigger defines who can see a character's secret religion. The character with the secret religion is FROM, while the viewer is ROOT.
-secret_religion_visibility_trigger = {
-    alias_name[trigger] = alias_match_left[trigger]
-}
+secret_religion_visibility_trigger = single_alias_right[trigger_clause]
 
 religion_group = {
     # TODO: Find out default (see jewish_group)

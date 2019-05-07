@@ -82,9 +82,7 @@ alias[effect:random_list] = {
     ## cardinality = 2..inf
     int = {
         ## cardinality = 0..1
-        trigger = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        trigger = single_alias_right[trigger_clause]
 
         ## cardinality = 0..inf
         alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
@@ -2955,9 +2953,7 @@ alias[effect:hidden_tooltip] = {
 
 # TODO: Docs?
 alias[effect:conditional_tooltip] = {
-    trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger = single_alias_right[trigger_clause]
     alias_name[trigger] = alias_match_left[trigger]
 }
 

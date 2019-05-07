@@ -96,15 +96,11 @@ law = {
     ## cardinality = 0..1
     ## replace_scope = { this = title root = title }
     ### Conditions for the law to be enabled. ROOT seems to be title.
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = title root = title }
     ### Conditions for the law appear. ROOT seems to be title.
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = title root = title }
     ### Effects when the law is enacted. ROOT seems to be title.
@@ -122,9 +118,7 @@ law = {
     ## cardinality = 0..1
     ## replace_scope = { this = title root = title }
     ### Conditions for the law to be able to be revoked. ROOT seems to be title.
-    revoke_allowed = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    revoke_allowed  = single_alias_right[trigger_clause]
 
     ### Chance for the AI to enact this law if able.
     ai_will_do = {
@@ -156,15 +150,11 @@ succession_law = {
     # TODO: Confirm scopes in this and the following.
     ## replace_scope = { this = title root = title }
     ### Conditions for the law to be enabled. ROOT seems to be title.
-    allow = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = title root = title }
     ### Conditions for the law appear. ROOT seems to be title.
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = title root = title }
     ### Effects when the law is enacted. ROOT seems to be title.
@@ -174,7 +164,5 @@ succession_law = {
 
     ## replace_scope = { this = title root = title }
     ### Conditions for the law to be able to be revoked. ROOT seems to be title.
-    revoke_allowed = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    revoke_allowed = single_alias_right[trigger_clause]
 }

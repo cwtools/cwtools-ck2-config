@@ -255,36 +255,26 @@ casus_belli = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character from = character }
     ### Conditions for the CB to show up in the declare war interaction. ROOT is the attacker, FROM is the defender.
-    can_use = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    can_use = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ## replace_scope = { this = title root = character from = character }
     ### Conditions for the CB to show up in the declare war interaction with a target title. THIS is the target title, ROOT is the attacker, FROM is the defender.
-    can_use_title = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    can_use_title = single_alias_right[trigger_clause]
 
     ## replace_scope = { this = character root = character from = character }
     ### Additional conditions for the CB to be used even if can_use/can_use_title passed and the CB is shown. ROOT is the attacker, FROM is the defender.
-    can_use_gui = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    can_use_gui = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character from = character }
     ### Conditions for the CB to continue being used after the war has started. ROOT is the attacker, FROM is the defender.
-    is_valid = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    is_valid = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ## replace_scope = { this = title root = character from = character }
     ### Conditions for the CB to continue being used after the war has started. THIS is the target title, ROOT is the attacker, FROM is the defender.
-    is_valid_title = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    is_valid_title = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ## replace_scope = { this = title root = character from = character }

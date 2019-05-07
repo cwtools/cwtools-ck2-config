@@ -74,9 +74,7 @@ disease = {
         ## cardinality = 0..1
         ## replace_scope = { this = no_scope root = no_scope }
         ### Global conditions for the outbreak to be possible.
-        can_outbreak = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        can_outbreak = single_alias_right[trigger_clause]
 
         # TODO: Figure out.
         ## cardinality = 0..1

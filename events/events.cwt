@@ -62,9 +62,7 @@ event = {
         desc = localisation
         ## cardinality = 1..inf
         desc = {
-            trigger = {
-		        alias_name[trigger] = alias_match_left[trigger]
-            }
+            trigger = single_alias_right[trigger_clause]
             text = localisation
             ## cardinality = 0..1
             picture = <sprite>
@@ -72,9 +70,7 @@ event = {
         picture = <sprite>
         ## cardinality = 1..inf
         picture = {
-            trigger = {
-		        alias_name[trigger] = alias_match_left[trigger]
-	        }
+            trigger = single_alias_right[trigger_clause]
             picture = <sprite>
         }
     }
@@ -133,9 +129,7 @@ event = {
     alias_name[pre_trigger] = alias_match_left[pre_trigger]
 
     ## cardinality = 0..1
-	trigger = {
-		alias_name[trigger] = alias_match_left[trigger]
-	}
+	trigger = single_alias_right[trigger_clause]
 
 	## cardinality = 0..1
 	immediate = {
@@ -159,18 +153,14 @@ event = {
             name = localisation
             ## cardinality = 1..inf
             name = {
-                trigger = {
-                    alias_name[trigger] = alias_match_left[trigger]
-                }
+                trigger = single_alias_right[trigger_clause]
                 text = localisation
             }
 
 		}
 
 		## cardinality = 0..1
-		trigger = {
-			alias_name[trigger] = alias_match_left[trigger]
-		}
+		trigger = single_alias_right[trigger_clause]
 
 		## cardinality = 0..1
 		alias_name[effect] = alias_match_left[effect]

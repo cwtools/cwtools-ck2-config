@@ -32,9 +32,7 @@ culture_group = {
     ## cardinality = 0..inf
     ## replace_scope = { this = no_scope root = no_scope }
     ### Conditions for the culture group to appear when generating a random world.
-    alternate_start = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    alternate_start = single_alias_right[trigger_clause]
 
     # TODO: Confirm. I don't remember where I found the info about the going down the list, but I distinctly remember finding it.
     ### Graphical cultures the culture group will use. It will go down the list until it finds a graphical culture it can use (might be limited by access to DLC, for example).
@@ -68,9 +66,7 @@ culture_group = {
         ## cardinality = 0..inf
         ## replace_scope = { this = no_scope root = no_scope }
         ### Conditions for the culture to appear when generating a random world, if its culture group is used at all.
-        alternate_start = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        alternate_start = single_alias_right[trigger_clause]
 
         ### The culture's colour on the culture map mode.
         alias_name[color] = alias_match_left[color]

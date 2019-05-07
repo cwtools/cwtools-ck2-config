@@ -24,7 +24,5 @@ government_flavor = {
     # TODO: Confirm
     ## replace_scope = { this = character root = character }
     ### Conditions for the government flavour type to be used. UNCONFIRMED: ROOT seems to be either the liege character or the title.
-    trigger = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger = single_alias_right[trigger_clause]
 }

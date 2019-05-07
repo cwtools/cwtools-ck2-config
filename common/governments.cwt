@@ -197,9 +197,7 @@ government = {
 
     ## replace_scope = { this = character root = character }
     ### Conditions for a character to select this government type. At game start, in case multiple governments are eligible, the first eligible one will be taken. feudal seem to be evaluated first.
-    potential = {
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### If yes, enables merchant republic mechanics: generating family palaces and patricians. It will also unlock the possibility to build coastal trade posts. Defaults to "no".
