@@ -171,11 +171,18 @@ single_alias[decision_ai_will_do_clause] = {
     alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
 }
 
-single_alias[any_clause] = {
+single_alias[any_trigger_clause] = {
+    ## cardinality = 0..1
+    count = int
+
+    alias_name[trigger] = alias_match_left[trigger]
+}
+
+single_alias[any_effect_clause] = {
     ## cardinality = 0..1
 	limit = single_alias_right[trigger_clause]
     ## cardinality = 0..1
     count = int
-    
+
     alias_name[effect] = alias_match_left[effect]
 }
