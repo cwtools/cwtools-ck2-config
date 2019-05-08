@@ -2393,13 +2393,6 @@ alias[trigger:distance] = {
 ### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
 alias[trigger:distance] = {
     where = scope[province]
-    distance = int
-}
-
-# TODO: Doc it up better
-## scope = { character province }
-### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
-alias[trigger:distance] = {
     where = enum[provinces]
     distance = int
 }
