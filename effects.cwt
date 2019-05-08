@@ -703,7 +703,7 @@ alias[effect:disband_event_forces] = bool
 
 ## scope = character
 ### Sets the dynasty of scoped character. May need to been chained with recalc_succession command, if impacting succession. Use dynasty = father_bastard to generate a cadet dynasty, dynasty = mother_bastard to create a bastard dynasty, or dynasty = none to make the character Lowborn. Special values used in character creation (""random"", ""culture"", and ""actually_culture"") do not work here. When setting character dynasty in an event it only works inside of an immediate = { } block.
-alias[effect:dynasty] = TODO
+alias[effect:dynasty] = scope[character]
 
 # TODO: Confirm
 ## scope = character
