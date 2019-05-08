@@ -2126,6 +2126,10 @@ alias[effect:prestige] = int
 alias[effect:religion] = scope[religion]
 
 ## scope = { character province title }
+### Changes the public religion of the scoped entity to match the given character's public religion. See also unsafe_religion.
+alias[effect:religion] = scope[character]
+
+## scope = { character province title }
 ### Changes the public religion of the scoped entity to match the given religion.
 alias[effect:religion] = <religion>
 

@@ -8,6 +8,11 @@ single_alias[general_decisions] = {
     ### Determines how seldom the AI checks whether they can and should do the decision, in months. Defult is 1(every month).
     ai_check_interval = int
 
+    # TODO: Docs?
+    ## cardinality = 0..1
+    ### Will use the icon of the religion stated
+    icon_religion = <religion>
+
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
     
     ## replace_scope = { this = character root = character }
@@ -38,6 +43,11 @@ single_alias[filtered_decisions] = {
     ## cardinality = 0..1
     ### Determines how seldom the AI checks whether they can and should do the decision, in months. Defult is 1(every month).
     ai_check_interval = int
+
+    # TODO: Docs?
+    ## cardinality = 0..1
+    ### Will use the icon of the religion stated
+    icon_religion = <religion>
 
     filter = enum[filter_targets_character]
     ai_target_filter = enum[filter_targets_character]

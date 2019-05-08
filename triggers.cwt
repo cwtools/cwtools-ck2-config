@@ -1611,6 +1611,7 @@ alias[trigger:monthly_prestige] = float
 ### Compares value with the amount of provinces with the given culture in the scoped character's realm.
 alias[trigger:num_culture_realm_provs] = {
     culture = scope[culture]
+    culture = <culture>
     value = int
 }
 
@@ -2304,6 +2305,10 @@ alias[trigger:true_religion] = <religion>
 ### True if the scoped character truly follows a religion of the given religion group. That means secret religion if they have one and public religion if they don't
 alias[trigger:true_religion_group] = <religion_group>
 
+## scope = province
+### True if the scoped province truly follows a religion of the given character. That means secret religion if they have one and public religion if they don't.
+alias[trigger:true_religion_group] = scope[character]
+
 # TODO: Figure out
 ## scope = character
 ###
@@ -2314,7 +2319,7 @@ alias[trigger:unused_manpower] = int
 alias[trigger:uses_decadence] = bool
 
 ## scope = character
-###
+### True if the scoped character is a vassal of the given character.
 alias[trigger:vassal_of] = scope[character]
 
 ## scope = character
@@ -2382,6 +2387,7 @@ alias[trigger:distance] = {
 ### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
 alias[trigger:distance] = {
     where = scope[province]
+    where = enum[provinces]
     distance = int
 }
 
@@ -2424,10 +2430,17 @@ alias[trigger:has_heresies] = bool
 ### Checks if the religion associated with the scoped entity has hard_to_convert = yes.
 alias[trigger:is_hard_to_convert] = bool
 
-# TODO: Allows other religion-associated scopes, expand once errors arise :)
 ## scope = { character province }
 ### True if the religion associated with the scoped entity is a heresy of the religion associated with the given entity.
 alias[trigger:is_heresy_of] = scope[religion]
+
+## scope = { character province }
+### True if the religion associated with the scoped entity is a heresy of the religion associated with the given entity.
+alias[trigger:is_heresy_of] = scope[character]
+
+## scope = { character province }
+### True if the religion associated with the scoped entity is a heresy of the religion associated with the given entity.
+alias[trigger:is_heresy_of] = <religion>
 
 ## scope = { character province }
 ### Checks if the religion associated with the scoped entity is a heresy of another religion.
