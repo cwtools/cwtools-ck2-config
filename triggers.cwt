@@ -1611,12 +1611,6 @@ alias[trigger:monthly_prestige] = float
 ### Compares value with the amount of provinces with the given culture in the scoped character's realm.
 alias[trigger:num_culture_realm_provs] = {
     culture = scope[culture]
-    value = int
-}
-
-## scope = character
-### Compares value with the amount of provinces with the given culture in the scoped character's realm.
-alias[trigger:num_culture_realm_provs] = {
     culture = <culture>
     value = int
 }
