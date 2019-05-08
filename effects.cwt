@@ -2989,5 +2989,12 @@ alias[effect:transfer_scaled_wealth] = {
     value = float
 }
 
-# TODO: Doc
+# TODO: Docs
+## scope = character
+###
 alias[effect:prisoner] = scope[character]
+
+# TODO: Docs
+## scope = Character
+###
+alias[effect:prisoner] = bool

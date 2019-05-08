@@ -216,3 +216,7 @@ alias[decision_pre_trigger:is_in_society] = bool
 ###
 # scope = character
 alias[decision_pre_trigger:ai] = bool
+
+### This decision is shown in the Religion View for each decadent character
+# scope = character
+alias[decision_pre_trigger:hide_in_decisions_list] = bool
