@@ -1595,7 +1595,7 @@ alias[effect:any_quest_target] = single_alias_right[any_effect_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in a character or title's realm
-alias[trigger:any_realm_province] = single_alias_right[trigger_clause]
+alias[trigger:any_realm_province] = single_alias_right[any_trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in a character or title's realm
