@@ -3616,4 +3616,4 @@ alias[trigger:is_virtous] = bool
 # TODO: Doc
 ## scope = character
 ### 
-alias[trigger:in_seculsion] = bool
+alias[trigger:in_seclusion] = bool
