@@ -79,15 +79,6 @@ links = {
         data_source = title
     }
 
-
-
-    capital_scope = {
-        desc = "Scopes to the character's (or title's, if a capital has been defined in landed_titles definitions) capital province"
-        # input_scopes = { character title }
-        input_scopes = character
-        output_scope = province
-    }
-
     # Character scopes ###
     artifact_owner = {
         desc = "Scopes to all the artifact's owner"
