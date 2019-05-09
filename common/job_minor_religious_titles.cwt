@@ -1,16 +1,3 @@
-enums = {
-    enum[is_jobs] = {
-        is_chancellor
-        is_marshal
-        is_treasurer
-        is_spymaster
-        is_spiritual
-    }
-    enum[lift_fows] = {
-        lift_fow
-        lift_neighbor_fow
-    }
-}
 
 types = {
     type[minor_title] = {

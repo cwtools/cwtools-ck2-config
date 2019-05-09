@@ -1,12 +1,5 @@
 # Most of this is actually hardcoded (https://github.com/tboby/cwtools/commit/8d63675a6b8d0acab491fe85726bf61beff914a1) due to how the hierarchy works. The type here is just for validation.
 
-enums = {
-    enum[mercenary_title_types] = {
-        mercenary
-        holy_order
-    }
-}
-
 types = {
     # WISHLIST: Would be nice to have a rule to not show it in breadcrumbs
     type[title_validation_only] = {

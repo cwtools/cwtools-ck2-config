@@ -1,14 +1,3 @@
-enums = {
-    complex_enum[artifact_slots] = {
-        path = "game/common/artifacts"
-        start_from_root = yes
-        name = {
-            slots = {
-                enum_name = int[0..inf]
-            }
-        }
-    }
-}
 
 types = {
     ## type_key_filter <> slots

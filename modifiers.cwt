@@ -537,87 +537,29 @@ alias[modifier:enum[troop_types]] = float
 
 # TODO: All the rest of the unit modifiers properly (check scopes too)
 
-# TODO: Yes, this is super hacky
-enums = {
-    enum[troop_types_max_levy] = {
-        pikemen_max_levy
-        knights_max_levy
-        archers_max_levy
-        light_infantry_max_levy
-        heavy_infantry_max_levy
-        light_cavalry_max_levy
-        heavy_cavalry_max_levy
-        galleys_max_levy
-    }
-}
 ### archers_max_levy, etc.
 # scope = province
 alias[modifier:<special_troop_type>_max_levy] = int
 # scope = province
 alias[modifier:enum[troop_types_max_levy]] = int
-enums = {
-    enum[troop_types_min_levy] = {
-        pikemen_min_levy
-        knights_min_levy
-        archers_min_levy
-        light_infantry_min_levy
-        heavy_infantry_min_levy
-        light_cavalry_min_levy
-        heavy_cavalry_min_levy
-        galleys_min_levy
-    }
-}
+
 ### archers_min_levy, etc.
 # scope = province
 alias[modifier:<special_troop_type>_min_levy] = int
 # scope = province
 alias[modifier:enum[troop_types_min_levy]] = int
-enums = {
-    enum[troop_types_land_only_offensive] = {
-        pikemen_offensive
-        knights_offensive
-        archers_offensive
-        light_infantry_offensive
-        heavy_infantry_offensive
-        light_cavalry_offensive
-        heavy_cavalry_offensive
-    }
-}
+
 ### archers_offensive, etc.
 # scope = unit
 alias[modifier:<special_troop_type>_offensive] = float
 # scope = unit
 alias[modifier:enum[troop_types_land_only_offensive]] = float
 
-enums = {
-    enum[troop_types_land_only_defensive] = {
-        pikemen_defensive
-        knights_defensive
-        archers_defensive
-        light_infantry_defensive
-        heavy_infantry_defensive
-        light_cavalry_defensive
-        heavy_cavalry_defensive
-    }
-}
 ### archers_defensive, etc.
 # scope = unit
 alias[modifier:<special_troop_type>_defensive] = float
 # scope = unit
 alias[modifier:enum[troop_types_land_only_defensive]] = float
-
-enums = {
-    enum[troop_types_land_only_morale] = {
-        pikemen_morale
-        knights_morale
-        archers_morale
-        light_infantry_morale
-        heavy_infantry_morale
-        light_cavalry_morale
-        heavy_cavalry_morale
-    }
-}
-
 
 ### archers_morale, etc.
 # scope = unit

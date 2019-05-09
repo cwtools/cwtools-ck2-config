@@ -1,12 +1,5 @@
 # TODO: probably wrong syntax; either way, figure out what stored_token_trigger means
 
-enums = {
-    enum[council_voting_pattern_types] = {
-        for
-        against
-    }
-}
-
 types = {
     type[council_voting_pattern] = {
         path_strict = yes

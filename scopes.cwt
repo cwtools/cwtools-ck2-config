@@ -602,7 +602,14 @@ alias[effect:any_known_enemy_plotter] = single_alias_right[any_effect_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to any plotter character whose plot the character in scope knows about
-alias[trigger:any_known_plotter] = single_alias_right[trigger_clause]
+alias[trigger:any_known_plotter] = {
+    ## cardinality = 0..1
+	target = scope[character]
+    ## cardinality = 0..1
+    count = int
+
+    alias_name[trigger] = alias_match_left[trigger]
+}
 ## scope = character
 ## push_scope = character
 ### Scopes to any plotter character whose plot the character in scope knows about

@@ -1,11 +1,3 @@
-enums = {
-    enum[bloodline_inheritance_types] = {
-        all_descendants
-        matrilineal
-        patrilineal
-        no_inheritance
-    }
-}
 
 types = {
     type[bloodline] = {
