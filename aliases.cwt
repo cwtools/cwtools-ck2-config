@@ -186,3 +186,12 @@ single_alias[any_effect_clause] = {
 
     alias_name[effect] = alias_match_left[effect]
 }
+
+single_alias[any_plotter_trigger_clause] = {
+    ## cardinality = 0..1
+    target = scope[character]
+    ## cardinality = 0..1
+    count = int
+
+    alias_name[trigger] = alias_match_left[trigger]
+}

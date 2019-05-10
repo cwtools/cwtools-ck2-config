@@ -1,13 +1,3 @@
-enums = {
-    enum[create_character_effects] = {
-        create_character
-        create_random_diplomat
-        create_random_intriguer
-        create_random_priest
-        create_random_soldier
-        create_random_steward
-    }
-}
 
 # TODO: Figure out defaults for a lot of these
 ## scope = { character province }

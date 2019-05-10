@@ -1,22 +1,5 @@
 # I am not sure if that's settings or what actually
 
-enums = {
-    enum[message_type_priorities] = {
-        ### ???
-        0
-        ### Popup.
-        1
-        ### High priority.
-        2
-        ### Low priority.
-        3
-        ### Log.
-        4
-        ### Disabled.
-        5
-    }
-}
-
 types = {
     ## type_key_filter = MESSAGE_INTEREST
     type[message_interest] = {

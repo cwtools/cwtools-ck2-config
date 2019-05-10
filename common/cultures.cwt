@@ -1,9 +1,3 @@
-enums = {
-    enum[grammar_transforms] = {
-        french
-        spanish
-    }
-}
 
 types = {
     type[culture_group] = {

@@ -1,21 +1,3 @@
-enums = {
-    enum[int_troop_types] = {
-        ### Light infantry
-        0
-        ### Heavy infantry
-        1
-        ### Pikemen
-        2
-        ### Light cavalry
-        3
-        ### Heavy cavalry
-        4
-        ### Archers
-        5
-        ### Special units
-        6
-    }
-}
 
 types = {
     type[retinue_subunit] = {

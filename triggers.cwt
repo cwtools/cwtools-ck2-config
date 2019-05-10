@@ -3612,3 +3612,8 @@ alias[trigger:is_wicked] = bool
 ## scope = character
 ### 
 alias[trigger:is_virtous] = bool
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:in_seclusion] = bool

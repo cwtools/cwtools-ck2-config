@@ -1,11 +1,3 @@
-enums = {
-    enum[create_title_effects_temporary_adventurer] = {
-        ### Destroyed automatically when at peace. The holder and the courtiers cannot marry or accept most other diplo-actions.
-        temporary
-        ### Adventure titles work just as temporary titles but do not get destroyed automatically when the holder is in peace. Instead, they are destroyed whenever the holder gains another title or when the holder dies.
-        adventurer
-    }
-}
 
 # TODO: Docs, figure cardinality out
 ## scope = title

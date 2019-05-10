@@ -2,21 +2,6 @@
 # Also TODO: Elaborate on descriptions of some of those commands
 # Also also - these are some wonky specs (some give target to scope, some scope to target), so it will likely need splitting into two enums, but that's in the mopup phase. Weird, is what I'm sayin'.
 
-enums = {
-    enum[receive_title_effects] = {
-        ### Also grants any vassal owning or below current title.
-        grant_title
-        ### No claim for the giver and no opinion bonus from the receiver.
-        grant_title_no_opinion
-        ### UNCONFIRMED Gives strong claim to character being usurped?
-        usurp_title
-        usurp_title_only
-        usurp_title_plus_barony_if_unlanded
-        usurp_title_plus_barony_if_unlanded_and_vassals
-        usurp_title_plus_barony_if_unlanded_and_vassals_no_adj
-    }
-}
-
 # TODO: Elaborate
 ## scope = { character title }
 alias[effect:enum[receive_title_effects]] = scope[title]

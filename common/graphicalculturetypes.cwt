@@ -1,11 +1,3 @@
-enums = {
-    enum[skin_tones] = {
-        0 # Light
-        1 # Tan
-        2 # Dark
-        3 # Black
-    }
-}
 
 types = {
     ## type_key_filter <> { tribalgfx nomadgfx }

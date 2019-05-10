@@ -602,7 +602,14 @@ alias[effect:any_known_enemy_plotter] = single_alias_right[any_effect_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to any plotter character whose plot the character in scope knows about
-alias[trigger:any_known_plotter] = single_alias_right[trigger_clause]
+alias[trigger:any_known_plotter] = {
+    ## cardinality = 0..1
+	target = scope[character]
+    ## cardinality = 0..1
+    count = int
+
+    alias_name[trigger] = alias_match_left[trigger]
+}
 ## scope = character
 ## push_scope = character
 ### Scopes to any plotter character whose plot the character in scope knows about
@@ -705,7 +712,16 @@ alias[trigger:any_plotter] = single_alias_right[trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all plotters (anywhere?). Vanilla usage uses 'target = ROOT' on the first line of the scope to limit the search. (?)any_plotter = {
-alias[effect:any_plotter] = single_alias_right[any_effect_clause]
+alias[effect:any_plotter] = {
+	## cardinality = 0..1
+	target = scope[character]
+    ## cardinality = 0..1
+	limit = single_alias_right[trigger_clause]
+    ## cardinality = 0..1
+    count = int
+
+    alias_name[effect] = alias_match_left[effect]
+}
 
 ## scope = character
 ## push_scope = character
@@ -1595,7 +1611,7 @@ alias[effect:any_quest_target] = single_alias_right[any_effect_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in a character or title's realm
-alias[trigger:any_realm_province] = single_alias_right[trigger_clause]
+alias[trigger:any_realm_province] = single_alias_right[any_trigger_clause]
 ## scope = character
 ## push_scope = province
 ### Scopes to all provinces in a character or title's realm
