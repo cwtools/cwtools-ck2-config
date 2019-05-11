@@ -566,3 +566,11 @@ alias[modifier:enum[troop_types_land_only_defensive]] = float
 alias[modifier:<special_troop_type>_morale] = float
 # scope = unit
 alias[modifier:enum[troop_types_land_only_morale]] = float
+
+# TODO: Docs
+# scope = character
+alias[modifier:court_size_modifier] = int
+
+# TODO: Docs
+# scope = character
+alias[modifier:court_size_maintenance_cost_modifier] = float

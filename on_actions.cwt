@@ -500,6 +500,8 @@ types = {
         ## type_key_filter = on_host_change
         ### Fires when a change of host has been detected. ROOT is the character that got a new host, FROM is the previous host (undefined if newly created), FROMFROM is the new host.
         subtype[on_host_change] = { }
+        # TODO: Docs
+        subtype[on_post_birth_stillbirth] = { }
     }
 }
 on_action = {

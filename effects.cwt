@@ -2998,3 +2998,13 @@ alias[effect:prisoner] = scope[character]
 ## scope = Character
 ###
 alias[effect:prisoner] = bool
+
+# TODO: Docs and check scope
+## scope = wonder
+###
+alias[effect:set_wonder_damaged] = bool
+
+# TODO: Docs and check scope
+## scope = province
+###
+alias[effect:add_wonder] = <wonder>
