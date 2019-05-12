@@ -26,6 +26,7 @@ single_alias[general_decisions] = {
     ## replace_scope = { this = character root = character }
     effect = single_alias_right[effect_clause]
 
+    ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
     ### Commands executed when taking the decision
     revoke_allowed = single_alias_right[trigger_clause]
