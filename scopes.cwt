@@ -919,7 +919,7 @@ alias[effect:any_unknown_enemy_plotter] = single_alias_right[any_effect_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all direct vassals of a character or title. Does not include courtiers. To scope to all vassals (direct or not) consider using any_realm_character.
-alias[trigger:any_vassal] = single_alias_right[trigger_clause]
+alias[trigger:any_vassal] = single_alias_right[any_trigger_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all direct vassals of a character or title. Does not include courtiers. To scope to all vassals (direct or not) consider using any_realm_character.
