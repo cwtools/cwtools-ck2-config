@@ -38,13 +38,58 @@ types = {
         }
     }
 
+    type[gender_law] = {
+        path_strict = yes
+        path = "game/common/laws"
+
+        # Let's keep it at least like that for testing.
+        skip_root_key = gender_laws
+
+        # Used mainly for obligations.
+        subtype[sprite] = {
+            slider_sprite = scalar
+        }
+
+        localisation = {
+            name = "$"
+            description = "$_desc"
+
+            # Obligations use sprites
+            subtype[!sprite] = {
+                button = "$_option"
+            }
+        }
+    }
+
+    type[je_jure_law] = {
+        path_strict = yes
+        path = "game/common/laws"
+
+        # Let's keep it at least like that for testing.
+        skip_root_key = de_jure_laws
+
+        # Used mainly for obligations.
+        subtype[sprite] = {
+            slider_sprite = scalar
+        }
+
+        localisation = {
+            name = "$"
+            description = "$_desc"
+
+            # Obligations use sprites
+            subtype[!sprite] = {
+                button = "$_option"
+            }
+        }
+    }
+
     type[succession_law] = {
         path_strict = yes
         path = "game/common/laws"
 
         # Let's keep it at least like that for testing.
         skip_root_key = succession_laws
-        #skip_root_key = { gender_laws succession_laws }
 
         localisation = {
             name = "$"
@@ -74,4 +119,6 @@ law_group = {
 }
 
 law = single_alias_right[law_clause]
+gender_law = single_alias_right[law_clause]
+je_jure_law = single_alias_right[law_clause]
 succession_law = single_alias_right[succession_law_clause]
