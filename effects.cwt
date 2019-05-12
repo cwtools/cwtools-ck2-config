@@ -539,6 +539,7 @@ alias[effect:character_event] = {
 ## scope = character
 ### Fires an event for the scoped character.
 alias[effect:long_character_event] = {
+    id = <event.character>
     id = <event.long_character>
 
     ## cardinality = 0..1
