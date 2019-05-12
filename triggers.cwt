@@ -2016,6 +2016,13 @@ alias[trigger:relative_realm_size] = {
     value = float
 }
 
+## scope = character
+### Compares size with the scoped character's realm size divided by who's realm size.
+alias[trigger:relative_realm_size] = {
+    who = scope[character]
+    size = float
+}
+
 # TODO: In levies or what
 ## scope = character
 ### Compares power to the scoped character's power divided by who's power.
