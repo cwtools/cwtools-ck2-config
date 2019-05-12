@@ -3418,6 +3418,11 @@ alias[trigger:is_valid_viking_invasion_target] = scope[character]
 ### Checks if the scoped title is a viceroyalty.
 alias[trigger:is_vice_royalty] = bool
 
+# TODO: Docs to confirm
+## scope = character
+### Checks if the scoped character's primary title is a viceroyalty.
+alias[trigger:is_vice_royalty] = bool
+
 # TODO: Better docs
 ## scope = title
 ### Compares to the amount of income the scoped mercenary title pays to its creator.
