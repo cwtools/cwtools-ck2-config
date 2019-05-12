@@ -80,7 +80,14 @@ single_alias[filtered_decisions] = {
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[decision_ai_will_do_clause]
 
-    # TODO: ai_accceptance
+    ai_acceptance = {
+        factor = int
+        yes_threshold = int
+        show_maybe_for_human = bool
+
+        ##cardinality = 0..inf
+        alias_name[additive_modifier] = alias_match_left[additive_modifier]
+    }
 }
 
 single_alias[filtered_decisions_settlements] = {
