@@ -50,6 +50,11 @@ single_alias[filtered_decisions] = {
     ### Will use the icon of the religion stated
     icon_religion = <religion>
 
+    # TODO: Docs?
+    ## cardinality = 0..1
+    ### Will use the icon of the gfx stated
+    diplomacy_icon = <sprite>
+
     ## cardinality = 0..1
     filter = enum[filter_targets_character]
     ai_target_filter = enum[filter_targets_character]
