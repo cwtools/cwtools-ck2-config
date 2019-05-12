@@ -2296,10 +2296,13 @@ alias[trigger:trait] = <trait>
 ###
 alias[trigger:treasury] = float
 
-# TODO: scope[religion]?
 ## scope = character
 ### True if the scoped character truly follows the given religion. That means secret religion if they have one and public religion if they don't
 alias[trigger:true_religion] = <religion>
+
+## scope = character
+### True if the scoped character truly follows the given character. That means secret religion if they have one and public religion if they don't
+alias[trigger:true_religion] = scope[character]
 
 ## scope = character
 ### True if the scoped character truly follows a religion of the given religion group. That means secret religion if they have one and public religion if they don't
