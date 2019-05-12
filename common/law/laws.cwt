@@ -1,0 +1,161 @@
+
+types = {
+    type[law_group] = {
+        path_strict = yes
+        path = "game/common/laws"
+        skip_root_key = law_groups
+
+        subtype[obligations] = {
+            law_type = obligations
+        }
+
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+
+    type[law] = {
+        path_strict = yes
+        path = "game/common/laws"
+
+        # Let's keep it at least like that for testing.
+        skip_root_key = laws
+        #skip_root_key = { laws de_jure_laws }
+
+        # Used mainly for obligations.
+        subtype[sprite] = {
+            slider_sprite = scalar
+        }
+
+        localisation = {
+            name = "$"
+            description = "$_desc"
+
+            # Obligations use sprites
+            subtype[!sprite] = {
+                button = "$_option"
+            }
+        }
+    }
+
+    type[succession_law] = {
+        path_strict = yes
+        path = "game/common/laws"
+
+        # Let's keep it at least like that for testing.
+        skip_root_key = succession_laws
+        #skip_root_key = { gender_laws succession_laws }
+
+        localisation = {
+            name = "$"
+            description = "$_desc"
+        }
+    }
+}
+
+law_group = {
+    ### Which tab this law belongs in.
+    law_type = enum[law_types]
+
+    ## cardinality = 0..1
+    ### If yes, councilors can initiate voting on this type of law. Defaults to "no".
+    allowed_for_councillors = bool
+
+    subtype[sprite] = {
+        ### Text shown on the left side of the slider.
+        left_value = localisation
+
+        ### Text shown on the right side of the slider.
+        right_value = localisation
+
+        ### The GFX resource used for positions on the slider.
+        slider_sprite = <sprite>
+    }
+}
+
+law = {
+    # TODO: Figure out.
+    ## cardinality = 0..1
+    ### UNKNOWN. Default no.
+    show_as_title = bool
+    group = <law_group>
+
+    ## cardinality = 0..1
+    ### If yes, this law will be selected by default on game start. Defaults to "no".
+    default = bool
+
+    # TODO: Confirm scopes in this and the following.
+    ## cardinality = 0..1
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law to be enabled. ROOT seems to be title.
+    allow = single_alias_right[trigger_clause]
+
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law appear. ROOT seems to be title.
+    potential = single_alias_right[trigger_clause]
+
+    ## replace_scope = { this = title root = title }
+    ### Effects when the law is enacted. ROOT seems to be title.
+    effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## replace_scope = { this = title root = title }
+    ## cardinality = 0..1
+    ### Effects when the law is enacted. Takes place before effect = {} and is only triggered when the law is passed in-game (not via history or event). ROOT seems to be title.
+    pass_effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## cardinality = 0..1
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law to be able to be revoked. ROOT seems to be title.
+    revoke_allowed  = single_alias_right[trigger_clause]
+
+    ### Chance for the AI to enact this law if able.
+    ai_will_do = {
+        ### Base chance. 1.0 is 100%.
+        factor = float
+
+        ## replace_scope = { this = title root = title }
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+    }
+
+    ### Chance for the AI to revoke this law if able.
+    ai_will_revoke = {
+        ### Base chance. 1.0 is 100%.
+        factor = float
+
+        ## replace_scope = { this = title root = title }
+        alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+    }
+
+    ### Effects of the law.
+    alias_name[modifier] = alias_match_left[modifier]
+}
+
+succession_law = {
+    ## cardinality = 0..inf
+    ## replace_scope = { this = title root = title }
+    alias_name[modifier] = alias_match_left[modifier]
+
+    # TODO: Confirm scopes in this and the following.
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law to be enabled. ROOT seems to be title.
+    allow = single_alias_right[trigger_clause]
+
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law appear. ROOT seems to be title.
+    potential = single_alias_right[trigger_clause]
+
+    ## replace_scope = { this = title root = title }
+    ### Effects when the law is enacted. ROOT seems to be title.
+    effect = {
+        alias_name[effect] = alias_match_left[effect]
+    }
+
+    ## replace_scope = { this = title root = title }
+    ### Conditions for the law to be able to be revoked. ROOT seems to be title.
+    revoke_allowed = single_alias_right[trigger_clause]
+}
