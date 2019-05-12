@@ -49,6 +49,7 @@ single_alias[filtered_decisions] = {
     ### Will use the icon of the religion stated
     icon_religion = <religion>
 
+    ## cardinality = 0..1
     filter = enum[filter_targets_character]
     ai_target_filter = enum[filter_targets_character]
 

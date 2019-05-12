@@ -391,10 +391,11 @@ alias[trigger:any_artifact_owner] = single_alias_right[trigger_clause]
 ### Scopes to anyone who has ever owned the artifact, including the current owner. Does not work on artifacts that have the history = no parameter.
 alias[effect:any_artifact_owner] = single_alias_right[any_effect_clause]
 
-## scope = character
-## push_scope = character
+## scope = { character war }
+## push_scope = character 
 ### Scopes to all attackers in a war
 alias[trigger:any_attacker] = single_alias_right[trigger_clause]
+
 ## scope = { character war }
 ## push_scope = character
 ### Scopes to all attackers in a war
@@ -1867,7 +1868,6 @@ alias[trigger:any_bloodline] = single_alias_right[trigger_clause]
 ### Scopes to any created bloodline
 alias[effect:any_bloodline] = single_alias_right[any_effect_clause]
 
-
 ## push_scope = bloodline
 ## scope = character
 ### Scopes to any bloodline owned by the character
@@ -1901,3 +1901,8 @@ alias[effect:random_owned_bloodline] = {
 	}
 	alias_name[effect] = alias_match_left[effect]
 }
+
+## push_scope = character
+## scope = character
+### 
+alias[trigger:faction_claimant] = single_alias_right[trigger_clause]
