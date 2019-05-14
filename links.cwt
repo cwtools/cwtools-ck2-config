@@ -696,5 +696,10 @@ links = {
         # input_scopes = character
         outut_scope = bloodline
     }
+    
+    # Faction ###
+    faction_claimant = {
+        input_scopes = character
+        outut_scope = title
+    }
 }
-
