@@ -2016,6 +2016,13 @@ alias[trigger:relative_realm_size] = {
     value = float
 }
 
+## scope = character
+### Compares size with the scoped character's realm size divided by who's realm size.
+alias[trigger:relative_realm_size] = {
+    who = scope[character]
+    size = float
+}
+
 # TODO: In levies or what
 ## scope = character
 ### Compares power to the scoped character's power divided by who's power.
@@ -2296,10 +2303,13 @@ alias[trigger:trait] = <trait>
 ###
 alias[trigger:treasury] = float
 
-# TODO: scope[religion]?
 ## scope = character
 ### True if the scoped character truly follows the given religion. That means secret religion if they have one and public religion if they don't
 alias[trigger:true_religion] = <religion>
+
+## scope = character
+### True if the scoped character truly follows the given character. That means secret religion if they have one and public religion if they don't
+alias[trigger:true_religion] = scope[character]
 
 ## scope = character
 ### True if the scoped character truly follows a religion of the given religion group. That means secret religion if they have one and public religion if they don't
@@ -3406,6 +3416,11 @@ alias[trigger:is_valid_viking_invasion_target] = scope[character]
 
 ## scope = title
 ### Checks if the scoped title is a viceroyalty.
+alias[trigger:is_vice_royalty] = bool
+
+# TODO: Docs to confirm
+## scope = character
+### Checks if the scoped character's primary title is a viceroyalty.
 alias[trigger:is_vice_royalty] = bool
 
 # TODO: Better docs

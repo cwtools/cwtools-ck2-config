@@ -26,6 +26,7 @@ single_alias[general_decisions] = {
     ## replace_scope = { this = character root = character }
     effect = single_alias_right[effect_clause]
 
+    ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
     ### Commands executed when taking the decision
     revoke_allowed = single_alias_right[trigger_clause]
@@ -49,6 +50,12 @@ single_alias[filtered_decisions] = {
     ### Will use the icon of the religion stated
     icon_religion = <religion>
 
+    # TODO: Docs?
+    ## cardinality = 0..1
+    ### Will use the icon of the gfx stated
+    diplomacy_icon = <sprite>
+
+    ## cardinality = 0..1
     filter = enum[filter_targets_character]
     ai_target_filter = enum[filter_targets_character]
 
@@ -79,7 +86,17 @@ single_alias[filtered_decisions] = {
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[decision_ai_will_do_clause]
 
-    # TODO: ai_accceptance
+    # TODO: Docs Defaults and Ranges
+    ## cardinality = 0..1
+    ## replace_scope = { this = character root = character from = character }
+    ai_acceptance = {
+        factor = int
+        yes_threshold = int
+        show_maybe_for_human = bool
+
+        ##cardinality = 0..inf
+        alias_name[additive_modifier_with_loc_key] = alias_match_left[additive_modifier_with_loc_key]
+    }
 }
 
 single_alias[filtered_decisions_settlements] = {

@@ -535,6 +535,25 @@ alias[effect:character_event] = {
     tooltip = localisation
 }
 
+# TODO: See if months works
+## scope = character
+### Fires an event for the scoped character.
+alias[effect:long_character_event] = {
+    id = <event.character>
+    id = <event.long_character>
+
+    ## cardinality = 0..1
+    enum[duration_dy] = int
+
+    ## cardinality = 0..1
+    ### Number of days to add randomly for the event occurrence date, closed-ended (days to days+random).
+    random = int
+
+    ## cardinality = 0..1
+    ### Tooltip for the effect. If not specified, uses the DEFAULT_SENDEVENT_EVENTOPTION_TOOLTIP key ("Character receives an event").
+    tooltip = localisation
+}
+
 # TODO: Elaborate.
 ## scope = character
 ### Records a chronicle entry.
