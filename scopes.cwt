@@ -1901,8 +1901,3 @@ alias[effect:random_owned_bloodline] = {
 	}
 	alias_name[effect] = alias_match_left[effect]
 }
-
-## push_scope = character
-## scope = character
-### 
-alias[trigger:faction_claimant] = single_alias_right[trigger_clause]
