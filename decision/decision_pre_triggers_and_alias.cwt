@@ -86,6 +86,7 @@ single_alias[filtered_decisions] = {
     ### Factors for an AI character to take the decision (1 = 100% chance)
     ai_will_do = single_alias_right[decision_ai_will_do_clause]
 
+    # TODO: Docs Defaults and Ranges
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character from = character }
     ai_acceptance = {
