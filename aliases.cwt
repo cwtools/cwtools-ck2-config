@@ -195,3 +195,11 @@ single_alias[any_plotter_trigger_clause] = {
 
     alias_name[trigger] = alias_match_left[trigger]
 }
+
+single_alias[law_ai_chance] = {
+    ### Base chance. 1.0 is 100%.
+    factor = float
+
+    ## replace_scope = { this = title root = title }
+    alias_name[multiplicative_modifier] = alias_match_left[multiplicative_modifier]
+}
