@@ -13,6 +13,11 @@ alias[trigger:NOR] = single_alias_right[trigger_clause]
 alias[trigger:NAND] = single_alias_right[trigger_clause]
 alias[trigger:AND] = single_alias_right[trigger_clause]
 alias[trigger:OR] = single_alias_right[trigger_clause]
+alias[trigger:calc_true_if] = {
+	amount = int
+	## cardinality = 1..inf
+    alias_name[trigger] = alias_match_left[trigger]
+}
 
 alias[effect:NOT] = {
 	## cardinality = 1..1
