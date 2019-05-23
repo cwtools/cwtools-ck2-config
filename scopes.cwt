@@ -2,7 +2,7 @@
 
 #CWTools magic scope
 alias[trigger:scope_field] = single_alias_right[trigger_clause]
-alias[effect:scope_field] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:scope_field] = single_alias_right[effect_clause]
 
 alias[trigger:NOT] = {
 	## cardinality = 1..1
@@ -19,10 +19,10 @@ alias[effect:NOT] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-alias[effect:NOR] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:NAND] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:AND] = { alias_name[effect] = alias_match_left[effect] }
-alias[effect:OR] = { alias_name[effect] = alias_match_left[effect] }
+alias[effect:NOR] = single_alias_right[effect_clause]
+alias[effect:NAND] = single_alias_right[effect_clause]
+alias[effect:AND] = single_alias_right[effect_clause]
+alias[effect:OR] = single_alias_right[effect_clause]
 
 ## scope = any
 alias[effect:if] = {
@@ -38,9 +38,7 @@ alias[effect:else_if] = {
 }
 
 ## scope = any
-alias[effect:else] = {
-	alias_name[effect] = alias_match_left[effect]
-}
+alias[effect:else] = single_alias_right[effect_clause]
 
 # Absolute reference scopes
 
@@ -52,9 +50,7 @@ alias[trigger:<society>] = single_alias_right[trigger_clause]
 ## scope = any
 ## push_scope = society
 ### Scopes to a society by absolute reference.
-alias[effect:<society>] = {
-    alias_name[effect] = alias_match_left[effect]
-}
+alias[effect:<society>] = single_alias_right[effect_clause]
 
 ## scope = any
 ## push_scope = offmap
@@ -64,9 +60,7 @@ alias[trigger:<offmap>] = single_alias_right[trigger_clause]
 ## scope = any
 ## push_scope = offmap
 ### Scopes to an offmap power by absolute reference.
-alias[effect:<offmap>] = {
-    alias_name[effect] = alias_match_left[effect]
-}
+alias[effect:<offmap>] = single_alias_right[effect_clause]
 
 ## scope = any
 ## push_scope = title
