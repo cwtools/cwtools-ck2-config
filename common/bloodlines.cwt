@@ -14,6 +14,15 @@ bloodline = {
     ## cardinality = 0..inf
     ### Modifiers the bloodline applies to everyone that has it.
     alias_name[modifier] = alias_match_left[modifier]
+    
+    # TODO: Docs
+    ## cardinality = 0..inf
+    ### Optional. Defines command modifiers that should affect all members of the bloodline.
+    <dynamic_modifier> = int
+
+    ## cardinality = 0..inf
+    ### Modifiers the bloodline applies to everyone that has it.
+    alias_name[bloodline_modifier] = alias_match_left[bloodline_modifier]
 
     ## cardinality = 0..1
     ### Command modifiers the bloodline applies to everyone that has it.
