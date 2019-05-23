@@ -3632,3 +3632,28 @@ alias[trigger:is_virtous] = bool
 ## scope = character
 ### 
 alias[trigger:in_seclusion] = bool
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:has_full_court] = bool
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:num_of_courtiers] = int
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:free_court_slots] = int
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:num_of_courtiers] = int
+
+# TODO: Doc
+## scope = character
+### 
+alias[trigger:is_important_character_to] = bool
