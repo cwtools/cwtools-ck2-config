@@ -3507,7 +3507,7 @@ alias[trigger:using_cb] = <casus_belli>
 alias[trigger:war_participation] = float
 
 # TODO: Docs
-## scope = war
+## scope = { war character }
 ###
 alias[trigger:war_score] = float
 
