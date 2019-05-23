@@ -527,10 +527,10 @@ alias[modifier:<culture_group>_opinion] = float
 # TODO: defined modifiers?
 alias[modifier:<trait>_opinion] = float
 
-### Adds (or removes in case of a negative number) a specified number of the given unit to the holding's levy, indirectly also increasing the holding's garrison size by the same amount. Flat ✓ ✓
+### Adds (or removes in case of a negative number) a specified number of the given unit to the holding's levy, indirectly also increasing the holding's garrison size by the same amount. Flat âœ“ âœ“
 # scope = province
 alias[modifier:<special_troop_type>] = float
-### Adds (or removes in case of a negative number) a specified number of the given unit to the holding's levy, indirectly also increasing the holding's garrison size by the same amount. Flat ✓ ✓
+### Adds (or removes in case of a negative number) a specified number of the given unit to the holding's levy, indirectly also increasing the holding's garrison size by the same amount. Flat âœ“ âœ“
 # scope = province
 alias[modifier:enum[troop_types]] = float
 
