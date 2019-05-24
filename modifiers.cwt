@@ -451,10 +451,6 @@ modifiers = {
     # TODO: Character?
     commander_limit = character
 
-    # TODO: fix
-    ### Growth rate of cultural/military/economy technology. Cumulative with tech_growth_modifier.
-    tech_growth_modifier_<tech_type> = character
-
     ### Generation of technology points in province
     economy_techpoints = province
     military_techpoints = province
@@ -565,6 +561,7 @@ alias[modifier:<special_troop_type>_morale] = float
 # scope = unit
 alias[modifier:enum[troop_types_land_only_morale]] = float
 
+# TODO: use enum[holding_types]_tax_modifier instead?
 ### Tax gained from castles/cities/temples in demesne
 # scope = character
 alias[modifier:<holding>_tax_modifier] = float
@@ -572,3 +569,6 @@ alias[modifier:<holding>_tax_modifier] = float
 ### Tax gained from vassals of the government type that normally corresponds to that holding
 # scope = character
 alias[modifier:<holding>_vassal_tax_modifier] = float
+
+### Growth rate of cultural/military/economy technology. Cumulative with tech_growth_modifier.
+alias[tech_growth_modifier_<tech_type>] = float
