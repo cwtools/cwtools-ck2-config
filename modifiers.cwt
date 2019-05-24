@@ -571,4 +571,4 @@ alias[modifier:<holding>_tax_modifier] = float
 alias[modifier:<holding>_vassal_tax_modifier] = float
 
 ### Growth rate of cultural/military/economy technology. Cumulative with tech_growth_modifier.
-alias[tech_growth_modifier_<tech_type>] = float
+alias[modifier:enum[tech_growth_modifiers]] = float
