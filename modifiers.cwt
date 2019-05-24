@@ -117,12 +117,6 @@ modifiers = {
     ### Tax gained from every holding in a province
     local_tax_modifier = province
 
-    ### Tax gained from castles/cities/temples in demesne
-    <holding_type>_tax_modifier = wealth
-
-    ### Tax gained from vassals of the government type that normally corresponds to that holding
-    <holding_type>_vassal_tax_modifier = wealth
-
     nomad_tax_modifier = province
     ### Prestige of a character earned each month
     monthly_character_prestige = character
@@ -570,3 +564,11 @@ alias[modifier:enum[troop_types_land_only_defensive]] = float
 alias[modifier:<special_troop_type>_morale] = float
 # scope = unit
 alias[modifier:enum[troop_types_land_only_morale]] = float
+
+### Tax gained from castles/cities/temples in demesne
+# scope = character
+alias[modifier:<holding>_tax_modifier] = float
+
+### Tax gained from vassals of the government type that normally corresponds to that holding
+# scope = character
+alias[modifier:<holding>_vassal_tax_modifier] = float
