@@ -3032,3 +3032,8 @@ alias[effect:add_wonder] = <wonder>
 ## scope = province
 ###
 alias[effect:destroy_wonder] = bool
+
+# TODO: Docs and check scope
+## scope = province
+###
+alias[effect:set_wonder_model] = <model>
