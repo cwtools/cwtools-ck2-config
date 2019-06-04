@@ -928,4 +928,10 @@ enums = {
         usurp_title_plus_barony_if_unlanded_and_vassals
         usurp_title_plus_barony_if_unlanded_and_vassals_no_adj
     }
+
+    enum[tech_growth_modifiers] = {
+        tech_growth_modifier_military
+        tech_growth_modifier_economy
+        tech_growth_modifier_culture
+    }
 }

@@ -16,6 +16,11 @@ nickname = {
     ### Conditions for the character to be eligible for the nickname.
     allow = single_alias_right[trigger_clause]
 
+    # TODO: Confirm
+    ## cardinality = 0..1
+    ### If yes, nickname is displayed before the first name of the character. Defaults to false.
+    is_prefix = bool
+
     ## cardinality = 0..1
     ### Yearly chance to gain the nickname if the character doesn't have a nickname yet.
     chance = {

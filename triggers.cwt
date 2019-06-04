@@ -614,6 +614,10 @@ alias[trigger:gold] = int
 alias[trigger:government] = <government>
 
 ## scope = character
+### True if the scoped character's government matches the given character's government. For checking government groups, see is_feudal, is_republic, etc.
+alias[trigger:government] = scope[character]
+
+## scope = character
 ### True if the scoped character's graphical culture matches the given graphical culture. This is different from the effect set_graphical_culture which takes a culture, not a culturegfx.
 alias[trigger:graphical_culture] = <graphical_culture>
 
@@ -3507,7 +3511,7 @@ alias[trigger:using_cb] = <casus_belli>
 alias[trigger:war_participation] = float
 
 # TODO: Docs
-## scope = war
+## scope = { war character }
 ###
 alias[trigger:war_score] = float
 
