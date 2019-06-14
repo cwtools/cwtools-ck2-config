@@ -3661,3 +3661,21 @@ alias[trigger:num_of_courtiers] = int
 ## scope = character
 ### 
 alias[trigger:is_important_character_to] = bool
+
+## scope = any
+alias[trigger:trigger_if] = {
+	limit = single_alias_right[trigger_clause]
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+alias[trigger:trigger_else_if] = {
+	limit = single_alias_right[trigger_clause]
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+alias[trigger:trigger_else] = {
+	limit = single_alias_right[trigger_clause]
+	alias_name[trigger] = alias_match_left[trigger]
+}
