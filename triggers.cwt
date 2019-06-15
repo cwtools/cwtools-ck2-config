@@ -443,6 +443,13 @@ alias[trigger:combat_rating_diff] = {
     value = int
 }
 
+## scope = character
+### Compares value with the absolute value of the difference in the combat ratings of the scoped and the given characters.
+alias[trigger:combat_rating_diff] = {
+    who = scope[character]
+    value = int
+}
+
 # TODO: Wiki says baronies but I think it's all titles (considering duchy titles are also used in vanilla on RHS); confirm
 ## scope = character
 ### True if the scoped character controls (personally or via vassals) all of the titles under the given title.
