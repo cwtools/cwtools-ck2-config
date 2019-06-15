@@ -175,7 +175,7 @@ single_alias[filtered_decisions_titles] = {
     ### Conditions on the decision taker for the decision to appear. Not taken into account when filter = self, use potential instead.
     from_potential = single_alias_right[trigger_clause]
 
-    ## replace_scope = { this = character root = title from = character }
+    ## replace_scope = { this = title root = title from = character }
     ### Conditions for the decision to appear
     potential = single_alias_right[trigger_clause]
 
