@@ -381,6 +381,10 @@ alias[trigger:can_hold_title] = <minor_title.job>
 alias[trigger:can_join_society] = scope[society]
 
 ## scope = character
+### True if the scoped character can join the given society.
+alias[trigger:can_join_society] = <society>
+
+## scope = character
 ### Checks if the scoped character doesn't have any traits with cannot_marry = yes, rule a theocracy of a religion that prohibits priest marriages, or belong to a holy order.
 alias[trigger:can_marry] = bool
 
