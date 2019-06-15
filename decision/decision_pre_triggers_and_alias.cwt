@@ -163,7 +163,9 @@ single_alias[filtered_decisions_titles] = {
     ### Determines how seldom the AI checks whether they can and should do the decision, in months. Defult is 1(every month).
     ai_check_interval = int
 
+    ## cardinality = 0..1
     filter = enum[filter_targets_titles]
+    ## cardinality = 0..1
     ai_target_filter = enum[filter_targets_titles]
 
     alias_name[decision_pre_trigger] = alias_match_left[decision_pre_trigger]
@@ -185,6 +187,7 @@ single_alias[filtered_decisions_titles] = {
     ## replace_scope = { this = character root = title from = character }
     effect = single_alias_right[effect_clause]
 
+    ## cardinality = 0..1
     ## replace_scope = { this = character root = title from = character }
     ### Commands executed when taking the decision
     revoke_allowed = single_alias_right[trigger_clause]
