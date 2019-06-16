@@ -3690,3 +3690,11 @@ alias[trigger:trigger_else] = {
 	limit = single_alias_right[trigger_clause]
 	alias_name[trigger] = alias_match_left[trigger]
 }
+
+# TODO: Docs
+## scope = province
+alias[trigger:has_wonder] = bool
+
+# TODO: Docs
+## scope = province
+alias[trigger:has_wonder] = <wonder>
