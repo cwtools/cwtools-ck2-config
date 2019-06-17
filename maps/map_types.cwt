@@ -8,6 +8,13 @@ types = {
         }
     }
 
+    type[colourmap] = {
+        name_from_file = yes
+        type_per_file = yes
+        path = "game/map"
+        path_file = "colormap.txt"
+    } 
+
     ## type_key_filter = { mild_winter normal_winter severe_winter }
     type[climates] = {
         path = "game/map"
@@ -22,6 +29,11 @@ types = {
     type[geographical_regions] = {
         path = "game/map"
         path_file = "geographical_region.txt"
+    }
+
+    type[islands] = {
+        path = "game/map"
+        path_file = "island_regions.txt"
     }
 }
 
@@ -40,7 +52,15 @@ province_id = {
     }
 }
 
+colourmap = {
+    name = scalar
+    multiplier = int
+}
+
 continents = {
     ## cardinality = 0..inf
     <province_id>
 }
+
+geographical_regions = single_alias_right[region_dcpr_clause]
+islands = single_alias_right[region_dcpr_clause]
