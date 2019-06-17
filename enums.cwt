@@ -377,6 +377,12 @@ enums = {
         months
         years
     }
+    enum[duration_ddmy] = {
+        day
+        duration
+        months
+        years
+    }
     # Hope I got this right.
     enum[gender_successions] = {
         ### Males only.
@@ -933,10 +939,5 @@ enums = {
         tech_growth_modifier_military
         tech_growth_modifier_economy
         tech_growth_modifier_culture
-    }
-
-    # TODO: Fix this
-    enum[provinces] = {
-        int[0..340]
     }
 }

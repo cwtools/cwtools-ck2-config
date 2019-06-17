@@ -1,0 +1,46 @@
+types = {
+    type[province_id] = {
+        path = "game/map"
+        path_file = "positions.txt"
+        localisation = {
+			## optional
+            name = "PROV$"
+        }
+    }
+
+    ## type_key_filter = { mild_winter normal_winter severe_winter }
+    type[climates] = {
+        path = "game/map"
+        path_file = "climate.txt"
+    }
+
+    type[continents] = {
+        path = "game/map"
+        path_file = "continent.txt"
+    }
+
+    type[geographical_regions] = {
+        path = "game/map"
+        path_file = "geographical_region.txt"
+    }
+}
+
+province_id = {
+    position = {
+        ## cardinality = 14..14
+        float
+    }
+    rotation = {
+        ## cardinality = 7..7
+        float
+    }
+    height = {
+        ## cardinality = 7..7
+        float
+    }
+}
+
+continents = {
+    ## cardinality = 0..inf
+    <province_id>
+}

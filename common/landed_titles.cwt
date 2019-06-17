@@ -25,7 +25,7 @@ title_validation_only = {
 
 alias[empire:<title.empire>] = {
     ### Listed province must be controlled to create a regular titular tilte. Affects ability to recruit mercenaries. Ruler can relocate their capital here without restriction.
-    capital = enum[provinces]
+    capital = <province_id>
 
     # TODO: Figure out
     ## cardinality = 0..1
@@ -196,7 +196,7 @@ alias[empire:<title.empire>] = {
 
 alias[kingdom:<title.kingdom>] = {
     ### Listed province must be controlled to create a regular titular tilte. Affects ability to recruit mercenaries. Ruler can relocate their capital here without restriction.
-    capital = enum[provinces]
+    capital = <province_id>
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
@@ -361,7 +361,7 @@ alias[kingdom:<title.kingdom>] = {
 
 alias[duchy:<title.duchy>] = {
     ### Listed province must be controlled to create a regular titular tilte. Affects ability to recruit mercenaries. Ruler can relocate their capital here without restriction.
-    capital = enum[provinces]
+    capital = <province_id>
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
@@ -519,7 +519,7 @@ alias[duchy:<title.duchy>] = {
 
 alias[duchy_hired:<title.duchy_hired>] = {
     ### Listed province must be controlled to create a regular titular tilte. Affects ability to recruit mercenaries. Ruler can relocate their capital here without restriction.
-    capital = enum[provinces]
+    capital = <province_id>
 
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
