@@ -2415,7 +2415,7 @@ alias[trigger:distance] = {
 ### Determines the minimum distance from the scope. If used with NOT, it becomes maximum distance. Distances are pixels within the main map images & positions.txt
 alias[trigger:distance] = {
     where = scope[province]
-    where = <province_id>
+    where = enum[provinces]
     distance = int
 }
 
@@ -3059,7 +3059,7 @@ alias[trigger:province] = scope[province]
 # TODO: Confirm
 ## scope = { culture religion }
 ### True if the given province belongs to the scoped culture or religion.
-alias[trigger:province] = <province_id>
+alias[trigger:province] = enum[provinces]
 
 ## scope = province
 ### True if the scoped province is the given province.
@@ -3067,11 +3067,11 @@ alias[trigger:province] = scope[province]
 
 ## scope = province
 ### True if the scoped province is the given province.
-alias[trigger:province] = <province_id>
+alias[trigger:province] = enum[provinces]
 
 ## scope = province
 ### True if the scoped province has the given id.
-alias[trigger:province_id] = <province_id>
+alias[trigger:province_id] = enum[provinces]
 
 ## scope = province
 ### Compares with the revolt risk in the scoped province.
