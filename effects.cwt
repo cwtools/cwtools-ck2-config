@@ -471,7 +471,7 @@ alias[effect:cancel_pregnancy] = yes
 
 ## scope = character
 ### Moves the capital.
-alias[effect:capital] = enum[provinces]
+alias[effect:capital] = enum[province]
 
 ## scope = character
 ### Changes base diplomacy stat. Will not decrease base stat below 0.
