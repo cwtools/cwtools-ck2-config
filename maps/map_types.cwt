@@ -40,6 +40,26 @@ types = {
         path = "game/map"
         path_file = "seasons.txt"
     }
+
+	type[terrains] = {
+		skip_root_key = categories
+		path = "game/map"
+        path_file = "terrain.txt"
+        subtype[type] = {
+            color = {
+                ## cardinality = 3..3
+                int[0..255]
+            }
+        }
+        subtype[terrain_types] = {
+            type = <terrains>
+        }
+    }
+
+	type[terrain_types] = {
+		path = "game/map"
+        path_file = "terrain.txt"
+    }
 }
 
 province_id = {
@@ -73,4 +93,25 @@ islands = single_alias_right[region_dcpr_clause]
 season = {
     start_date=date
     end_date=date
+}
+
+terrains = {
+	## cardinality = 0..1
+	is_water = yes
+	## cardinality = 0..1
+	inland_sea = yes
+	
+	## cardinality = 0..1
+	color = {
+		## cardinality = 3..3
+        int[0..255]
+    }
+
+    subtype[type] = {
+        type = <terrains>
+        color = {
+            int
+        }
+        priority = int
+    }
 }
