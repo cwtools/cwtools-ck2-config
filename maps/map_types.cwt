@@ -84,7 +84,7 @@ colourmap = {
 
 continents = {
     ## cardinality = 0..inf
-    enum[province]
+    enum[provinces]
 }
 
 geographical_regions = single_alias_right[region_dcpr_clause]
