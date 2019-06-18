@@ -214,7 +214,7 @@ alias[character_history_effect:raise_levies] = {
     dismiss = bool
 
     ### Where to raise/dismiss the levies.
-    location = enum[provinces]
+    location = location = enum[province]
 
     ### Multiplies the regular amount of levies by this value.
     force_mult = float

@@ -117,7 +117,7 @@ disease = {
             start_provinces = {
                 # TODO: not at all sure this is going to work considering provice ids are defined in a different system
                 ## cardinality = 1..inf
-                enum[provinces]
+                location = enum[province]
             }
             excluded_regions = {
                 ## cardinality = 1..inf
