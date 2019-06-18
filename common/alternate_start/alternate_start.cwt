@@ -240,7 +240,7 @@ alternate_start_setting = {
 ### Used to determine adjacencies when spreading things in addition to the normal adjacencies, in order to ensure islands are included in the spread. Order does not matter, the connection is two-way.
 alternate_start_adjacencies = {
     ## cardinality = 0..inf
-    location = enum[province] = location = enum[province]
+    enum[provinces] = enum[provinces]
 }
 
 ### Will pick one of character, holy_site or dynasty naming for the religion. The rest of the values are determined by the appropriate section.
