@@ -34,7 +34,7 @@ alias[effect:activate_title] = {
 alias[effect:clr_global_flag] = value[global_flag]
 
 # TODO: find other scopes if applicable, only one mentioned on wiki.
-## scope = character
+## scope = any
 ### Enables prepared invasions for that religion (the allow_viking_invasion property). Also see‚ disable_prepared_invasion.
 alias[effect:enable_prepared_invasion] = <religion>
 
@@ -693,9 +693,8 @@ alias[effect:destroy_tradepost] = scope[province]
 ###
 alias[effect:diplomatic_immunity] = yes
 
-# TODO: possibly scope[religion]?
 ## scope = any
-### Disables prepared invasions for that religion (the allow_viking_invasion property). Also seeÃ‚Â enable_prepared_invasion.
+### Disables prepared invasions for that religion (the allow_viking_invasion property). Also see‚ enable_prepared_invasion.
 alias[effect:disable_prepared_invasion] = <religion>
 
 ## scope = character
