@@ -33,7 +33,6 @@ alias[effect:activate_title] = {
 ### Clears a previously set global flag.
 alias[effect:clr_global_flag] = value[global_flag]
 
-# TODO: find other scopes if applicable, only one mentioned on wiki.
 ## scope = any
 ### Enables prepared invasions for that religion (the allow_viking_invasion property). Also see‚ disable_prepared_invasion.
 alias[effect:enable_prepared_invasion] = <religion>
