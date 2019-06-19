@@ -693,7 +693,7 @@ alias[effect:destroy_tradepost] = scope[province]
 ###
 alias[effect:diplomatic_immunity] = yes
 
-## scope = any
+## scope = character
 ### Disables prepared invasions for that religion (the allow_viking_invasion property). Also see‚ enable_prepared_invasion.
 alias[effect:disable_prepared_invasion] = <religion>
 
