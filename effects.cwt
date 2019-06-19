@@ -11,17 +11,10 @@ alias[effect:set_offmap_dislike] = {
 # TODO: possibly scope[offmap]?
 # TODO: <offmap_like> matching the <offmap>.
 ## scope = any
-### Sets the dislike of the specifiedÃ‚Â offmapÃ‚Â power to the specifiedÃ‚Â type.
+### Sets the dislike of the specified‚ offmap‚ power to the specified‚ type or random.
 alias[effect:set_offmap_like] = {
     offmap = <offmap>
     type = <offmap_like>
-}
-
-TODO: possibly scope[offmap]?
-## scope = any
-### Sets the dislike of the specifiedÃ‚Â offmapÃ‚Â power to a random type available to it.
-alias[effect:set_offmap_like] = {
-    offmap = <offmap>
     type = random
 }
 
