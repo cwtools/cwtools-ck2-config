@@ -36,7 +36,7 @@ alias[effect:clr_global_flag] = value[global_flag]
 
 # TODO: find other scopes if applicable, only one mentioned on wiki.
 ## scope = character
-### Enables prepared invasions for that religion (the allow_viking_invasion property). Also seeÃ‚Â disable_prepared_invasion.
+### Enables prepared invasions for that religion (the allow_viking_invasion property). Also see‚ disable_prepared_invasion.
 alias[effect:enable_prepared_invasion] = <religion>
 
 ## scope = any
