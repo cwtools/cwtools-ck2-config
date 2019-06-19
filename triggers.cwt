@@ -214,7 +214,10 @@ alias[trigger:num_religion_provinces] = int
 
 ## scope = any with flags
 ### Checks if the current scope has had a given flag for a given time in days, months or years. Works for any scope that can store flags, unlike the more specific had_scope_flag commands.
-alias[trigger:had_flag] = TODO
+alias[trigger:had_flag] = {
+    flag = TODO
+    enum[duration] = int
+}
 
 ## scope = any with flags
 ### Checks if the current scope has a given flag. Works for any scope that can store flags, unlike the more specific has_scope_flag commands.
@@ -381,6 +384,10 @@ alias[trigger:can_hold_title] = <minor_title.job>
 alias[trigger:can_join_society] = scope[society]
 
 ## scope = character
+### True if the scoped character can join the given society.
+alias[trigger:can_join_society] = <society>
+
+## scope = character
 ### Checks if the scoped character doesn't have any traits with cannot_marry = yes, rule a theocracy of a religion that prohibits priest marriages, or belong to a holy order.
 alias[trigger:can_marry] = bool
 
@@ -440,6 +447,13 @@ alias[trigger:combat_rating] = int
 ### Compares value with the absolute value of the difference in the combat ratings of the scoped and the given characters.
 alias[trigger:combat_rating_diff] = {
     character = scope[character]
+    value = int
+}
+
+## scope = character
+### Compares value with the absolute value of the difference in the combat ratings of the scoped and the given characters.
+alias[trigger:combat_rating_diff] = {
+    who = scope[character]
     value = int
 }
 
@@ -3661,3 +3675,41 @@ alias[trigger:num_of_courtiers] = int
 ## scope = character
 ### 
 alias[trigger:is_important_character_to] = bool
+
+## scope = any
+alias[trigger:trigger_if] = {
+	limit = single_alias_right[trigger_clause]
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+alias[trigger:trigger_else_if] = {
+	limit = single_alias_right[trigger_clause]
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+## scope = any
+alias[trigger:trigger_else] = {
+	limit = single_alias_right[trigger_clause]
+	alias_name[trigger] = alias_match_left[trigger]
+}
+
+# TODO: Docs
+## scope = province
+alias[trigger:has_wonder] = bool
+
+# TODO: Docs
+## scope = province
+alias[trigger:has_wonder] = <wonder>
+
+# TODO: Docs
+## scope = war
+alias[trigger:defender] = {
+    character = scope[character]
+}
+
+# TODO: Docs
+## scope = war
+alias[trigger:attacker] = {
+    character = scope[character]
+}

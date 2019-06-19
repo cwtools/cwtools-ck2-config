@@ -326,6 +326,8 @@ alias[effect:add_character_modifier] = {
     hidden = bool
     ## cardinality = 0..1
     stacking = bool
+    ## cardinality = 0..1
+    inherit = bool
 }
 
 ## scope = character

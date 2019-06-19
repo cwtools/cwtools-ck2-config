@@ -103,6 +103,8 @@ types = {
         }
     }
 
+
+    # DEPRICATED
     type[vassal_decision] = {
         path = "game/decisions"
         skip_root_key = vassal_decisions
