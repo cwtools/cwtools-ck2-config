@@ -1,17 +1,10 @@
 # TODO: possibly scope[offmap]?
 # TODO: <offmap_dislike> matching the <offmap>.
 ## scope = any
-### Sets the dislike of the specifiedÂ offmapÂ power to the specifiedÂ type.
+### Sets the dislike of the specified� offmap� power to the specified��type or random.
 alias[effect:set_offmap_dislike] = {
     offmap = <offmap>
     type = <offmap_dislike>
-}
-
-# TODO: possibly scope[offmap]?
-## scope = any
-### Sets the dislike of the specifiedÂ offmapÂ power to a random type available to it.
-alias[effect:set_offmap_dislike] = {
-    offmap = <offmap>
     type = random
 }
 
@@ -326,6 +319,8 @@ alias[effect:add_character_modifier] = {
     hidden = bool
     ## cardinality = 0..1
     stacking = bool
+    ## cardinality = 0..1
+    inherit = bool
 }
 
 ## scope = character
