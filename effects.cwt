@@ -22,7 +22,6 @@ alias[effect:set_offmap_like] = {
 ### Activate a disease, which can now randomly appear. Note that there's no way to deactivate a disease.
 alias[effect:activate_disease] = <disease>
 
-# TODO: possibly scope[title]?
 ## scope = any
 ### Activate/deactivate a titular or de jure landed title. Unlike destroyed titles (destroy_landed_title), deactivated titles cannot be re-created by the player or AI, except through special decisions.
 alias[effect:activate_title] = {
