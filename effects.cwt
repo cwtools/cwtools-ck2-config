@@ -45,6 +45,7 @@ alias[effect:log] = scalar
 ### Logs a list of all event targets set, and what each scope corresponds to intoÃ‚Â game.log. Only logs if the game is started with the "-scriptlog" parameter.
 alias[effect:log_scopes] = yes
 
+# TODO: see if additive modifiers work
 ## scope = any
 ### An effect that might execute or not based on random chance.
 alias[effect:random] = {
