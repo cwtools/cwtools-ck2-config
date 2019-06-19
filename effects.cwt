@@ -124,7 +124,7 @@ alias[effect:start_outbreak] = <disease>
 ### Based on the evaluation of a simple (non-clause right-hand side) trigger, selects up to one of the results to happen.
 alias[effect:trigger_switch] = {
     ### The LHS trigger to check.
-    on_trigger = alias_name[trigger]
+    on_trigger = TODO
 
     ## cardinality = 1..inf
     ### The RHS option.
