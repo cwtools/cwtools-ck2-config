@@ -377,6 +377,12 @@ enums = {
         months
         years
     }
+    enum[duration_ddmy] = {
+        day
+        duration
+        months
+        years
+    }
     # Hope I got this right.
     enum[gender_successions] = {
         ### Males only.

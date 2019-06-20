@@ -58,6 +58,7 @@ minor_title = {
     ### Changes the title holder's opinion of the title granter by this value.
     opinion_effect = int
 
+    ## cardinality = 0..1
     ### Titles with higher dignity take priority over titles with lower dignity.
     dignity = float
 
