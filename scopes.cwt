@@ -466,7 +466,8 @@ alias[effect:any_close_relative] = single_alias_right[any_effect_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to everyone in the same court as the character. Note that it will match prisoners (even if foreign) and councillors (even if landed). If used for a ruler who is a councilor, it will check their liege's court instead of their own!
-alias[trigger:any_courtier] = single_alias_right[trigger_clause]
+alias[trigger:any_courtier] = single_alias_right[any_trigger_clause]
+
 ## scope = character
 ## push_scope = character
 ### Scopes to everyone in the same court as the character. Note that it will match prisoners (even if foreign) and councillors (even if landed). If used for a ruler who is a councilor, it will check their liege's court instead of their own!
@@ -792,7 +793,8 @@ alias[effect:any_quest_target] = single_alias_right[any_effect_clause]
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters within the current character or title's sub-realm. Includes both vassals and courtiers, but not the liege of the realm. Like any_courtier, it does not include prisoners abroad.
-alias[trigger:any_realm_character] = single_alias_right[trigger_clause]
+alias[trigger:any_realm_character] = single_alias_right[any_trigger_clause]
+
 ## scope = character
 ## push_scope = character
 ### Scopes to all characters within the current character or title's sub-realm. Includes both vassals and courtiers, but not the liege of the realm. Like any_courtier, it does not include prisoners abroad.

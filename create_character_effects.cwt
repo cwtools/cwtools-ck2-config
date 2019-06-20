@@ -81,12 +81,16 @@ alias[effect:enum[create_character_effects]] = {
     religion = scope[character]
 
     ## cardinality = 0..1
-    ### The character's religion will be this.
+    ### The character's culture will be this.
     culture = scope[character]
 
     ## cardinality = 0..1
     ### The character's religion will be randomly selected out of those eligible for that.
     culture = random
+
+    ## cardinality = 0..1
+    ### The character's culture will be this.
+    culture = <culture>
 
     ## cardinality = 0..1
     ### The character's specific dna for their portrait.
