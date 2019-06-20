@@ -46,7 +46,7 @@ title_history = {
 
         ## cardinality = 0..inf
         ### Implements the given law in the title.
-        law = enum[defined_law_types]
+        law = <law>
 
         ## cardinality = 0..inf
         ### Implements the given succession law in the title.
