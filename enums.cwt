@@ -941,7 +941,7 @@ enums = {
         tech_growth_modifier_culture
     }
 
-    enum[law_types] = {
+    enum[defined_law_types] = {
         <law>
         <gender_law>
         <je_jure_law>

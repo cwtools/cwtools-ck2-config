@@ -57,5 +57,5 @@ council_voting_pattern = {
     ## cardinality = 0..inf
     ## replace_scope = { this = character root = character from = character fromfrom = character }
     ### Voting on laws of the given type. Liege is FROM, vote starter is FROMFROM.
-    enum[law_types] = single_alias_right[trigger_clause]
+    enum[defined_law_types] = single_alias_right[trigger_clause]
 }

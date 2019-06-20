@@ -2693,11 +2693,11 @@ alias[trigger:dislike_tribal_organization] = bool
 # TODO: Confirm if it's primary
 ## scope = character
 ### True if the scoped character's primary title has the given law enabled.
-alias[trigger:has_law] = enum[law_types]
+alias[trigger:has_law] = enum[defined_law_types]
 
 ## scope = title
 ### True if the scoped title has the given law enabled.
-alias[trigger:has_law] = enum[law_types]
+alias[trigger:has_law] = enum[defined_law_types]
 
 # TODO: primary or any? distinction might be meaningless, but still
 ## scope = character
@@ -3477,7 +3477,7 @@ alias[trigger:temporary] = bool
 ### True if who would be heir to the scoped title if the title had the given law.
 alias[trigger:would_be_heir_under_law] = {
     who = scope[character]
-    law = enum[law_types]
+    law = enum[defined_law_types]
 }
 
 # TODO: does already occupied count?
