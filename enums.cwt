@@ -940,4 +940,11 @@ enums = {
         tech_growth_modifier_economy
         tech_growth_modifier_culture
     }
+
+    enum[law_types] = {
+        <law>
+        <gender_law>
+        <je_jure_law>
+        <succession_law>
+    }
 }

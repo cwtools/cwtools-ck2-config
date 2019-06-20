@@ -2092,7 +2092,7 @@ alias[effect:add_weak_pressed_claim] = scope[character]
 # TODO: Elaborate; confirm scope
 ## scope = { character title }
 ### approve_law = law, starts a vote on a law
-alias[effect:approve_law] = <law>
+alias[effect:approve_law] = enum[law_types]
 
 # TODO: Figure out
 ## scope = { character title }
@@ -2513,12 +2513,12 @@ alias[effect:add_building] = <building>
 # TODO: Confirm if it's ignored in this case
 ## scope = title
 ### Sets the specified law for the scoped title, ignoring cooldown and opinion effects.
-alias[effect:add_law] = <law>
+alias[effect:add_law] = enum[law_types]
 
 ## scope = title
 ### Sets the specified law for the scoped title with some extra parameters.
 alias[effect:add_law] = {
-    law = <law>
+    law = enum[law_types]
 
     ## cardinality = 0..1
     ### If yes, cooldown is ignored when executing this command. Defaults to "yes".
@@ -2532,7 +2532,7 @@ alias[effect:add_law] = {
 # TODO: Figure out
 ## scope = title
 ###
-alias[effect:add_law_w_cooldown] = <law>
+alias[effect:add_law_w_cooldown] = enum[law_types]
 
 # TODO: Confirm
 ## scope = title
@@ -2723,7 +2723,7 @@ alias[effect:reset_coa] = scope[title]
 # TODO: Figure out
 ## scope = title
 ###
-alias[effect:revoke_law] = <law>
+alias[effect:revoke_law] = enum[law_types]
 
 # TODO: Figure out
 ## scope = title
