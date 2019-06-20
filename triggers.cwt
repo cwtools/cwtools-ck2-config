@@ -3718,7 +3718,3 @@ alias[trigger:defender] = {
 alias[trigger:attacker] = {
     character = scope[character]
 }
-
-# TODO: Docs
-## scope = { character title }
-alias[trigger:has_law] = <law>
