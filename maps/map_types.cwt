@@ -26,7 +26,7 @@ types = {
         path_file = "continent.txt"
     }
 
-    type[geographical_regions] = {
+    type[region] = {
         path = "game/map"
         path_file = "geographical_region.txt"
     }
@@ -87,7 +87,7 @@ continents = {
     enum[provinces]
 }
 
-geographical_regions = single_alias_right[region_dcpr_clause]
+region = single_alias_right[region_dcpr_clause]
 islands = single_alias_right[region_dcpr_clause]
 
 season = {
