@@ -48,14 +48,19 @@ types = {
             health = int[-inf..-1]
         }
 
-        localisation = {
-            name = "$"
-            description = "$_desc"
+        subtype[not_hidden] = {
+            ## cardinality = 0..1
+            hidden = no
+            localisation = {
+                name = "$"
+                description = "$_desc"
 
-            subtype[health_reducing] = {
-                death_reason = "$_death"
+                subtype[health_reducing] = {
+                    death_reason = "$_death"
+                }
             }
         }
+
     }
 }
 

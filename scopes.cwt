@@ -28,6 +28,8 @@ alias[effect:NOR] = single_alias_right[effect_clause]
 alias[effect:NAND] = single_alias_right[effect_clause]
 alias[effect:AND] = single_alias_right[effect_clause]
 alias[effect:OR] = single_alias_right[effect_clause]
+alias[effect:hidden_effect] = single_alias_right[effect_clause]
+alias[trigger:hidden_trigger] = single_alias_right[trigger_clause]
 
 ## scope = any
 alias[effect:if] = {
@@ -391,7 +393,7 @@ alias[trigger:any_artifact_owner] = single_alias_right[trigger_clause]
 alias[effect:any_artifact_owner] = single_alias_right[any_effect_clause]
 
 ## scope = { character war }
-## push_scope = character 
+## push_scope = character
 ### Scopes to all attackers in a war
 alias[trigger:any_attacker] = single_alias_right[trigger_clause]
 

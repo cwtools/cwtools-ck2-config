@@ -5,6 +5,7 @@ types = {
 
         localisation = {
             name = "$"
+            ## optional
             description = "$_desc"
         }
     }

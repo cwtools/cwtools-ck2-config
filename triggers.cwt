@@ -725,12 +725,12 @@ alias[trigger:has_children] = bool
 
 # TODO: Figure out (though this along with many others is kinda obvious) ???
 ## scope = character
-### 
+###
 alias[trigger:has_claim] = scope[title]
 
 # TODO: Docs
 ## scope = character
-### 
+###
 alias[trigger:has_claim] = title
 
 # TODO: Scopes?
@@ -1127,6 +1127,11 @@ alias[trigger:infamy] = float
 ## scope = character
 ### True if the scoped character is interested in the given society.
 alias[trigger:interested_in_society] = <society>
+
+# TODO: Confirm if society scope doesn't worn
+## scope = character
+### True if the scoped character is interested in the given society.
+alias[trigger:interested_in_society] = scope[society]
 
 ## scope = character
 ### True if the scoped character is interested in the society of the given character.
@@ -3595,32 +3600,32 @@ alias[trigger:show_only_failed_conditions] = yes
 
 # TODO: Doc
 ## scope = siege
-### 
+###
 alias[trigger:phase] = enum[combat_phases]
 
 # TODO: Doc
 ## scope = siege
-### 
+###
 alias[trigger:enum[troop_types_land_only]] = float
 
 # TODO: Doc
 ## scope = siege
-### 
+###
 alias[trigger:<special_troop_type>] = float
 
 # TODO: Doc
 ## scope = siege
-### 
+###
 alias[trigger:days] = int
 
 # TODO: Doc
 # scope = siege
-### 
+###
 alias[trigger:is_flanking] = bool
 
 # TODO: Doc
 ## scope = siege
-### 
+###
 alias[trigger:light_troops] = {
     who = enum[troop_types_land_only]
     who = <special_troop_type>
@@ -3629,7 +3634,7 @@ alias[trigger:light_troops] = {
 
 # TODO: Doc
 ## scope = siege
-### 
+###
 alias[trigger:heavy_troops] = {
     who = enum[troop_types_land_only]
     who = <special_troop_type>
@@ -3638,42 +3643,42 @@ alias[trigger:heavy_troops] = {
 
 # TODO: Doc
 ## scope = character
-### 
+###
 alias[trigger:is_wicked] = bool
 
 # TODO: Doc
 ## scope = character
-### 
+###
 alias[trigger:is_virtous] = bool
 
 # TODO: Doc
 ## scope = character
-### 
+###
 alias[trigger:in_seclusion] = bool
 
 # TODO: Doc
 ## scope = character
-### 
+###
 alias[trigger:has_full_court] = bool
 
 # TODO: Doc
 ## scope = character
-### 
+###
 alias[trigger:num_of_courtiers] = int
 
 # TODO: Doc
 ## scope = character
-### 
+###
 alias[trigger:free_court_slots] = int
 
 # TODO: Doc
 ## scope = character
-### 
+###
 alias[trigger:num_of_courtiers] = int
 
 # TODO: Doc
 ## scope = character
-### 
+###
 alias[trigger:is_important_character_to] = bool
 
 ## scope = any

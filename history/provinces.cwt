@@ -40,11 +40,11 @@ province_history = {
         ### Changes the religion of the province.
         religion = <religion>
 
-        ## cardinality = 0..1
+        ## cardinality = 0..inf
         ### Builds a holding of the given type in the province.
         <title.barony> = enum[holding_types_barony_only]
 
-        ## cardinality = 0..1
+        ## cardinality = 0..inf
         ### Adds the given building in the specified barony's holding.
         <title.barony> = <building>
 

@@ -451,27 +451,27 @@ enums = {
 
     # TODO: Docs
     enum[filter_targets_settlements] = {
-        capital,
-        owned,
-        vassal_owned,
-        sub_realm_owned,
-        realm_owned,
-        dynasty_owned,
+        capital
+        owned
+        vassal_owned
+        sub_realm_owned
+        realm_owned
+        dynasty_owned
         all
     }
 
     # TODO: Docs
     enum[filter_targets_titles] = {
-        capital,
-        primary_title,
-        owned,
-        vassal_owned,
-        sub_realm_owned,
-        realm_owned,
-        dynasty_owned,
+        capital
+        primary_title
+        owned
+        vassal_owned
+        sub_realm_owned
+        realm_owned
+        dynasty_owned
         all
     }
-    
+
     enum[technology_levels] = {
         1
         2
@@ -482,7 +482,7 @@ enums = {
         7
         8
     }
-    
+
     enum[alternate_start_setting_types] = {
         ### A checkbox with two states.
         checkbox
@@ -566,7 +566,7 @@ enums = {
             }
         }
     }
-    
+
     enum[bloodline_inheritance_types] = {
         all_descendants
         matrilineal
@@ -626,7 +626,7 @@ enums = {
         light_cavalry_morale
         heavy_cavalry_morale
     }
-    
+
     enum[combat_tactic_groups] = {
         skirmish
         advance
@@ -642,17 +642,17 @@ enums = {
         attacker
         defender
     }
-    
+
     enum[council_voting_pattern_types] = {
         for
         against
     }
-    
+
     enum[grammar_transforms] = {
         french
         spanish
     }
-    
+
     enum[skin_tones] = {
         0 # Light
         1 # Tan
@@ -672,7 +672,7 @@ enums = {
         lift_fow
         lift_neighbor_fow
     }
-    
+
     enum[mercenary_title_types] = {
         mercenary
         holy_order
@@ -683,7 +683,7 @@ enums = {
         obligations
         realm
     }
-    
+
     enum[objective_types_ambition] = {
         ### The character.
         character
@@ -745,7 +745,7 @@ enums = {
         ### All county titles with trade posts.
         rep_trade_posts
     }
-    
+
     enum[objective_types_title] = {
         liege_titles
         vassal_titles
@@ -779,7 +779,7 @@ enums = {
         ### Special units
         6
     }
-    
+
     # TODO: split into scope-based categories; as it is it's just copied from the wiki
     enum[variable_exports] = {
         diplomacy
@@ -890,7 +890,7 @@ enums = {
         holding_total_levy
         holding_total_levy_percent
     }
-    
+
     enum[create_character_effects] = {
         create_character
         create_random_diplomat
@@ -899,7 +899,7 @@ enums = {
         create_random_soldier
         create_random_steward
     }
-    
+
     enum[create_title_effects_temporary_adventurer] = {
         ### Destroyed automatically when at peace. The holder and the courtiers cannot marry or accept most other diplo-actions.
         temporary
@@ -921,7 +921,7 @@ enums = {
         ### Disabled.
         5
     }
-    
+
     enum[receive_title_effects] = {
         ### Also grants any vassal owning or below current title.
         grant_title

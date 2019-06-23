@@ -719,7 +719,7 @@ alias[effect:disband_event_forces] = value[earmark]
 
 # TODO: Docs ... Strange, used in CB_Types
 ## scope = character
-### 
+###
 alias[effect:disband_event_forces] = bool
 
 ## scope = character
@@ -1897,13 +1897,13 @@ alias[effect:abandon_heresy] = yes
 ## scope = character
 ### Removes specified event id with a delayed trigger on scoped character.
 alias[effect:clear_delayed_event] = {
-    id = <event.character_scope>
+    id = <event.character>
 }
 
 ## scope = province
 ### Removes specified event id with a delayed trigger on scoped province.
 alias[effect:clear_delayed_event] = {
-    id = <event.province_scope>
+    id = <event.province>
 }
 
 # TODO: confirm scopes, wiki's likely outdated here
