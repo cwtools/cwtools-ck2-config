@@ -562,7 +562,7 @@ enums = {
         start_from_root = yes
         name = {
             slots = {
-                enum_name = int[0..inf]
+                enum_name = scalar
             }
         }
     }

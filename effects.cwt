@@ -387,7 +387,7 @@ alias[effect:add_rival] = scope[character]
 ### Adds a timed modifier to the society of scoped character. Works with days and years.
 alias[effect:add_society_modifier] = {
     modifier = TODO # waiting for static modifiers
-    aliast_name[duration] = alias_match_left[duration]
+    alias_name[duration] = alias_match_left[duration]
     # Works with duration, but apparently not months.
     ## cardinality = 0..0
     months = scalar
@@ -1429,6 +1429,7 @@ alias[effect:spawn_fleet] = {
 alias[effect:spawn_unit] = {
     province = scope[province]
 
+    ## cardinality = 0..1
     home = scope[province]
 
     owner = scope[character]

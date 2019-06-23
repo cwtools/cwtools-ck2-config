@@ -3,7 +3,7 @@ types = {
     type[decision] = {
         path = "game/decisions"
         skip_root_key = decisions
-        
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -14,7 +14,7 @@ types = {
     type[plot_decision] = {
         path = "game/decisions"
         skip_root_key = plot_decisions
-        
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -25,7 +25,7 @@ types = {
     type[society_decision] = {
         path = "game/decisions"
         skip_root_key = society_decisions
-        
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -33,10 +33,10 @@ types = {
         }
     }
 
-    type[targetted_decision] = {
+    type[targeted_decisions] = {
         path = "game/decisions"
-        skip_root_key = targetted_decisions
-            
+        skip_root_key = targeted_decisions
+
         localisation = {
             name = "$"
             description = "$_named"
@@ -46,7 +46,7 @@ types = {
     type[settlement_decision] = {
         path = "game/decisions"
         skip_root_key = settlement_decisions
-            
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -56,7 +56,7 @@ types = {
     type[trade_post_decision] = {
         path = "game/decisions"
         skip_root_key = trade_post_decisions
-            
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -66,7 +66,7 @@ types = {
     type[fort_decision] = {
         path = "game/decisions"
         skip_root_key = fort_decisions
-            
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -76,7 +76,7 @@ types = {
     type[hospital_decision] = {
         path = "game/decisions"
         skip_root_key = hospital_decisions
-            
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -86,7 +86,7 @@ types = {
     type[title_decision] = {
         path = "game/decisions"
         skip_root_key = title_decisions
-            
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -96,7 +96,7 @@ types = {
     type[offmap_decision] = {
         path = "game/decisions"
         skip_root_key = offmap_decisions
-            
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -108,7 +108,7 @@ types = {
     type[vassal_decision] = {
         path = "game/decisions"
         skip_root_key = vassal_decisions
-            
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -118,7 +118,7 @@ types = {
     type[dynasty_decision] = {
         path = "game/decisions"
         skip_root_key = dynasty_decisions
-            
+
         localisation = {
             name = "$"
             description = "$_desc"
@@ -131,7 +131,7 @@ decision = single_alias_right[general_decisions]
 plot_decision = single_alias_right[general_decisions]
 society_decision = single_alias_right[general_decisions]
 # TODO: Docs
-targetted_decision = single_alias_right[filtered_decisions]
+targeted_decisions = single_alias_right[filtered_decisions]
 # TODO: Docs
 settlement_decision = single_alias_right[filtered_decisions_settlements]
 trade_post_decision = single_alias_right[filtered_decisions_settlements]
