@@ -59,7 +59,7 @@ localisation_commands = {
     GetFOA = title
     GetTitledGrandMasterName = society
     GetTitledNextGrandMasterName = society
-    
+
     Command = any
     GetName = { Wonder Upgrade }
     GetTypeName = { Wonder Upgrade }
@@ -80,7 +80,7 @@ localisation_commands = {
     GetConstructionStatus = Upgrade
     GetAllowTriggerDescription = Upgrade
     GetActiveTriggerDescription = Upgrade
-    GetCompletionDate = Upgrade 
+    GetCompletionDate = Upgrade
 
     GetAgeYears = character
     GetName = { religion culture variable province government modifier offmap wonder upgrade }
@@ -96,7 +96,7 @@ localisation_commands = {
     GetHighGodNameCap = religion
     GetRandomGodName = religion
     GetRandomGodNameCap = religion
-    GetRandomEvilGodName = religion 
+    GetRandomEvilGodName = religion
     GetRandomEvilGodNameCap = religion
     GetPriestTitle = religion
     GetPietyName = religion
@@ -143,4 +143,13 @@ localisation_commands = {
     GetBornInPurpleDesc = character
     GetArtifactStorage = artifact
     GetWonderTypeShortCap = wonder
+
+    GetDuelWeapon = character
+    GetWeaponInjuringBlowOnMe = character
+    GetWeaponInjuringBlow = character
+    GetHonorific = character
+    GetHouse = character
+    GetManWomanPreference = character
+    GetFertilityGoddess = character
+    GetHomageReaction = character
 }
