@@ -47,7 +47,7 @@ building = {
     desc = localisation
 
     ## cardinality = 0..1
-    ## replace_scope = { this = province root = province from = character fromfrom = title}
+    ## replace_scope = { this = province root = province from = character fromfrom = title }
     ### Conditions for the building to appear on the holding's buildings list.
     potential = single_alias_right[trigger_clause]
 

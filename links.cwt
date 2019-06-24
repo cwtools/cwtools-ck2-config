@@ -700,6 +700,6 @@ links = {
     # Faction ###
     faction_claimant = {
         input_scopes = character
-        outut_scope = title
+        output_scope = title
     }
 }

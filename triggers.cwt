@@ -462,6 +462,11 @@ alias[trigger:combat_rating_diff] = {
 ### True if the scoped character controls (personally or via vassals) all of the titles under the given title.
 alias[trigger:completely_controls] = scope[title]
 
+# TODO: Wiki says baronies but I think it's all titles (considering duchy titles are also used in vanilla on RHS); confirm
+## scope = character
+### True if the scoped character controls (personally or via vassals) all of the titles under the given title.
+alias[trigger:completely_controls] = <title>
+
 ## scope = character
 ### True if the scoped character controls (personally or via vassals) all of the titles in the given region.
 alias[trigger:completely_controls_region] = <region>
