@@ -83,9 +83,6 @@ alias[trigger:has_game_started] = bool
 ### True if the global flag is currently set.
 alias[trigger:has_global_flag] = value[global_flag]
 
-## scope = any
-### Checks if religion features are enabled in the current game; usually dependent on whether or not Holy Fury is active.
-alias[trigger:has_religion_features] = bool
 
 ## scope = any
 ### Checks if the world is randomised or shattered.
@@ -947,10 +944,17 @@ alias[trigger:has_regent] = bool
 ###
 alias[trigger:has_regiments] = bool
 
-# TODO: Probably a religion scope allowed too?
 ## scope = character
 ### Checks if the scoped character's religion has a given religion feature.
 alias[trigger:has_religion_feature] = <religion_feature>
+
+## scope = religion
+### Checks if the scoped religion has a given religion feature.
+alias[trigger:has_religion_feature] = <religion_feature>
+
+## scope = any
+### Checks if religion features are enabled in the current game; usually dependent on whether or not Holy Fury is active.
+alias[trigger:has_religion_features] = bool
 
 ## scope = character
 ### Checks if the scoped character secretly follows another religion.
