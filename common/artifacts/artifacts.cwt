@@ -25,10 +25,7 @@ artifact = {
     ## cardinality = 0..1
     ### Conditions for the artifact to be active. Unowned artifacts are active only if they don't have this block.
     ## replace_scope = { this = character root = character fromfrom = character }
-    active = {
-        ## cardinality = 0..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    active = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### Flags automatically assigned to each created artifact of this type.
@@ -55,10 +52,7 @@ artifact = {
     ## cardinality = 0..1
     ### Conditions for the artifact_can_be_gifted_to trigger.
     ## replace_scope = { this = character root = character }
-    allowed_gift = {
-        ## cardinality = 0..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allowed_gift  = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### Command modifiers the artifact applies to its owner.
