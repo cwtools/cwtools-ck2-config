@@ -218,7 +218,7 @@ alias[trigger:had_flag] = {
 
 ## scope = any with flags
 ### Checks if the current scope has a given flag. Works for any scope that can store flags, unlike the more specific has_scope_flag commands.
-alias[trigger:has_flag] = TODO
+alias[trigger:has_flag] = value[character_flag]
 
 ## scope = artifact
 ### True if the scoped artifact is the same as the given artifact.
