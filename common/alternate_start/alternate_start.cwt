@@ -112,17 +112,11 @@ alternate_start_setting = {
 
     ## cardinality = 0..1
     ### Conditions for the setting to appear on the list. Evaluated once, when the window is opened.
-    potential = {
-        ## cardinality = 0..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential  = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### Conditions for the setting to be enabled.
-    trigger = {
-        ## cardinality = 0..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    trigger  = single_alias_right[trigger_clause]
 
     subtype[checkbox] = {
         ## cardinality = 0..1

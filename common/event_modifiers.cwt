@@ -27,8 +27,5 @@ event_modifier = {
     }
 
     ## cardinality = 0..1
-    is_visible = {
-        ## cardinality = 1..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    is_visible = single_alias_right[trigger_clause]
 }

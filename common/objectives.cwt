@@ -191,10 +191,7 @@ objective = {
         ## cardinality = 0..1
         ## replace_scope = { this = character root = character from = character fromfrom = character }
         ### When trigger fulfilled, anyone within the society can be invited. ROOT is the plotter. FROM is the target. FROMFROM is the society
-        society_plot = {
-            ## cardinality = 1..inf
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        society_plot = single_alias_right[trigger_clause]
 
         subtype[targets_character] = {
             ## cardinality = 0..1
@@ -219,10 +216,7 @@ objective = {
 
     ## replace_scope = { this = character root = character }
     ### Conditions for a character to have access to the objective. ROOT is the character.
-    potential = {
-        ## cardinality = 1..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    potential = single_alias_right[trigger_clause]
 
     # target_potential
 
@@ -230,19 +224,13 @@ objective = {
         subtype[targets_character] = {
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for a character to be eligible as a target for the plot. ROOT is the target, FROM is the plotter.
-            target_potential = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            target_potential = single_alias_right[trigger_clause]
         }
 
         subtype[targets_title] = {
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for a title to be eligible as a target for the plot. ROOT is the target, FROM is the plotter.
-            target_potential = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            target_potential = single_alias_right[trigger_clause]
         }
     }
 
@@ -253,114 +241,72 @@ objective = {
     subtype[ambition] = {
         ## replace_scope = { this = character root = character }
         ### Conditions for an ambition to be shown but be ineligible for selection. Probably. UNCONFIRMED. ROOT is the character.
-        allow = {
-            ## cardinality = 1..inf
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        allow = single_alias_right[trigger_clause]
     }
 
     subtype[faction] = {
         subtype[targets_character] = {
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for a faction to be shown but not allowed to be joined. ROOT is the target, FROM is the faction member.
-            allow = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            allow = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for a faction to be shown but not allowed to be joined. For players or something. ROOT is the target, FROM is the faction member.
-            player_allow = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            player_allow = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for being allowed to join a faction. ROOT is the target, FROM is the joiner.
-            allow_join = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            allow_join = single_alias_right[trigger_clause]
         }
 
         subtype[targets_title] = {
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for a faction to be shown but not allowed to be joined. ROOT is the target, FROM is the faction member.
-            allow = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            allow = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for a faction to be shown but not allowed to be joined. For players or something. ROOT is the target, FROM is the faction member.
-            player_allow = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            player_allow = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for being allowed to join a faction. ROOT is the target, FROM is the joiner.
-            allow_join = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            allow_join = single_alias_right[trigger_clause]
         }
     }
 
     subtype[focus] = {
         ## replace_scope = { this = character root = character }
         ### Conditions for a focus to be shown but be ineligible for selection. ROOT is the character.
-        allow = {
-            ## cardinality = 1..inf
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        allow = single_alias_right[trigger_clause]
     }
 
     subtype[plot] = {
         subtype[targets_character] = {
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for a plot to be shown but not allowed to be joined. ROOT is the target, FROM is the plotter.
-            allow = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            allow = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for a plot to be shown but not allowed to be joined. For players or something. ROOT is the target, FROM is the plotter.
-            player_allow = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            player_allow = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = character root = character from = character fromfrom = character }
             ### Conditions for being allowed to join a plot. ROOT is the target, FROM is the joiner, FROMFROM is the plotter.
-            allow_join = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            allow_join = single_alias_right[trigger_clause]
         }
 
         subtype[targets_title] = {
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for a plot to be shown but not allowed to be joined. ROOT is the target, FROM is the plotter.
-            allow = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            allow = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for a plot to be shown but not allowed to be joined. For players or something. ROOT is the target, FROM is the plotter.
-            player_allow = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            player_allow = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = title root = title from = character fromfrom = character }
             ### Conditions for being allowed to join a plot. ROOT is the target, FROM is the joiner, FROMFROM is the plotter.
-            allow_join = {
-                ## cardinality = 1..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            allow_join = single_alias_right[trigger_clause]
         }
     }
 
@@ -490,90 +436,57 @@ objective = {
     subtype[ambition] = {
         ## replace_scope = { this = character root = character }
         ### Conditions for the ambition to count as being successfully completed. ROOT is the character.
-        success = {
-            ## cardinality = 0..inf
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        success = single_alias_right[trigger_clause]
 
         ## replace_scope = { this = character root = character }
         ### Conditions for the ambition to automatically abort. ROOT is the character.
-        abort = {
-            ## cardinality = 0..inf
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        abort = single_alias_right[trigger_clause]
     }
 
     subtype[faction] = {
         subtype[targets_character] = {
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for the faction to count as being successful. ROOT is the target, FROM is the faction member.
-            success = {
-                ## cardinality = 0..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            success = single_alias_right[trigger_clause]
         }
         subtype[targets_title] = {
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for the plot to count as being successful. ROOT is the target, FROM is the faction member.
-            success = {
-                ## cardinality = 0..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            success = single_alias_right[trigger_clause]
         }
 
         ### Not used, use potential/allow instead.
-        abort = {
-            ## cardinality = 0..inf
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        abort = single_alias_right[trigger_clause]
     }
 
     subtype[focus] = {
         ## replace_scope = { this = character root = character }
         ### Conditions for the focus to count as being successfully completed. ROOT is the character. Usually always = no for focii.
-        success = {
-            ## cardinality = 0..inf
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        success = single_alias_right[trigger_clause]
 
         ## replace_scope = { this = character root = character }
         ### Conditions for the focus to automatically abort. ROOT is the character.
-        abort = {
-            ## cardinality = 0..inf
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        abort = single_alias_right[trigger_clause]
     }
 
     subtype[plot] = {
         subtype[targets_character] = {
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for the plot to count as being successfully completed. ROOT is the target, FROM is the plotter.
-            success = {
-                ## cardinality = 0..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            success = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = character root = character from = character }
             ### Conditions for the plot to automatically abort. ROOT is the target, FROM is the plotter.
-            abort = {
-                ## cardinality = 0..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            abort = single_alias_right[trigger_clause]
         }
         subtype[targets_title] = {
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for the plot to count as being successfully completed. ROOT is the target, FROM is the plotter.
-            success = {
-                ## cardinality = 0..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            success = single_alias_right[trigger_clause]
 
             ## replace_scope = { this = title root = title from = character }
             ### Conditions for the plot to automatically abort. ROOT is the target, FROM is the plotter.
-            abort = {
-                ## cardinality = 0..inf
-                alias_name[trigger] = alias_match_left[trigger]
-            }
+            abort = single_alias_right[trigger_clause]
         }
     }
 
