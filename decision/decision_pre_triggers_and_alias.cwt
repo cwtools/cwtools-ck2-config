@@ -184,7 +184,7 @@ single_alias[filtered_decisions_titles] = {
     ### Conditions for the decision to be enabled
     allow = single_alias_right[trigger_clause]
 
-    ## replace_scope = { this = character root = title from = character }
+    ## replace_scope = { this = title root = title from = character }
     effect = single_alias_right[effect_clause]
 
     ## cardinality = 0..1
