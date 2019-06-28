@@ -141,7 +141,7 @@ single_alias[filtered_decisions_settlements] = {
     ### Conditions for the decision to be enabled
     allow = single_alias_right[trigger_clause]
 
-    ## replace_scope = { this = character root = holding from = character }
+    ## replace_scope = { this = holding root = holding from = character }
     effect = single_alias_right[effect_clause]
 
     ## replace_scope = { this = character root = holding from = character }
