@@ -930,6 +930,27 @@ alias[effect:opinion] = {
     multiplier = int
 }
 
+## scope = character
+### Adds an, opinion modifier, to the scoped character towards "who".
+alias[effect:opinion] = {
+    name = <opinion_modifier>
+
+    who = scope[character]
+
+    ## cardinality = 0..1
+    ### Can be used to customise localisation that appears in the tooltip.
+    origin_description = localisation
+
+    ## cardinality = 0..1
+    ### Overrides the default duration of the opinion modifier.
+    enum[duration_my] = int
+
+    # TODO: Docs and confirm int rather than multiplier
+    ## cardinality = 0..1
+    ###
+    multiplier = int
+}
+
 # TODO: Confirm
 ## scope = character
 ###
