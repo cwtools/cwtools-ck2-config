@@ -150,6 +150,11 @@ alias[effect:unsafe_destroy_landed_title] = scope[title]
 # TODO: More general solution?
 alias[effect:clr_flag] = value[flag]
 
+## scope = any with flags
+### Clears the given flag from the current scope. Works for any scope that can store flags, unlike the more specific clr_scope_flag commands.
+# TODO: More general solution?
+alias[effect:clr_flag] = value[flag]
+
 ## scope = any
 ### Sets a flag in the current scope if it can store flags. Works for any such scope, unlike the more specific set_scope_flag commands.
 # TODO: More general solution?
