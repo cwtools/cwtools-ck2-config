@@ -15,6 +15,13 @@ types = {
 sprite = {
 	name = scalar
     texturefile = filepath
-	## cardinality = 0..inf
-	scalar = scalar
+	## cardinality = 0..1
+	noOfFrames = int
+	
+	## cardinality = 0..1
+	loadType = scalar
+
+	## cardinality = 0..1
+	clickSound = <sound>
+	
 }
