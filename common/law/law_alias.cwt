@@ -30,7 +30,6 @@ single_alias[law_clause] = {
         ### If yes, this law will be selected by default on game start. Defaults to "no".
         default = bool
 
-
         ## replace_scope = { this = title root = title }
         ## cardinality = 0..1
         ### Effects when the law is enacted. Takes place before effect = {} and is only triggered when the law is passed in-game (not via history or event). ROOT seems to be title.
