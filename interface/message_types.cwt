@@ -48,7 +48,7 @@ message_type = {
 
     ## cardinality = 0..1
     ### The sound used for this message type.
-    sound = <sound>
+    sound = filepath[sound/,.wav]
 
     # TODO: Confirm
     ## cardinality = 0..1

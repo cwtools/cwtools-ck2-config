@@ -57,11 +57,11 @@ death = {
     sound_list = {
         female = {
             ## cardinality = 1..inf
-            <sound>
+            filepath[sound/,.wav]
         }
         male = {
             ## cardinality = 1..inf
-            <sound>
+            filepath[sound/,.wav]
         }
     }
 }

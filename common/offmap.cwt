@@ -104,7 +104,7 @@ offmap = {
     beginning_of_history = date_field
 
     ### What sound to use as the background SFX for the offmap screen.
-    sound = <sound>
+    sound = filepath[sound/,.wav]
 
     ## replace_scope = { this = offmap root = offmap from = character }
     ### Conditions for showing the button to open the offmap screen. The trigger is evaluated once a month. ROOT is the offmap power, FROM is the player.
