@@ -3749,9 +3749,3 @@ alias[trigger:has_wonder] = <wonder>
 alias[trigger:defender] = {
     character = scope[character]
 }
-
-# TODO: Docs
-## scope = war
-alias[trigger:attacker] = {
-    character = scope[character]
-}
