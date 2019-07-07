@@ -10,7 +10,7 @@ single_alias[general_decisions] = {
 
     # TODO: Docs
     ## cardinality = 0..1
-    ###
+    ### Defaults to no.
     is_mercenary = bool
 
     # TODO: Docs?
