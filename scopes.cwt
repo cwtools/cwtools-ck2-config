@@ -1673,7 +1673,7 @@ alias[effect:random_disconnected_province] = {
 	alias_name[effect] = alias_match_left[effect]
 }
 
-## scope = character
+## scope = province
 ## push_scope = province
 ### Scopes to a random bordering province. Unlike any_neighbor_province, this does NOT scope to sea tiles!
 alias[effect:random_neighbor_province] = {
