@@ -40,19 +40,11 @@ council_position = {
 
         ## cardinality = 0..inf
         ### Adds the percentage of available troops from "ROOT" to "who" multiplied by factor to the score.
-        additive_power_diff_modifier = {
-            who = scope[character]
-            factor = float
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        additive_power_diff_modifier = single_alias_right[council_power_percentages]
 
         ## cardinality = 0..inf
         ### Adds the percentage of realm size from "ROOT" to "who" multiplied by factor to the score.
-        additive_compared_realm_size_modifier = {
-            who = scope[character]
-            factor = float
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        additive_compared_realm_size_modifier = single_alias_right[council_power_percentages]
 
         # According to wiki; haven't checked myself
         ## cardinality = 0..inf
@@ -65,11 +57,7 @@ council_position = {
         
         ## cardinality = 0..inf
         ### Adds the opinion from "ROOT" to "who" multiplied by factor to the score.
-        additive_opinion_modifier = {
-            who = scope[character]
-            factor = float
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        additive_opinion_modifier = single_alias_right[council_power_percentages]
 
         ## cardinality = 0..inf
         alias_name[additive_modifier] = alias_match_left[additive_modifier]

@@ -35,10 +35,7 @@ alias[empire:<title.empire>] = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
     ### Special conditions to create a title via the create de jure title mechanic. ROOT is the character creating.
-    allow = {
-        ## cardinality = 0..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow  = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### Randomly-generated holders will have this religion.
@@ -201,10 +198,7 @@ alias[kingdom:<title.kingdom>] = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
     ### Special conditions to create a title via the create de jure title mechanic. ROOT is the character creating.
-    allow = {
-        ## cardinality = 0..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### Randomly-generated holders will have this religion.
@@ -366,10 +360,7 @@ alias[duchy:<title.duchy>] = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
     ### Special conditions to create a title via the create de jure title mechanic. ROOT is the character creating.
-    allow = {
-        ## cardinality = 0..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### Randomly-generated holders will have this religion.
@@ -524,10 +515,7 @@ alias[duchy_hired:<title.duchy_hired>] = {
     ## cardinality = 0..1
     ## replace_scope = { this = character root = character }
     ### Special conditions to recruit the mercenary company. ROOT is the character hiring.
-    allow = {
-        ## cardinality = 0..inf
-        alias_name[trigger] = alias_match_left[trigger]
-    }
+    allow = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
     ### Randomly-generated holders will have this religion. For holy orders, employer religion must match to be able to recruit.

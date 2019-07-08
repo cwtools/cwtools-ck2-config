@@ -135,9 +135,7 @@ religion_group = {
         ## cardinality = 0..1
         ## replace_scope = { this = no_scope root = no_scope }
         ### Conditions for the religion to appear when generating a random world.
-        alternate_start = {
-            alias_name[trigger] = alias_match_left[trigger]
-        }
+        alternate_start = single_alias_right[trigger_clause]
 
         ## cardinality = 0..1
         ### How hard the AI will try to convert characters of other religions in the same group; overrides religious group value if set. 0 is never, 1 is if ai_zeal is high, 2 is always.

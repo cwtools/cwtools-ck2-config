@@ -83,9 +83,6 @@ alias[trigger:has_game_started] = bool
 ### True if the global flag is currently set.
 alias[trigger:has_global_flag] = value[global_flag]
 
-## scope = any
-### Checks if religion features are enabled in the current game; usually dependent on whether or not Holy Fury is active.
-alias[trigger:has_religion_features] = bool
 
 ## scope = any
 ### Checks if the world is randomised or shattered.
@@ -221,7 +218,35 @@ alias[trigger:had_flag] = {
 
 ## scope = any with flags
 ### Checks if the current scope has a given flag. Works for any scope that can store flags, unlike the more specific has_scope_flag commands.
-alias[trigger:has_flag] = TODO
+alias[trigger:has_flag] = value[flag]
+
+## scope = any with flags
+### Checks if the current scope has a given flag. Works for any scope that can store flags, unlike the more specific has_scope_flag commands.
+alias[trigger:has_flag] = value[global_flag]
+
+## scope = artifact
+### Checks if the current artifact has a given flag.
+alias[trigger:has_flag] = value[artifact_flag]
+
+## scope = bloodline
+### Checks if the current bloodline has a given flag.
+alias[trigger:has_flag] = value[bloodline_flag]
+
+## scope = character
+### Checks if the current character has a given flag.
+alias[trigger:has_flag] = value[character_flag]
+
+## scope = character
+### Checks if the current character's dynasty has a given flag.
+alias[trigger:has_flag] = value[dynasty_flag]
+
+## scope = province
+### Checks if the current province has a given flag.
+alias[trigger:has_flag] = value[province_flag]
+
+## scope = title
+### Checks if the current character has a given flag.
+alias[trigger:has_flag] = value[title_flag]
 
 ## scope = artifact
 ### True if the scoped artifact is the same as the given artifact.
@@ -947,10 +972,17 @@ alias[trigger:has_regent] = bool
 ###
 alias[trigger:has_regiments] = bool
 
-# TODO: Probably a religion scope allowed too?
 ## scope = character
 ### Checks if the scoped character's religion has a given religion feature.
 alias[trigger:has_religion_feature] = <religion_feature>
+
+## scope = religion
+### Checks if the scoped religion has a given religion feature.
+alias[trigger:has_religion_feature] = <religion_feature>
+
+## scope = any
+### Checks if religion features are enabled in the current game; usually dependent on whether or not Holy Fury is active.
+alias[trigger:has_religion_features] = bool
 
 ## scope = character
 ### Checks if the scoped character secretly follows another religion.
@@ -3715,11 +3747,5 @@ alias[trigger:has_wonder] = <wonder>
 # TODO: Docs
 ## scope = war
 alias[trigger:defender] = {
-    character = scope[character]
-}
-
-# TODO: Docs
-## scope = war
-alias[trigger:attacker] = {
     character = scope[character]
 }

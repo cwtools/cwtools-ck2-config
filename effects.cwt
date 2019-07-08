@@ -150,6 +150,11 @@ alias[effect:unsafe_destroy_landed_title] = scope[title]
 # TODO: More general solution?
 alias[effect:clr_flag] = value[flag]
 
+## scope = any with flags
+### Clears the given flag from the current scope. Works for any scope that can store flags, unlike the more specific clr_scope_flag commands.
+# TODO: More general solution?
+alias[effect:clr_flag] = value[flag]
+
 ## scope = any
 ### Sets a flag in the current scope if it can store flags. Works for any such scope, unlike the more specific set_scope_flag commands.
 # TODO: More general solution?
@@ -908,6 +913,27 @@ alias[effect:occupy_minors_of_occupied_settlements] = scope[character]
 ### Adds an, opinion modifier, to the scoped character towards "who".
 alias[effect:opinion] = {
     modifier = <opinion_modifier>
+
+    who = scope[character]
+
+    ## cardinality = 0..1
+    ### Can be used to customise localisation that appears in the tooltip.
+    origin_description = localisation
+
+    ## cardinality = 0..1
+    ### Overrides the default duration of the opinion modifier.
+    enum[duration_my] = int
+
+    # TODO: Docs and confirm int rather than multiplier
+    ## cardinality = 0..1
+    ###
+    multiplier = int
+}
+
+## scope = character
+### Adds an, opinion modifier, to the scoped character towards "who".
+alias[effect:opinion] = {
+    name = <opinion_modifier>
 
     who = scope[character]
 

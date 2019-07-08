@@ -8,6 +8,11 @@ single_alias[general_decisions] = {
     ### Determines how seldom the AI checks whether they can and should do the decision, in months. Defult is 1(every month).
     ai_check_interval = int
 
+    # TODO: Docs
+    ## cardinality = 0..1
+    ### Defaults to no.
+    is_mercenary = bool
+
     # TODO: Docs?
     ## cardinality = 0..1
     ### Will use the icon of the religion stated
@@ -133,15 +138,15 @@ single_alias[filtered_decisions_settlements] = {
     from_potential = single_alias_right[trigger_clause]
 
     ### Conditions for the decision to appear
-    ## replace_scope = { this = character root = holding from = character }
+    ## replace_scope = { this = holding root = holding from = character }
     potential = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    ## replace_scope = { this = character root = holding from = character }
+    ## replace_scope = { this = holding root = holding from = character }
     ### Conditions for the decision to be enabled
     allow = single_alias_right[trigger_clause]
 
-    ## replace_scope = { this = character root = holding from = character }
+    ## replace_scope = { this = holding root = holding from = character }
     effect = single_alias_right[effect_clause]
 
     ## replace_scope = { this = character root = holding from = character }
@@ -180,11 +185,11 @@ single_alias[filtered_decisions_titles] = {
     potential = single_alias_right[trigger_clause]
 
     ## cardinality = 0..1
-    ## replace_scope = { this = character root = title from = character }
+    ## replace_scope = { this = title root = title from = character }
     ### Conditions for the decision to be enabled
     allow = single_alias_right[trigger_clause]
 
-    ## replace_scope = { this = character root = title from = character }
+    ## replace_scope = { this = title root = title from = character }
     effect = single_alias_right[effect_clause]
 
     ## cardinality = 0..1

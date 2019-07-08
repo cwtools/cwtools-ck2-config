@@ -3,27 +3,7 @@ types = {
     type[decision] = {
         path = "game/decisions"
         skip_root_key = decisions
-
-        localisation = {
-            name = "$"
-            description = "$_desc"
-            extra_description = "$_desc_extra"
-        }
-    }
-
-    type[plot_decision] = {
-        path = "game/decisions"
         skip_root_key = plot_decisions
-
-        localisation = {
-            name = "$"
-            description = "$_desc"
-            extra_description = "$_desc_extra"
-        }
-    }
-
-    type[society_decision] = {
-        path = "game/decisions"
         skip_root_key = society_decisions
 
         localisation = {
@@ -46,35 +26,8 @@ types = {
     type[settlement_decision] = {
         path = "game/decisions"
         skip_root_key = settlement_decisions
-
-        localisation = {
-            name = "$"
-            description = "$_desc"
-        }
-    }
-
-    type[trade_post_decision] = {
-        path = "game/decisions"
         skip_root_key = trade_post_decisions
-
-        localisation = {
-            name = "$"
-            description = "$_desc"
-        }
-    }
-
-    type[fort_decision] = {
-        path = "game/decisions"
         skip_root_key = fort_decisions
-
-        localisation = {
-            name = "$"
-            description = "$_desc"
-        }
-    }
-
-    type[hospital_decision] = {
-        path = "game/decisions"
         skip_root_key = hospital_decisions
 
         localisation = {
@@ -128,15 +81,10 @@ types = {
 
 # TODO: Docs
 decision = single_alias_right[general_decisions]
-plot_decision = single_alias_right[general_decisions]
-society_decision = single_alias_right[general_decisions]
 # TODO: Docs
 targeted_decisions = single_alias_right[filtered_decisions]
 # TODO: Docs
 settlement_decision = single_alias_right[filtered_decisions_settlements]
-trade_post_decision = single_alias_right[filtered_decisions_settlements]
-fort_decision = single_alias_right[filtered_decisions_settlements]
-hospital_decision = single_alias_right[filtered_decisions_settlements]
 # TODO: Docs
 title_decision = single_alias_right[filtered_decisions_titles]
 # TODO: Docs
