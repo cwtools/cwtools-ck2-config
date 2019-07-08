@@ -110,8 +110,20 @@ bookmark = {
             title_name = localisation
 
             ## cardinality = 0..1
+            ### If yes, replace the primary title by the dynasty CoA. For cultures that use dynasty_title_names. Defaults to "no".
+            coa_dynasty = bool
+
+            ## cardinality = 0..1
+            ### Shows that the character requires a specific DLC to be playable (because of exclusive religions or governments). Defaults to no DLC.
+            dlc = enum[dlcs]
+
+            ## cardinality = 0..1
             ### The character's characteristics.
             character = {
+                ## cardinality = 0..1
+                ### If yes then the character is female. Defaults to "no".
+                female = bool
+
                 ### The character's DNA for their portrait.
                 dna = portrait_dna_field
 
