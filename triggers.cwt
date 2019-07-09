@@ -1021,6 +1021,10 @@ alias[trigger:has_truce] = scope[character]
 ### True if the scoped character has a weak claim on the given title.
 alias[trigger:has_weak_claim] = <title>
 
+## scope = character
+### True if the scoped character has a weak claim on the given title.
+alias[trigger:has_weak_claim] = scope[title]
+
 # TODO: isn't weak pressed inheritable?
 ## scope = character
 ### True if the scoped character has a weak pressed claim (i.e., a non-inheritable claim) on the target title.
