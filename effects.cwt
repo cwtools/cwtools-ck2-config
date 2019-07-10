@@ -440,7 +440,7 @@ alias[effect:break_betrothal] = scope[character]
 ### UNCONFIRMED Cancels the current ambition of the scoped character.
 alias[effect:cancel_ambition] = yes
 
-# TODO: Figure out
+# TODO: Docs and Figure out
 ## scope = character
 ### UNKNOWN
 alias[effect:cancel_job_action] = <job_action>
@@ -451,7 +451,7 @@ alias[effect:cancel_objective] = TODO
 
 ## scope = character
 ###
-alias[effect:cancel_plot] = TODO
+alias[effect:cancel_plot] = <objective.plot>
 
 ## scope = character
 ### Ends a character's pregnancy instantaneously. Can be called at any time during pregnancy prior to birth. If pregnancy notification is to be avoided, must be called earlier than 2 months pregnancy.
