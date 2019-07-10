@@ -2977,7 +2977,7 @@ alias[effect:troops] = float
 # TODO: Enum it up
 ## scope = war
 ### Possible war ends: invalid, whitepeace, success, reverse_demand
-alias[effect:end_war] = TODO
+alias[effect:end_war] = enum[war_ends]
 
 alias[effect:custom_tooltip] = {
     text = localisation

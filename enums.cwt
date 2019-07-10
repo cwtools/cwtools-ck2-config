@@ -944,4 +944,11 @@ enums = {
     enum[usurp_types] = {
         claim
     }
+
+    enum[war_ends] = {
+        invalid
+        whitepeace
+        success
+        reverse_demand
+    }
 }
