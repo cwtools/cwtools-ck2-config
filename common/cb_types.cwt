@@ -328,7 +328,7 @@ casus_belli = {
     }
 
     ## cardinality = 0..1
-    ## replace_scope = { this = character root = character from = character }
+    ## replace_scope = { this = war root = character from = character }
     ### The effect of a white peace. ROOT is the attacker, FROM is the defender.
     on_fail = {
         alias_name[effect] = alias_match_left[effect]
