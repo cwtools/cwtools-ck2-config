@@ -940,4 +940,8 @@ enums = {
         tech_growth_modifier_economy
         tech_growth_modifier_culture
     }
+
+    enum[usurp_types] = {
+        claim
+    }
 }
