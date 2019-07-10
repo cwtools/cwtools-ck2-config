@@ -392,12 +392,12 @@ alias[trigger:any_artifact_owner] = single_alias_right[trigger_clause]
 ### Scopes to anyone who has ever owned the artifact, including the current owner. Does not work on artifacts that have the history = no parameter.
 alias[effect:any_artifact_owner] = single_alias_right[any_effect_clause]
 
-## scope = { character war }
+## scope = war
 ## push_scope = character
 ### Scopes to all attackers in a war
 alias[trigger:any_attacker] = single_alias_right[trigger_clause]
 
-## scope = { character war }
+## scope = war
 ## push_scope = character
 ### Scopes to all attackers in a war
 alias[effect:any_attacker] = single_alias_right[any_effect_clause]
