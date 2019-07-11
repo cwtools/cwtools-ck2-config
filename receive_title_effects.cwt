@@ -15,5 +15,6 @@ alias[effect:enum[receive_title_effects]] = scope[character]
 ## scope = { character title }
 alias[effect:enum[receive_title_effects]] = {
     target = scope[character]
+    target = scope[province]
     type = enum[usurp_types] # Not sure what should be there; an enum?
 }
