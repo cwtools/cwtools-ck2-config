@@ -543,7 +543,7 @@ alias[effect:long_character_event] = {
     tooltip = localisation
 }
 
-# TODO: Elaborate. Make chronicle a seperate scope?
+# TODO: Elaborate.
 ## scope = character
 ### Records a chronicle entry.
 alias[effect:chronicle] = {
