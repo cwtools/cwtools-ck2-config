@@ -729,7 +729,7 @@ alias[effect:excommunicate] = yes
 
 ## scope = character
 ###
-alias[effect:faction] = TODO
+alias[effect:faction] = <objective.faction>
 
 # TODO: Confirm
 ## scope = character
@@ -818,7 +818,7 @@ alias[effect:join_defender_wars] = scope[character]
 
 ## scope = character
 ### Joins the faction led by the faction leader, if it exists. Also supports the optional argument
-alias[effect:join_faction] = TODO
+alias[effect:join_faction] = <objective.faction>
 
 ## scope = character
 ### Joins the specified society.
