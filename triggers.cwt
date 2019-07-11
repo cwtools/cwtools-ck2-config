@@ -1122,10 +1122,15 @@ alias[trigger:lower_real_tier_than] = scope[character]
 
 # TODO: higher/lower real tier than scope[titile] ?
 
-# TODO: wha
+# TODO: Figure out better + docs
 ## scope = character
 ###
-alias[trigger:holding_diff] = TODO
+alias[trigger:holding_diff] = {
+    first_type = enum[holding_types]
+    first_count_vassals = bool
+    second_type = none
+    value = float
+}
 
 ## scope = character
 ### True if the given character owes a favor to the scoped character.
