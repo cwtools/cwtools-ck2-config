@@ -3138,6 +3138,10 @@ alias[trigger:province] = enum[provinces]
 alias[trigger:province_id] = enum[provinces]
 
 ## scope = province
+### True if the scoped province has the given id.
+alias[trigger:province_id] = scope[province]
+
+## scope = province
 ### Compares with the revolt risk in the scoped province.
 alias[trigger:revolt_risk] = float
 
