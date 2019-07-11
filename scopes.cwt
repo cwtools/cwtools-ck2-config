@@ -194,12 +194,12 @@ alias[trigger:any_direct_de_jure_vassal_title] = single_alias_right[trigger_clau
 alias[effect:any_direct_de_jure_vassal_title] = single_alias_right[any_effect_clause]
 
 # TODO: Docs
-## scope = character
+## scope = title
 ## push_scope = title
 ### 
 alias[trigger:any_de_jure_liege_title] = single_alias_right[trigger_clause]
-## scope = character
-## push_scope = character
+## scope = title
+## push_scope = title
 ### 
 alias[effect:any_de_jure_liege_title] = single_alias_right[any_effect_clause]
 

@@ -2904,7 +2904,7 @@ alias[effect:succession] = TODO
 # TODO: Figure out
 ## scope = title
 ###
-alias[effect:succession_w_cooldown] = TODO
+alias[effect:succession_w_cooldown] = <law.succession>
 
 ## scope = title
 ### Converts the scoped barony-tier holding to another type.
