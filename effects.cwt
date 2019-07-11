@@ -826,7 +826,7 @@ alias[effect:join_society] = <society>
 
 ## scope = character
 ###
-alias[effect:leave_faction] = TODO
+alias[effect:leave_faction] = <objective.faction>
 
 # TODO: Confirm
 ## scope = character
