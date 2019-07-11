@@ -16,6 +16,8 @@ enums = {
         "Mystics"
         "Jade Dragon"
         "Holy Fury"
+        "The Reaper's Due"
+        "Monks And Mystics"
     }
     enum[title_tiers] = {
         baron
