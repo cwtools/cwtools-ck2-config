@@ -62,6 +62,14 @@ enums = {
         intrigue
         learning
     }
+    enum[attributes_and_combat] = {
+        diplomacy
+        martial
+        stewardship
+        intrigue
+        learning
+        combat_rating
+    }
     enum[troop_types] = {
         pikemen
         knights

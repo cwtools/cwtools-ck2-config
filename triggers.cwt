@@ -382,7 +382,7 @@ alias[trigger:at_location] = scope[province]
 ### Compares value with the absolute value of the difference in the given attribute of the scoped and the given characters.
 alias[trigger:attribute_diff] = {
     character = scope[character]
-    attribute = enum[attributes]
+    attribute = enum[attributes_and_combat]
     value = int
 }
 
