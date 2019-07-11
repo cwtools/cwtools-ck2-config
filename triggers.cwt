@@ -209,10 +209,24 @@ alias[trigger:num_culture_provinces] = int
 ### Compares with the number of provinces in the world with the religion associated with the scoped entity.
 alias[trigger:num_religion_provinces] = int
 
+# TODO: better solution
 ## scope = any with flags
 ### Checks if the current scope has had a given flag for a given time in days, months or years. Works for any scope that can store flags, unlike the more specific had_scope_flag commands.
 alias[trigger:had_flag] = {
-    flag = TODO
+    flag = value[flag]
+    flag = value[global_flag]
+    ## scope = artifact
+    flag = value[artifact_flag]
+    ## scope = bloodline
+    flag = value[bloodline_flag]
+    ## scope = character
+    flag = value[character_flag]
+    ## scope = character
+    flag = value[dynasty_flag]
+    ## scope = province
+    flag = value[province_flag]
+    ## scope = title
+    flag = value[title_flag]
     enum[duration] = int
 }
 
