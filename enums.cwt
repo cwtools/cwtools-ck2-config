@@ -377,6 +377,10 @@ enums = {
         months
         years
     }
+    enum[duration_dy] = {
+        duration
+        years
+    }
     enum[duration_ddmy] = {
         day
         duration
