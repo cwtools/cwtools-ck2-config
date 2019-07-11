@@ -287,7 +287,7 @@ alias[effect:add_alliance] = {
 
 ## scope = character
 ###
-alias[effect:add_ambition] = TODO
+alias[effect:add_ambition] = <objective.ambition>
 
 ## scope = character
 ### A copy of the named artifact is created and added to the scoped character.
