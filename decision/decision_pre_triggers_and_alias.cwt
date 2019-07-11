@@ -204,7 +204,7 @@ single_alias[filtered_decisions_titles] = {
 }
 
 single_alias[general_offmap_decisions] = {
-    button_name = TODO
+    button_name = <gui_button>
 
     ## cardinality = 0..1
     ### Will show an alert once decision is enabled
