@@ -476,6 +476,7 @@ enums = {
         realm_owned
         dynasty_owned
         all
+        self
     }
 
     enum[technology_levels] = {
