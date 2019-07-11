@@ -2826,10 +2826,10 @@ alias[effect:set_holy_site] = scope[religion]
 ### Sets the scoped county to be a holy site of the given religion and its heresies. Warning: this lets you have more than 5 holy sites which might cause weirdness.
 alias[effect:set_holy_site_with_heresies] = scope[religion]
 
-# TODO: Figure out, probably an enum
+# TODO: Docs
 ## scope = title
 ###
-alias[effect:set_investiture] = TODO
+alias[effect:set_investiture] = enum[investiture_types]
 
 # TODO: Figure out
 ## scope = title

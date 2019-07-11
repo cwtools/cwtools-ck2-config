@@ -951,4 +951,9 @@ enums = {
         success
         reverse_demand
     }
+
+    enum[investiture_types] = {
+        head
+        any
+    }
 }
