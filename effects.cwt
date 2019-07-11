@@ -295,7 +295,7 @@ alias[effect:add_artifact] = <artifact>
 
 ## scope = character
 ### Warn: buggy behavior
-alias[effect:add_betrothal] = TODO
+alias[effect:add_betrothal] = <character>
 
 # TODO: pay attention to the type for name field, might be wrong
 # TODO: Also write an alias for "either duration = -1 or days/months/years"
@@ -683,7 +683,7 @@ alias[effect:death] = {
 alias[effect:decadence] = int
 
 ## scope = character
-### Also see,Â approve_law.
+### Also see, approve_law.
 alias[effect:decline_law] = TODO
 
 ## scope = character
