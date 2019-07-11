@@ -2899,7 +2899,7 @@ alias[effect:set_tribal_vassal_tax_income] = bool
 # TODO: Confirm if that hasn't changed with the introduction of moddable successions. Make an enum in either case
 ## scope = title
 ### Valid successions: gavelkind, primogeniture, feudal_elective, seniority, catholic_bishopric, open_elective, turkish_succession, patrician_elective, ultimogeniture, tanistry, appointment, papal_succession, elective_gavelkind
-alias[effect:succession] = TODO
+alias[effect:succession] = <law.succession>
 
 # TODO: Figure out
 ## scope = title
