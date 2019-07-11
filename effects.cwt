@@ -377,7 +377,7 @@ alias[effect:add_society_modifier] = {
     modifier = <static_modifier>
     alias_name[duration] = alias_match_left[duration]
     ## cardinality = 0..1
-    enum[duration_dy] = int
+    enum[duration_duy] = int
 }
 
 # TODO: Confirm

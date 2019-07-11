@@ -377,7 +377,7 @@ enums = {
         months
         years
     }
-    enum[duration_dy] = {
+    enum[duration_duy] = {
         duration
         years
     }
