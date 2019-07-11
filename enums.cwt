@@ -947,6 +947,12 @@ enums = {
 
     enum[usurp_types] = {
         claim
+        invasion
+        holy_war
+        revolt
+        host
+        duel
+        faction_demand
     }
 
     enum[war_ends] = {
