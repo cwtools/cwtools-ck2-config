@@ -984,8 +984,11 @@ alias[effect:population] = int
 alias[effect:remove_character_modifier] = <event_modifier>
 
 ## scope = character
-### Removes a number of instances of a,Â character modifier,Â (usually a stackable one).
-alias[effect:remove_character_modifiers] = TODO
+### Removes a number of instances of a, character modifier, (usually a stackable one).
+alias[effect:remove_character_modifiers] = {
+    modifier = <event_modifier>
+    amount = int
+}
 
 ## scope = character
 ### Removes the consort/concubine relationship between the scoped and the given characters. Works in either scope.
