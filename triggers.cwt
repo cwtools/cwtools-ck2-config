@@ -3780,3 +3780,8 @@ alias[trigger:defender] = {
 ## scope = character
 ###
 alias[trigger:stored_token_trigger] = <casus_belli>
+
+# TODO: Docs
+## scope = title
+###
+alias[trigger:holder] = scope[character]
