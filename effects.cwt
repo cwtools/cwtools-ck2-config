@@ -113,7 +113,7 @@ alias[effect:set_parent_religion] = {
 
 ## scope = any
 ### Plays the specified sound, as defined in interface/sound.sfx
-alias[effect:sound_effect] = filepath[sound/,.wav]
+alias[effect:sound_effect] = <sound>
 
 ## scope = any
 ### Forces an outbreak, but follows the scenarios set up in the disease.txt file.
@@ -287,7 +287,7 @@ alias[effect:add_alliance] = {
 
 ## scope = character
 ###
-alias[effect:add_ambition] = TODO
+alias[effect:add_ambition] = <objective.ambition>
 
 ## scope = character
 ### A copy of the named artifact is created and added to the scoped character.
@@ -295,7 +295,7 @@ alias[effect:add_artifact] = <artifact>
 
 ## scope = character
 ### Warn: buggy behavior
-alias[effect:add_betrothal] = TODO
+alias[effect:add_betrothal] = <character>
 
 # TODO: pay attention to the type for name field, might be wrong
 # TODO: Also write an alias for "either duration = -1 or days/months/years"
@@ -374,11 +374,10 @@ alias[effect:add_rival] = scope[character]
 ## scope = character
 ### Adds a timed modifier to the society of scoped character. Works with days and years.
 alias[effect:add_society_modifier] = {
-    modifier = TODO # waiting for static modifiers
+    modifier = <static_modifier>
     alias_name[duration] = alias_match_left[duration]
-    # Works with duration, but apparently not months.
-    ## cardinality = 0..0
-    months = scalar
+    ## cardinality = 0..1
+    enum[duration_duy] = int
 }
 
 # TODO: Confirm
@@ -440,7 +439,7 @@ alias[effect:break_betrothal] = scope[character]
 ### UNCONFIRMED Cancels the current ambition of the scoped character.
 alias[effect:cancel_ambition] = yes
 
-# TODO: Figure out
+# TODO: Docs and Figure out
 ## scope = character
 ### UNKNOWN
 alias[effect:cancel_job_action] = <job_action>
@@ -451,7 +450,7 @@ alias[effect:cancel_objective] = TODO
 
 ## scope = character
 ###
-alias[effect:cancel_plot] = TODO
+alias[effect:cancel_plot] = <objective.plot>
 
 ## scope = character
 ### Ends a character's pregnancy instantaneously. Can be called at any time during pregnancy prior to birth. If pregnancy notification is to be avoided, must be called earlier than 2 months pregnancy.
@@ -460,6 +459,10 @@ alias[effect:cancel_pregnancy] = yes
 ## scope = character
 ### Moves the capital.
 alias[effect:capital] = enum[provinces]
+
+## scope = character
+### Moves the capital.
+alias[effect:capital] = scope[province]
 
 ## scope = character
 ### Changes base diplomacy stat. Will not decrease base stat below 0.
@@ -684,7 +687,7 @@ alias[effect:death] = {
 alias[effect:decadence] = int
 
 ## scope = character
-### Also see,Â approve_law.
+### Also see, approve_law.
 alias[effect:decline_law] = TODO
 
 ## scope = character
@@ -730,7 +733,7 @@ alias[effect:excommunicate] = yes
 
 ## scope = character
 ###
-alias[effect:faction] = TODO
+alias[effect:faction] = <objective.faction>
 
 # TODO: Confirm
 ## scope = character
@@ -788,7 +791,7 @@ alias[effect:impregnate] = 0
 
 ## scope = character
 ###
-alias[effect:impregnate_cuckoo] = TODO
+alias[effect:impregnate_cuckoo] = scope[character]
 
 ## scope = character
 ### Scoped character will be imprisoned by target. Identical to the "prisoner" command.
@@ -819,7 +822,7 @@ alias[effect:join_defender_wars] = scope[character]
 
 ## scope = character
 ### Joins the faction led by the faction leader, if it exists. Also supports the optional argument
-alias[effect:join_faction] = TODO
+alias[effect:join_faction] = <objective.faction>
 
 ## scope = character
 ### Joins the specified society.
@@ -827,7 +830,7 @@ alias[effect:join_society] = <society>
 
 ## scope = character
 ###
-alias[effect:leave_faction] = TODO
+alias[effect:leave_faction] = <objective.faction>
 
 # TODO: Confirm
 ## scope = character
@@ -985,8 +988,11 @@ alias[effect:population] = int
 alias[effect:remove_character_modifier] = <event_modifier>
 
 ## scope = character
-### Removes a number of instances of a,Â character modifier,Â (usually a stackable one).
-alias[effect:remove_character_modifiers] = TODO
+### Removes a number of instances of a, character modifier, (usually a stackable one).
+alias[effect:remove_character_modifiers] = {
+    modifier = <event_modifier>
+    amount = int
+}
 
 ## scope = character
 ### Removes the consort/concubine relationship between the scoped and the given characters. Works in either scope.
@@ -2826,10 +2832,10 @@ alias[effect:set_holy_site] = scope[religion]
 ### Sets the scoped county to be a holy site of the given religion and its heresies. Warning: this lets you have more than 5 holy sites which might cause weirdness.
 alias[effect:set_holy_site_with_heresies] = scope[religion]
 
-# TODO: Figure out, probably an enum
+# TODO: Docs
 ## scope = title
 ###
-alias[effect:set_investiture] = TODO
+alias[effect:set_investiture] = enum[investiture_types]
 
 # TODO: Figure out
 ## scope = title
@@ -2899,12 +2905,12 @@ alias[effect:set_tribal_vassal_tax_income] = bool
 # TODO: Confirm if that hasn't changed with the introduction of moddable successions. Make an enum in either case
 ## scope = title
 ### Valid successions: gavelkind, primogeniture, feudal_elective, seniority, catholic_bishopric, open_elective, turkish_succession, patrician_elective, ultimogeniture, tanistry, appointment, papal_succession, elective_gavelkind
-alias[effect:succession] = TODO
+alias[effect:succession] = <law.succession>
 
 # TODO: Figure out
 ## scope = title
 ###
-alias[effect:succession_w_cooldown] = TODO
+alias[effect:succession_w_cooldown] = <law.succession>
 
 ## scope = title
 ### Converts the scoped barony-tier holding to another type.
@@ -2977,7 +2983,7 @@ alias[effect:troops] = float
 # TODO: Enum it up
 ## scope = war
 ### Possible war ends: invalid, whitepeace, success, reverse_demand
-alias[effect:end_war] = TODO
+alias[effect:end_war] = enum[war_ends]
 
 alias[effect:custom_tooltip] = {
     text = localisation

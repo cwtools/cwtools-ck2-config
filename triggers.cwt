@@ -212,7 +212,20 @@ alias[trigger:num_religion_provinces] = int
 ## scope = any with flags
 ### Checks if the current scope has had a given flag for a given time in days, months or years. Works for any scope that can store flags, unlike the more specific had_scope_flag commands.
 alias[trigger:had_flag] = {
-    flag = TODO
+    flag = value[flag]
+    flag = value[global_flag]
+    ## scope = artifact
+    flag = value[artifact_flag]
+    ## scope = bloodline
+    flag = value[bloodline_flag]
+    ## scope = character
+    flag = value[character_flag]
+    ## scope = character
+    flag = value[dynasty_flag]
+    ## scope = province
+    flag = value[province_flag]
+    ## scope = title
+    flag = value[title_flag]
     enum[duration] = int
 }
 
@@ -369,7 +382,7 @@ alias[trigger:at_location] = scope[province]
 ### Compares value with the absolute value of the difference in the given attribute of the scoped and the given characters.
 alias[trigger:attribute_diff] = {
     character = scope[character]
-    attribute = enum[attributes]
+    attribute = enum[attributes_and_combat]
     value = int
 }
 
@@ -1021,6 +1034,10 @@ alias[trigger:has_truce] = scope[character]
 ### True if the scoped character has a weak claim on the given title.
 alias[trigger:has_weak_claim] = <title>
 
+## scope = character
+### True if the scoped character has a weak claim on the given title.
+alias[trigger:has_weak_claim] = scope[title]
+
 # TODO: isn't weak pressed inheritable?
 ## scope = character
 ### True if the scoped character has a weak pressed claim (i.e., a non-inheritable claim) on the target title.
@@ -1105,10 +1122,15 @@ alias[trigger:lower_real_tier_than] = scope[character]
 
 # TODO: higher/lower real tier than scope[titile] ?
 
-# TODO: wha
+# TODO: Figure out better + docs
 ## scope = character
 ###
-alias[trigger:holding_diff] = TODO
+alias[trigger:holding_diff] = {
+    first_type = enum[holding_types]
+    first_count_vassals = bool
+    second_type = none
+    value = float
+}
 
 ## scope = character
 ### True if the given character owes a favor to the scoped character.
@@ -3114,6 +3136,10 @@ alias[trigger:province] = enum[provinces]
 ## scope = province
 ### True if the scoped province has the given id.
 alias[trigger:province_id] = enum[provinces]
+
+## scope = province
+### True if the scoped province has the given id.
+alias[trigger:province_id] = scope[province]
 
 ## scope = province
 ### Compares with the revolt risk in the scoped province.

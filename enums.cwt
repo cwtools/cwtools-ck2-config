@@ -16,6 +16,8 @@ enums = {
         "Mystics"
         "Jade Dragon"
         "Holy Fury"
+        "The Reaper's Due"
+        "Monks And Mystics"
     }
     enum[title_tiers] = {
         baron
@@ -59,6 +61,14 @@ enums = {
         stewardship
         intrigue
         learning
+    }
+    enum[attributes_and_combat] = {
+        diplomacy
+        martial
+        stewardship
+        intrigue
+        learning
+        combat_rating
     }
     enum[troop_types] = {
         pikemen
@@ -377,6 +387,10 @@ enums = {
         months
         years
     }
+    enum[duration_duy] = {
+        duration
+        years
+    }
     enum[duration_ddmy] = {
         day
         duration
@@ -470,6 +484,7 @@ enums = {
         realm_owned
         dynasty_owned
         all
+        self
     }
 
     enum[technology_levels] = {
@@ -939,5 +954,27 @@ enums = {
         tech_growth_modifier_military
         tech_growth_modifier_economy
         tech_growth_modifier_culture
+    }
+
+    enum[usurp_types] = {
+        claim
+        invasion
+        holy_war
+        revolt
+        host
+        duel
+        faction_demand
+    }
+
+    enum[war_ends] = {
+        invalid
+        whitepeace
+        success
+        reverse_demand
+    }
+
+    enum[investiture_types] = {
+        head
+        any
     }
 }

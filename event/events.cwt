@@ -181,6 +181,9 @@ event = {
 
         ## cardinality = 0..1
         tooltip_info = enum[attributes]
+
+        ## cardinality = 0..1
+        tooltip_info = bool
 	}
 
 

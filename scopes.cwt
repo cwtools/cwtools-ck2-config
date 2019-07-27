@@ -193,6 +193,16 @@ alias[trigger:any_direct_de_jure_vassal_title] = single_alias_right[trigger_clau
 ### Scopes to all titles that are dejure part of a title's realm
 alias[effect:any_direct_de_jure_vassal_title] = single_alias_right[any_effect_clause]
 
+# TODO: Docs
+## scope = title
+## push_scope = title
+### 
+alias[trigger:any_de_jure_liege_title] = single_alias_right[trigger_clause]
+## scope = title
+## push_scope = title
+### 
+alias[effect:any_de_jure_liege_title] = single_alias_right[any_effect_clause]
+
 ## scope = character
 ## push_scope = title
 ### Scopes to all titles a character holds
@@ -392,12 +402,12 @@ alias[trigger:any_artifact_owner] = single_alias_right[trigger_clause]
 ### Scopes to anyone who has ever owned the artifact, including the current owner. Does not work on artifacts that have the history = no parameter.
 alias[effect:any_artifact_owner] = single_alias_right[any_effect_clause]
 
-## scope = { character war }
+## scope = war
 ## push_scope = character
 ### Scopes to all attackers in a war
 alias[trigger:any_attacker] = single_alias_right[trigger_clause]
 
-## scope = { character war }
+## scope = war
 ## push_scope = character
 ### Scopes to all attackers in a war
 alias[effect:any_attacker] = single_alias_right[any_effect_clause]
