@@ -3775,3 +3775,8 @@ alias[trigger:has_wonder] = <wonder>
 alias[trigger:defender] = {
     character = scope[character]
 }
+
+# TODO: Docs
+## scope = character
+###
+alias[trigger:stored_token_trigger] = <casus_belli>
