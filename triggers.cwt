@@ -72,7 +72,7 @@ alias[trigger:has_dlc] = enum[dlcs]
 ### True if the given game rule has the given option selected.
 alias[trigger:has_game_rule] = {
     name = <game_rule>
-    value = <game_rule_option>
+    value = value[game_rule_option]
 }
 
 ## scope = any
@@ -3775,3 +3775,13 @@ alias[trigger:has_wonder] = <wonder>
 alias[trigger:defender] = {
     character = scope[character]
 }
+
+# TODO: Docs
+## scope = character
+###
+alias[trigger:stored_token_trigger] = <casus_belli>
+
+# TODO: Docs
+## scope = title
+###
+alias[trigger:holder] = scope[character]

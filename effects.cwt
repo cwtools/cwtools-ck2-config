@@ -3054,3 +3054,244 @@ alias[effect:destroy_wonder] = bool
 ## scope = province
 ###
 alias[effect:set_wonder_model] = <model>
+
+# Works in religion scope, or a scope from which a religion can be gotten (character, province, county/barony title, title with religion defined, society with associated religion):
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_peace_piety_gain] = int
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_pacifist] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_convert_other_groups] = int
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_convert_same_group] = int
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_peace_prestige_loss] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_ai_aggression] = float
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_unit_modifier] = = {
+    alias_name[modifier] = alias_match_left[modifier]
+}
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_unit_home_modifier] = = {
+    alias_name[modifier] = alias_match_left[modifier]
+}
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_hard_to_convert] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_raised_vassal_opinion_loss] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_piety_loss_for_attacking_same_religion] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_max_wives] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_max_consorts] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_feminist] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_heir_designation] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_short_reign_opinion_year_mult] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_jizya_tax] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_can_retire_to_monastery] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_can_excommunicate] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_can_grant_divorce] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_can_grant_invasion_cb] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_can_grant_claim] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_can_call_crusade] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_pc_marriage] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_bs_marriage] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_psc_marriage] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_cousin_marriage] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_seafaring] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_allow_looting] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_allow_rivermovement] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_autocephaly] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_pentarchy] = bool
+
+# When used in religion scope, sets the title that controls the religion. Use "none" to set the religion as not having any controller. If a title already controls the religion when this is called, it will cease to control the religion. Example: set_religion_head = k_norway/ROOT/none
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_religion_head] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_uses_decadence] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_can_have_antipopes] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_priests_can_marry] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_priests_can_inherit] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_ignores_defensive_attrition] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_character_modifier] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:add_intermarry] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:remove_intermarry] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:clear_intermarry] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_defensive_attrition] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_female_temple_holders] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_male_temple_holders] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_branch_tag] = bool
+
+# TODO: Docs and fix title with religion defined and society with associated religion
+## scope = { religion character province title society }
+###
+alias[effect:set_allows_matrilineal_marriage] = bool

@@ -121,7 +121,7 @@ disease = {
             }
             excluded_regions = {
                 ## cardinality = 1..inf
-                <geographical_region>
+                <region>
             }
         }
     }

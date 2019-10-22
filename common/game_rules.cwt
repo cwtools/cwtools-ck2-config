@@ -9,18 +9,6 @@ types = {
             group = group
         }
     }
-    type[game_rule_option] = {
-        path_strict = yes
-        path = "game/common/game_rules"
-        skip_root_key = any
-
-        name_field = name
-
-        localisation = {
-            name = text
-            description = desc
-        }
-    }
 }
 
 game_rule = {
@@ -34,16 +22,17 @@ game_rule = {
     # TODO: change to game_rule_option specific to that rule
     ## cardinality = 0..1
     ### If set, the game rule will default to that option when using an alternate start.
-    alt_start_default = <game_rule_option>
+    alt_start_default = value[game_rule_option]
 
     ## cardinality = 0..1
     ### If set, the rule will only appear if that dlc is enabled.
     dlc = enum[dlcs]
 
+    # Removed <game_rule_option> for now
     ## cardinality = 2..inf
-    <game_rule_option> = {
+    option = {
         ### The option's name for referring to via has_game_rule.
-        name = scalar
+        name = value_set[game_rule_option]
 
         ### The option's name.
         text = localisation
@@ -59,4 +48,5 @@ game_rule = {
         ### If no, achievements can't be earned with this option active in an alternate start. Defaults to "yes".
         alt_start_achievements = bool
     }
+    
 }
