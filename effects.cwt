@@ -3089,14 +3089,14 @@ alias[effect:set_ai_aggression] = float
 # TODO: Docs and fix title with religion defined and society with associated religion
 ## scope = { religion character province title society }
 ###
-alias[effect:set_unit_modifier] = = {
+alias[effect:set_unit_modifier] = {
     alias_name[modifier] = alias_match_left[modifier]
 }
 
 # TODO: Docs and fix title with religion defined and society with associated religion
 ## scope = { religion character province title society }
 ###
-alias[effect:set_unit_home_modifier] = = {
+alias[effect:set_unit_home_modifier] = {
     alias_name[modifier] = alias_match_left[modifier]
 }
 

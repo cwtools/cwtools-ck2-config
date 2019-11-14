@@ -18,6 +18,7 @@ character = {
     name = scalar
 
     ### The character's dynasty.
+    ## cardinality = 0..1
     dynasty = <dynasty>
 
     ### The character's religion.
@@ -219,3 +220,6 @@ alias[character_history_effect:raise_levies] = {
     ### Multiplies the regular amount of levies by this value.
     force_mult = float
 }
+
+alias[character_history_effect:trait] = <trait>
+alias[character_history_effect:culture] = <culture>
