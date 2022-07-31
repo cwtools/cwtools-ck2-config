@@ -687,7 +687,7 @@ alias[effect:death] = {
 alias[effect:decadence] = int
 
 ## scope = character
-### Also see,�approve_law.
+### Also see, approve_law.
 alias[effect:decline_law] = TODO
 
 ## scope = character
@@ -715,6 +715,14 @@ alias[effect:disband_event_forces] = bool
 ## scope = character
 ### Sets the dynasty of scoped character. May need to been chained with recalc_succession command, if impacting succession. Use, dynasty = father_bastard, to generate a cadet dynasty,, dynasty = mother_bastard, to create a bastard dynasty, or, dynasty = none, to make the character Lowborn. Special values used in character creation (""random"", ""culture"", and ""actually_culture"") do, not, work here. When setting character dynasty in an event it only works inside of an immediate = { } block.
 alias[effect:dynasty] = scope[character]
+
+## scope = character
+### Sets the dynasty of scoped character. May need to been chained with recalc_succession command, if impacting succession. Use, dynasty = father_bastard, to generate a cadet dynasty,, dynasty = mother_bastard, to create a bastard dynasty, or, dynasty = none, to make the character Lowborn. Special values used in character creation (""random"", ""culture"", and ""actually_culture"") do, not, work here. When setting character dynasty in an event it only works inside of an immediate = { } block.
+alias[effect:dynasty] = father_bastard
+
+## scope = character
+### Sets the dynasty of scoped character. May need to been chained with recalc_succession command, if impacting succession. Use, dynasty = father_bastard, to generate a cadet dynasty,, dynasty = mother_bastard, to create a bastard dynasty, or, dynasty = none, to make the character Lowborn. Special values used in character creation (""random"", ""culture"", and ""actually_culture"") do, not, work here. When setting character dynasty in an event it only works inside of an immediate = { } block.
+alias[effect:dynasty] = mother_bastard
 
 # TODO: Confirm
 ## scope = character
@@ -988,7 +996,7 @@ alias[effect:population] = int
 alias[effect:remove_character_modifier] = <event_modifier>
 
 ## scope = character
-### Removes a number of instances of a,�character modifier,�(usually a stackable one).
+### Removes a number of instances of a, character modifier, (usually a stackable one).
 alias[effect:remove_character_modifiers] = {
     modifier = <event_modifier>
     amount = int
